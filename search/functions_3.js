@@ -21,6 +21,7 @@ var searchData=
   ['deserialize',['deserialize',['../group__Parallel.html#ga6fb3864413e851ea6dcd1ffa319f2f25',1,'Serialize.hpp']]],
   ['destroy',['destroy',['http://en.cppreference.com/w/cpp/memory/allocator/destroy.html',1,'std::allocator::destroy()'],['http://en.cppreference.com/w/cpp/memory/allocator_traits/destroy.html',1,'std::allocator_traits::destroy()'],['http://en.cppreference.com/w/cpp/memory/polymorphic_allocator/destroy.html',1,'std::pmr::polymorphic_allocator::destroy()'],['http://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor/destroy.html',1,'std::scoped_allocator_adaptor::destroy()']]],
   ['detach',['detach',['http://en.cppreference.com/w/cpp/thread/thread/detach.html',1,'std::thread']]],
+  ['determinant',['determinant',['../Determinant_8hpp.html#ab08ada564d99ea087019620d2276ec50',1,'Determinant.hpp']]],
   ['dgemm_5f',['dgemm_',['../group__Utilities.html#gac932a44b57087d32ce5341314437dbbd',1,'Blas.hpp']]],
   ['dgemm_5f_3c_20true_20_3e',['dgemm_&lt; true &gt;',['../group__Utilities.html#gaba62a62589ffc7b8b85a7722390f7ce0',1,'Blas.hpp']]],
   ['dgemm_5ferror_5ftransa_5ffalse',['dgemm_error_transa_false',['../namespacetest__blas__asserts__for__bad__char.html#a45d28997245c1100a87c90d8fecbc9a2',1,'test_blas_asserts_for_bad_char']]],

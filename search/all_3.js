@@ -45,6 +45,8 @@ var searchData=
   ['detach',['detach',['http://en.cppreference.com/w/cpp/thread/thread/detach.html',1,'std::thread']]],
   ['detected_5for',['detected_or',['http://en.cppreference.com/w/cpp/experimental/is_detected.html',1,'std::experimental']]],
   ['detected_5for_5ft',['detected_or_t',['http://en.cppreference.com/w/cpp/experimental/is_detected.html',1,'std::experimental']]],
+  ['determinant',['determinant',['../Determinant_8hpp.html#ab08ada564d99ea087019620d2276ec50',1,'Determinant.hpp']]],
+  ['determinant_2ehpp',['Determinant.hpp',['../Determinant_8hpp.html',1,'']]],
   ['developer_27s_20guide',['Developer&apos;s Guide',['../dev_guide.html',1,'']]],
   ['devguide_2emd',['DevGuide.md',['../DevGuide_8md.html',1,'']]],
   ['dgemm_5f',['dgemm_',['../group__Utilities.html#gac932a44b57087d32ce5341314437dbbd',1,'Blas.hpp']]],

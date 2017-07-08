@@ -1,0 +1,442 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: ElementId&lt; VolumeDim &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classElementId-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">ElementId&lt; VolumeDim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__ComputationalDomain.html">Computational Domain</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>An <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> uniquely labels a Element. It is constructed from the BlockId of the Block to which the Element belongs and the VolumeDim SegementIds that label the segments of the Block that the Element covers.  
+ <a href="classElementId.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ElementId_8hpp_source.html">ElementId.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac233b495a4c9bfaa737aaa40d358ca56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#ac233b495a4c9bfaa737aaa40d358ca56">ElementId</a> ()=default</td></tr>
+<tr class="memdesc:ac233b495a4c9bfaa737aaa40d358ca56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor needed for Charm++ serialization.  <a href="#ac233b495a4c9bfaa737aaa40d358ca56">More...</a><br /></td></tr>
+<tr class="separator:ac233b495a4c9bfaa737aaa40d358ca56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe504d43a27ca679bff205642d06a38a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#abe504d43a27ca679bff205642d06a38a">ElementId</a> (size_t <a class="el" href="classElementId.html#a9e12c7f0ab94ee0d0783d003e4272317">block_id</a>)</td></tr>
+<tr class="memdesc:abe504d43a27ca679bff205642d06a38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> of the root Element of a Block.  <a href="#abe504d43a27ca679bff205642d06a38a">More...</a><br /></td></tr>
+<tr class="separator:abe504d43a27ca679bff205642d06a38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57174e177575120bdcdd444cc3ecd4d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#a57174e177575120bdcdd444cc3ecd4d2">ElementId</a> (size_t <a class="el" href="classElementId.html#a9e12c7f0ab94ee0d0783d003e4272317">block_id</a>, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt; <a class="el" href="classElementId.html#ad85cc9620b9d3dd34be478baae24c497">segment_ids</a>)</td></tr>
+<tr class="memdesc:a57174e177575120bdcdd444cc3ecd4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an arbitrary <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a>.  <a href="#a57174e177575120bdcdd444cc3ecd4d2">More...</a><br /></td></tr>
+<tr class="separator:a57174e177575120bdcdd444cc3ecd4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a9bc33c38a611b7e591ba33be4c476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#a00a9bc33c38a611b7e591ba33be4c476">id_of_child</a> (size_t dim, <a class="el" href="group__ComputationalDomain.html#ga8c0137d7160ad71b6ed265c53c99ed00">Side</a> side) const</td></tr>
+<tr class="separator:a00a9bc33c38a611b7e591ba33be4c476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a3308a9b02144b0949c51c91f3e12e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#a65a3308a9b02144b0949c51c91f3e12e">id_of_parent</a> (size_t dim) const</td></tr>
+<tr class="separator:a65a3308a9b02144b0949c51c91f3e12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e12c7f0ab94ee0d0783d003e4272317"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#a9e12c7f0ab94ee0d0783d003e4272317">block_id</a> () const noexcept</td></tr>
+<tr class="separator:a9e12c7f0ab94ee0d0783d003e4272317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85cc9620b9d3dd34be478baae24c497"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#ad85cc9620b9d3dd34be478baae24c497">segment_ids</a> () const noexcept</td></tr>
+<tr class="separator:ad85cc9620b9d3dd34be478baae24c497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8288db46c7909a2868642024edbe623"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html#af8288db46c7909a2868642024edbe623">pup</a> (PUP::er &amp;p)</td></tr>
+<tr class="memdesc:af8288db46c7909a2868642024edbe623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization for Charm++.  <a href="#af8288db46c7909a2868642024edbe623">More...</a><br /></td></tr>
+<tr class="separator:af8288db46c7909a2868642024edbe623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t VolumeDim&gt;<br />
+class ElementId&lt; VolumeDim &gt;</h3>
+
+<p>An <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> uniquely labels a Element. It is constructed from the BlockId of the Block to which the Element belongs and the VolumeDim SegementIds that label the segments of the Block that the Element covers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac233b495a4c9bfaa737aaa40d358ca56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac233b495a4c9bfaa737aaa40d358ca56">&#9670;&nbsp;</a></span>ElementId() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::<a class="el" href="classElementId.html">ElementId</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor needed for Charm++ serialization. </p>
+
+</div>
+</div>
+<a id="abe504d43a27ca679bff205642d06a38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe504d43a27ca679bff205642d06a38a">&#9670;&nbsp;</a></span>ElementId() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::<a class="el" href="classElementId.html">ElementId</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>block_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create the <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> of the root Element of a Block. </p>
+
+</div>
+</div>
+<a id="a57174e177575120bdcdd444cc3ecd4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57174e177575120bdcdd444cc3ecd4d2">&#9670;&nbsp;</a></span>ElementId() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::<a class="el" href="classElementId.html">ElementId</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>block_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt;&#160;</td>
+          <td class="paramname"><em>segment_ids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an arbitrary <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a>. </p>
+
+<p class="reference">References <a class="el" href="classElementId.html#ad85cc9620b9d3dd34be478baae24c497">ElementId&lt; VolumeDim &gt;::segment_ids()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9e12c7f0ab94ee0d0783d003e4272317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e12c7f0ab94ee0d0783d003e4272317">&#9670;&nbsp;</a></span>block_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::block_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ElementId_8hpp.html#ae6206f3ce03b958cedcf4bc64f8dc3cc">operator==()</a>.</p>
+
+</div>
+</div>
+<a id="a00a9bc33c38a611b7e591ba33be4c476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a9bc33c38a611b7e591ba33be4c476">&#9670;&nbsp;</a></span>id_of_child()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::id_of_child </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__ComputationalDomain.html#ga8c0137d7160ad71b6ed265c53c99ed00">Side</a>&#160;</td>
+          <td class="paramname"><em>side</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+</div>
+</div>
+<a id="a65a3308a9b02144b0949c51c91f3e12e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a3308a9b02144b0949c51c91f3e12e">&#9670;&nbsp;</a></span>id_of_parent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::id_of_parent </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dim</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+</div>
+</div>
+<a id="af8288db46c7909a2868642024edbe623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8288db46c7909a2868642024edbe623">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization for Charm++. </p>
+
+<p class="reference">Referenced by <a class="el" href="classElementId.html#ad85cc9620b9d3dd34be478baae24c497">ElementId&lt; VolumeDim &gt;::segment_ids()</a>.</p>
+
+</div>
+</div>
+<a id="ad85cc9620b9d3dd34be478baae24c497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85cc9620b9d3dd34be478baae24c497">&#9670;&nbsp;</a></span>segment_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;<a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim&gt;&amp; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;::segment_ids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/numeric_limits/max.html">std::numeric_limits::max()</a>, <a class="el" href="ElementId_8hpp.html#a94c96777e85ff2ee7e039ee54c82fd20">operator!=()</a>, <a class="el" href="ElementId_8hpp.html#ae6206f3ce03b958cedcf4bc64f8dc3cc">operator==()</a>, and <a class="el" href="classElementId.html#af8288db46c7909a2868642024edbe623">ElementId&lt; VolumeDim &gt;::pup()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classElementId.html#a57174e177575120bdcdd444cc3ecd4d2">ElementId&lt; VolumeDim &gt;::ElementId()</a>, and <a class="el" href="ElementId_8hpp.html#ae6206f3ce03b958cedcf4bc64f8dc3cc">operator==()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Domain/<a class="el" href="ElementId_8hpp_source.html">ElementId.hpp</a></li>
+<li>src/Domain/<a class="el" href="ElementId_8cpp.html">ElementId.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

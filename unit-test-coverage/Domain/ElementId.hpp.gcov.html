@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - a892ab8178fa2b9cef9cd3e31ba207344a6e7ae6 - Domain/ElementId.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">SpECTRE Unit Test Code Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">Domain</a> - ElementId.hpp<span style="font-size: 80%;"> (source / <a href="ElementId.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/a892ab8178fa2b9cef9cd3e31ba207344a6e7ae6">a892ab8178fa2b9cef9cd3e31ba207344a6e7ae6</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-07-08 02:05:56</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Distributed under the MIT License.</a>
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : /// \file
+<span class="lineNum">       5 </span>            : /// Defines class ElementId.
+<span class="lineNum">       6 </span>            : 
+<span class="lineNum">       7 </span>            : #pragma once
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #include &lt;array&gt;
+<span class="lineNum">      10 </span>            : #include &lt;iosfwd&gt;
+<span class="lineNum">      11 </span>            : #include &lt;pup.h&gt;
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span>            : #include &quot;Domain/SegmentId.hpp&quot;
+<span class="lineNum">      14 </span>            : #include &quot;ErrorHandling/Assert.hpp&quot;
+<span class="lineNum">      15 </span>            : #include &quot;Utilities/MakeArray.hpp&quot;
+<span class="lineNum">      16 </span>            : #include &quot;Utilities/StdHelpers.hpp&quot;
+<span class="lineNum">      17 </span>            : 
+<span class="lineNum">      18 </span>            : /// \ingroup ComputationalDomain
+<span class="lineNum">      19 </span>            : /// An ElementId uniquely labels a Element.
+<span class="lineNum">      20 </span>            : /// It is constructed from the BlockId of the Block to which the Element belongs
+<span class="lineNum">      21 </span>            : /// and the VolumeDim SegementIds that label the segments of the Block that the
+<span class="lineNum">      22 </span>            : /// Element covers.
+<span class="lineNum">      23 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      24 </span>            : class ElementId {
+<span class="lineNum">      25 </span>            :  public:
+<span class="lineNum">      26 </span>            :   /// Default constructor needed for Charm++ serialization.
+<span class="lineNum">      27 </span>            :   ElementId() = default;
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            :   /// Create the ElementId of the root Element of a Block.
+<span class="lineNum">      30 </span>            :   explicit ElementId(size_t block_id);
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span>            :   /// Create an arbitrary ElementId.
+<span class="lineNum">      33 </span>            :   ElementId(size_t block_id, std::array&lt;SegmentId, VolumeDim&gt; segment_ids);
+<span class="lineNum">      34 </span>            : 
+<span class="lineNum">      35 </span>            :   ElementId&lt;VolumeDim&gt; id_of_child(size_t dim, Side side) const;
+<span class="lineNum">      36 </span>            : 
+<a name="37"><span class="lineNum">      37 </span>            :   ElementId&lt;VolumeDim&gt; id_of_parent(size_t dim) const;</a>
+<span class="lineNum">      38 </span>            : 
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">         59 :   size_t block_id() const noexcept { return block_id_; }</span></a>
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span><span class="lineCov">         58 :   const std::array&lt;SegmentId, VolumeDim&gt;&amp; segment_ids() const noexcept {</span>
+<span class="lineNum">      42 </span><span class="lineCov">         58 :     return segment_ids_;</span>
+<span class="lineNum">      43 </span>            :   }
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span>            :   /// Serialization for Charm++
+<span class="lineNum">      46 </span>            :   void pup(PUP::er&amp; p);  // NOLINT
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span>            :  private:
+<span class="lineNum">      49 </span>            :   size_t block_id_ = std::numeric_limits&lt;size_t&gt;::max();
+<span class="lineNum">      50 </span>            :   std::array&lt;SegmentId, VolumeDim&gt; segment_ids_ =
+<span class="lineNum">      51 </span>            :       make_array&lt;VolumeDim&gt;(SegmentId());
+<span class="lineNum">      52 </span>            : };
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            : /// Output operator for ElementId.
+<span class="lineNum">      55 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      56 </span>            : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const ElementId&lt;VolumeDim&gt;&amp; id);
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span>            : /// Equivalence operator for ElementId.
+<span class="lineNum">      59 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      60 </span>            : bool operator==(const ElementId&lt;VolumeDim&gt;&amp; lhs,
+<span class="lineNum">      61 </span>            :                 const ElementId&lt;VolumeDim&gt;&amp; rhs) noexcept;
+<span class="lineNum">      62 </span>            : 
+<span class="lineNum">      63 </span>            : /// Inequivalence operator for ElementId.
+<span class="lineNum">      64 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      65 </span>            : bool operator!=(const ElementId&lt;VolumeDim&gt;&amp; lhs,
+<span class="lineNum">      66 </span>            :                 const ElementId&lt;VolumeDim&gt;&amp; rhs) noexcept;
+<span class="lineNum">      67 </span>            : 
+<span class="lineNum">      68 </span>            : // ######################################################################
+<span class="lineNum">      69 </span>            : // INLINE DEFINITIONS
+<span class="lineNum">      70 </span>            : // ######################################################################
+<span class="lineNum">      71 </span>            : 
+<span class="lineNum">      72 </span>            : // These are defined so that an ElementId can be used as part of a key of an
+<span class="lineNum">      73 </span>            : // unordered_set or unordered_map.
+<span class="lineNum">      74 </span>            : namespace std {
+<span class="lineNum">      75 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      76 </span>            : struct hash&lt;ElementId&lt;VolumeDim&gt;&gt; {
+<span class="lineNum">      77 </span>            :   size_t operator()(const ElementId&lt;VolumeDim&gt;&amp; c) const;
+<span class="lineNum">      78 </span>            : };
+<span class="lineNum">      79 </span>            : }  // namespace std
+<a name="80"><span class="lineNum">      80 </span>            : </a>
+<span class="lineNum">      81 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      82 </span><span class="lineCov">         14 : inline bool operator==(const ElementId&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">      83 </span>            :                        const ElementId&lt;VolumeDim&gt;&amp; rhs) noexcept {
+<span class="lineNum">      84 </span><span class="lineCov">         26 :   return lhs.block_id() == rhs.block_id() and</span>
+<span class="lineNum">      85 </span><span class="lineCov">         26 :          lhs.segment_ids() == rhs.segment_ids();</span>
+<span class="lineNum">      86 </span>            : }
+<a name="87"><span class="lineNum">      87 </span>            : </a>
+<span class="lineNum">      88 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      89 </span><span class="lineCov">          3 : inline bool operator!=(const ElementId&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">      90 </span>            :                        const ElementId&lt;VolumeDim&gt;&amp; rhs) noexcept {
+<span class="lineNum">      91 </span><span class="lineCov">          3 :   return not(lhs == rhs);</span>
+<span class="lineNum">      92 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - db33caf08c61684fd7b2d05dace978c57b753efd - DataStructures/DataVector.hpp</title>
+  <title>LCOV - c54c9455009d95e8638a8f0fa895824207b2b7e4 - DataStructures/DataVector.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,20 +28,20 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/db33caf08c61684fd7b2d05dace978c57b753efd">db33caf08c61684fd7b2d05dace978c57b753efd</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/c54c9455009d95e8638a8f0fa895824207b2b7e4">c54c9455009d95e8638a8f0fa895824207b2b7e4</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">140</td>
             <td class="headerCovTableEntry">143</td>
-            <td class="headerCovTableEntry">143</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryHi">97.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-11 02:08:04</td>
+            <td class="headerValue">2017-07-12 02:08:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">81</td>
-            <td class="headerCovTableEntry">81</td>
+            <td class="headerCovTableEntry">84</td>
+            <td class="headerCovTableEntry">84</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -138,7 +138,7 @@
 <span class="lineNum">      68 </span>            :   /// Empty DataVector
 <a name="69"><span class="lineNum">      69 </span><span class="lineCov">        185 :   DataVector() = default;</span></a>
 <span class="lineNum">      70 </span>            :   /// \cond HIDDEN_SYMBOLS
-<span class="lineNum">      71 </span><span class="lineCov">      86789 :   ~DataVector() = default;</span>
+<span class="lineNum">      71 </span><span class="lineCov">      86795 :   ~DataVector() = default;</span>
 <a name="72"><span class="lineNum">      72 </span>            : </a>
 <span class="lineNum">      73 </span>            :   DataVector(const DataVector&amp; rhs);
 <span class="lineNum">      74 </span><span class="lineCov">      43150 :   DataVector(DataVector&amp;&amp; rhs) noexcept = default;  // NOLINT</span>
@@ -153,7 +153,7 @@
 <span class="lineNum">      83 </span>            :   /// \endcond
 <a name="84"><span class="lineNum">      84 </span>            : </a>
 <span class="lineNum">      85 </span>            :   /// Number of values stored
-<span class="lineNum">      86 </span><span class="lineCov">      68914 :   size_t size() const { return size_; }</span>
+<span class="lineNum">      86 </span><span class="lineCov">      69026 :   size_t size() const { return size_; }</span>
 <span class="lineNum">      87 </span>            : 
 <a name="88"><span class="lineNum">      88 </span>            :   // @{</a>
 <span class="lineNum">      89 </span>            :   /// Set the DataVector to be a reference to another DataVector object
@@ -170,9 +170,9 @@
 <span class="lineNum">     100 </span><span class="lineCov">    2869694 :     ASSERT(i &lt; size_, &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;, size = &quot; &lt;&lt; size_);</span>
 <a name="101"><span class="lineNum">     101 </span><span class="lineCov">    2869694 :     return data_[i];  // NOLINT</span></a>
 <span class="lineNum">     102 </span>            :   }
-<span class="lineNum">     103 </span><span class="lineCov">    8282484 :   const double&amp; operator[](const size_type i) const {</span>
-<span class="lineNum">     104 </span><span class="lineCov">    8282484 :     ASSERT(i &lt; size_, &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;, size = &quot; &lt;&lt; size_);</span>
-<span class="lineNum">     105 </span><span class="lineCov">    8282484 :     return data_[i];  // NOLINT</span>
+<span class="lineNum">     103 </span><span class="lineCov">    8282674 :   const double&amp; operator[](const size_type i) const {</span>
+<span class="lineNum">     104 </span><span class="lineCov">    8282674 :     ASSERT(i &lt; size_, &quot;i = &quot; &lt;&lt; i &lt;&lt; &quot;, size = &quot; &lt;&lt; size_);</span>
+<span class="lineNum">     105 </span><span class="lineCov">    8282674 :     return data_[i];  // NOLINT</span>
 <span class="lineNum">     106 </span>            :   }
 <span class="lineNum">     107 </span>            :   // @}
 <span class="lineNum">     108 </span>            : 
@@ -210,9 +210,9 @@
 <span class="lineNum">     140 </span><span class="lineCov">          1 :     return *this;</span>
 <a name="141"><span class="lineNum">     141 </span>            :   }</a>
 <span class="lineNum">     142 </span>            :   template &lt;typename VT, bool VF&gt;
-<span class="lineNum">     143 </span><span class="lineCov">          1 :   DataVector&amp; operator+=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
-<span class="lineNum">     144 </span><span class="lineCov">          1 :     data_ += rhs;</span>
-<a name="145"><span class="lineNum">     145 </span><span class="lineCov">          1 :     return *this;</span></a>
+<span class="lineNum">     143 </span><span class="lineCov">          2 :   DataVector&amp; operator+=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
+<span class="lineNum">     144 </span><span class="lineCov">          2 :     data_ += rhs;</span>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">          2 :     return *this;</span></a>
 <span class="lineNum">     146 </span>            :   }
 <span class="lineNum">     147 </span><span class="lineCov">          1 :   DataVector&amp; operator+=(const double&amp; rhs) {</span>
 <span class="lineNum">     148 </span><span class="lineCov">          1 :     data_ += rhs;</span>
@@ -224,18 +224,18 @@
 <span class="lineNum">     154 </span><span class="lineCov">          1 :     return *this;</span>
 <a name="155"><span class="lineNum">     155 </span>            :   }</a>
 <span class="lineNum">     156 </span>            :   template &lt;typename VT, bool VF&gt;
-<span class="lineNum">     157 </span><span class="lineCov">          1 :   DataVector&amp; operator-=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
-<span class="lineNum">     158 </span><span class="lineCov">          1 :     data_ -= rhs;</span>
-<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          1 :     return *this;</span></a>
+<span class="lineNum">     157 </span><span class="lineCov">          2 :   DataVector&amp; operator-=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
+<span class="lineNum">     158 </span><span class="lineCov">          2 :     data_ -= rhs;</span>
+<a name="159"><span class="lineNum">     159 </span><span class="lineCov">          2 :     return *this;</span></a>
 <span class="lineNum">     160 </span>            :   }
 <span class="lineNum">     161 </span><span class="lineCov">          1 :   DataVector&amp; operator-=(const double&amp; rhs) {</span>
 <span class="lineNum">     162 </span><span class="lineCov">          1 :     data_ -= rhs;</span>
 <span class="lineNum">     163 </span><span class="lineCov">          1 :     return *this;</span>
 <a name="164"><span class="lineNum">     164 </span>            :   }</a>
 <span class="lineNum">     165 </span>            : 
-<span class="lineNum">     166 </span><span class="lineCov">          1 :   DataVector&amp; operator*=(const DataVector&amp; rhs) {</span>
-<span class="lineNum">     167 </span><span class="lineCov">          1 :     data_ *= rhs.data_;</span>
-<span class="lineNum">     168 </span><span class="lineCov">          1 :     return *this;</span>
+<span class="lineNum">     166 </span><span class="lineCov">          2 :   DataVector&amp; operator*=(const DataVector&amp; rhs) {</span>
+<span class="lineNum">     167 </span><span class="lineCov">          2 :     data_ *= rhs.data_;</span>
+<span class="lineNum">     168 </span><span class="lineCov">          2 :     return *this;</span>
 <a name="169"><span class="lineNum">     169 </span>            :   }</a>
 <span class="lineNum">     170 </span>            :   template &lt;typename VT, bool VF&gt;
 <span class="lineNum">     171 </span><span class="lineCov">          1 :   DataVector&amp; operator*=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
@@ -247,9 +247,9 @@
 <span class="lineNum">     177 </span><span class="lineCov">          1 :     return *this;</span>
 <a name="178"><span class="lineNum">     178 </span>            :   }</a>
 <span class="lineNum">     179 </span>            : 
-<span class="lineNum">     180 </span><span class="lineCov">          1 :   DataVector&amp; operator/=(const DataVector&amp; rhs) {</span>
-<span class="lineNum">     181 </span><span class="lineCov">          1 :     data_ /= rhs.data_;</span>
-<span class="lineNum">     182 </span><span class="lineCov">          1 :     return *this;</span>
+<span class="lineNum">     180 </span><span class="lineCov">          2 :   DataVector&amp; operator/=(const DataVector&amp; rhs) {</span>
+<span class="lineNum">     181 </span><span class="lineCov">          2 :     data_ /= rhs.data_;</span>
+<span class="lineNum">     182 </span><span class="lineCov">          2 :     return *this;</span>
 <a name="183"><span class="lineNum">     183 </span>            :   }</a>
 <span class="lineNum">     184 </span>            :   template &lt;typename VT, bool VF&gt;
 <span class="lineNum">     185 </span><span class="lineCov">          1 :   DataVector&amp; operator/=(const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {</span>
@@ -296,8 +296,8 @@
 <span class="lineNum">     226 </span>            :                                   const blaze::Vector&lt;VT, VF&gt;&amp; rhs) {
 <a name="227"><span class="lineNum">     227 </span><span class="lineCov">          1 :     return lhs.data_ - ~rhs;</span></a>
 <span class="lineNum">     228 </span>            :   }
-<span class="lineNum">     229 </span><span class="lineCov">          1 :   friend decltype(auto) operator-(const DataVector&amp; lhs, const double&amp; rhs) {</span>
-<a name="230"><span class="lineNum">     230 </span><span class="lineCov">          1 :     return lhs.data_ - rhs;</span></a>
+<span class="lineNum">     229 </span><span class="lineCov">          2 :   friend decltype(auto) operator-(const DataVector&amp; lhs, const double&amp; rhs) {</span>
+<a name="230"><span class="lineNum">     230 </span><span class="lineCov">          2 :     return lhs.data_ - rhs;</span></a>
 <span class="lineNum">     231 </span>            :   }
 <span class="lineNum">     232 </span><span class="lineCov">          1 :   friend decltype(auto) operator-(const double&amp; lhs, const DataVector&amp; rhs) {</span>
 <a name="233"><span class="lineNum">     233 </span><span class="lineCov">          1 :     return lhs - rhs.data_;</span></a>
@@ -349,7 +349,7 @@
 <span class="lineNum">     279 </span>            : 
 <a name="280"><span class="lineNum">     280 </span><span class="lineCov">          1 :   friend decltype(auto) abs(const DataVector&amp; t) { return abs(t.data_); }</span></a>
 <span class="lineNum">     281 </span>            : 
-<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          1 :   friend decltype(auto) sqrt(const DataVector&amp; t) { return sqrt(t.data_); }</span></a>
+<a name="282"><span class="lineNum">     282 </span><span class="lineCov">          3 :   friend decltype(auto) sqrt(const DataVector&amp; t) { return sqrt(t.data_); }</span></a>
 <span class="lineNum">     283 </span>            : 
 <span class="lineNum">     284 </span><span class="lineCov">          1 :   friend decltype(auto) invsqrt(const DataVector&amp; t) {</span>
 <span class="lineNum">     285 </span><span class="lineCov">          1 :     return invsqrt(t.data_);</span>
@@ -435,49 +435,48 @@
 <span class="lineNum">     365 </span><span class="lineCov">          4 : }</span>
 <span class="lineNum">     366 </span>            : 
 <span class="lineNum">     367 </span>            : template &lt;typename VT, bool VF&gt;
-<span class="lineNum">     368 </span><span class="lineCov">          3 : DataVector&amp; DataVector::operator=(const blaze::Vector&lt;VT, VF&gt;&amp; expression) {</span>
-<span class="lineNum">     369 </span><span class="lineCov">          3 :   if (owning_) {</span>
-<span class="lineNum">     370 </span><span class="lineCov">          1 :     size_ = (~expression).size();</span>
-<span class="lineNum">     371 </span><span class="lineCov">          1 :     owned_data_ = InternalStorage_t(size_);</span>
-<span class="lineNum">     372 </span><span class="lineCov">          1 :     data_ = decltype(data_){owned_data_.data(), size_};</span>
-<span class="lineNum">     373 </span><span class="lineCov">          1 :     data_ = expression;</span>
-<span class="lineNum">     374 </span>            :   } else {
-<span class="lineNum">     375 </span><span class="lineCov">          2 :     ASSERT((~expression).size() == size(), &quot;Must copy into same size&quot;);</span>
-<span class="lineNum">     376 </span><span class="lineCov">          1 :     data_ = expression;</span>
-<span class="lineNum">     377 </span>            :   }
-<span class="lineNum">     378 </span><span class="lineCov">          2 :   return *this;</span>
-<span class="lineNum">     379 </span>            : }
-<span class="lineNum">     380 </span>            : /// \endcond
-<span class="lineNum">     381 </span>            : 
-<span class="lineNum">     382 </span>            : namespace ConstantExpressions_details {
-<span class="lineNum">     383 </span>            : template &lt;&gt;
-<span class="lineNum">     384 </span>            : struct pow&lt;DataVector, 0, void&gt; {
-<span class="lineNum">     385 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(const DataVector&amp; /*t*/) {
-<span class="lineNum">     386 </span><span class="lineCov">          2 :     return 1.0;</span>
-<span class="lineNum">     387 </span>            :   }
-<span class="lineNum">     388 </span>            : };
-<span class="lineNum">     389 </span>            : template &lt;typename BlazeVector&gt;
-<span class="lineNum">     390 </span>            : struct pow&lt;
-<span class="lineNum">     391 </span>            :     BlazeVector, 0,
-<span class="lineNum">     392 </span>            :     std::enable_if_t&lt;std::is_base_of&lt;blaze::Expression, BlazeVector&gt;::value&gt;&gt; {
-<span class="lineNum">     393 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(
-<span class="lineNum">     394 </span>            :       const BlazeVector&amp; /*t*/) {
-<span class="lineNum">     395 </span><span class="lineCov">          1 :     return 1.0;</span>
-<span class="lineNum">     396 </span>            :   }
-<span class="lineNum">     397 </span>            : };
-<span class="lineNum">     398 </span>            : 
-<span class="lineNum">     399 </span>            : template &lt;int N&gt;
-<span class="lineNum">     400 </span>            : struct pow&lt;DataVector, N, typename std::enable_if&lt;(N &lt; 0)&gt;::type&gt; {
-<span class="lineNum">     401 </span>            :   static_assert(N &gt; 0,
-<span class="lineNum">     402 </span>            :                 &quot;Cannot use pow on DataVectorStructures with a negative &quot;
-<span class="lineNum">     403 </span>            :                 &quot;exponent. You must &quot;
-<span class="lineNum">     404 </span>            :                 &quot;divide by a positive exponent instead.&quot;);
-<span class="lineNum">     405 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr decltype(auto) apply(
-<span class="lineNum">     406 </span>            :       const DataVector&amp; t) {
-<span class="lineNum">     407 </span>            :     return DataVector(t.size(), 1.0) / (t * pow&lt;DataVector, -N - 1&gt;::apply(t));
-<span class="lineNum">     408 </span>            :   }
-<span class="lineNum">     409 </span>            : };
-<span class="lineNum">     410 </span>            : }  // namespace ConstantExpressions_details
+<span class="lineNum">     368 </span><span class="lineCov">          4 : DataVector&amp; DataVector::operator=(const blaze::Vector&lt;VT, VF&gt;&amp; expression) {</span>
+<span class="lineNum">     369 </span><span class="lineCov">          6 :   if (owning_ and (~expression).size() != size()) {</span>
+<span class="lineNum">     370 </span><span class="lineNoCov">          0 :     size_ = (~expression).size();</span>
+<span class="lineNum">     371 </span><span class="lineNoCov">          0 :     owned_data_ = InternalStorage_t(size_);</span>
+<span class="lineNum">     372 </span><span class="lineNoCov">          0 :     data_ = decltype(data_){owned_data_.data(), size_};</span>
+<span class="lineNum">     373 </span><span class="lineCov">          4 :   } else if (not owning_) {</span>
+<span class="lineNum">     374 </span><span class="lineCov">          2 :     ASSERT((~expression).size() == size(), &quot;Must copy into same size&quot;);</span>
+<span class="lineNum">     375 </span>            :   }
+<span class="lineNum">     376 </span><span class="lineCov">          3 :   data_ = expression;</span>
+<span class="lineNum">     377 </span><span class="lineCov">          3 :   return *this;</span>
+<span class="lineNum">     378 </span>            : }
+<span class="lineNum">     379 </span>            : /// \endcond
+<span class="lineNum">     380 </span>            : 
+<span class="lineNum">     381 </span>            : namespace ConstantExpressions_details {
+<span class="lineNum">     382 </span>            : template &lt;&gt;
+<span class="lineNum">     383 </span>            : struct pow&lt;DataVector, 0, void&gt; {
+<span class="lineNum">     384 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(const DataVector&amp; /*t*/) {
+<span class="lineNum">     385 </span><span class="lineCov">          2 :     return 1.0;</span>
+<span class="lineNum">     386 </span>            :   }
+<span class="lineNum">     387 </span>            : };
+<span class="lineNum">     388 </span>            : template &lt;typename BlazeVector&gt;
+<span class="lineNum">     389 </span>            : struct pow&lt;
+<span class="lineNum">     390 </span>            :     BlazeVector, 0,
+<span class="lineNum">     391 </span>            :     std::enable_if_t&lt;std::is_base_of&lt;blaze::Expression, BlazeVector&gt;::value&gt;&gt; {
+<span class="lineNum">     392 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(
+<span class="lineNum">     393 </span>            :       const BlazeVector&amp; /*t*/) {
+<span class="lineNum">     394 </span><span class="lineCov">          1 :     return 1.0;</span>
+<span class="lineNum">     395 </span>            :   }
+<span class="lineNum">     396 </span>            : };
+<span class="lineNum">     397 </span>            : 
+<span class="lineNum">     398 </span>            : template &lt;int N&gt;
+<span class="lineNum">     399 </span>            : struct pow&lt;DataVector, N, typename std::enable_if&lt;(N &lt; 0)&gt;::type&gt; {
+<span class="lineNum">     400 </span>            :   static_assert(N &gt; 0,
+<span class="lineNum">     401 </span>            :                 &quot;Cannot use pow on DataVectorStructures with a negative &quot;
+<span class="lineNum">     402 </span>            :                 &quot;exponent. You must &quot;
+<span class="lineNum">     403 </span>            :                 &quot;divide by a positive exponent instead.&quot;);
+<span class="lineNum">     404 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr decltype(auto) apply(
+<span class="lineNum">     405 </span>            :       const DataVector&amp; t) {
+<span class="lineNum">     406 </span>            :     return DataVector(t.size(), 1.0) / (t * pow&lt;DataVector, -N - 1&gt;::apply(t));
+<span class="lineNum">     407 </span>            :   }
+<span class="lineNum">     408 </span>            : };
+<span class="lineNum">     409 </span>            : }  // namespace ConstantExpressions_details
 </pre>
       </td>
     </tr>

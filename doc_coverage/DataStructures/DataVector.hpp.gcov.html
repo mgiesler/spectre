@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - db33caf08c61684fd7b2d05dace978c57b753efd - DataStructures/DataVector.hpp</title>
+  <title>LCOV - c54c9455009d95e8638a8f0fa895824207b2b7e4 - DataStructures/DataVector.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/db33caf08c61684fd7b2d05dace978c57b753efd">db33caf08c61684fd7b2d05dace978c57b753efd</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/c54c9455009d95e8638a8f0fa895824207b2b7e4">c54c9455009d95e8638a8f0fa895824207b2b7e4</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">84</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-11 02:08:27</td>
+            <td class="headerValue">2017-07-12 02:08:59</td>
             <td></td>
           </tr>
           <tr>
@@ -432,48 +432,47 @@
 <span class="lineNum">     366 </span>            : 
 <span class="lineNum">     367 </span>            : template &lt;typename VT, bool VF&gt;
 <span class="lineNum">     368 </span>            : DataVector&amp; DataVector::operator=(const blaze::Vector&lt;VT, VF&gt;&amp; expression) {
-<span class="lineNum">     369 </span>            :   if (owning_) {
+<span class="lineNum">     369 </span>            :   if (owning_ and (~expression).size() != size()) {
 <span class="lineNum">     370 </span>            :     size_ = (~expression).size();
 <span class="lineNum">     371 </span>            :     owned_data_ = InternalStorage_t(size_);
 <span class="lineNum">     372 </span>            :     data_ = decltype(data_){owned_data_.data(), size_};
-<span class="lineNum">     373 </span>            :     data_ = expression;
-<span class="lineNum">     374 </span>            :   } else {
-<span class="lineNum">     375 </span>            :     ASSERT((~expression).size() == size(), &quot;Must copy into same size&quot;);
-<span class="lineNum">     376 </span>            :     data_ = expression;
-<span class="lineNum">     377 </span>            :   }
-<span class="lineNum">     378 </span>            :   return *this;
-<span class="lineNum">     379 </span>            : }
-<span class="lineNum">     380 </span>            : /// \endcond
-<span class="lineNum">     381 </span>            : 
-<span class="lineNum">     382 </span>            : namespace ConstantExpressions_details {
-<span class="lineNum">     383 </span>            : template &lt;&gt;
-<span class="lineNum">     384 </span>            : struct pow&lt;DataVector, 0, void&gt; {
-<span class="lineNum">     385 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(const DataVector&amp; /*t*/) {
-<span class="lineNum">     386 </span>            :     return 1.0;
-<span class="lineNum">     387 </span>            :   }
-<span class="lineNum">     388 </span>            : };
-<span class="lineNum">     389 </span>            : template &lt;typename BlazeVector&gt;
-<span class="lineNum">     390 </span>            : struct pow&lt;
-<span class="lineNum">     391 </span>            :     BlazeVector, 0,
-<span class="lineNum">     392 </span>            :     std::enable_if_t&lt;std::is_base_of&lt;blaze::Expression, BlazeVector&gt;::value&gt;&gt; {
-<span class="lineNum">     393 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(
-<span class="lineNum">     394 </span>            :       const BlazeVector&amp; /*t*/) {
-<span class="lineNum">     395 </span>            :     return 1.0;
-<span class="lineNum">     396 </span>            :   }
-<span class="lineNum">     397 </span>            : };
-<span class="lineNum">     398 </span>            : 
-<span class="lineNum">     399 </span>            : template &lt;int N&gt;
-<span class="lineNum">     400 </span>            : struct pow&lt;DataVector, N, typename std::enable_if&lt;(N &lt; 0)&gt;::type&gt; {
-<span class="lineNum">     401 </span>            :   static_assert(N &gt; 0,
-<span class="lineNum">     402 </span>            :                 &quot;Cannot use pow on DataVectorStructures with a negative &quot;
-<span class="lineNum">     403 </span>            :                 &quot;exponent. You must &quot;
-<span class="lineNum">     404 </span>            :                 &quot;divide by a positive exponent instead.&quot;);
-<span class="lineNum">     405 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr decltype(auto) apply(
-<span class="lineNum">     406 </span>            :       const DataVector&amp; t) {
-<span class="lineNum">     407 </span>            :     return DataVector(t.size(), 1.0) / (t * pow&lt;DataVector, -N - 1&gt;::apply(t));
-<span class="lineNum">     408 </span>            :   }
-<span class="lineNum">     409 </span>            : };
-<span class="lineNum">     410 </span>            : }  // namespace ConstantExpressions_details
+<span class="lineNum">     373 </span>            :   } else if (not owning_) {
+<span class="lineNum">     374 </span>            :     ASSERT((~expression).size() == size(), &quot;Must copy into same size&quot;);
+<span class="lineNum">     375 </span>            :   }
+<span class="lineNum">     376 </span>            :   data_ = expression;
+<span class="lineNum">     377 </span>            :   return *this;
+<span class="lineNum">     378 </span>            : }
+<span class="lineNum">     379 </span>            : /// \endcond
+<span class="lineNum">     380 </span>            : 
+<span class="lineNum">     381 </span>            : namespace ConstantExpressions_details {
+<span class="lineNum">     382 </span>            : template &lt;&gt;
+<span class="lineNum">     383 </span>            : struct pow&lt;DataVector, 0, void&gt; {
+<span class="lineNum">     384 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(const DataVector&amp; /*t*/) {
+<span class="lineNum">     385 </span>            :     return 1.0;
+<span class="lineNum">     386 </span>            :   }
+<span class="lineNum">     387 </span>            : };
+<span class="lineNum">     388 </span>            : template &lt;typename BlazeVector&gt;
+<span class="lineNum">     389 </span>            : struct pow&lt;
+<span class="lineNum">     390 </span>            :     BlazeVector, 0,
+<span class="lineNum">     391 </span>            :     std::enable_if_t&lt;std::is_base_of&lt;blaze::Expression, BlazeVector&gt;::value&gt;&gt; {
+<span class="lineNum">     392 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr double apply(
+<span class="lineNum">     393 </span>            :       const BlazeVector&amp; /*t*/) {
+<span class="lineNum">     394 </span>            :     return 1.0;
+<span class="lineNum">     395 </span>            :   }
+<span class="lineNum">     396 </span>            : };
+<span class="lineNum">     397 </span>            : 
+<span class="lineNum">     398 </span>            : template &lt;int N&gt;
+<span class="lineNum">     399 </span>            : struct pow&lt;DataVector, N, typename std::enable_if&lt;(N &lt; 0)&gt;::type&gt; {
+<span class="lineNum">     400 </span>            :   static_assert(N &gt; 0,
+<span class="lineNum">     401 </span>            :                 &quot;Cannot use pow on DataVectorStructures with a negative &quot;
+<span class="lineNum">     402 </span>            :                 &quot;exponent. You must &quot;
+<span class="lineNum">     403 </span>            :                 &quot;divide by a positive exponent instead.&quot;);
+<span class="lineNum">     404 </span>            :   SPECTRE_ALWAYS_INLINE static constexpr decltype(auto) apply(
+<span class="lineNum">     405 </span>            :       const DataVector&amp; t) {
+<span class="lineNum">     406 </span>            :     return DataVector(t.size(), 1.0) / (t * pow&lt;DataVector, -N - 1&gt;::apply(t));
+<span class="lineNum">     407 </span>            :   }
+<span class="lineNum">     408 </span>            : };
+<span class="lineNum">     409 </span>            : }  // namespace ConstantExpressions_details
 </pre>
       </td>
     </tr>

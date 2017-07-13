@@ -1,0 +1,680 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: EmbeddingMaps::ProductOf3Maps Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceEmbeddingMaps.html">EmbeddingMaps</a></li><li class="navelem"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classEmbeddingMaps_1_1ProductOf3Maps-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">EmbeddingMaps::ProductOf3Maps Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__EmbeddingMaps.html">Embedding Maps</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Product of three one-dimensional <a class="el" href="namespaceEmbeddingMaps.html" title="Contains all embedding maps. ">EmbeddingMaps</a>.  
+ <a href="classEmbeddingMaps_1_1ProductOf3Maps.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ProductMaps_8hpp_source.html">ProductMaps.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad466e38ac56fed9dc3dbfe236ff4a013"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#ad466e38ac56fed9dc3dbfe236ff4a013">ProductOf3Maps</a> (const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;map_1, const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;map_2, const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;map_3)</td></tr>
+<tr class="separator:ad466e38ac56fed9dc3dbfe236ff4a013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519891a56d1370082719a18353235972"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a519891a56d1370082719a18353235972">ProductOf3Maps</a> ()=default</td></tr>
+<tr class="separator:a519891a56d1370082719a18353235972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7b1a26e8f2a0bda506a047dfa9c566"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a3a7b1a26e8f2a0bda506a047dfa9c566">~ProductOf3Maps</a> () override=default</td></tr>
+<tr class="separator:a3a7b1a26e8f2a0bda506a047dfa9c566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc9bb080090d94542dd82cd7a51f127"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a9dc9bb080090d94542dd82cd7a51f127">ProductOf3Maps</a> (const <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;other)</td></tr>
+<tr class="separator:a9dc9bb080090d94542dd82cd7a51f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83aee8e3dba4784a8ebdd5deb5da79ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a83aee8e3dba4784a8ebdd5deb5da79ab">operator=</a> (const <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;)=delete</td></tr>
+<tr class="separator:a83aee8e3dba4784a8ebdd5deb5da79ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb09e28e18c04167df2662da5d6f3e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#abeb09e28e18c04167df2662da5d6f3e1">ProductOf3Maps</a> (<a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&amp;) noexcept</td></tr>
+<tr class="separator:abeb09e28e18c04167df2662da5d6f3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71aace5f7cb912b61222e249c8047a9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a71aace5f7cb912b61222e249c8047a9c">operator=</a> (<a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a71aace5f7cb912b61222e249c8047a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d31d2d50f73c52f7b2c4661dbc5ecf"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 3, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a64d31d2d50f73c52f7b2c4661dbc5ecf">get_clone</a> () const override</td></tr>
+<tr class="memdesc:a64d31d2d50f73c52f7b2c4661dbc5ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a copy of the concrete <a class="el" href="classEmbeddingMap.html" title="Base class representing a coordinate mapping from a DimOfDomain-dimensional space (coordinates ) to a...">EmbeddingMap</a>.  <a href="#a64d31d2d50f73c52f7b2c4661dbc5ecf">More...</a><br /></td></tr>
+<tr class="separator:a64d31d2d50f73c52f7b2c4661dbc5ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19130eb324aa00ce7f0de3d30b2ff8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#ac19130eb324aa00ce7f0de3d30b2ff8a">operator()</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi) const override</td></tr>
+<tr class="separator:ac19130eb324aa00ce7f0de3d30b2ff8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a8d8857e1203f314a17e3a86640515"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a42a8d8857e1203f314a17e3a86640515">inverse</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;x) const override</td></tr>
+<tr class="separator:a42a8d8857e1203f314a17e3a86640515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9f7999fadf05567fc22ba7038022be"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a1f9f7999fadf05567fc22ba7038022be">jacobian</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi, size_t ud, size_t ld) const override</td></tr>
+<tr class="separator:a1f9f7999fadf05567fc22ba7038022be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3c5c4f30a89681bd1f53f33e5d2d75"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a1a3c5c4f30a89681bd1f53f33e5d2d75">inv_jacobian</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi, size_t ud, size_t ld) const override</td></tr>
+<tr class="separator:a1a3c5c4f30a89681bd1f53f33e5d2d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722065d13a6e6750b767647fabb48f9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a722065d13a6e6750b767647fabb48f9f">WRAPPED_PUPable_decl_base_template</a> (SINGLE_ARG(<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 3, 3 &gt;), <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a>)</td></tr>
+<tr class="separator:a722065d13a6e6750b767647fabb48f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad660db371c0b94271bf7c5b2c6e924a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#ad660db371c0b94271bf7c5b2c6e924a5">ProductOf3Maps</a> (CkMigrateMessage *)</td></tr>
+<tr class="separator:ad660db371c0b94271bf7c5b2c6e924a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0d62e0592db2ec2d65ab152f5f811c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a0d0d62e0592db2ec2d65ab152f5f811c">pup</a> (PUP::er &amp;p) override</td></tr>
+<tr class="separator:a0d0d62e0592db2ec2d65ab152f5f811c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classEmbeddingMap"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classEmbeddingMap')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classEmbeddingMap.html">EmbeddingMap&lt; 3, 3 &gt;</a></td></tr>
+<tr class="memitem:a98772fc9c3bd4c70c9be389c9d9f85af inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a98772fc9c3bd4c70c9be389c9d9f85af">WRAPPED_PUPable_abstract</a> (<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>)</td></tr>
+<tr class="separator:a98772fc9c3bd4c70c9be389c9d9f85af inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9820c10dbf521140c64d985f79935ce inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#aa9820c10dbf521140c64d985f79935ce">EmbeddingMap</a> ()=default</td></tr>
+<tr class="separator:aa9820c10dbf521140c64d985f79935ce inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeee24b7d27b04617a888b93384fbd47 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#aaeee24b7d27b04617a888b93384fbd47">EmbeddingMap</a> (const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;)=delete</td></tr>
+<tr class="separator:aaeee24b7d27b04617a888b93384fbd47 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad62c3b6dcddbc033956e68559c341d inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a3ad62c3b6dcddbc033956e68559c341d">EmbeddingMap</a> (<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a3ad62c3b6dcddbc033956e68559c341d inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98775c14be1f9030b25a965778423b42 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a98775c14be1f9030b25a965778423b42">~EmbeddingMap</a> () override=default</td></tr>
+<tr class="separator:a98775c14be1f9030b25a965778423b42 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a04d25440340f1df725679be5db3e7 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a69a04d25440340f1df725679be5db3e7">operator=</a> (const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;)=delete</td></tr>
+<tr class="separator:a69a04d25440340f1df725679be5db3e7 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f8b0d151a57912731684fc5679cb58 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a48f8b0d151a57912731684fc5679cb58">operator=</a> (<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; DimOfDomain, DimOfRange &gt; &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a48f8b0d151a57912731684fc5679cb58 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c8a4f1394d594213180b6841c4b3d14 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfRange, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a9c8a4f1394d594213180b6841c4b3d14">operator()</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfDomain, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi) const=0</td></tr>
+<tr class="memdesc:a9c8a4f1394d594213180b6841c4b3d14 inherit pub_methods_classEmbeddingMap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the mapping (i.e. compute \(x^i(\xi^I)\)).  <a href="classEmbeddingMap.html#a9c8a4f1394d594213180b6841c4b3d14">More...</a><br /></td></tr>
+<tr class="separator:a9c8a4f1394d594213180b6841c4b3d14 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedbb199f2b3e3e8532dc5f9fd2d854e8 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfDomain, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#aedbb199f2b3e3e8532dc5f9fd2d854e8">inverse</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfRange, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;x) const=0</td></tr>
+<tr class="memdesc:aedbb199f2b3e3e8532dc5f9fd2d854e8 inherit pub_methods_classEmbeddingMap"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the inverse mapping (i.e. compute \(\xi^I(x^i)\)).  <a href="classEmbeddingMap.html#aedbb199f2b3e3e8532dc5f9fd2d854e8">More...</a><br /></td></tr>
+<tr class="separator:aedbb199f2b3e3e8532dc5f9fd2d854e8 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075e3521acad41e2aeeea9386c8bfc19 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a075e3521acad41e2aeeea9386c8bfc19">jacobian</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfDomain, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi, size_t ud, size_t ld) const=0</td></tr>
+<tr class="separator:a075e3521acad41e2aeeea9386c8bfc19 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d248b22b7fc68079e4eaa31b56a59d4 inherit pub_methods_classEmbeddingMap"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html#a8d248b22b7fc68079e4eaa31b56a59d4">inv_jacobian</a> (const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; DimOfDomain, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;xi, size_t ud, size_t ld) const=0</td></tr>
+<tr class="memdesc:a8d248b22b7fc68079e4eaa31b56a59d4 inherit pub_methods_classEmbeddingMap"><td class="mdescLeft">&#160;</td><td class="mdescRight">(i.e. compute \(\frac{\partial \xi^{ud}}{\partial x^{ld}}\)).  <a href="classEmbeddingMap.html#a8d248b22b7fc68079e4eaa31b56a59d4">More...</a><br /></td></tr>
+<tr class="separator:a8d248b22b7fc68079e4eaa31b56a59d4 inherit pub_methods_classEmbeddingMap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Product of three one-dimensional <a class="el" href="namespaceEmbeddingMaps.html" title="Contains all embedding maps. ">EmbeddingMaps</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad466e38ac56fed9dc3dbfe236ff4a013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad466e38ac56fed9dc3dbfe236ff4a013">&#9670;&nbsp;</a></span>ProductOf3Maps() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map_2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 1, 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map_3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a519891a56d1370082719a18353235972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519891a56d1370082719a18353235972">&#9670;&nbsp;</a></span>ProductOf3Maps() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a7b1a26e8f2a0bda506a047dfa9c566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7b1a26e8f2a0bda506a047dfa9c566">&#9670;&nbsp;</a></span>~ProductOf3Maps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::~ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9dc9bb080090d94542dd82cd7a51f127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dc9bb080090d94542dd82cd7a51f127">&#9670;&nbsp;</a></span>ProductOf3Maps() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abeb09e28e18c04167df2662da5d6f3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb09e28e18c04167df2662da5d6f3e1">&#9670;&nbsp;</a></span>ProductOf3Maps() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad660db371c0b94271bf7c5b2c6e924a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad660db371c0b94271bf7c5b2c6e924a5">&#9670;&nbsp;</a></span>ProductOf3Maps() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::ProductOf3Maps </td>
+          <td>(</td>
+          <td class="paramtype">CkMigrateMessage *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a64d31d2d50f73c52f7b2c4661dbc5ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d31d2d50f73c52f7b2c4661dbc5ecf">&#9670;&nbsp;</a></span>get_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt;3, 3&gt; &gt; EmbeddingMaps::ProductOf3Maps::get_clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a copy of the concrete <a class="el" href="classEmbeddingMap.html" title="Base class representing a coordinate mapping from a DimOfDomain-dimensional space (coordinates ) to a...">EmbeddingMap</a>. </p>
+
+<p>Implements <a class="el" href="classEmbeddingMap.html#a77b0301099af3827ed8789ce7858049c">EmbeddingMap&lt; 3, 3 &gt;</a>.</p>
+
+<p class="reference">References <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#aa4ca20f83ad28e0815c3c0410cf5385b">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::inv_jacobian()</a>, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#a7281076a5f63b9676c6ccef63dcfd0e7">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::inverse()</a>, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#aa82db616e9017d591e52c45fe3ba2acd">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::jacobian()</a>, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#a01e3e33e20fc60a2329b8aed961d7335">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::operator()()</a>, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#aed863103e280c4908863c4afc9b8b686">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::pup()</a>, and <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#a7931de964cbf4a427b55dd489aadf9a2">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;::WRAPPED_PUPable_decl_base_template()</a>.</p>
+
+</div>
+</div>
+<a id="a1a3c5c4f30a89681bd1f53f33e5d2d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3c5c4f30a89681bd1f53f33e5d2d75">&#9670;&nbsp;</a></span>inv_jacobian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double EmbeddingMaps::ProductOf3Maps::inv_jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ld</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a42a8d8857e1203f314a17e3a86640515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a8d8857e1203f314a17e3a86640515">&#9670;&nbsp;</a></span>inverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; EmbeddingMaps::ProductOf3Maps::inverse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f9f7999fadf05567fc22ba7038022be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9f7999fadf05567fc22ba7038022be">&#9670;&nbsp;</a></span>jacobian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double EmbeddingMaps::ProductOf3Maps::jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ld</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="ac19130eb324aa00ce7f0de3d30b2ff8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac19130eb324aa00ce7f0de3d30b2ff8a">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; EmbeddingMaps::ProductOf3Maps::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83aee8e3dba4784a8ebdd5deb5da79ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83aee8e3dba4784a8ebdd5deb5da79ab">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a>&amp; EmbeddingMaps::ProductOf3Maps::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71aace5f7cb912b61222e249c8047a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71aace5f7cb912b61222e249c8047a9c">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a>&amp; EmbeddingMaps::ProductOf3Maps::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d0d62e0592db2ec2d65ab152f5f811c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d0d62e0592db2ec2d65ab152f5f811c">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EmbeddingMaps::ProductOf3Maps::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a722065d13a6e6750b767647fabb48f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722065d13a6e6750b767647fabb48f9f">&#9670;&nbsp;</a></span>WRAPPED_PUPable_decl_base_template()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EmbeddingMaps::ProductOf3Maps::WRAPPED_PUPable_decl_base_template </td>
+          <td>(</td>
+          <td class="paramtype">SINGLE_ARG(<a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; 3, 3 &gt;)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">ProductOf3Maps</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Domain/EmbeddingMaps/<a class="el" href="ProductMaps_8hpp_source.html">ProductMaps.hpp</a></li>
+<li>src/Domain/EmbeddingMaps/<a class="el" href="ProductMaps_8cpp.html">ProductMaps.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

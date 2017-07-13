@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - d62aa504ec86867e48a115863734874130647bba - Domain/EmbeddingMaps/ProductMaps.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">SpECTRE Unit Test Code Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Domain/EmbeddingMaps</a> - ProductMaps.hpp<span style="font-size: 80%;"> (source / <a href="ProductMaps.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/d62aa504ec86867e48a115863734874130647bba">d62aa504ec86867e48a115863734874130647bba</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntryMed">77.8 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-07-13 02:25:00</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryLo">60.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Distributed under the MIT License.</a>
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : /// \file
+<span class="lineNum">       5 </span>            : /// Defines the class templates ProductOf2Maps and ProductOf3Maps.
+<span class="lineNum">       6 </span>            : 
+<span class="lineNum">       7 </span>            : #pragma once
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #include &lt;memory&gt;
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : #include &quot;DataStructures/Tensor/TypeAliases.hpp&quot;
+<span class="lineNum">      12 </span>            : #include &quot;EmbeddingMap.hpp&quot;
+<span class="lineNum">      13 </span>            : #include &quot;Parallel/CharmPupable.hpp&quot;
+<span class="lineNum">      14 </span>            : #include &quot;Parallel/PupStlCpp11.hpp&quot;
+<span class="lineNum">      15 </span>            : 
+<span class="lineNum">      16 </span>            : namespace EmbeddingMaps {
+<span class="lineNum">      17 </span>            : 
+<span class="lineNum">      18 </span>            : /// \ingroup EmbeddingMaps
+<span class="lineNum">      19 </span>            : /// \brief Product of two codimension=0 EmbeddingMaps.
+<span class="lineNum">      20 </span>            : ///
+<span class="lineNum">      21 </span>            : /// \tparam Dim1 dimension of the domain and range of the first mapping.
+<span class="lineNum">      22 </span>            : /// \tparam Dim2 dimension of the domain and range of the second mapping.
+<span class="lineNum">      23 </span>            : template &lt;size_t Dim1, size_t Dim2&gt;
+<span class="lineNum">      24 </span>            : class ProductOf2Maps final : public EmbeddingMap&lt;Dim1 + Dim2, Dim1 + Dim2&gt; {
+<span class="lineNum">      25 </span>            :  public:
+<span class="lineNum">      26 </span>            :   ProductOf2Maps(const EmbeddingMap&lt;Dim1, Dim1&gt;&amp; map_1,
+<a name="27"><span class="lineNum">      27 </span>            :                  const EmbeddingMap&lt;Dim2, Dim2&gt;&amp; map_2);</a>
+<span class="lineNum">      28 </span>            :   ProductOf2Maps() = default;
+<span class="lineNum">      29 </span><span class="lineCov">          3 :   ~ProductOf2Maps() override = default;</span>
+<span class="lineNum">      30 </span>            :   ProductOf2Maps(const ProductOf2Maps&lt;Dim1, Dim2&gt;&amp; other);
+<span class="lineNum">      31 </span>            :   ProductOf2Maps&lt;Dim1, Dim2&gt;&amp; operator=(const ProductOf2Maps&lt;Dim1, Dim2&gt;&amp;) =
+<span class="lineNum">      32 </span>            :       delete;
+<span class="lineNum">      33 </span>            :   ProductOf2Maps(ProductOf2Maps&lt;Dim1, Dim2&gt;&amp;&amp;) noexcept = default;  // NOLINT
+<a name="34"><span class="lineNum">      34 </span>            :   ProductOf2Maps&lt;Dim1, Dim2&gt;&amp; operator=(ProductOf2Maps&lt;Dim1, Dim2&gt;&amp;&amp;) = delete;</a>
+<span class="lineNum">      35 </span>            : 
+<span class="lineNum">      36 </span><span class="lineCov">          1 :   std::unique_ptr&lt;EmbeddingMap&lt;Dim1 + Dim2, Dim1 + Dim2&gt;&gt; get_clone()</span>
+<span class="lineNum">      37 </span>            :       const override {
+<span class="lineNum">      38 </span><span class="lineCov">          1 :     return std::make_unique&lt;ProductOf2Maps&lt;Dim1, Dim2&gt;&gt;(*this);</span>
+<span class="lineNum">      39 </span>            :   }
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            :   Point&lt;Dim1 + Dim2, Frame::Grid&gt; operator()(
+<span class="lineNum">      42 </span>            :       const Point&lt;Dim1 + Dim2, Frame::Logical&gt;&amp; xi) const override;
+<span class="lineNum">      43 </span>            : 
+<span class="lineNum">      44 </span>            :   Point&lt;Dim1 + Dim2, Frame::Logical&gt; inverse(
+<span class="lineNum">      45 </span>            :       const Point&lt;Dim1 + Dim2, Frame::Grid&gt;&amp; x) const override;
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            :   double jacobian(const Point&lt;Dim1 + Dim2, Frame::Logical&gt;&amp; xi, size_t ud,
+<span class="lineNum">      48 </span>            :                   size_t ld) const override;
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span>            :   double inv_jacobian(const Point&lt;Dim1 + Dim2, Frame::Logical&gt;&amp; xi, size_t ud,
+<a name="51"><span class="lineNum">      51 </span>            :                       size_t ld) const override;</a>
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :   WRAPPED_PUPable_decl_base_template(  // NOLINT</span>
+<span class="lineNum">      54 </span>            :       SINGLE_ARG(EmbeddingMap&lt;Dim1 + Dim2, Dim1 + Dim2&gt;), ProductOf2Maps);
+<span class="lineNum">      55 </span>            :   explicit ProductOf2Maps(CkMigrateMessage* /* m */);
+<span class="lineNum">      56 </span>            : 
+<span class="lineNum">      57 </span>            :   void pup(PUP::er&amp; p) override;  // NOLINT
+<span class="lineNum">      58 </span>            : 
+<span class="lineNum">      59 </span>            :  private:
+<span class="lineNum">      60 </span>            :   std::unique_ptr&lt;EmbeddingMap&lt;Dim1, Dim1&gt;&gt; map1_;
+<span class="lineNum">      61 </span>            :   std::unique_ptr&lt;EmbeddingMap&lt;Dim2, Dim2&gt;&gt; map2_;
+<span class="lineNum">      62 </span>            : };
+<span class="lineNum">      63 </span>            : 
+<span class="lineNum">      64 </span>            : /// \ingroup EmbeddingMaps
+<span class="lineNum">      65 </span>            : /// \brief Product of three one-dimensional EmbeddingMaps.
+<span class="lineNum">      66 </span>            : class ProductOf3Maps final : public EmbeddingMap&lt;3, 3&gt; {
+<span class="lineNum">      67 </span>            :  public:
+<span class="lineNum">      68 </span>            :   ProductOf3Maps(const EmbeddingMap&lt;1, 1&gt;&amp; map_1,
+<span class="lineNum">      69 </span>            :                  const EmbeddingMap&lt;1, 1&gt;&amp; map_2,
+<a name="70"><span class="lineNum">      70 </span>            :                  const EmbeddingMap&lt;1, 1&gt;&amp; map_3);</a>
+<span class="lineNum">      71 </span>            :   ProductOf3Maps() = default;
+<span class="lineNum">      72 </span><span class="lineCov">          3 :   ~ProductOf3Maps() override = default;</span>
+<span class="lineNum">      73 </span>            :   ProductOf3Maps(const ProductOf3Maps&amp; other);
+<span class="lineNum">      74 </span>            :   ProductOf3Maps&amp; operator=(const ProductOf3Maps&amp;) = delete;
+<span class="lineNum">      75 </span>            :   ProductOf3Maps(ProductOf3Maps&amp;&amp;) noexcept =  // NOLINT
+<span class="lineNum">      76 </span>            :       default;
+<a name="77"><span class="lineNum">      77 </span>            :   ProductOf3Maps&amp; operator=(ProductOf3Maps&amp;&amp;) = default;</a>
+<span class="lineNum">      78 </span>            : 
+<span class="lineNum">      79 </span><span class="lineCov">          1 :   std::unique_ptr&lt;EmbeddingMap&lt;3, 3&gt;&gt; get_clone() const override{</span>
+<span class="lineNum">      80 </span><span class="lineCov">          1 :     return std::make_unique&lt;ProductOf3Maps&gt;(*this);</span>
+<span class="lineNum">      81 </span>            :   }
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span>            :   Point&lt;3, Frame::Grid&gt; operator()(
+<span class="lineNum">      84 </span>            :       const Point&lt;3, Frame::Logical&gt;&amp; xi) const override;
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span>            :   Point&lt;3, Frame::Logical&gt; inverse(
+<span class="lineNum">      87 </span>            :       const Point&lt;3, Frame::Grid&gt;&amp; x) const override;
+<span class="lineNum">      88 </span>            : 
+<span class="lineNum">      89 </span>            :   double jacobian(const Point&lt;3, Frame::Logical&gt;&amp; xi, size_t ud,
+<span class="lineNum">      90 </span>            :                   size_t ld) const override;
+<span class="lineNum">      91 </span>            : 
+<span class="lineNum">      92 </span>            :   double inv_jacobian(const Point&lt;3, Frame::Logical&gt;&amp; xi, size_t ud,
+<a name="93"><span class="lineNum">      93 </span>            :                       size_t ld) const override;</a>
+<span class="lineNum">      94 </span>            : 
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 :   WRAPPED_PUPable_decl_base_template(  // NOLINT</span>
+<span class="lineNum">      96 </span>            :       SINGLE_ARG(EmbeddingMap&lt;3, 3&gt;), ProductOf3Maps);
+<span class="lineNum">      97 </span>            : 
+<span class="lineNum">      98 </span>            :   explicit ProductOf3Maps(CkMigrateMessage* /* m */);
+<span class="lineNum">      99 </span>            : 
+<span class="lineNum">     100 </span>            :   void pup(PUP::er&amp; p) override;
+<span class="lineNum">     101 </span>            : 
+<span class="lineNum">     102 </span>            :  private:
+<span class="lineNum">     103 </span>            :   std::unique_ptr&lt;EmbeddingMap&lt;1, 1&gt;&gt; map1_{nullptr};
+<span class="lineNum">     104 </span>            :   std::unique_ptr&lt;EmbeddingMap&lt;1, 1&gt;&gt; map2_{nullptr};
+<span class="lineNum">     105 </span>            :   std::unique_ptr&lt;EmbeddingMap&lt;1, 1&gt;&gt; map3_{nullptr};
+<span class="lineNum">     106 </span>            : };
+<span class="lineNum">     107 </span>            : }  // namespace EmbeddingMaps
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span>            : /// \cond HIDDEN_SYMBOLS
+<span class="lineNum">     110 </span>            : template &lt;size_t Dim1, size_t Dim2&gt;
+<span class="lineNum">     111 </span>            : PUP::able::PUP_ID
+<span class="lineNum">     112 </span><span class="lineCov">        252 :     EmbeddingMaps::ProductOf2Maps&lt;Dim1, Dim2&gt;::my_PUP_ID =  // NOLINT</span>
+<span class="lineNum">     113 </span>            :     0;
+<span class="lineNum">     114 </span>            : /// \endcond
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

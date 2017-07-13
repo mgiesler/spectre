@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - c54c9455009d95e8638a8f0fa895824207b2b7e4 - Domain/EmbeddingMaps/Identity.cpp</title>
+  <title>LCOV - d62aa504ec86867e48a115863734874130647bba - Domain/EmbeddingMaps/Identity.cpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,21 +28,21 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/c54c9455009d95e8638a8f0fa895824207b2b7e4">c54c9455009d95e8638a8f0fa895824207b2b7e4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/d62aa504ec86867e48a115863734874130647bba">d62aa504ec86867e48a115863734874130647bba</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntryMed">86.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-12 02:08:37</td>
+            <td class="headerValue">2017-07-13 02:25:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -77,12 +77,55 @@
 <span class="lineNum">       7 </span>            : #include &quot;ErrorHandling/Assert.hpp&quot;
 <span class="lineNum">       8 </span>            : 
 <span class="lineNum">       9 </span>            : namespace EmbeddingMaps {
-<span class="lineNum">      10 </span>            : template class Identity&lt;1&gt;;
-<span class="lineNum">      11 </span>            : template class Identity&lt;2&gt;;
-<span class="lineNum">      12 </span>            : // Identity should only be used in ProductMaps if a particular dimension is
-<a name="13"><span class="lineNum">      13 </span>            : // unaffected.  So if the largest dim we do is 3, then you should never use</a>
-<span class="lineNum">      14 </span>            : // Identity&lt;3&gt;
-<span class="lineNum">      15 </span><span class="lineNoCov">          0 : }  // namespace EmbeddingMaps</span>
+<a name="10"><span class="lineNum">      10 </span>            : </a>
+<span class="lineNum">      11 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      12 </span><span class="lineCov">          4 : Point&lt;Dim, Frame::Grid&gt; Identity&lt;Dim&gt;::operator()(</span>
+<span class="lineNum">      13 </span>            :     const Point&lt;Dim, Frame::Logical&gt;&amp; xi) const {
+<span class="lineNum">      14 </span><span class="lineCov">          4 :   Point&lt;Dim, Frame::Grid&gt; x{};</span>
+<span class="lineNum">      15 </span><span class="lineCov">          4 :   std::copy(xi.begin(), xi.end(), x.begin());</span>
+<span class="lineNum">      16 </span><span class="lineCov">          4 :   return x;</span>
+<span class="lineNum">      17 </span>            : }
+<a name="18"><span class="lineNum">      18 </span>            : </a>
+<span class="lineNum">      19 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      20 </span><span class="lineCov">          2 : Point&lt;Dim, Frame::Logical&gt; Identity&lt;Dim&gt;::inverse(</span>
+<span class="lineNum">      21 </span>            :     const Point&lt;Dim, Frame::Grid&gt;&amp; x) const {
+<span class="lineNum">      22 </span><span class="lineCov">          2 :   Point&lt;Dim, Frame::Logical&gt; xi{};</span>
+<span class="lineNum">      23 </span><span class="lineCov">          2 :   std::copy(x.begin(), x.end(), xi.begin());</span>
+<span class="lineNum">      24 </span><span class="lineCov">          2 :   return xi;</span>
+<span class="lineNum">      25 </span>            : }
+<a name="26"><span class="lineNum">      26 </span>            : </a>
+<span class="lineNum">      27 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      28 </span><span class="lineCov">          5 : double Identity&lt;Dim&gt;::jacobian(const Point&lt;Dim, Frame::Logical&gt;&amp; /* xi */,</span>
+<span class="lineNum">      29 </span>            :                                const size_t ud, const size_t ld) const {
+<span class="lineNum">      30 </span><span class="lineCov">          5 :   ASSERT(ld &lt; Dim, &quot;ld = &quot; &lt;&lt; ld);</span>
+<span class="lineNum">      31 </span><span class="lineCov">          5 :   ASSERT(ud &lt; Dim, &quot;ud = &quot; &lt;&lt; ud);</span>
+<span class="lineNum">      32 </span><span class="lineCov">          5 :   return (ld == ud ? 1.0 : 0.0);</span>
+<span class="lineNum">      33 </span>            : }
+<a name="34"><span class="lineNum">      34 </span>            : </a>
+<span class="lineNum">      35 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      36 </span><span class="lineCov">          5 : double Identity&lt;Dim&gt;::inv_jacobian(const Point&lt;Dim, Frame::Logical&gt;&amp; /* xi */,</span>
+<span class="lineNum">      37 </span>            :                                    const size_t ud, const size_t ld) const {
+<span class="lineNum">      38 </span><span class="lineCov">          5 :   ASSERT(ld &lt; Dim, &quot;ld = &quot; &lt;&lt; ld);</span>
+<span class="lineNum">      39 </span><span class="lineCov">          5 :   ASSERT(ud &lt; Dim, &quot;ud = &quot; &lt;&lt; ud);</span>
+<span class="lineNum">      40 </span><span class="lineCov">          5 :   return (ld == ud ? 1.0 : 0.0);</span>
+<span class="lineNum">      41 </span>            : }
+<a name="42"><span class="lineNum">      42 </span>            : </a>
+<span class="lineNum">      43 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      44 </span><span class="lineCov">          2 : std::unique_ptr&lt;EmbeddingMap&lt;Dim, Dim&gt;&gt; Identity&lt;Dim&gt;::get_clone() const {</span>
+<span class="lineNum">      45 </span><span class="lineCov">          2 :   return std::make_unique&lt;Identity&lt;Dim&gt;&gt;();</span>
+<span class="lineNum">      46 </span>            : }
+<a name="47"><span class="lineNum">      47 </span>            : </a>
+<span class="lineNum">      48 </span>            : template &lt;size_t Dim&gt;
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 : void Identity&lt;Dim&gt;::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :   EmbeddingMap&lt;Dim, Dim&gt;::pup(p);</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 : }  // NOLINT</span>
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            : template class Identity&lt;1&gt;;
+<span class="lineNum">      54 </span>            : template class Identity&lt;2&gt;;
+<span class="lineNum">      55 </span>            : // Identity should only be used in ProductMaps if a particular dimension is
+<a name="56"><span class="lineNum">      56 </span>            : // unaffected.  So if the largest dim we do is 3, then you should never use</a>
+<span class="lineNum">      57 </span>            : // Identity&lt;3&gt;
+<span class="lineNum">      58 </span><span class="lineCov">        378 : }  // namespace EmbeddingMaps</span>
 </pre>
       </td>
     </tr>

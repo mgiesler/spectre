@@ -163,12 +163,17 @@ $(function() {
 <div class="textblock"><code>#include &lt;catch.hpp&gt;</code><br />
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/random.html">random</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="Tensor_8hpp_source.html">DataStructures/Tensor/Tensor.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AffineMap_8hpp_source.html">Domain/EmbeddingMaps/AffineMap.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Identity_8hpp_source.html">Domain/EmbeddingMaps/Identity.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ProductMaps_8hpp_source.html">Domain/EmbeddingMaps/ProductMaps.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Rotation_8hpp_source.html">Domain/EmbeddingMaps/Rotation.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ConstantExpressions_8hpp_source.html">Utilities/ConstantExpressions.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TestHelpers_8hpp_source.html">tests/Unit/TestHelpers.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa7d5d806c164896aa1b94d7b44b9495f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Test__EmbeddingMaps_8cpp.html#aa7d5d806c164896aa1b94d7b44b9495f">test_rotation_3</a> (const <a class="el" href="classEmbeddingMaps_1_1Rotation.html">EmbeddingMaps::Rotation</a>&lt; 3 &gt; &amp;three_dim_rotation_map, const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;xi_hat, const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;eta_hat, const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;zeta_hat)</td></tr>
+<tr class="separator:aa7d5d806c164896aa1b94d7b44b9495f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a597487a48c3c950d773f89abada6393e"><td class="memTemplParams" colspan="2">template&lt;size_t Dim&gt; </td></tr>
 <tr class="memitem:a597487a48c3c950d773f89abada6393e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Test__EmbeddingMaps_8cpp.html#a597487a48c3c950d773f89abada6393e">test_identity</a> ()</td></tr>
 <tr class="separator:a597487a48c3c950d773f89abada6393e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,7 +196,49 @@ template&lt;size_t Dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="classEmbeddingMaps_1_1Identity.html#a0679bcab2108cb365fa2e0e549c4dc8c">EmbeddingMaps::Identity&lt; Dim &gt;::inv_jacobian()</a>, <a class="el" href="classEmbeddingMaps_1_1Identity.html#a948faded5da4dc67732353d66b49f6eb">EmbeddingMaps::Identity&lt; Dim &gt;::inverse()</a>, and <a class="el" href="classEmbeddingMaps_1_1Identity.html#aa1aea238bda7fa44fe0d81f749779139">EmbeddingMaps::Identity&lt; Dim &gt;::jacobian()</a>.</p>
+<p class="reference">References <a class="el" href="classEmbeddingMaps_1_1Identity.html#ab5e363b065384a6fa6e146e617f2a258">EmbeddingMaps::Identity&lt; Dim &gt;::get_clone()</a>, <a class="el" href="classEmbeddingMaps_1_1Identity.html#a0679bcab2108cb365fa2e0e549c4dc8c">EmbeddingMaps::Identity&lt; Dim &gt;::inv_jacobian()</a>, <a class="el" href="classEmbeddingMaps_1_1Identity.html#a16569701d18fad6f365bbadac3e25a14">EmbeddingMaps::Identity&lt; Dim &gt;::inverse()</a>, and <a class="el" href="classEmbeddingMaps_1_1Identity.html#aa1aea238bda7fa44fe0d81f749779139">EmbeddingMaps::Identity&lt; Dim &gt;::jacobian()</a>.</p>
+
+</div>
+</div>
+<a id="aa7d5d806c164896aa1b94d7b44b9495f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d5d806c164896aa1b94d7b44b9495f">&#9670;&nbsp;</a></span>test_rotation_3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_rotation_3 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMaps_1_1Rotation.html">EmbeddingMaps::Rotation</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>three_dim_rotation_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi_hat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>eta_hat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="TypeAliases_8hpp.html#aeb7f31b93cdf9ca6495082e6a639f1ea">Point</a>&lt; 3, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>zeta_hat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#a641256d174d48a2b84493caa67c45dc3">EmbeddingMaps::Rotation&lt; 3 &gt;::get_clone()</a>, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#a274549c8234d384cedcfc93bb2c398eb">EmbeddingMaps::Rotation&lt; 3 &gt;::inv_jacobian()</a>, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#a79557920fcba07a06947df163c2fe5ce">EmbeddingMaps::Rotation&lt; 3 &gt;::inverse()</a>, and <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#a84322a32d160e1c0e4f75aac405d68d7">EmbeddingMaps::Rotation&lt; 3 &gt;::jacobian()</a>.</p>
 
 </div>
 </div>

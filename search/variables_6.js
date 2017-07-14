@@ -56,7 +56,7 @@ var searchData=
   ['is_5fpod_5fv',['is_pod_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental']]],
   ['is_5fpointer_5fv',['is_pointer_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental']]],
   ['is_5fpolymorphic_5fv',['is_polymorphic_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental']]],
-  ['is_5fpupable_5fv',['is_pupable_v',['../namespacett.html#a95616ae6e570d22e3525b829d3eb861f',1,'tt']]],
+  ['is_5fpupable_5fv',['is_pupable_v',['../namespaceParallel.html#a99e5e039d67f87cc794544f3eb871029',1,'Parallel']]],
   ['is_5freference_5fv',['is_reference_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental']]],
   ['is_5frvalue_5freference_5fv',['is_rvalue_reference_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental']]],
   ['is_5fsame_5fv',['is_same_v',['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::is_same_v()'],['../group__TypeTraits.html#ga173105b805ff5fa637edb005f704feca',1,'cpp17::is_same_v()']]],

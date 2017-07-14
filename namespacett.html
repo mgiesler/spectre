@@ -174,9 +174,6 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1has__inequivalence.html">has_inequivalence</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type <code>T</code> has operator!= defined.  <a href="structtt_1_1has__inequivalence.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1has__pup__member.html">has_pup_member</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> has a <code>pup</code> member function.  <a href="structtt_1_1has__pup__member.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1has__size.html">has_size</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type <code>T</code> has a <code>size()</code> member function.  <a href="structtt_1_1has__size.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,9 +197,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1is__maplike.html">is_maplike</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type <code>T</code> is like a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/map.html">std::map</a> or std::unordored_map.  <a href="structtt_1_1is__maplike.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1is__pupable.html">is_pupable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type <code>T</code> has operator| defined for Charm++ serialization.  <a href="structtt_1_1is__pupable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1is__std__array.html">is_std_array</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type T is a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>.  <a href="structtt_1_1is__std__array.html#details">More...</a><br /></td></tr>
@@ -306,18 +300,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a92620761a98a96c2d2be6b18851444a0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a92620761a98a96c2d2be6b18851444a0"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#a92620761a98a96c2d2be6b18851444a0">is_string_like_v</a> = <a class="el" href="structtt_1_1is__string__like.html">is_string_like</a>&lt;T&gt;::value</td></tr>
 <tr class="separator:a92620761a98a96c2d2be6b18851444a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc3aa536de632aa5cb81738c7aa7924a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:afc3aa536de632aa5cb81738c7aa7924a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#afc3aa536de632aa5cb81738c7aa7924a">has_pup_member_t</a> = typename <a class="el" href="structtt_1_1has__pup__member.html">has_pup_member</a>&lt; T &gt;::type</td></tr>
-<tr class="separator:afc3aa536de632aa5cb81738c7aa7924a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa68057b2e49012699a23e7d4af02d5eb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa68057b2e49012699a23e7d4af02d5eb"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#aa68057b2e49012699a23e7d4af02d5eb">has_pup_member_v</a> = <a class="el" href="structtt_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::value</td></tr>
-<tr class="separator:aa68057b2e49012699a23e7d4af02d5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a173de6c5ee55a9473af87b1ee23ba"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad1a173de6c5ee55a9473af87b1ee23ba"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#ad1a173de6c5ee55a9473af87b1ee23ba">is_pupable_t</a> = typename <a class="el" href="structtt_1_1is__pupable.html">is_pupable</a>&lt; T &gt;::type</td></tr>
-<tr class="separator:ad1a173de6c5ee55a9473af87b1ee23ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95616ae6e570d22e3525b829d3eb861f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a95616ae6e570d22e3525b829d3eb861f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#a95616ae6e570d22e3525b829d3eb861f">is_pupable_v</a> = <a class="el" href="structtt_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::value</td></tr>
-<tr class="separator:a95616ae6e570d22e3525b829d3eb861f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6daa5314a7b9a1a83e01ea59fe7d8ecb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6daa5314a7b9a1a83e01ea59fe7d8ecb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#a6daa5314a7b9a1a83e01ea59fe7d8ecb">has_get_clone_t</a> = typename <a class="el" href="structtt_1_1has__get__clone.html">has_get_clone</a>&lt; T &gt;::type</td></tr>
 <tr class="separator:a6daa5314a7b9a1a83e01ea59fe7d8ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -405,23 +387,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1has__inequivalence.html" title="Check if type T has operator!= defined. ">has_inequivalence</a> </dd></dl>
-
-</div>
-</div>
-<a id="afc3aa536de632aa5cb81738c7aa7924a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3aa536de632aa5cb81738c7aa7924a">&#9670;&nbsp;</a></span>has_pup_member_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacett.html#afc3aa536de632aa5cb81738c7aa7924a">tt::has_pup_member_t</a> = typedef typename <a class="el" href="structtt_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1has__pup__member.html" title="Check if T has a pup member function. ">has_pup_member</a> </dd></dl>
 
 </div>
 </div>
@@ -541,23 +506,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1is__maplike.html" title="Check if type T is like a std::map or std::unordored_map. ">is_maplike</a> </dd></dl>
-
-</div>
-</div>
-<a id="ad1a173de6c5ee55a9473af87b1ee23ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a173de6c5ee55a9473af87b1ee23ba">&#9670;&nbsp;</a></span>is_pupable_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacett.html#ad1a173de6c5ee55a9473af87b1ee23ba">tt::is_pupable_t</a> = typedef typename <a class="el" href="structtt_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1is__pupable.html" title="Check if type T has operator| defined for Charm++ serialization. ">is_pupable</a> </dd></dl>
 
 </div>
 </div>
@@ -698,23 +646,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa68057b2e49012699a23e7d4af02d5eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa68057b2e49012699a23e7d4af02d5eb">&#9670;&nbsp;</a></span>has_pup_member_v</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool tt::has_pup_member_v = <a class="el" href="structtt_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1has__pup__member.html" title="Check if T has a pup member function. ">has_pup_member</a> </dd></dl>
-
-</div>
-</div>
 <a id="a68af00f737489d35f5979b159710d799"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68af00f737489d35f5979b159710d799">&#9670;&nbsp;</a></span>has_size_v</h2>
 
@@ -848,23 +779,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1is__maplike.html" title="Check if type T is like a std::map or std::unordored_map. ">is_maplike</a> </dd></dl>
-
-</div>
-</div>
-<a id="a95616ae6e570d22e3525b829d3eb861f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95616ae6e570d22e3525b829d3eb861f">&#9670;&nbsp;</a></span>is_pupable_v</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr bool tt::is_pupable_v = <a class="el" href="structtt_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::value</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1is__pupable.html" title="Check if type T has operator| defined for Charm++ serialization. ">is_pupable</a> </dd></dl>
 
 </div>
 </div>

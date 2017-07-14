@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - d62aa504ec86867e48a115863734874130647bba - Utilities/FileSystem.cpp</title>
+  <title>LCOV - 6e865f2c857978071fd7f0f66804c70de0c0a067 - Utilities/FileSystem.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/d62aa504ec86867e48a115863734874130647bba">d62aa504ec86867e48a115863734874130647bba</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6e865f2c857978071fd7f0f66804c70de0c0a067">6e865f2c857978071fd7f0f66804c70de0c0a067</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">87</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-13 02:25:00</td>
+            <td class="headerValue">2017-07-14 02:10:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -213,10 +213,10 @@
 <span class="lineNum">     143 </span>            :   // LCOV_EXCL_STOP
 <a name="144"><span class="lineNum">     144 </span>            : }</a>
 <span class="lineNum">     145 </span>            : 
-<span class="lineNum">     146 </span><span class="lineCov">          1 : bool check_if_dir_exists(const std::string&amp; dir) {</span>
-<span class="lineNum">     147 </span><span class="lineCov">          1 :   struct stat buf {};</span>
+<span class="lineNum">     146 </span><span class="lineCov">          9 : bool check_if_dir_exists(const std::string&amp; dir) {</span>
+<span class="lineNum">     147 </span><span class="lineCov">          9 :   struct stat buf {};</span>
 <span class="lineNum">     148 </span>            :   // stat returns 0 if the operation is successful (thing exists)
-<span class="lineNum">     149 </span><span class="lineCov">          1 :   return 0 == stat(dir.c_str(), &amp;buf) and S_ISDIR(buf.st_mode);</span>
+<span class="lineNum">     149 </span><span class="lineCov">          9 :   return 0 == stat(dir.c_str(), &amp;buf) and S_ISDIR(buf.st_mode);</span>
 <a name="150"><span class="lineNum">     150 </span>            : }</a>
 <span class="lineNum">     151 </span>            : 
 <span class="lineNum">     152 </span><span class="lineCov">          3 : bool check_if_file_exists(const std::string&amp; file) {</span>
@@ -272,11 +272,11 @@
 <span class="lineNum">     202 </span><span class="lineCov">          1 :   return return_dir;</span>
 <a name="203"><span class="lineNum">     203 </span>            : }</a>
 <span class="lineNum">     204 </span>            : 
-<span class="lineNum">     205 </span><span class="lineCov">          7 : std::vector&lt;std::string&gt; ls(const std::string&amp; dir_name) {</span>
-<span class="lineNum">     206 </span><span class="lineCov">          7 :   std::vector&lt;std::string&gt; contents;</span>
-<span class="lineNum">     207 </span><span class="lineCov">          7 :   DIR* dir = opendir(dir_name.c_str());</span>
-<span class="lineNum">     208 </span><span class="lineCov">          7 :   double wait_time = 1;</span>
-<span class="lineNum">     209 </span><span class="lineCov">          7 :   while (dir == nullptr) {</span>
+<span class="lineNum">     205 </span><span class="lineCov">          5 : std::vector&lt;std::string&gt; ls(const std::string&amp; dir_name) {</span>
+<span class="lineNum">     206 </span><span class="lineCov">          5 :   std::vector&lt;std::string&gt; contents;</span>
+<span class="lineNum">     207 </span><span class="lineCov">          5 :   DIR* dir = opendir(dir_name.c_str());</span>
+<span class="lineNum">     208 </span><span class="lineCov">          5 :   double wait_time = 1;</span>
+<span class="lineNum">     209 </span><span class="lineCov">          5 :   while (dir == nullptr) {</span>
 <span class="lineNum">     210 </span>            :     // LCOV_EXCL_START
 <span class="lineNum">     211 </span>            :     std::this_thread::sleep_for(std::chrono::duration&lt;double&gt;(wait_time));
 <span class="lineNum">     212 </span>            :     wait_time += 10;
@@ -288,11 +288,11 @@
 <span class="lineNum">     218 </span>            :   }
 <span class="lineNum">     219 </span>            :   struct dirent* file;
 <span class="lineNum">     220 </span>            :   // readdir returns next file in dir
-<span class="lineNum">     221 </span><span class="lineCov">        113 :   while (nullptr != (file = readdir(dir))) {</span>
-<span class="lineNum">     222 </span><span class="lineCov">         53 :     contents.emplace_back(static_cast&lt;char*&gt;(file-&gt;d_name));</span>
+<span class="lineNum">     221 </span><span class="lineCov">         35 :   while (nullptr != (file = readdir(dir))) {</span>
+<span class="lineNum">     222 </span><span class="lineCov">         15 :     contents.emplace_back(static_cast&lt;char*&gt;(file-&gt;d_name));</span>
 <span class="lineNum">     223 </span>            :   }
-<span class="lineNum">     224 </span><span class="lineCov">          7 :   closedir(dir);</span>
-<span class="lineNum">     225 </span><span class="lineCov">          7 :   return contents;</span>
+<span class="lineNum">     224 </span><span class="lineCov">          5 :   closedir(dir);</span>
+<span class="lineNum">     225 </span><span class="lineCov">          5 :   return contents;</span>
 <a name="226"><span class="lineNum">     226 </span>            : }</a>
 <span class="lineNum">     227 </span>            : 
 <span class="lineNum">     228 </span><span class="lineCov">          9 : void rm(const std::string&amp; path, bool recursive) {</span>

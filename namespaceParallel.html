@@ -151,6 +151,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Parallel Namespace Reference</div>  </div>
@@ -160,6 +161,27 @@ $(function() {
 <p>Contains functions that forward to Charm++ parallel functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1has__pup__member.html">has_pup_member</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> has a <code>pup</code> member function.  <a href="structParallel_1_1has__pup__member.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1is__array__proxy.html">is_array_proxy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> is a Charm++ proxy for an array chare.  <a href="structParallel_1_1is__array__proxy.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1is__chare__proxy.html">is_chare_proxy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> is a Charm++ proxy for a chare.  <a href="structParallel_1_1is__chare__proxy.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1is__group__proxy.html">is_group_proxy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> is a Charm++ proxy for a group chare.  <a href="structParallel_1_1is__group__proxy.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1is__node__group__proxy.html">is_node_group_proxy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> is a Charm++ proxy for a node group chare.  <a href="structParallel_1_1is__node__group__proxy.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structParallel_1_1is__pupable.html">is_pupable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if type <code>T</code> has operator| defined for Charm++ serialization.  <a href="structParallel_1_1is__pupable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gaccc68e564135958d18110d2847dcc1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Parallel.html#gaccc68e564135958d18110d2847dcc1b3">abort</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;message)</td></tr>
@@ -202,10 +224,92 @@ Functions</h2></td></tr>
 <tr class="memitem:gae21964b5d28608afd21ae090c1c4c073"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Parallel.html#gae21964b5d28608afd21ae090c1c4c073">printf</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;format, Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae21964b5d28608afd21ae090c1c4c073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print an atomic message to stdout with C printf usage.  <a href="group__Parallel.html#gae21964b5d28608afd21ae090c1c4c073">More...</a><br /></td></tr>
 <tr class="separator:gae21964b5d28608afd21ae090c1c4c073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27907852d1e51848fc42c073f824554c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a27907852d1e51848fc42c073f824554c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceParallel.html#a27907852d1e51848fc42c073f824554c">has_pup_member_t</a> = typename <a class="el" href="structParallel_1_1has__pup__member.html">has_pup_member</a>&lt; T &gt;::type</td></tr>
+<tr class="separator:a27907852d1e51848fc42c073f824554c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bb92f00c4aa3fb15b1888332bc5462"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae9bb92f00c4aa3fb15b1888332bc5462"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceParallel.html#ae9bb92f00c4aa3fb15b1888332bc5462">has_pup_member_v</a> = <a class="el" href="structParallel_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::value</td></tr>
+<tr class="separator:ae9bb92f00c4aa3fb15b1888332bc5462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f8a5f10d370ff570bb623bf858b6ed"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af9f8a5f10d370ff570bb623bf858b6ed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceParallel.html#af9f8a5f10d370ff570bb623bf858b6ed">is_pupable_t</a> = typename <a class="el" href="structParallel_1_1is__pupable.html">is_pupable</a>&lt; T &gt;::type</td></tr>
+<tr class="separator:af9f8a5f10d370ff570bb623bf858b6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e5e039d67f87cc794544f3eb871029"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a99e5e039d67f87cc794544f3eb871029"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceParallel.html#a99e5e039d67f87cc794544f3eb871029">is_pupable_v</a> = <a class="el" href="structParallel_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::value</td></tr>
+<tr class="separator:a99e5e039d67f87cc794544f3eb871029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains functions that forward to Charm++ parallel functions. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a27907852d1e51848fc42c073f824554c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27907852d1e51848fc42c073f824554c">&#9670;&nbsp;</a></span>has_pup_member_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceParallel.html#a27907852d1e51848fc42c073f824554c">Parallel::has_pup_member_t</a> = typedef typename <a class="el" href="structParallel_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structParallel_1_1has__pup__member.html" title="Check if T has a pup member function. ">has_pup_member</a> </dd></dl>
+
+</div>
+</div>
+<a id="af9f8a5f10d370ff570bb623bf858b6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f8a5f10d370ff570bb623bf858b6ed">&#9670;&nbsp;</a></span>is_pupable_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceParallel.html#af9f8a5f10d370ff570bb623bf858b6ed">Parallel::is_pupable_t</a> = typedef typename <a class="el" href="structParallel_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structParallel_1_1is__pupable.html" title="Check if type T has operator| defined for Charm++ serialization. ">is_pupable</a> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae9bb92f00c4aa3fb15b1888332bc5462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bb92f00c4aa3fb15b1888332bc5462">&#9670;&nbsp;</a></span>has_pup_member_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool Parallel::has_pup_member_v = <a class="el" href="structParallel_1_1has__pup__member.html">has_pup_member</a>&lt;T&gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structParallel_1_1has__pup__member.html" title="Check if T has a pup member function. ">has_pup_member</a> </dd></dl>
+
+</div>
+</div>
+<a id="a99e5e039d67f87cc794544f3eb871029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e5e039d67f87cc794544f3eb871029">&#9670;&nbsp;</a></span>is_pupable_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool Parallel::is_pupable_v = <a class="el" href="structParallel_1_1is__pupable.html">is_pupable</a>&lt;T&gt;::value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structParallel_1_1is__pupable.html" title="Check if type T has operator| defined for Charm++ serialization. ">is_pupable</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.10-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

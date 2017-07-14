@@ -38,7 +38,7 @@ var searchData=
   ['test_5ftaggedtuple_2ecpp',['Test_TaggedTuple.cpp',['../Test__TaggedTuple_8cpp.html',1,'']]],
   ['test_5ftensor_2ecpp',['Test_Tensor.cpp',['../Test__Tensor_8cpp.html',1,'']]],
   ['test_5ftensorexpressions_2ecpp',['Test_TensorExpressions.cpp',['../Test__TensorExpressions_8cpp.html',1,'']]],
-  ['test_5ftypetraits_2ecpp',['Test_TypeTraits.cpp',['../Test__TypeTraits_8cpp.html',1,'']]],
+  ['test_5ftypetraits_2ecpp',['Test_TypeTraits.cpp',['../Parallel_2Test__TypeTraits_8cpp.html',1,'(Global Namespace)'],['../Utilities_2Test__TypeTraits_8cpp.html',1,'(Global Namespace)']]],
   ['test_5fvariables_2ecpp',['Test_Variables.cpp',['../Test__Variables_8cpp.html',1,'']]],
   ['testframework_2ecpp',['TestFramework.cpp',['../TestFramework_8cpp.html',1,'']]],
   ['testhelpers_2ehpp',['TestHelpers.hpp',['../TestHelpers_8hpp.html',1,'']]],
@@ -52,5 +52,5 @@ var searchData=
   ['typedisplayer_2ehpp',['TypeDisplayer.hpp',['../TypeDisplayer_8hpp.html',1,'']]],
   ['typeindex',['typeindex',['http://en.cppreference.com/w/cpp/header/typeindex.html',1,'']]],
   ['typeinfo',['typeinfo',['http://en.cppreference.com/w/cpp/header/typeinfo.html',1,'']]],
-  ['typetraits_2ehpp',['TypeTraits.hpp',['../TypeTraits_8hpp.html',1,'']]]
+  ['typetraits_2ehpp',['TypeTraits.hpp',['../Parallel_2TypeTraits_8hpp.html',1,'(Global Namespace)'],['../Utilities_2TypeTraits_8hpp.html',1,'(Global Namespace)']]]
 ];

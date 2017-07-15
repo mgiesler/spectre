@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 6e865f2c857978071fd7f0f66804c70de0c0a067 - Domain/Direction.cpp</title>
+  <title>LCOV - 8b9877dec2a56535153aa414590c3fd6c88db038 - Domain/Direction.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6e865f2c857978071fd7f0f66804c70de0c0a067">6e865f2c857978071fd7f0f66804c70de0c0a067</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8b9877dec2a56535153aa414590c3fd6c88db038">8b9877dec2a56535153aa414590c3fd6c88db038</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">26</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-14 02:10:21</td>
+            <td class="headerValue">2017-07-15 02:10:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -113,15 +113,15 @@
 <span class="lineNum">      43 </span><span class="lineCov">         12 : }</span>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <span class="lineNum">      45 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      46 </span><span class="lineCov">         34 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">      46 </span><span class="lineCov">        162 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
 <span class="lineNum">      47 </span>            :                          const Direction&lt;VolumeDim&gt;&amp; direction) {
-<span class="lineNum">      48 </span><span class="lineCov">         34 :   if (-1.0 == direction.sign()) {</span>
-<span class="lineNum">      49 </span><span class="lineCov">         19 :     os &lt;&lt; &quot;-&quot;;</span>
+<span class="lineNum">      48 </span><span class="lineCov">        162 :   if (-1.0 == direction.sign()) {</span>
+<span class="lineNum">      49 </span><span class="lineCov">         86 :     os &lt;&lt; &quot;-&quot;;</span>
 <span class="lineNum">      50 </span>            :   } else {
-<span class="lineNum">      51 </span><span class="lineCov">         15 :     os &lt;&lt; &quot;+&quot;;</span>
+<span class="lineNum">      51 </span><span class="lineCov">         76 :     os &lt;&lt; &quot;+&quot;;</span>
 <span class="lineNum">      52 </span>            :   }
-<span class="lineNum">      53 </span><span class="lineCov">         34 :   os &lt;&lt; direction.dimension();</span>
-<span class="lineNum">      54 </span><span class="lineCov">         34 :   return os;</span>
+<span class="lineNum">      53 </span><span class="lineCov">        162 :   os &lt;&lt; direction.dimension();</span>
+<span class="lineNum">      54 </span><span class="lineCov">        162 :   return os;</span>
 <span class="lineNum">      55 </span>            : }
 <span class="lineNum">      56 </span>            : 
 <span class="lineNum">      57 </span>            : template std::ostream&amp; operator&lt;&lt;(std::ostream&amp;, const Direction&lt;1&gt;&amp;);

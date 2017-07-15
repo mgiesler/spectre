@@ -26,6 +26,7 @@ var searchData=
   ['test_5fmakearray_2ecpp',['Test_MakeArray.cpp',['../Test__MakeArray_8cpp.html',1,'']]],
   ['test_5fmatrix_2ecpp',['Test_Matrix.cpp',['../Test__Matrix_8cpp.html',1,'']]],
   ['test_5fonedrootfinder_2ecpp',['Test_OneDRootFinder.cpp',['../Test__OneDRootFinder_8cpp.html',1,'']]],
+  ['test_5forientations_2ecpp',['Test_Orientations.cpp',['../Test__Orientations_8cpp.html',1,'']]],
   ['test_5fparallel_2ecpp',['Test_Parallel.cpp',['../Test__Parallel_8cpp.html',1,'']]],
   ['test_5fprettytype_2ecpp',['Test_PrettyType.cpp',['../Test__PrettyType_8cpp.html',1,'']]],
   ['test_5fpupstlcpp11_2ecpp',['Test_PupStlCpp11.cpp',['../Test__PupStlCpp11_8cpp.html',1,'']]],

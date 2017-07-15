@@ -28,6 +28,7 @@ var searchData=
   ['allocator_5ftraits',['allocator_traits',['http://en.cppreference.com/w/cpp/memory/allocator_traits.html',1,'std']]],
   ['any',['any',['http://en.cppreference.com/w/cpp/utility/any.html',1,'std::any'],['http://en.cppreference.com/w/cpp/experimental/any.html',1,'std::experimental::any']]],
   ['array',['array',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],
+  ['array_3c_20direction_3c_20volumedim_20_3e_2c_20volumedim_20_3e',['array&lt; Direction&lt; VolumeDim &gt;, VolumeDim &gt;',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],
   ['array_3c_20segmentid_2c_20volumedim_20_3e',['array&lt; SegmentId, VolumeDim &gt;',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],
   ['array_3c_20size_5ft_2c_20dim_20_3e',['array&lt; size_t, Dim &gt;',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],
   ['array_3c_20x_2c_20tensor_5fdetail_3a_3astructure_3c_20symm_2c_20indices_2e_2e_2e_20_3e_3a_3asize_28_29_3e',['array&lt; X, Tensor_detail::Structure&lt; Symm, Indices... &gt;::size()&gt;',['http://en.cppreference.com/w/cpp/container/array.html',1,'std']]],

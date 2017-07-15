@@ -1,0 +1,640 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: Orientation&lt; VolumeDim &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classOrientation-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Orientation&lt; VolumeDim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DomainCreators.html">Domain Creators</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Allows one to construct a custom <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> between two Blocks.  
+ <a href="classOrientation.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Orientation_8hpp_source.html">Orientation.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:afb7a1e3eb4c94ec10f10130984c19a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#afb7a1e3eb4c94ec10f10130984c19a8f">Orientation</a> ()=default</td></tr>
+<tr class="separator:afb7a1e3eb4c94ec10f10130984c19a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ad3044d165140677f14ee1f5a8d607"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#aa2ad3044d165140677f14ee1f5a8d607">Orientation</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt; mapped_directions)</td></tr>
+<tr class="separator:aa2ad3044d165140677f14ee1f5a8d607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a748ed52162bdd1c6dc261f707824ec9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a748ed52162bdd1c6dc261f707824ec9f">Orientation</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt; &amp;directions_in_host, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt; &amp;directions_in_neighbor)</td></tr>
+<tr class="separator:a748ed52162bdd1c6dc261f707824ec9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa85038a02193e5216297092242eef29f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#aa85038a02193e5216297092242eef29f">~Orientation</a> ()=default</td></tr>
+<tr class="separator:aa85038a02193e5216297092242eef29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db8d5d2e3acbd27e6281b5f0634957c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a9db8d5d2e3acbd27e6281b5f0634957c">Orientation</a> (const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;)=default</td></tr>
+<tr class="separator:a9db8d5d2e3acbd27e6281b5f0634957c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03f35160526d730666cf7cc0b57bafba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a03f35160526d730666cf7cc0b57bafba">operator=</a> (const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;)=default</td></tr>
+<tr class="separator:a03f35160526d730666cf7cc0b57bafba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72121b9e94b3ac5cf27ca411f432750"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#ae72121b9e94b3ac5cf27ca411f432750">Orientation</a> (<a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:ae72121b9e94b3ac5cf27ca411f432750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c64f11f751be49bb4b32e295ff18bc4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a6c64f11f751be49bb4b32e295ff18bc4">operator=</a> (<a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a6c64f11f751be49bb4b32e295ff18bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443660f436d07b2cbc361090dc1b38fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a443660f436d07b2cbc361090dc1b38fd">is_aligned</a> () const noexcept</td></tr>
+<tr class="memdesc:a443660f436d07b2cbc361090dc1b38fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when mapped(Direction) == <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>.  <a href="#a443660f436d07b2cbc361090dc1b38fd">More...</a><br /></td></tr>
+<tr class="separator:a443660f436d07b2cbc361090dc1b38fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9ec32427c63f37afa85dc57d77f252"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a4b9ec32427c63f37afa85dc57d77f252">mapped</a> (const size_t dim) const noexcept</td></tr>
+<tr class="memdesc:a4b9ec32427c63f37afa85dc57d77f252"><td class="mdescLeft">&#160;</td><td class="mdescRight">The corresponding dimension in the neighbor.  <a href="#a4b9ec32427c63f37afa85dc57d77f252">More...</a><br /></td></tr>
+<tr class="separator:a4b9ec32427c63f37afa85dc57d77f252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a950661f721377db814cf826509a0badd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a950661f721377db814cf826509a0badd">mapped</a> (const <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt; &amp;direction) const</td></tr>
+<tr class="memdesc:a950661f721377db814cf826509a0badd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The corresponding direction in the neighbor.  <a href="#a950661f721377db814cf826509a0badd">More...</a><br /></td></tr>
+<tr class="separator:a950661f721377db814cf826509a0badd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a73f1d951370e844c09a5992f246e3b"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a4a73f1d951370e844c09a5992f246e3b">mapped</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt; &amp;segmentIds) const</td></tr>
+<tr class="memdesc:a4a73f1d951370e844c09a5992f246e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The corresponding SegmentIds in the neighbor.  <a href="#a4a73f1d951370e844c09a5992f246e3b">More...</a><br /></td></tr>
+<tr class="separator:a4a73f1d951370e844c09a5992f246e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447996c06525908fac46ca188084e9c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrientation.html#a447996c06525908fac46ca188084e9c4">pup</a> (PUP::er &amp;p)</td></tr>
+<tr class="memdesc:a447996c06525908fac46ca188084e9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization for Charm++.  <a href="#a447996c06525908fac46ca188084e9c4">More...</a><br /></td></tr>
+<tr class="separator:a447996c06525908fac46ca188084e9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ad2fe98bf215a20e2285f8030a46f90a7"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDimLocal&gt; </td></tr>
+<tr class="memitem:ad2fe98bf215a20e2285f8030a46f90a7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classOrientation.html#ad2fe98bf215a20e2285f8030a46f90a7">operator==</a> (const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDimLocal &gt; &amp;lhs, const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDimLocal &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:ad2fe98bf215a20e2285f8030a46f90a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t VolumeDim&gt;<br />
+class Orientation&lt; VolumeDim &gt;</h3>
+
+<p>Allows one to construct a custom <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> between two Blocks. </p>
+<h3>Usage</h3>
+<p>The user provides <code>2*VolumeDim</code> Directions, encoding the correspondence between the directions in each block. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">VolumeDim</td><td>the dimension of the blocks. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afb7a1e3eb4c94ec10f10130984c19a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7a1e3eb4c94ec10f10130984c19a8f">&#9670;&nbsp;</a></span>Orientation() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2ad3044d165140677f14ee1f5a8d607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ad3044d165140677f14ee1f5a8d607">&#9670;&nbsp;</a></span>Orientation() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt;&#160;</td>
+          <td class="paramname"><em>mapped_directions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__ComputationalDomain.html#gga8c0137d7160ad71b6ed265c53c99ed00a19de5b94f7b83900d4b296d9fa491aec">Upper</a>.</p>
+
+</div>
+</div>
+<a id="a748ed52162bdd1c6dc261f707824ec9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748ed52162bdd1c6dc261f707824ec9f">&#9670;&nbsp;</a></span>Orientation() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>directions_in_host</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>directions_in_neighbor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__ComputationalDomain.html#gga8c0137d7160ad71b6ed265c53c99ed00a19de5b94f7b83900d4b296d9fa491aec">Upper</a>.</p>
+
+</div>
+</div>
+<a id="aa85038a02193e5216297092242eef29f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa85038a02193e5216297092242eef29f">&#9670;&nbsp;</a></span>~Orientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::~<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9db8d5d2e3acbd27e6281b5f0634957c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9db8d5d2e3acbd27e6281b5f0634957c">&#9670;&nbsp;</a></span>Orientation() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae72121b9e94b3ac5cf27ca411f432750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72121b9e94b3ac5cf27ca411f432750">&#9670;&nbsp;</a></span>Orientation() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::<a class="el" href="classOrientation.html">Orientation</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a443660f436d07b2cbc361090dc1b38fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443660f436d07b2cbc361090dc1b38fd">&#9670;&nbsp;</a></span>is_aligned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::is_aligned </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True when mapped(Direction) == <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>. </p>
+
+</div>
+</div>
+<a id="a4b9ec32427c63f37afa85dc57d77f252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9ec32427c63f37afa85dc57d77f252">&#9670;&nbsp;</a></span>mapped() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::mapped </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>dim</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The corresponding dimension in the neighbor. </p>
+
+<p class="reference">Referenced by <a class="el" href="classOrientation.html#a950661f721377db814cf826509a0badd">Orientation&lt; VolumeDim &gt;::mapped()</a>.</p>
+
+</div>
+</div>
+<a id="a950661f721377db814cf826509a0badd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a950661f721377db814cf826509a0badd">&#9670;&nbsp;</a></span>mapped() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDirection.html">Direction</a>&lt;VolumeDim&gt; <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::mapped </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The corresponding direction in the neighbor. </p>
+
+<p class="reference">References <a class="el" href="classDirection.html#ae518785f586c5fa053ac10171a3afd33">Direction&lt; VolumeDim &gt;::dimension()</a>, <a class="el" href="classOrientation.html#a4b9ec32427c63f37afa85dc57d77f252">Orientation&lt; VolumeDim &gt;::mapped()</a>, <a class="el" href="Orientation_8hpp.html#a97b1cc5194c401b3a006b56dabea19e9">operator&lt;&lt;()</a>, <a class="el" href="classOrientation.html#ad2fe98bf215a20e2285f8030a46f90a7">Orientation&lt; VolumeDim &gt;::operator==</a>, <a class="el" href="classOrientation.html#a447996c06525908fac46ca188084e9c4">Orientation&lt; VolumeDim &gt;::pup()</a>, <a class="el" href="classDirection.html#aeed6135f12322d0c3433c43bb98d743f">Direction&lt; VolumeDim &gt;::side()</a>, and <a class="el" href="group__ComputationalDomain.html#gga8c0137d7160ad71b6ed265c53c99ed00a19de5b94f7b83900d4b296d9fa491aec">Upper</a>.</p>
+
+</div>
+</div>
+<a id="a4a73f1d951370e844c09a5992f246e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a73f1d951370e844c09a5992f246e3b">&#9670;&nbsp;</a></span>mapped() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt; <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::mapped </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="el" href="classSegmentId.html">SegmentId</a>, VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>segmentIds</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The corresponding SegmentIds in the neighbor. </p>
+
+<p class="reference">References <a class="el" href="group__ComputationalDomain.html#gga8c0137d7160ad71b6ed265c53c99ed00a19de5b94f7b83900d4b296d9fa491aec">Upper</a>.</p>
+
+</div>
+</div>
+<a id="a03f35160526d730666cf7cc0b57bafba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03f35160526d730666cf7cc0b57bafba">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c64f11f751be49bb4b32e295ff18bc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c64f11f751be49bb4b32e295ff18bc4">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOrientation.html">Orientation</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a447996c06525908fac46ca188084e9c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a447996c06525908fac46ca188084e9c4">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization for Charm++. </p>
+
+<p class="reference">Referenced by <a class="el" href="classOrientation.html#a950661f721377db814cf826509a0badd">Orientation&lt; VolumeDim &gt;::mapped()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ad2fe98bf215a20e2285f8030a46f90a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fe98bf215a20e2285f8030a46f90a7">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<div class="memtemplate">
+template&lt;size_t VolumeDimLocal&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDimLocal &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDimLocal &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classOrientation.html#a950661f721377db814cf826509a0badd">Orientation&lt; VolumeDim &gt;::mapped()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Domain/<a class="el" href="Orientation_8hpp_source.html">Orientation.hpp</a></li>
+<li>src/Domain/<a class="el" href="Orientation_8cpp.html">Orientation.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

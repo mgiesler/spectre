@@ -39,6 +39,7 @@ var searchData=
   ['iostream',['iostream',['http://en.cppreference.com/w/cpp/io/basic_iostream/basic_iostream.html',1,'std::iostream']]],
   ['is',['is',['http://en.cppreference.com/w/cpp/locale/ctype/is.html',1,'std::ctype::is()'],['http://en.cppreference.com/w/cpp/locale/ctype/is.html',1,'std::ctype_byname::is()']]],
   ['is_5fabsolute',['is_absolute',['http://en.cppreference.com/w/cpp/filesystem/path/is_absrel.html',1,'std::filesystem::path']]],
+  ['is_5faligned',['is_aligned',['../classOrientation.html#a443660f436d07b2cbc361090dc1b38fd',1,'Orientation']]],
   ['is_5fblock_5ffile',['is_block_file',['http://en.cppreference.com/w/cpp/experimental/fs/is_block_file.html',1,'std::experimental::filesystem::is_block_file()'],['http://en.cppreference.com/w/cpp/filesystem/is_block_file.html',1,'std::filesystem::is_block_file()']]],
   ['is_5fcharacter_5ffile',['is_character_file',['http://en.cppreference.com/w/cpp/experimental/fs/is_character_file.html',1,'std::experimental::filesystem::is_character_file()'],['http://en.cppreference.com/w/cpp/filesystem/is_character_file.html',1,'std::filesystem::is_character_file()']]],
   ['is_5fdirectory',['is_directory',['http://en.cppreference.com/w/cpp/experimental/fs/is_directory.html',1,'std::experimental::filesystem::is_directory()'],['http://en.cppreference.com/w/cpp/filesystem/is_directory.html',1,'std::filesystem::is_directory()']]],

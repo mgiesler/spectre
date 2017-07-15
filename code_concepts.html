@@ -161,10 +161,10 @@ $(function() {
  The computational domain is partitioned into cells called Blocks. Furthermore, each Block must have at most one neighboring Block in each <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>.</li>
 <li>Block:<br />
  A reference cell embedded into a subset of the computational domain. Blocks are identified by unique integral values.</li>
-<li>Orientation:<br />
+<li><a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a>:<br />
  The information of how the Logical Coordinates between Blocks are related.</li>
 <li>ref BlackNeighbor "Block Neighbor":<br />
- The identity and Orientation of a neighbor of a given Block.</li>
+ The identity and <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of a neighbor of a given Block.</li>
 <li><a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>:<br />
  A logical coordinate axis and a label "Upper" or "Lower" depending on whether the <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a> is aligned with or anti-aligned with the logical coordinate axis, respectively.</li>
 <li>Refinement Level:<br />
@@ -184,7 +184,7 @@ $(function() {
 <li>Internal Boundary:<br />
  A boundary that is not an External Boundary.</li>
 <li>ref Neighbors "Face Neighbors" (Rename C++ Neighbors class to FaceNeighbors):<br />
- The identities and Orientation of the neighbors in a particular direction of a given Element.</li>
+ The identities and <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of the neighbors in a particular direction of a given Element.</li>
 <li>External Boundary Condition:<br />
  A prescription for updating the solution on an External Boundary. Each External Boundary of Block has exactly one External Boundary Condition associated with it. </li>
 </ul>

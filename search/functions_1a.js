@@ -56,6 +56,7 @@ var searchData=
   ['_7enumpunct',['~numpunct',['http://en.cppreference.com/w/cpp/locale/numpunct/~numpunct.html',1,'std::numpunct']]],
   ['_7enumpunct_5fbyname',['~numpunct_byname',['http://en.cppreference.com/w/cpp/locale/numpunct_byname.html',1,'std::numpunct_byname']]],
   ['_7eoptional',['~optional',['http://en.cppreference.com/w/cpp/experimental/optional/~optional.html',1,'std::experimental::optional::~optional()'],['http://en.cppreference.com/w/cpp/utility/optional/~optional.html',1,'std::optional::~optional()']]],
+  ['_7eorientation',['~Orientation',['../classOrientation.html#aa85038a02193e5216297092242eef29f',1,'Orientation']]],
   ['_7eostream',['~ostream',['http://en.cppreference.com/w/cpp/io/basic_ostream/~basic_ostream.html',1,'std::ostream']]],
   ['_7eostrstream',['~ostrstream',['http://en.cppreference.com/w/cpp/io/ostrstream/~ostrstream.html',1,'std::ostrstream']]],
   ['_7epackaged_5ftask',['~packaged_task',['http://en.cppreference.com/w/cpp/thread/packaged_task/~packaged_task.html',1,'std::packaged_task']]],

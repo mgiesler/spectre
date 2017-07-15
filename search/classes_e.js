@@ -4,6 +4,7 @@ var searchData=
   ['ofstream',['ofstream',['http://en.cppreference.com/w/cpp/io/basic_ofstream.html',1,'std']]],
   ['once_5fflag',['once_flag',['http://en.cppreference.com/w/cpp/thread/once_flag.html',1,'std']]],
   ['optional',['optional',['http://en.cppreference.com/w/cpp/experimental/optional.html',1,'std::experimental::optional'],['http://en.cppreference.com/w/cpp/utility/optional.html',1,'std::optional']]],
+  ['orientation',['Orientation',['../classOrientation.html',1,'']]],
   ['ostream',['ostream',['http://en.cppreference.com/w/cpp/io/basic_ostream.html',1,'std']]],
   ['ostream_5fiterator',['ostream_iterator',['http://en.cppreference.com/w/cpp/iterator/ostream_iterator.html',1,'std']]],
   ['ostream_5fjoiner',['ostream_joiner',['http://en.cppreference.com/w/cpp/experimental/ostream_joiner.html',1,'std::experimental']]],

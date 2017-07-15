@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 6e865f2c857978071fd7f0f66804c70de0c0a067 - Domain/Direction.hpp</title>
+  <title>LCOV - 8b9877dec2a56535153aa414590c3fd6c88db038 - Domain/Direction.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,20 +28,20 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6e865f2c857978071fd7f0f66804c70de0c0a067">6e865f2c857978071fd7f0f66804c70de0c0a067</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8b9877dec2a56535153aa414590c3fd6c88db038">8b9877dec2a56535153aa414590c3fd6c88db038</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntry">23</td>
+            <td class="headerCovTableEntry">29</td>
+            <td class="headerCovTableEntry">29</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-14 02:10:21</td>
+            <td class="headerValue">2017-07-15 02:10:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">34</td>
-            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry">42</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -92,7 +92,7 @@
 <span class="lineNum">      22 </span>            :   enum class Axis;
 <a name="23"><span class="lineNum">      23 </span>            : </a>
 <span class="lineNum">      24 </span>            :   /// Construct by specifying an Axis and a Side.
-<span class="lineNum">      25 </span><span class="lineCov">         33 :   Direction(Axis axis, Side side) : axis_(axis), side_(side) {}</span>
+<span class="lineNum">      25 </span><span class="lineCov">        165 :   Direction(Axis axis, Side side) : axis_(axis), side_(side) {}</span>
 <span class="lineNum">      26 </span>            : 
 <span class="lineNum">      27 </span>            :   /// Construct by specifying a dimension and a Side.
 <span class="lineNum">      28 </span>            :   Direction&lt;VolumeDim&gt;(size_t dimension, Side side);
@@ -101,16 +101,16 @@
 <span class="lineNum">      31 </span>            :   Direction() = default;
 <a name="32"><span class="lineNum">      32 </span>            : </a>
 <span class="lineNum">      33 </span>            :   /// The dimension of the Direction
-<span class="lineNum">      34 </span><span class="lineCov">         70 :   size_t dimension() const noexcept { return static_cast&lt;size_t&gt;(axis_); }</span>
+<span class="lineNum">      34 </span><span class="lineCov">        510 :   size_t dimension() const noexcept { return static_cast&lt;size_t&gt;(axis_); }</span>
 <a name="35"><span class="lineNum">      35 </span>            : </a>
 <span class="lineNum">      36 </span>            :   /// The Axis of the Direction
 <span class="lineNum">      37 </span><span class="lineCov">         18 :   Axis axis() const noexcept { return axis_; }</span>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
 <span class="lineNum">      39 </span>            :   /// The side of the Direction
-<span class="lineNum">      40 </span><span class="lineCov">         17 :   Side side() const noexcept { return side_; }</span>
+<span class="lineNum">      40 </span><span class="lineCov">        168 :   Side side() const noexcept { return side_; }</span>
 <a name="41"><span class="lineNum">      41 </span>            : </a>
 <span class="lineNum">      42 </span>            :   /// The sign for the normal to the Side.
-<span class="lineNum">      43 </span><span class="lineCov">         71 :   double sign() const noexcept { return (Side::Lower == side_ ? -1.0 : 1.0); }</span>
+<span class="lineNum">      43 </span><span class="lineCov">        345 :   double sign() const noexcept { return (Side::Lower == side_ ? -1.0 : 1.0); }</span>
 <span class="lineNum">      44 </span>            : 
 <span class="lineNum">      45 </span>            :   /// The opposite Direction.
 <span class="lineNum">      46 </span>            :   Direction&lt;VolumeDim&gt; opposite() const;
@@ -160,60 +160,60 @@
 <span class="lineNum">      90 </span>            : #pragma GCC diagnostic pop
 <a name="91"><span class="lineNum">      91 </span>            : </a>
 <span class="lineNum">      92 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      93 </span><span class="lineCov">          8 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_xi() {</span>
-<span class="lineNum">      94 </span><span class="lineCov">          8 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Lower);</span>
+<span class="lineNum">      93 </span><span class="lineCov">         14 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_xi() {</span>
+<span class="lineNum">      94 </span><span class="lineCov">         14 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Lower);</span>
 <span class="lineNum">      95 </span>            : }
 <a name="96"><span class="lineNum">      96 </span>            : </a>
 <span class="lineNum">      97 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      98 </span><span class="lineCov">          7 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_xi() {</span>
-<span class="lineNum">      99 </span><span class="lineCov">          7 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Upper);</span>
+<span class="lineNum">      98 </span><span class="lineCov">         61 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_xi() {</span>
+<span class="lineNum">      99 </span><span class="lineCov">         61 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Upper);</span>
 <span class="lineNum">     100 </span>            : }
 <a name="101"><span class="lineNum">     101 </span>            : </a>
 <span class="lineNum">     102 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     103 </span><span class="lineCov">          5 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_eta() {</span>
+<span class="lineNum">     103 </span><span class="lineCov">          9 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_eta() {</span>
 <span class="lineNum">     104 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
-<span class="lineNum">     105 </span><span class="lineCov">          5 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Lower);</span>
+<span class="lineNum">     105 </span><span class="lineCov">          9 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Lower);</span>
 <span class="lineNum">     106 </span>            : }
 <a name="107"><span class="lineNum">     107 </span>            : </a>
 <span class="lineNum">     108 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     109 </span><span class="lineCov">          5 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_eta() {</span>
+<span class="lineNum">     109 </span><span class="lineCov">         41 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_eta() {</span>
 <span class="lineNum">     110 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
-<span class="lineNum">     111 </span><span class="lineCov">          5 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Upper);</span>
+<span class="lineNum">     111 </span><span class="lineCov">         41 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Upper);</span>
 <span class="lineNum">     112 </span>            : }
 <a name="113"><span class="lineNum">     113 </span>            : </a>
 <span class="lineNum">     114 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     115 </span><span class="lineCov">          3 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_zeta() {</span>
+<span class="lineNum">     115 </span><span class="lineCov">          5 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_zeta() {</span>
 <span class="lineNum">     116 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
-<span class="lineNum">     117 </span><span class="lineCov">          3 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Lower);</span>
+<span class="lineNum">     117 </span><span class="lineCov">          5 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Lower);</span>
 <span class="lineNum">     118 </span>            : }
 <a name="119"><span class="lineNum">     119 </span>            : </a>
 <span class="lineNum">     120 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     121 </span><span class="lineCov">          3 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_zeta() {</span>
+<span class="lineNum">     121 </span><span class="lineCov">         21 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_zeta() {</span>
 <span class="lineNum">     122 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
-<span class="lineNum">     123 </span><span class="lineCov">          3 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Upper);</span>
+<span class="lineNum">     123 </span><span class="lineCov">         21 :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Upper);</span>
 <span class="lineNum">     124 </span>            : }
 <a name="125"><span class="lineNum">     125 </span>            : </a>
 <span class="lineNum">     126 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     127 </span><span class="lineCov">          2 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::opposite() const {</span>
-<span class="lineNum">     128 </span><span class="lineCov">          2 :   return Direction&lt;VolumeDim&gt;(axis_, ::opposite(side_));</span>
+<span class="lineNum">     127 </span><span class="lineCov">         13 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::opposite() const {</span>
+<span class="lineNum">     128 </span><span class="lineCov">         13 :   return Direction&lt;VolumeDim&gt;(axis_, ::opposite(side_));</span>
 <span class="lineNum">     129 </span>            : }
-<span class="lineNum">     130 </span>            : 
+<a name="130"><span class="lineNum">     130 </span>            : </a>
 <span class="lineNum">     131 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     132 </span>            : void Direction&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {
-<span class="lineNum">     133 </span>            :   p | axis_;
-<span class="lineNum">     134 </span>            :   p | side_;
-<span class="lineNum">     135 </span>            : }
+<span class="lineNum">     132 </span><span class="lineCov">         18 : void Direction&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">     133 </span><span class="lineCov">         18 :   p | axis_;</span>
+<span class="lineNum">     134 </span><span class="lineCov">         18 :   p | side_;</span>
+<span class="lineNum">     135 </span><span class="lineCov">         18 : }</span>
 <a name="136"><span class="lineNum">     136 </span>            : </a>
 <span class="lineNum">     137 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     138 </span><span class="lineCov">         12 : inline bool operator==(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">     138 </span><span class="lineCov">         89 : inline bool operator==(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
 <span class="lineNum">     139 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
-<span class="lineNum">     140 </span><span class="lineCov">         12 :   return lhs.dimension() == rhs.dimension() and lhs.sign() == rhs.sign();</span>
+<span class="lineNum">     140 </span><span class="lineCov">         89 :   return lhs.dimension() == rhs.dimension() and lhs.sign() == rhs.sign();</span>
 <span class="lineNum">     141 </span>            : }
-<span class="lineNum">     142 </span>            : 
+<a name="142"><span class="lineNum">     142 </span>            : </a>
 <span class="lineNum">     143 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     144 </span>            : inline bool operator!=(const Direction&lt;VolumeDim&gt;&amp; lhs,
+<span class="lineNum">     144 </span><span class="lineCov">         16 : inline bool operator!=(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
 <span class="lineNum">     145 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
-<span class="lineNum">     146 </span>            :   return not(lhs == rhs);
+<span class="lineNum">     146 </span><span class="lineCov">         16 :   return not(lhs == rhs);</span>
 <span class="lineNum">     147 </span>            : }
 <span class="lineNum">     148 </span>            : 
 <span class="lineNum">     149 </span>            : // These are defined so that a Direction can be used as part of a key of an

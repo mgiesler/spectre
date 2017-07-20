@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7fda24306c55c43f26bb7d14bf56392f5884be4 - Utilities/PointerVector.hpp - functions</title>
+  <title>LCOV - 1cbdc60701edff9acd4e70ebf3f2171b5ed2042e - Utilities/PointerVector.hpp - functions</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7fda24306c55c43f26bb7d14bf56392f5884be4">f7fda24306c55c43f26bb7d14bf56392f5884be4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1cbdc60701edff9acd4e70ebf3f2171b5ed2042e">1cbdc60701edff9acd4e70ebf3f2171b5ed2042e</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">171</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-19 02:15:42</td>
+            <td class="headerValue">2017-07-20 02:13:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">64</td>
-            <td class="headerCovTableEntry">64</td>
+            <td class="headerCovTableEntry">66</td>
+            <td class="headerCovTableEntry">66</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -88,8 +88,20 @@
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#678">std::enable_if&lt;std::integral_constant&lt;bool, ((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecForEachExpr&lt;PointerVector&lt;double, false, false, false&gt;, blaze::Sqrt, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::assign&lt;blaze::DVecForEachExpr&lt;PointerVector&lt;double, false, false, false&gt;, blaze::Sqrt, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">9</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#678">std::enable_if&lt;std::integral_constant&lt;bool, ((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::assign&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#678">std::enable_if&lt;std::integral_constant&lt;bool, ((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::assign&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
               <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#752">std::enable_if&lt;std::integral_constant&lt;bool, (((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecDVecMultExpr&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value)&amp;&amp;blaze::HasSIMDAdd&lt;double, blaze::IsSIMDCombinable, void&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::addAssign&lt;blaze::DVecDVecMultExpr&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">10</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#752">std::enable_if&lt;std::integral_constant&lt;bool, (((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value)&amp;&amp;blaze::HasSIMDAdd&lt;double, blaze::IsSIMDCombinable, void&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::addAssign&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
@@ -97,7 +109,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#752">std::enable_if&lt;std::integral_constant&lt;bool, (((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;PointerVector&lt;double, false, false, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value)&amp;&amp;blaze::HasSIMDAdd&lt;double, blaze::IsSIMDCombinable, void&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::addAssign&lt;PointerVector&lt;double, false, false, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
+              <td class="coverFnHi">16</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#976">std::enable_if&lt;std::integral_constant&lt;bool, (((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;PointerVector&lt;double, false, false, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value)&amp;&amp;blaze::HasSIMDDiv&lt;double, blaze::IsSIMDCombinable, void&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::divAssign&lt;PointerVector&lt;double, false, false, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">15</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#826">std::enable_if&lt;std::integral_constant&lt;bool, (((blaze::useOptimizedKernels&amp;&amp;((PointerVector&lt;double, false, false, false&gt;::{unnamed type#1})1))&amp;&amp;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt;::simdEnabled)&amp;&amp;blaze::IsSIMDCombinable&lt;double, PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}::ElementType&gt;::value)&amp;&amp;blaze::HasSIMDSub&lt;double, blaze::IsSIMDCombinable, void&gt;::value&gt;::value, void&gt;::type PointerVector&lt;double, false, false, false&gt;::subAssign&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt; &gt;(blaze::DenseVector&lt;PointerVector&lt;double, false, false, false&gt;::{unnamed type#1}, false&gt; const&amp;)</a></td>
@@ -109,11 +125,11 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#173">PointerVector&lt;double, false, false, false&gt;::PointerVector(double*, unsigned long)</a></td>
-              <td class="coverFnHi">43708</td>
+              <td class="coverFnHi">43814</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#172">PointerVector&lt;double, false, false, false&gt;::PointerVector()</a></td>
-              <td class="coverFnHi">198</td>
+              <td class="coverFnHi">254</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#389">PointerVector&lt;double, false, false, false&gt;::operator=(double const&amp;)</a></td>
@@ -124,8 +140,20 @@
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#418">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator=&lt;blaze::DVecForEachExpr&lt;PointerVector&lt;double, false, false, false&gt;, blaze::Sqrt, false&gt; &gt;(blaze::Vector&lt;blaze::DVecForEachExpr&lt;PointerVector&lt;double, false, false, false&gt;, blaze::Sqrt, false&gt;, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">9</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#418">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator=&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt; &gt;(blaze::Vector&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">17</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#418">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator=&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt; &gt;(blaze::Vector&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt;, false&gt; const&amp;)</a></td>
               <td class="coverFnHi">2</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#466">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator/=&lt;PointerVector&lt;double, false, false, false&gt; &gt;(blaze::Vector&lt;PointerVector&lt;double, false, false, false&gt;, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">15</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#521">std::enable_if&lt;blaze::IsNumeric&lt;double&gt;::value, PointerVector&lt;double, false, false, false&gt; &gt;::type&amp; PointerVector&lt;double, false, false, false&gt;::operator/=&lt;double&gt;(double)</a></td>
@@ -148,12 +176,16 @@
               <td class="coverFnHi">2</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="PointerVector.hpp.gcov.html#428">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator+=&lt;blaze::DVecDVecMultExpr&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt; &gt;(blaze::Vector&lt;blaze::DVecDVecMultExpr&lt;blaze::DVecDVecMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, PointerVector&lt;double, false, false, false&gt;, false&gt;, false&gt; const&amp;)</a></td>
+              <td class="coverFnHi">10</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#428">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator+=&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt; &gt;(blaze::Vector&lt;blaze::DVecScalarMultExpr&lt;PointerVector&lt;double, false, false, false&gt;, double, false&gt;, false&gt; const&amp;)</a></td>
               <td class="coverFnHi">1</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#428">PointerVector&lt;double, false, false, false&gt;&amp; PointerVector&lt;double, false, false, false&gt;::operator+=&lt;PointerVector&lt;double, false, false, false&gt; &gt;(blaze::Vector&lt;PointerVector&lt;double, false, false, false&gt;, false&gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
+              <td class="coverFnHi">16</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#88">blaze::SubScalarLhs&lt;double&gt;::SubScalarLhs(double)</a></td>
@@ -177,15 +209,15 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#237">PointerVector&lt;double, false, false, false&gt;::size() const</a></td>
-              <td class="coverFnHi">663</td>
+              <td class="coverFnHi">856</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#189">PointerVector&lt;double, false, false, false&gt;::begin() const</a></td>
-              <td class="coverFnHi">183</td>
+              <td class="coverFnHi">276</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="PointerVector.hpp.gcov.html#183">PointerVector&lt;double, false, false, false&gt;::operator[](unsigned long) const</a></td>
-              <td class="coverFnHi">8284387</td>
+              <td class="coverFnHi">8284429</td>
             </tr>
   </table>
   <br>

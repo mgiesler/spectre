@@ -33,10 +33,10 @@ var searchData=
   ['unique_5fptr_3c_20embeddingmap_3c_201_2c_201_20_3e_20_3e',['unique_ptr&lt; EmbeddingMap&lt; 1, 1 &gt; &gt;',['http://en.cppreference.com/w/cpp/memory/unique_ptr.html',1,'std']]],
   ['unique_5fptr_3c_20embeddingmap_3c_20dim1_2c_20dim1_20_3e_20_3e',['unique_ptr&lt; EmbeddingMap&lt; Dim1, Dim1 &gt; &gt;',['http://en.cppreference.com/w/cpp/memory/unique_ptr.html',1,'std']]],
   ['unique_5fptr_3c_20embeddingmap_3c_20dim2_2c_20dim2_20_3e_20_3e',['unique_ptr&lt; EmbeddingMap&lt; Dim2, Dim2 &gt; &gt;',['http://en.cppreference.com/w/cpp/memory/unique_ptr.html',1,'std']]],
-  ['unordered_5fmap',['unordered_map',['http://en.cppreference.com/w/cpp/container/unordered_map.html',1,'std::pmr::unordered_map'],['http://en.cppreference.com/w/cpp/container/unordered_map.html',1,'std::unordered_map']]],
+  ['unordered_5fmap',['unordered_map',['http://en.cppreference.com/w/cpp/container/unordered_map.html',1,'std::unordered_map'],['http://en.cppreference.com/w/cpp/container/unordered_map.html',1,'std::pmr::unordered_map']]],
   ['unordered_5fmultimap',['unordered_multimap',['http://en.cppreference.com/w/cpp/container/unordered_multimap.html',1,'std::unordered_multimap'],['http://en.cppreference.com/w/cpp/container/unordered_multimap.html',1,'std::pmr::unordered_multimap']]],
   ['unordered_5fmultiset',['unordered_multiset',['http://en.cppreference.com/w/cpp/container/unordered_multiset.html',1,'std::pmr::unordered_multiset'],['http://en.cppreference.com/w/cpp/container/unordered_multiset.html',1,'std::unordered_multiset']]],
   ['unordered_5fset',['unordered_set',['http://en.cppreference.com/w/cpp/container/unordered_set.html',1,'std::unordered_set'],['http://en.cppreference.com/w/cpp/container/unordered_set.html',1,'std::pmr::unordered_set']]],
-  ['unsynchronized_5fpool_5fresource',['unsynchronized_pool_resource',['http://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource.html',1,'std::pmr::unsynchronized_pool_resource'],['http://en.cppreference.com/w/cpp/experimental/unsynchronized_pool_resource.html',1,'std::experimental::pmr::unsynchronized_pool_resource']]],
+  ['unsynchronized_5fpool_5fresource',['unsynchronized_pool_resource',['http://en.cppreference.com/w/cpp/experimental/unsynchronized_pool_resource.html',1,'std::experimental::pmr::unsynchronized_pool_resource'],['http://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource.html',1,'std::pmr::unsynchronized_pool_resource']]],
   ['uses_5fallocator',['uses_allocator',['http://en.cppreference.com/w/cpp/memory/uses_allocator.html',1,'std']]]
 ];

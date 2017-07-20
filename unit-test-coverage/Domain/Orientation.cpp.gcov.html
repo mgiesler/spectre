@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7fda24306c55c43f26bb7d14bf56392f5884be4 - Domain/Orientation.cpp</title>
+  <title>LCOV - 1cbdc60701edff9acd4e70ebf3f2171b5ed2042e - Domain/Orientation.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7fda24306c55c43f26bb7d14bf56392f5884be4">f7fda24306c55c43f26bb7d14bf56392f5884be4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1cbdc60701edff9acd4e70ebf3f2171b5ed2042e">1cbdc60701edff9acd4e70ebf3f2171b5ed2042e</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">41</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-19 02:15:42</td>
+            <td class="headerValue">2017-07-20 02:13:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -78,16 +78,16 @@
 <span class="lineNum">       8 </span>            : #include &quot;Domain/SegmentId.hpp&quot;
 <a name="9"><span class="lineNum">       9 </span>            : </a>
 <span class="lineNum">      10 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      11 </span><span class="lineCov">          6 : Orientation&lt;VolumeDim&gt;::Orientation(</span>
+<span class="lineNum">      11 </span><span class="lineCov">          7 : Orientation&lt;VolumeDim&gt;::Orientation(</span>
 <span class="lineNum">      12 </span>            :     std::array&lt;Direction&lt;VolumeDim&gt;, VolumeDim&gt; mapped_directions)
-<span class="lineNum">      13 </span><span class="lineCov">          6 :     : mapped_directions_(std::move(mapped_directions)) {</span>
-<span class="lineNum">      14 </span><span class="lineCov">         18 :   for (size_t j = 0; j &lt; VolumeDim; j++) {</span>
-<span class="lineNum">      15 </span><span class="lineCov">         24 :     if (mapped_directions_[j].dimension() != j or</span>
+<span class="lineNum">      13 </span><span class="lineCov">          7 :     : mapped_directions_(std::move(mapped_directions)) {</span>
+<span class="lineNum">      14 </span><span class="lineCov">         22 :   for (size_t j = 0; j &lt; VolumeDim; j++) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">         27 :     if (mapped_directions_[j].dimension() != j or</span>
 <span class="lineNum">      16 </span><span class="lineCov">         12 :         mapped_directions_[j].side() != Side::Upper) {</span>
-<span class="lineNum">      17 </span><span class="lineCov">          6 :       is_aligned_ = false;</span>
+<span class="lineNum">      17 </span><span class="lineCov">          9 :       is_aligned_ = false;</span>
 <span class="lineNum">      18 </span>            :     }
 <span class="lineNum">      19 </span>            :   }
-<span class="lineNum">      20 </span><span class="lineCov">          6 : }</span>
+<span class="lineNum">      20 </span><span class="lineCov">          7 : }</span>
 <a name="21"><span class="lineNum">      21 </span>            : </a>
 <span class="lineNum">      22 </span>            : template &lt;size_t VolumeDim&gt;
 <span class="lineNum">      23 </span><span class="lineCov">          8 : Orientation&lt;VolumeDim&gt;::Orientation(</span>
@@ -118,10 +118,10 @@
 <span class="lineNum">      48 </span>            : }
 <a name="49"><span class="lineNum">      49 </span>            : </a>
 <span class="lineNum">      50 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      51 </span><span class="lineCov">          9 : void Orientation&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {</span>
-<span class="lineNum">      52 </span><span class="lineCov">          9 :   p | mapped_directions_;</span>
-<span class="lineNum">      53 </span><span class="lineCov">          9 :   p | is_aligned_;</span>
-<span class="lineNum">      54 </span><span class="lineCov">          9 : }</span>
+<span class="lineNum">      51 </span><span class="lineCov">         12 : void Orientation&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">      52 </span><span class="lineCov">         12 :   p | mapped_directions_;</span>
+<span class="lineNum">      53 </span><span class="lineCov">         12 :   p | is_aligned_;</span>
+<span class="lineNum">      54 </span><span class="lineCov">         12 : }</span>
 <a name="55"><span class="lineNum">      55 </span>            : </a>
 <span class="lineNum">      56 </span>            : template &lt;&gt;
 <span class="lineNum">      57 </span><span class="lineCov">         16 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Orientation&lt;1&gt;&amp; orientation) {</span>
@@ -137,11 +137,11 @@
 <span class="lineNum">      67 </span>            : }
 <a name="68"><span class="lineNum">      68 </span>            : </a>
 <span class="lineNum">      69 </span>            : template &lt;&gt;
-<span class="lineNum">      70 </span><span class="lineCov">         16 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Orientation&lt;3&gt;&amp; orientation) {</span>
-<span class="lineNum">      71 </span><span class="lineCov">         32 :   os &lt;&lt; &quot;(&quot; &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_xi()) &lt;&lt; &quot;, &quot;</span>
-<span class="lineNum">      72 </span><span class="lineCov">         48 :      &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_eta()) &lt;&lt; &quot;, &quot;</span>
-<span class="lineNum">      73 </span><span class="lineCov">         48 :      &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_zeta()) &lt;&lt; &quot;)&quot;;</span>
-<span class="lineNum">      74 </span><span class="lineCov">         16 :   return os;</span>
+<span class="lineNum">      70 </span><span class="lineCov">         33 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Orientation&lt;3&gt;&amp; orientation) {</span>
+<span class="lineNum">      71 </span><span class="lineCov">         66 :   os &lt;&lt; &quot;(&quot; &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_xi()) &lt;&lt; &quot;, &quot;</span>
+<span class="lineNum">      72 </span><span class="lineCov">         99 :      &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_eta()) &lt;&lt; &quot;, &quot;</span>
+<span class="lineNum">      73 </span><span class="lineCov">         99 :      &lt;&lt; orientation.mapped(Direction&lt;3&gt;::upper_zeta()) &lt;&lt; &quot;)&quot;;</span>
+<span class="lineNum">      74 </span><span class="lineCov">         33 :   return os;</span>
 <span class="lineNum">      75 </span>            : }
 <span class="lineNum">      76 </span>            : 
 <span class="lineNum">      77 </span>            : template class Orientation&lt;1&gt;;

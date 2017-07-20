@@ -154,7 +154,8 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Tensor</div>  </div>
 </div><!--header-->
@@ -268,6 +269,21 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:ga875b107b929ff008a27078792ac0bc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the <a class="el" href="group__Tensor.html#ga05c512b755e913cdbddce8634bdb4fa6">TensorIndexType</a> is Spatial or Spacetime.  <a href="group__Tensor.html#ga875b107b929ff008a27078792ac0bc8e">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga875b107b929ff008a27078792ac0bc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4c3b2df867aebefae1690561c24f7b3b"><td class="memTemplParams" colspan="2">template&lt;typename TensorType &gt; </td></tr>
+<tr class="memitem:ga4c3b2df867aebefae1690561c24f7b3b"><td class="memTemplItemLeft" align="right" valign="top">TensorType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Tensor.html#ga4c3b2df867aebefae1690561c24f7b3b">divide_by</a> (TensorType tensor, const <a class="el" href="classDataVector.html">DataVector</a> &amp;divisor)</td></tr>
+<tr class="memdesc:ga4c3b2df867aebefae1690561c24f7b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the components of a tensor by a scalar.  <a href="#ga4c3b2df867aebefae1690561c24f7b3b">More...</a><br /></td></tr>
+<tr class="separator:ga4c3b2df867aebefae1690561c24f7b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga067e096adcc0c631df663d965911f568"><td class="memTemplParams" colspan="2">template&lt;typename Index &gt; </td></tr>
+<tr class="memitem:ga067e096adcc0c631df663d965911f568"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classDataVector.html">DataVector</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Tensor.html#ga067e096adcc0c631df663d965911f568">magnitude</a> (const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; <a class="el" href="classIndex.html">Index</a> &gt;&gt; &amp;tensor)</td></tr>
+<tr class="memdesc:ga067e096adcc0c631df663d965911f568"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the Euclidean magnitude of a rank-1 tensor  <a href="#ga067e096adcc0c631df663d965911f568">More...</a><br /></td></tr>
+<tr class="separator:ga067e096adcc0c631df663d965911f568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8446b724aa528b3c180d5f0c3cba83fa"><td class="memTemplParams" colspan="2">template&lt;typename Index0 , typename Index1 &gt; </td></tr>
+<tr class="memitem:ga8446b724aa528b3c180d5f0c3cba83fa"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classDataVector.html">DataVector</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Tensor.html#ga8446b724aa528b3c180d5f0c3cba83fa">magnitude</a> (const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; Index0 &gt;&gt; &amp;tensor, const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1, 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; Index1, Index1 &gt;&gt; &amp;metric)</td></tr>
+<tr class="memdesc:ga8446b724aa528b3c180d5f0c3cba83fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute the magnitude of a rank-1 tensor  <a href="#ga8446b724aa528b3c180d5f0c3cba83fa">More...</a><br /></td></tr>
+<tr class="separator:ga8446b724aa528b3c180d5f0c3cba83fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p><a class="el" href="classTensor.html">Tensor</a> use documentation. </p>
@@ -730,6 +746,106 @@ template&lt;typename IndexLs , typename CanonicalTensorIndex , typename TensorIn
 <tr><td class="fieldname"><a id="ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911"></a>Lo&#160;</td><td class="fielddoc"><p>Covariant, or Lower index. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga4c3b2df867aebefae1690561c24f7b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c3b2df867aebefae1690561c24f7b3b">&#9670;&nbsp;</a></span>divide_by()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TensorType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TensorType divide_by </td>
+          <td>(</td>
+          <td class="paramtype">TensorType&#160;</td>
+          <td class="paramname"><em>tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classDataVector.html">DataVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>divisor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Divides the components of a tensor by a scalar. </p>
+<p><em>Returns:</em> a tensor of the same type as the input tensor </p>
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>, and <a class="el" href="classDataVector.html#a39a9ecdd962c142bee87c6c55be825a4">DataVector::size()</a>.</p>
+
+</div>
+</div>
+<a id="ga067e096adcc0c631df663d965911f568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga067e096adcc0c631df663d965911f568">&#9670;&nbsp;</a></span>magnitude() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Index &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataVector.html">DataVector</a> magnitude </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; <a class="el" href="classIndex.html">Index</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute the Euclidean magnitude of a rank-1 tensor </p>
+<p><em>Returns:</em> the Euclidean magnitude of the rank-1 tensor</p>
+<h3>Details</h3>
+<p>Computes the square root of the sum of the squares of the components of the rank-1 tensor. </p>
+
+<p class="reference">References <a class="el" href="group__ConstantExpressions.html#ga4acefaccfb2d2ff1d491ac107f8bb2a8">square()</a>.</p>
+
+</div>
+</div>
+<a id="ga8446b724aa528b3c180d5f0c3cba83fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8446b724aa528b3c180d5f0c3cba83fa">&#9670;&nbsp;</a></span>magnitude() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Index0 , typename Index1 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataVector.html">DataVector</a> magnitude </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; Index0 &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTensor.html">Tensor</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, <a class="el" href="group__Tensor.html#ga8cfb4461e3d8d897b541a8d64da1369e">Symmetry</a>&lt; 1, 1 &gt;, <a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt; Index1, Index1 &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>metric</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compute the magnitude of a rank-1 tensor </p>
+<p><em>Returns:</em> the magnitude of the rank-1 tensor</p>
+<h3>Details</h3>
+<p>Returns the square root of the input tensor contracted twice with the given metric. </p>
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
 
 </div>
 </div>

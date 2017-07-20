@@ -13,5 +13,6 @@ var searchData=
   ['devguide_2emd',['DevGuide.md',['../DevGuide_8md.html',1,'']]],
   ['digraph_2ehpp',['Digraph.hpp',['../Digraph_8hpp.html',1,'']]],
   ['direction_2ecpp',['Direction.cpp',['../Direction_8cpp.html',1,'']]],
-  ['direction_2ehpp',['Direction.hpp',['../Direction_8hpp.html',1,'']]]
+  ['direction_2ehpp',['Direction.hpp',['../Direction_8hpp.html',1,'']]],
+  ['divideby_2ehpp',['DivideBy.hpp',['../DivideBy_8hpp.html',1,'']]]
 ];

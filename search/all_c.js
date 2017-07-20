@@ -1,6 +1,8 @@
 var searchData=
 [
   ['m',['m',['http://en.cppreference.com/w/cpp/numeric/random/fisher_f_distribution/params.html',1,'std::fisher_f_distribution::m()'],['http://en.cppreference.com/w/cpp/numeric/random/lognormal_distribution/params.html',1,'std::lognormal_distribution::m()']]],
+  ['magnitude',['magnitude',['../group__Tensor.html#ga067e096adcc0c631df663d965911f568',1,'magnitude(const Tensor&lt; DataVector, Symmetry&lt; 1 &gt;, typelist&lt; Index &gt;&gt; &amp;tensor):&#160;Magnitude.hpp'],['../group__Tensor.html#ga8446b724aa528b3c180d5f0c3cba83fa',1,'magnitude(const Tensor&lt; DataVector, Symmetry&lt; 1 &gt;, typelist&lt; Index0 &gt;&gt; &amp;tensor, const Tensor&lt; DataVector, Symmetry&lt; 1, 1 &gt;, typelist&lt; Index1, Index1 &gt;&gt; &amp;metric):&#160;Magnitude.hpp']]],
+  ['magnitude_2ehpp',['Magnitude.hpp',['../Magnitude_8hpp.html',1,'']]],
   ['main',['main',['../ParallelInfo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'ParallelInfo.cpp']]],
   ['main_2emd',['Main.md',['../Main_8md.html',1,'']]],
   ['make_5farray',['make_array',['http://en.cppreference.com/w/cpp/experimental/make_array.html',1,'std::experimental::make_array()'],['../MakeArray_8hpp.html#a14cf7ef8ab7f9f56d06762b195ce29c2',1,'make_array(std::integral_constant&lt; std::size_t, size &gt;, T &amp;&amp;value):&#160;MakeArray.hpp'],['../group__Utilities.html#ga18e7d6f15d7089f056a7d1a32ad1b536',1,'make_array(T &amp;&amp;value):&#160;MakeArray.hpp'],['../group__Utilities.html#ga55b73f5c6d3e8963a3110b1b314fc463',1,'make_array(T &amp;&amp;t, V &amp;&amp;... values):&#160;MakeArray.hpp']]],

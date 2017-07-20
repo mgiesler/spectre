@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['magnitude_2ehpp',['Magnitude.hpp',['../Magnitude_8hpp.html',1,'']]],
   ['main_2emd',['Main.md',['../Main_8md.html',1,'']]],
   ['makearray_2ehpp',['MakeArray.hpp',['../MakeArray_8hpp.html',1,'']]],
   ['map',['map',['http://en.cppreference.com/w/cpp/header/map.html',1,'']]],

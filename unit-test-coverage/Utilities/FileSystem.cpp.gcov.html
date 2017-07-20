@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7fda24306c55c43f26bb7d14bf56392f5884be4 - Utilities/FileSystem.cpp</title>
+  <title>LCOV - 1cbdc60701edff9acd4e70ebf3f2171b5ed2042e - Utilities/FileSystem.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7fda24306c55c43f26bb7d14bf56392f5884be4">f7fda24306c55c43f26bb7d14bf56392f5884be4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1cbdc60701edff9acd4e70ebf3f2171b5ed2042e">1cbdc60701edff9acd4e70ebf3f2171b5ed2042e</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">87</td>
-            <td class="headerCovTableEntry">87</td>
+            <td class="headerCovTableEntry">86</td>
+            <td class="headerCovTableEntry">86</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-19 02:15:42</td>
+            <td class="headerValue">2017-07-20 02:13:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -302,8 +302,8 @@
 <span class="lineNum">     232 </span><span class="lineCov">          5 :       contents.erase(std::find(contents.begin(), contents.end(), &quot;.&quot;s));</span>
 <span class="lineNum">     233 </span><span class="lineCov">          5 :       contents.erase(std::find(contents.begin(), contents.end(), &quot;..&quot;s));</span>
 <a name="234"><span class="lineNum">     234 </span>            :       std::transform(</a>
-<span class="lineNum">     235 </span><span class="lineCov">         10 :           contents.begin(), contents.end(), contents.begin(),</span>
-<span class="lineNum">     236 </span><span class="lineCov">         15 :           [&amp;path](std::string&amp; element) { return path + &quot;/&quot; + element; });</span>
+<span class="lineNum">     235 </span>            :           contents.begin(), contents.end(), contents.begin(),
+<span class="lineNum">     236 </span><span class="lineCov">         10 :           [&amp;path](std::string&amp; element) { return path + &quot;/&quot; + element; });</span>
 <span class="lineNum">     237 </span><span class="lineCov">         10 :       for (const auto&amp; files : contents) {</span>
 <span class="lineNum">     238 </span><span class="lineCov">          5 :         rm(files, recursive);</span>
 <span class="lineNum">     239 </span>            :       }

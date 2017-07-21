@@ -2,8 +2,10 @@ var searchData=
 [
   ['magnitude_2ehpp',['Magnitude.hpp',['../Magnitude_8hpp.html',1,'']]],
   ['main_2emd',['Main.md',['../Main_8md.html',1,'']]],
+  ['makearithmeticvalue_2ehpp',['MakeArithmeticValue.hpp',['../MakeArithmeticValue_8hpp.html',1,'']]],
   ['makearray_2ehpp',['MakeArray.hpp',['../MakeArray_8hpp.html',1,'']]],
   ['map',['map',['http://en.cppreference.com/w/cpp/header/map.html',1,'']]],
+  ['math_2ehpp',['Math.hpp',['../Math_8hpp.html',1,'']]],
   ['matrix_2ecpp',['Matrix.cpp',['../Matrix_8cpp.html',1,'']]],
   ['matrix_2ehpp',['Matrix.hpp',['../Matrix_8hpp.html',1,'']]],
   ['memory',['memory',['http://en.cppreference.com/w/cpp/header/memory.html',1,'']]],

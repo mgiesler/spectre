@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1cbdc60701edff9acd4e70ebf3f2171b5ed2042e - Utilities/PointerVector.hpp</title>
+  <title>LCOV - 9794fbf26bf13262f9aad49b35dbc8e767fb575f - Utilities/PointerVector.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1cbdc60701edff9acd4e70ebf3f2171b5ed2042e">1cbdc60701edff9acd4e70ebf3f2171b5ed2042e</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/9794fbf26bf13262f9aad49b35dbc8e767fb575f">9794fbf26bf13262f9aad49b35dbc8e767fb575f</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">171</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-20 02:13:18</td>
+            <td class="headerValue">2017-07-21 02:14:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">66</td>
@@ -242,7 +242,7 @@
 <a name="172"><span class="lineNum">     172 </span>            :   enum : bool { smpAssignable = !blaze::IsSMPAssignable&lt;Type&gt;::value };</a>
 <a name="173"><span class="lineNum">     173 </span>            : </a>
 <span class="lineNum">     174 </span><span class="lineCov">        254 :   PointerVector() = default;</span>
-<span class="lineNum">     175 </span><span class="lineCov">      43814 :   PointerVector(Type* ptr, size_t size) : v_(ptr), size_(size) {}</span>
+<span class="lineNum">     175 </span><span class="lineCov">      43817 :   PointerVector(Type* ptr, size_t size) : v_(ptr), size_(size) {}</span>
 <span class="lineNum">     176 </span>            :   PointerVector(const PointerVector&amp; /*rhs*/) = default;
 <span class="lineNum">     177 </span>            :   PointerVector&amp; operator=(const PointerVector&amp; /*rhs*/) = default;
 <span class="lineNum">     178 </span>            :   PointerVector(PointerVector&amp;&amp; /*rhs*/) = default;
@@ -258,10 +258,10 @@
 <a name="188"><span class="lineNum">     188 </span><span class="lineCov">      43030 :   Pointer data() noexcept { return v_; }</span></a>
 <a name="189"><span class="lineNum">     189 </span><span class="lineCov">     133682 :   ConstPointer data() const noexcept { return v_; }</span></a>
 <span class="lineNum">     190 </span><span class="lineCov">         19 :   Iterator begin() noexcept { return Iterator(v_); }</span>
-<a name="191"><span class="lineNum">     191 </span><span class="lineCov">        276 :   ConstIterator begin() const noexcept { return ConstIterator(v_); }</span></a>
+<a name="191"><span class="lineNum">     191 </span><span class="lineCov">        280 :   ConstIterator begin() const noexcept { return ConstIterator(v_); }</span></a>
 <a name="192"><span class="lineNum">     192 </span>            :   ConstIterator cbegin() const noexcept { return ConstIterator(v_); }</a>
 <span class="lineNum">     193 </span><span class="lineCov">         10 :   Iterator end() noexcept { return Iterator(v_ + size_); }</span>
-<span class="lineNum">     194 </span><span class="lineCov">        127 :   ConstIterator end() const noexcept { return ConstIterator(v_ + size_); }</span>
+<span class="lineNum">     194 </span><span class="lineCov">        130 :   ConstIterator end() const noexcept { return ConstIterator(v_ + size_); }</span>
 <span class="lineNum">     195 </span>            :   ConstIterator cend() const noexcept { return ConstIterator(v_ + size_); }
 <span class="lineNum">     196 </span>            :   //@}
 <span class="lineNum">     197 </span>            : 

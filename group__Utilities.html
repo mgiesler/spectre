@@ -243,6 +243,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9c127d07f412267ea6548c8dab8b44c1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga9c127d07f412267ea6548c8dab8b44c1">operator&quot;&quot; _st</a> (const unsigned long long n)</td></tr>
 <tr class="memdesc:ga9c127d07f412267ea6548c8dab8b44c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the _st size_t suffix.  <a href="#ga9c127d07f412267ea6548c8dab8b44c1">More...</a><br /></td></tr>
 <tr class="separator:ga9c127d07f412267ea6548c8dab8b44c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35fc5cda6788087491ae9435a4960880"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataVector.html">DataVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga35fc5cda6788087491ae9435a4960880">make_arithmetic_value</a> (const <a class="el" href="classDataVector.html">DataVector</a> &amp;input, double value)</td></tr>
+<tr class="memdesc:ga35fc5cda6788087491ae9435a4960880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classDataVector.html" title="A class for storing data on a mesh. ">DataVector</a> the same size as <code>input</code>, with each element equal to <code>value</code>.  <a href="#ga35fc5cda6788087491ae9435a4960880">More...</a><br /></td></tr>
+<tr class="separator:ga35fc5cda6788087491ae9435a4960880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad09889932f03a48c4bedb925215f8f92"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gad09889932f03a48c4bedb925215f8f92">make_arithmetic_value</a> (double, double value)</td></tr>
+<tr class="memdesc:gad09889932f03a48c4bedb925215f8f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the double <code>value</code>.  <a href="#gad09889932f03a48c4bedb925215f8f92">More...</a><br /></td></tr>
+<tr class="separator:gad09889932f03a48c4bedb925215f8f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="memTemplParams" colspan="2">template&lt;std::size_t size, typename T &gt; </td></tr>
 <tr class="memitem:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; T &gt;, size &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga18e7d6f15d7089f056a7d1a32ad1b536">make_array</a> (T &amp;&amp;value)</td></tr>
 <tr class="memdesc:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to initialize a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>.  <a href="#ga18e7d6f15d7089f056a7d1a32ad1b536">More...</a><br /></td></tr>
@@ -251,6 +257,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; typename <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; T &gt;, sizeof...(V)+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga55b73f5c6d3e8963a3110b1b314fc463">make_array</a> (T &amp;&amp;t, V &amp;&amp;... values)</td></tr>
 <tr class="memdesc:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to initialize a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a> with varying number of arguments.  <a href="#ga55b73f5c6d3e8963a3110b1b314fc463">More...</a><br /></td></tr>
 <tr class="separator:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eed7cb45692393b257c3987070d1da2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga1eed7cb45692393b257c3987070d1da2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga1eed7cb45692393b257c3987070d1da2">number_of_digits</a> (const T number)</td></tr>
+<tr class="memdesc:ga1eed7cb45692393b257c3987070d1da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of digits in an integer number.  <a href="#ga1eed7cb45692393b257c3987070d1da2">More...</a><br /></td></tr>
+<tr class="separator:ga1eed7cb45692393b257c3987070d1da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga49015243242c2caad5bdbd64ea7449a1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga49015243242c2caad5bdbd64ea7449a1"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga49015243242c2caad5bdbd64ea7449a1">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/list.html">std::list</a>&lt; T &gt; &amp;v)</td></tr>
 <tr class="memdesc:ga49015243242c2caad5bdbd64ea7449a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the items of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/list.html">std::list</a>.  <a href="#ga49015243242c2caad5bdbd64ea7449a1">More...</a><br /></td></tr>
@@ -1068,7 +1078,7 @@ template&lt;typename... Args&gt; </div>
 
 <p class="reference">References <a class="el" href="group__Utilities.html#ga440a175ca29c1e92a7147f210a860932">spectre_version()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ParallelInfo_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a>, and <a class="el" href="classRunTests.html#a58aef7973c605af178b7ebeae42bb2fa">RunTests::RunTests()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classRunTests.html#a58aef7973c605af178b7ebeae42bb2fa">RunTests::RunTests()</a>.</p>
 
 </div>
 </div>
@@ -1099,6 +1109,70 @@ template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map 
 </div><div class="memdoc">
 
 <p>Construct a string containing the keys of a map. </p>
+
+</div>
+</div>
+<a id="ga35fc5cda6788087491ae9435a4960880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35fc5cda6788087491ae9435a4960880">&#9670;&nbsp;</a></span>make_arithmetic_value() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataVector.html">DataVector</a> make_arithmetic_value </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDataVector.html">DataVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="classDataVector.html" title="A class for storing data on a mesh. ">DataVector</a> the same size as <code>input</code>, with each element equal to <code>value</code>. </p>
+
+<p class="reference">References <a class="el" href="classDataVector.html#a39a9ecdd962c142bee87c6c55be825a4">DataVector::size()</a>.</p>
+
+</div>
+</div>
+<a id="gad09889932f03a48c4bedb925215f8f92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad09889932f03a48c4bedb925215f8f92">&#9670;&nbsp;</a></span>make_arithmetic_value() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double make_arithmetic_value </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the double <code>value</code>. </p>
+<h3>Details</h3>
+<p>The argument <code>input</code> is unused, but is present so that <code>make_arithmetic_value</code> has the same interface for doubles and DataVectors. </p>
 
 </div>
 </div>
@@ -1257,6 +1331,30 @@ template&lt;class T , class U &gt; </div>
 <p>Cast <code>u</code> to a type <code>T</code> where the cast may result in narrowing. </p>
 
 <p class="reference">Referenced by <a class="el" href="group__Utilities.html#gaba62a62589ffc7b8b85a7722390f7ce0">dgemm_&lt; true &gt;()</a>, and <a class="el" href="group__Utilities.html#gafaf6db75ede2a9bc2fa4b6b17b8ef128">gsl::narrow()</a>.</p>
+
+</div>
+</div>
+<a id="ga1eed7cb45692393b257c3987070d1da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1eed7cb45692393b257c3987070d1da2">&#9670;&nbsp;</a></span>number_of_digits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T number_of_digits </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of digits in an integer number. </p>
+
+<p class="reference">References <a class="el" href="namespacett.html#a1199b80c0851bbf8b025c562054397ec">tt::is_integer_v</a>.</p>
 
 </div>
 </div>

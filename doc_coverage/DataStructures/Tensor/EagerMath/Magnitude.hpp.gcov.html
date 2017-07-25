@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 9794fbf26bf13262f9aad49b35dbc8e767fb575f - DataStructures/Tensor/EagerMath/Magnitude.hpp</title>
+  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - DataStructures/Tensor/EagerMath/Magnitude.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/9794fbf26bf13262f9aad49b35dbc8e767fb575f">9794fbf26bf13262f9aad49b35dbc8e767fb575f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">2</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-24 02:15:30</td>
+            <td class="headerValue">2017-07-25 02:16:57</td>
             <td></td>
           </tr>
           <tr>
@@ -75,55 +75,54 @@
 <span class="lineNum">       9 </span>            : #include &quot;DataStructures/DataVector.hpp&quot;
 <span class="lineNum">      10 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;
 <span class="lineNum">      11 </span>            : #include &quot;ErrorHandling/Assert.hpp&quot;
-<span class="lineNum">      12 </span>            : 
-<span class="lineNum">      13 </span>            : /*!
-<span class="lineNum">      14 </span>            :  * \ingroup Tensor
-<span class="lineNum">      15 </span>            :  * \brief compute the Euclidean magnitude of a rank-1 tensor
-<span class="lineNum">      16 </span>            :  *
-<span class="lineNum">      17 </span>            :  * \returns the Euclidean magnitude of the rank-1 tensor
-<span class="lineNum">      18 </span>            :  *
-<span class="lineNum">      19 </span>            :  * \details
-<span class="lineNum">      20 </span>            :  * Computes the square root of the sum of the squares of the components of
-<span class="lineNum">      21 </span>            :  * the rank-1 tensor.
-<span class="lineNum">      22 </span>            :  */
-<span class="lineNum">      23 </span>            : template &lt;typename Index&gt;
-<span class="lineNum">      24 </span><span class="lineCov">          2 : DataVector magnitude(</span>
-<span class="lineNum">      25 </span>            :     const Tensor&lt;DataVector, Symmetry&lt;1&gt;, typelist&lt;Index&gt;&gt;&amp; tensor) {
-<span class="lineNum">      26 </span>            :   DataVector magnitude_squared(tensor.template get&lt;0&gt;().size(), 0.);
-<span class="lineNum">      27 </span>            :   for (size_t d = 0; d &lt; Index::dim; ++d) {
-<span class="lineNum">      28 </span>            :     magnitude_squared += square(tensor.get(d));
-<span class="lineNum">      29 </span>            :   }
-<span class="lineNum">      30 </span>            :   return sqrt(magnitude_squared);
-<span class="lineNum">      31 </span>            : }
-<span class="lineNum">      32 </span>            : 
-<span class="lineNum">      33 </span>            : /*!
-<span class="lineNum">      34 </span>            :  * \ingroup Tensor
-<span class="lineNum">      35 </span>            :  * \brief compute the magnitude of a rank-1 tensor
-<span class="lineNum">      36 </span>            :  *
-<span class="lineNum">      37 </span>            :  * \returns the magnitude of the rank-1 tensor
-<span class="lineNum">      38 </span>            :  *
-<span class="lineNum">      39 </span>            :  * \details
-<span class="lineNum">      40 </span>            :  * Returns the square root of the input tensor contracted twice with the given
-<span class="lineNum">      41 </span>            :  * metric.
-<span class="lineNum">      42 </span>            :  */
-<span class="lineNum">      43 </span>            : template &lt;typename Index0, typename Index1&gt;
-<span class="lineNum">      44 </span><span class="lineCov">          2 : DataVector magnitude(</span>
-<span class="lineNum">      45 </span>            :     const Tensor&lt;DataVector, Symmetry&lt;1&gt;, typelist&lt;Index0&gt;&gt;&amp; tensor,
-<span class="lineNum">      46 </span>            :     const Tensor&lt;DataVector, Symmetry&lt;1, 1&gt;, typelist&lt;Index1, Index1&gt;&gt;&amp;
-<span class="lineNum">      47 </span>            :         metric) {
-<span class="lineNum">      48 </span>            :   static_assert(std::is_same&lt;Index0, change_index_up_lo&lt;Index1&gt;&gt;::value,
-<span class="lineNum">      49 </span>            :                 &quot;The indices of the tensor and metric must be the same, &quot;
-<span class="lineNum">      50 </span>            :                 &quot;except for their valence which must be opposite&quot;);
-<span class="lineNum">      51 </span>            :   ASSERT(tensor.get(0).size() == metric.get(0, 0).size(),
-<span class="lineNum">      52 </span>            :          &quot;The DataVector in `tensor` and `metric` do not have the same size&quot;);
-<span class="lineNum">      53 </span>            :   DataVector magnitude_squared(tensor.template get&lt;0&gt;().size(), 0.);
-<span class="lineNum">      54 </span>            :   for (size_t a = 0; a &lt; Index0::dim; ++a) {
-<span class="lineNum">      55 </span>            :     for (size_t b = 0; b &lt; Index0::dim; ++b) {
-<span class="lineNum">      56 </span>            :       magnitude_squared += tensor.get(a) * tensor.get(b) * metric.get(a, b);
-<span class="lineNum">      57 </span>            :     }
-<span class="lineNum">      58 </span>            :   }
-<span class="lineNum">      59 </span>            :   return sqrt(magnitude_squared);
-<span class="lineNum">      60 </span>            : }
+<span class="lineNum">      12 </span>            : #include &quot;Utilities/MakeArithmeticValue.hpp&quot;
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span>            : /*!
+<span class="lineNum">      15 </span>            :  * \ingroup Tensor
+<span class="lineNum">      16 </span>            :  * \brief compute the Euclidean magnitude of a rank-1 tensor
+<span class="lineNum">      17 </span>            :  *
+<span class="lineNum">      18 </span>            :  * \returns the Euclidean magnitude of the rank-1 tensor
+<span class="lineNum">      19 </span>            :  *
+<span class="lineNum">      20 </span>            :  * \details
+<span class="lineNum">      21 </span>            :  * Computes the square root of the sum of the squares of the components of
+<span class="lineNum">      22 </span>            :  * the rank-1 tensor.
+<span class="lineNum">      23 </span>            :  */
+<span class="lineNum">      24 </span>            : template &lt;typename DataType, typename Index&gt;
+<span class="lineNum">      25 </span><span class="lineCov">          2 : DataType magnitude(</span>
+<span class="lineNum">      26 </span>            :     const Tensor&lt;DataType, Symmetry&lt;1&gt;, typelist&lt;Index&gt;&gt;&amp; tensor) {
+<span class="lineNum">      27 </span>            :   auto magnitude_squared = make_arithmetic_value(tensor.get(0), 0.);
+<span class="lineNum">      28 </span>            :   for (size_t d = 0; d &lt; Index::dim; ++d) {
+<span class="lineNum">      29 </span>            :     magnitude_squared += square(tensor.get(d));
+<span class="lineNum">      30 </span>            :   }
+<span class="lineNum">      31 </span>            :   return sqrt(magnitude_squared);
+<span class="lineNum">      32 </span>            : }
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : /*!
+<span class="lineNum">      35 </span>            :  * \ingroup Tensor
+<span class="lineNum">      36 </span>            :  * \brief compute the magnitude of a rank-1 tensor
+<span class="lineNum">      37 </span>            :  *
+<span class="lineNum">      38 </span>            :  * \returns the magnitude of the rank-1 tensor
+<span class="lineNum">      39 </span>            :  *
+<span class="lineNum">      40 </span>            :  * \details
+<span class="lineNum">      41 </span>            :  * Returns the square root of the input tensor contracted twice with the given
+<span class="lineNum">      42 </span>            :  * metric.
+<span class="lineNum">      43 </span>            :  */
+<span class="lineNum">      44 </span>            : template &lt;typename DataType, typename Index0, typename Index1&gt;
+<span class="lineNum">      45 </span><span class="lineCov">          2 : DataType magnitude(</span>
+<span class="lineNum">      46 </span>            :     const Tensor&lt;DataType, Symmetry&lt;1&gt;, typelist&lt;Index0&gt;&gt;&amp; tensor,
+<span class="lineNum">      47 </span>            :     const Tensor&lt;DataType, Symmetry&lt;1, 1&gt;, typelist&lt;Index1, Index1&gt;&gt;&amp;
+<span class="lineNum">      48 </span>            :         metric) {
+<span class="lineNum">      49 </span>            :   static_assert(std::is_same&lt;Index0, change_index_up_lo&lt;Index1&gt;&gt;::value,
+<span class="lineNum">      50 </span>            :                 &quot;The indices of the tensor and metric must be the same, &quot;
+<span class="lineNum">      51 </span>            :                 &quot;except for their valence which must be opposite&quot;);
+<span class="lineNum">      52 </span>            :   auto magnitude_squared = make_arithmetic_value(tensor.template get&lt;0&gt;(), 0.);
+<span class="lineNum">      53 </span>            :   for (size_t a = 0; a &lt; Index0::dim; ++a) {
+<span class="lineNum">      54 </span>            :     for (size_t b = 0; b &lt; Index0::dim; ++b) {
+<span class="lineNum">      55 </span>            :       magnitude_squared += tensor.get(a) * tensor.get(b) * metric.get(a, b);
+<span class="lineNum">      56 </span>            :     }
+<span class="lineNum">      57 </span>            :   }
+<span class="lineNum">      58 </span>            :   return sqrt(magnitude_squared);
+<span class="lineNum">      59 </span>            : }
 </pre>
       </td>
     </tr>

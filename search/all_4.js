@@ -6,6 +6,7 @@ var searchData=
   ['elementid',['ElementId',['../classElementId.html',1,'ElementId&lt; VolumeDim &gt;'],['../classElementId.html#ac233b495a4c9bfaa737aaa40d358ca56',1,'ElementId::ElementId()=default'],['../classElementId.html#abe504d43a27ca679bff205642d06a38a',1,'ElementId::ElementId(size_t block_id)'],['../classElementId.html#a57174e177575120bdcdd444cc3ecd4d2',1,'ElementId::ElementId(size_t block_id, std::array&lt; SegmentId, VolumeDim &gt; segment_ids)']]],
   ['elementid_2ecpp',['ElementId.cpp',['../ElementId_8cpp.html',1,'']]],
   ['elementid_2ehpp',['ElementId.hpp',['../ElementId_8hpp.html',1,'']]],
+  ['elementtype',['ElementType',['../classDataVector.html#aae0dec6ea21cecbc5fcb56030e818054',1,'DataVector']]],
   ['embeddingmap',['EmbeddingMap',['../classEmbeddingMap.html',1,'EmbeddingMap&lt; DimOfDomain, DimOfRange &gt;'],['../classEmbeddingMap.html#aa9820c10dbf521140c64d985f79935ce',1,'EmbeddingMap::EmbeddingMap()=default'],['../classEmbeddingMap.html#aaeee24b7d27b04617a888b93384fbd47',1,'EmbeddingMap::EmbeddingMap(const EmbeddingMap&lt; DimOfDomain, DimOfRange &gt; &amp;)=delete'],['../classEmbeddingMap.html#a3ad62c3b6dcddbc033956e68559c341d',1,'EmbeddingMap::EmbeddingMap(EmbeddingMap&lt; DimOfDomain, DimOfRange &gt; &amp;&amp;) noexcept=default']]],
   ['embeddingmap_2ehpp',['EmbeddingMap.hpp',['../EmbeddingMap_8hpp.html',1,'']]],
   ['embeddingmap_3c_201_2c_201_20_3e',['EmbeddingMap&lt; 1, 1 &gt;',['../classEmbeddingMap.html',1,'']]],

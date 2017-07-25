@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 9794fbf26bf13262f9aad49b35dbc8e767fb575f - DataStructures/Tensor/Tensor.hpp</title>
+  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - DataStructures/Tensor/Tensor.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/9794fbf26bf13262f9aad49b35dbc8e767fb575f">9794fbf26bf13262f9aad49b35dbc8e767fb575f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">69</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-24 02:15:04</td>
+            <td class="headerValue">2017-07-25 02:16:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">222</td>
-            <td class="headerCovTableEntry">224</td>
-            <td class="headerCovTableEntryHi">99.1 %</td>
+            <td class="headerCovTableEntry">235</td>
+            <td class="headerCovTableEntry">237</td>
+            <td class="headerCovTableEntryHi">99.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -178,7 +178,7 @@
 <span class="lineNum">     108 </span>            :   using TE = TensorExpression&lt;Tensor&lt;X, Symm, tmpl::list&lt;Indices...&gt;&gt;, X, Symm,
 <a name="109"><span class="lineNum">     109 </span>            :                               tmpl::list&lt;Indices...&gt;, ArgsLs&gt;;</a>
 <a name="110"><span class="lineNum">     110 </span>            : </a>
-<a name="111"><span class="lineNum">     111 </span><span class="lineCov">        105 :   Tensor() = default;</span></a>
+<a name="111"><span class="lineNum">     111 </span><span class="lineCov">        107 :   Tensor() = default;</span></a>
 <a name="112"><span class="lineNum">     112 </span><span class="lineCov">      43264 :   ~Tensor() = default;</span></a>
 <span class="lineNum">     113 </span><span class="lineCov">          5 :   Tensor(const Tensor&amp;) = default;</span>
 <span class="lineNum">     114 </span><span class="lineCov">          6 :   Tensor(Tensor&amp;&amp;) noexcept = default;  // NOLINT</span>
@@ -287,12 +287,12 @@
 <span class="lineNum">     217 </span><span class="lineCov">       1680 :     return gsl::at(data_, structure::get_storage_index(n...));</span>
 <a name="218"><span class="lineNum">     218 </span>            :   }</a>
 <span class="lineNum">     219 </span>            :   template &lt;typename... N&gt;
-<span class="lineNum">     220 </span><span class="lineCov">        168 :   constexpr const_reference get(N... n) const {</span>
+<span class="lineNum">     220 </span><span class="lineCov">        235 :   constexpr const_reference get(N... n) const {</span>
 <span class="lineNum">     221 </span>            :     static_assert(
 <span class="lineNum">     222 </span>            :         sizeof...(Indices) == sizeof...(N),
 <span class="lineNum">     223 </span>            :         &quot;the number of tensor indices specified must match the rank of &quot;
 <span class="lineNum">     224 </span>            :         &quot;the tensor&quot;);
-<span class="lineNum">     225 </span><span class="lineCov">        504 :     return gsl::at(data_, structure::get_storage_index(n...));</span>
+<span class="lineNum">     225 </span><span class="lineCov">        705 :     return gsl::at(data_, structure::get_storage_index(n...));</span>
 <span class="lineNum">     226 </span>            :   }
 <span class="lineNum">     227 </span>            :   // @}
 <span class="lineNum">     228 </span>            : 
@@ -303,14 +303,14 @@
 <span class="lineNum">     233 </span>            :     static_assert(sizeof...(Indices) == sizeof...(N),
 <span class="lineNum">     234 </span>            :                   &quot;the number of tensor indices specified must match the rank &quot;
 <span class="lineNum">     235 </span>            :                   &quot;of the tensor&quot;);
-<span class="lineNum">     236 </span><span class="lineCov">    5821592 :     return gsl::at(data_, structure::template get_storage_index&lt;N...&gt;());</span>
+<span class="lineNum">     236 </span><span class="lineCov">    5821606 :     return gsl::at(data_, structure::template get_storage_index&lt;N...&gt;());</span>
 <span class="lineNum">     237 </span>            :   }
 <span class="lineNum">     238 </span>            :   template &lt;int... N&gt;
 <span class="lineNum">     239 </span>            :   SPECTRE_ALWAYS_INLINE constexpr const_reference get() const {
 <span class="lineNum">     240 </span>            :     static_assert(sizeof...(Indices) == sizeof...(N),
 <span class="lineNum">     241 </span>            :                   &quot;the number of tensor indices specified must match the rank &quot;
 <span class="lineNum">     242 </span>            :                   &quot;of the tensor&quot;);
-<span class="lineNum">     243 </span><span class="lineCov">     222426 :     return gsl::at(data_, structure::template get_storage_index&lt;N...&gt;());</span>
+<span class="lineNum">     243 </span><span class="lineCov">     222420 :     return gsl::at(data_, structure::template get_storage_index&lt;N...&gt;());</span>
 <span class="lineNum">     244 </span>            :   }
 <span class="lineNum">     245 </span>            :   // @}
 <span class="lineNum">     246 </span>            : 
@@ -502,8 +502,8 @@
 <span class="lineNum">     432 </span>            : template &lt;typename X, typename Symm, template &lt;typename...&gt; class IndexLs,
 <a name="433"><span class="lineNum">     433 </span>            :           typename... Indices&gt;</a>
 <span class="lineNum">     434 </span>            : template &lt;size_t NumberOfIndices, std::enable_if_t&lt;(NumberOfIndices == 1)&gt;*&gt;
-<span class="lineNum">     435 </span><span class="lineCov">        270 : Tensor&lt;X, Symm, IndexLs&lt;Indices...&gt;&gt;::Tensor(storage_type data)</span>
-<span class="lineNum">     436 </span><span class="lineCov">        270 :     : data_(std::move(data)) {}</span>
+<span class="lineNum">     435 </span><span class="lineCov">        273 : Tensor&lt;X, Symm, IndexLs&lt;Indices...&gt;&gt;::Tensor(storage_type data)</span>
+<span class="lineNum">     436 </span><span class="lineCov">        273 :     : data_(std::move(data)) {}</span>
 <span class="lineNum">     437 </span>            : 
 <span class="lineNum">     438 </span>            : // The cpp17::disjunction is used to prevent the compiler from matching this
 <span class="lineNum">     439 </span>            : // function when it should select the move constructor.
@@ -515,8 +515,8 @@
 <span class="lineNum">     445 </span>            :         cpp17::disjunction_v&lt;std::is_same&lt;Tensor&lt;X, Symm, IndexLs&lt;Indices...&gt;&gt;,
 <a name="446"><span class="lineNum">     446 </span>            :                                           std::decay_t&lt;Args&gt;&gt;...&gt; and</a>
 <span class="lineNum">     447 </span>            :         sizeof...(Args) == 1)&gt;*&gt;
-<span class="lineNum">     448 </span><span class="lineCov">      43274 : Tensor&lt;X, Symm, IndexLs&lt;Indices...&gt;&gt;::Tensor(Args&amp;&amp;... args)</span>
-<span class="lineNum">     449 </span><span class="lineCov">      86548 :     : data_(make_array&lt;size()&gt;(X(std::forward&lt;Args&gt;(args)...))) {}</span>
+<span class="lineNum">     448 </span><span class="lineCov">      43275 : Tensor&lt;X, Symm, IndexLs&lt;Indices...&gt;&gt;::Tensor(Args&amp;&amp;... args)</span>
+<span class="lineNum">     449 </span><span class="lineCov">      86550 :     : data_(make_array&lt;size()&gt;(X(std::forward&lt;Args&gt;(args)...))) {}</span>
 <span class="lineNum">     450 </span>            : 
 <span class="lineNum">     451 </span>            : template &lt;typename X, typename Symm, template &lt;typename...&gt; class IndexLs,
 <a name="452"><span class="lineNum">     452 </span>            :           typename... Indices&gt;</a>

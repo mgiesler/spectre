@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 9794fbf26bf13262f9aad49b35dbc8e767fb575f - Utilities/PointerVector.hpp</title>
+  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - Utilities/PointerVector.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/9794fbf26bf13262f9aad49b35dbc8e767fb575f">9794fbf26bf13262f9aad49b35dbc8e767fb575f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">171</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-24 02:15:04</td>
+            <td class="headerValue">2017-07-25 02:16:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">66</td>
@@ -242,7 +242,7 @@
 <a name="172"><span class="lineNum">     172 </span>            :   enum : bool { smpAssignable = !blaze::IsSMPAssignable&lt;Type&gt;::value };</a>
 <a name="173"><span class="lineNum">     173 </span>            : </a>
 <span class="lineNum">     174 </span><span class="lineCov">        254 :   PointerVector() = default;</span>
-<span class="lineNum">     175 </span><span class="lineCov">      43817 :   PointerVector(Type* ptr, size_t size) : v_(ptr), size_(size) {}</span>
+<span class="lineNum">     175 </span><span class="lineCov">      43820 :   PointerVector(Type* ptr, size_t size) : v_(ptr), size_(size) {}</span>
 <span class="lineNum">     176 </span>            :   PointerVector(const PointerVector&amp; /*rhs*/) = default;
 <span class="lineNum">     177 </span>            :   PointerVector&amp; operator=(const PointerVector&amp; /*rhs*/) = default;
 <span class="lineNum">     178 </span>            :   PointerVector(PointerVector&amp;&amp; /*rhs*/) = default;
@@ -252,7 +252,7 @@
 <a name="182"><span class="lineNum">     182 </span>            :   /*!\name Data access functions */</a>
 <a name="183"><span class="lineNum">     183 </span>            :   //@{</a>
 <span class="lineNum">     184 </span><span class="lineCov">    2869876 :   Type&amp; operator[](const size_t i) noexcept { return v_[i]; }</span>
-<span class="lineNum">     185 </span><span class="lineCov">    8284429 :   const Type&amp; operator[](const size_t i) const noexcept { return v_[i]; }</span>
+<span class="lineNum">     185 </span><span class="lineCov">    8284619 :   const Type&amp; operator[](const size_t i) const noexcept { return v_[i]; }</span>
 <a name="186"><span class="lineNum">     186 </span>            :   inline Reference at(size_t index);</a>
 <a name="187"><span class="lineNum">     187 </span>            :   inline ConstReference at(size_t index) const;</a>
 <a name="188"><span class="lineNum">     188 </span><span class="lineCov">      43030 :   Pointer data() noexcept { return v_; }</span></a>
@@ -306,7 +306,7 @@
 <span class="lineNum">     236 </span>            : 
 <a name="237"><span class="lineNum">     237 </span>            :   size_t spacing() const noexcept { return size_; }</a>
 <span class="lineNum">     238 </span>            : 
-<span class="lineNum">     239 </span><span class="lineCov">        856 :   size_t size() const noexcept { return size_; }</span>
+<span class="lineNum">     239 </span><span class="lineCov">        867 :   size_t size() const noexcept { return size_; }</span>
 <span class="lineNum">     240 </span>            :   //@}
 <span class="lineNum">     241 </span>            : 
 <span class="lineNum">     242 </span>            :   /*!\name Resource management functions */

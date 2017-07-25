@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 9794fbf26bf13262f9aad49b35dbc8e767fb575f - DataStructures/DataVector.cpp</title>
+  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - DataStructures/DataVector.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/9794fbf26bf13262f9aad49b35dbc8e767fb575f">9794fbf26bf13262f9aad49b35dbc8e767fb575f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">63</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-24 02:15:04</td>
+            <td class="headerValue">2017-07-25 02:16:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -77,10 +77,10 @@
 <span class="lineNum">       7 </span>            : 
 <a name="8"><span class="lineNum">       8 </span>            : #include &quot;Utilities/StdHelpers.hpp&quot;</a>
 <span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">      43469 : DataVector::DataVector(const size_t size, const double value)</span>
+<span class="lineNum">      10 </span><span class="lineCov">      43472 : DataVector::DataVector(const size_t size, const double value)</span>
 <span class="lineNum">      11 </span>            :     : size_(size),
 <span class="lineNum">      12 </span>            :       owned_data_(size_, value),
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">      43469 :       data_(owned_data_.data(), size_) {}</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineCov">      43472 :       data_(owned_data_.data(), size_) {}</span></a>
 <span class="lineNum">      14 </span>            : 
 <span class="lineNum">      15 </span><span class="lineCov">         22 : DataVector::DataVector(std::initializer_list&lt;double&gt; list)</span>
 <a name="16"><span class="lineNum">      16 </span><span class="lineCov">         22 :     : size_(list.size()), owned_data_(list), data_(owned_data_.data(), size_) {}</span></a>

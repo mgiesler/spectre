@@ -27,7 +27,9 @@ var searchData=
   ['number_5fof_5fdigits',['number_of_digits',['../group__Utilities.html#ga1eed7cb45692393b257c3987070d1da2',1,'Math.hpp']]],
   ['number_5fof_5fgrid_5fpoints',['number_of_grid_points',['../classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#aa7a324dba42b8df39e11c9ad3b258967',1,'Variables&lt; tmpl::list&lt; Tags... &gt; &gt;']]],
   ['number_5fof_5fnodes',['number_of_nodes',['../group__Parallel.html#gaf999b9700ece84fca6cb82bb1ee9f3f2',1,'Parallel']]],
+  ['number_5fof_5fpast_5fsteps',['number_of_past_steps',['../classTimeSteppers_1_1AdamsBashforthN.html#a7abc131033f9f4d4978084930d769834',1,'TimeSteppers::AdamsBashforthN::number_of_past_steps()'],['../classTimeSteppers_1_1RungeKutta3.html#a46ddbf6d4c8f741dabf2f82a7db35b28',1,'TimeSteppers::RungeKutta3::number_of_past_steps()'],['../classTimeStepper.html#a7cb129519c7e2a1f0b324436ebb6f86d',1,'TimeStepper::number_of_past_steps()']]],
   ['number_5fof_5fprocs',['number_of_procs',['../group__Parallel.html#ga537d2cc78336566826c93c49f82746a8',1,'Parallel']]],
+  ['number_5fof_5fsubsteps',['number_of_substeps',['../classTimeSteppers_1_1AdamsBashforthN.html#a9108ec398371ad27b7611a1b5dfcc7c5',1,'TimeSteppers::AdamsBashforthN::number_of_substeps()'],['../classTimeSteppers_1_1RungeKutta3.html#a03a09e23a8cd0c764498780a07776f2d',1,'TimeSteppers::RungeKutta3::number_of_substeps()'],['../classTimeStepper.html#a8125ccc30db12266f528745349689e4f',1,'TimeStepper::number_of_substeps()']]],
   ['numpunct',['numpunct',['http://en.cppreference.com/w/cpp/locale/numpunct/numpunct.html',1,'std::numpunct']]],
   ['numpunct_5fbyname',['numpunct_byname',['http://en.cppreference.com/w/cpp/locale/numpunct_byname.html',1,'std::numpunct_byname']]]
 ];

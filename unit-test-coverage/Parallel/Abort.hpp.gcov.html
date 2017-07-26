@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - Parallel/Abort.hpp</title>
+  <title>LCOV - e1356bd2d3fce54f9e58d67bcbad40dbd1677077 - Parallel/Abort.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e1356bd2d3fce54f9e58d67bcbad40dbd1677077">e1356bd2d3fce54f9e58d67bcbad40dbd1677077</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">2</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-25 02:16:34</td>
+            <td class="headerValue">2017-07-26 02:16:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -84,8 +84,8 @@
 <span class="lineNum">      14 </span>            : 
 <a name="15"><span class="lineNum">      15 </span>            : /// \ingroup Parallel</a>
 <span class="lineNum">      16 </span>            : /// Abort the program with an error message.
-<span class="lineNum">      17 </span><span class="lineCov">         81 : [[noreturn]] inline void abort(const std::string&amp; message) {</span>
-<span class="lineNum">      18 </span><span class="lineCov">         81 :   CkAbort(message.c_str());</span>
+<span class="lineNum">      17 </span><span class="lineCov">        193 : [[noreturn]] inline void abort(const std::string&amp; message) {</span>
+<span class="lineNum">      18 </span><span class="lineCov">        193 :   CkAbort(message.c_str());</span>
 <span class="lineNum">      19 </span>            :   // the following call is never reached, but suppresses the warning that
 <span class="lineNum">      20 </span>            :   // a 'noreturn' functions does return
 <span class="lineNum">      21 </span>            :   std::terminate();  // LCOV_EXCL_LINE

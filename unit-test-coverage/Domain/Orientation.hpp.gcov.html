@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd - Domain/Orientation.hpp</title>
+  <title>LCOV - e1356bd2d3fce54f9e58d67bcbad40dbd1677077 - Domain/Orientation.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd">6db2f5dd1df1ddb8eb992586a347e8a3e8f120bd</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e1356bd2d3fce54f9e58d67bcbad40dbd1677077">e1356bd2d3fce54f9e58d67bcbad40dbd1677077</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">13</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-25 02:16:34</td>
+            <td class="headerValue">2017-07-26 02:16:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -145,10 +145,10 @@
 <span class="lineNum">      75 </span>            :                          const Orientation&lt;VolumeDim&gt;&amp; orientation);
 <a name="76"><span class="lineNum">      76 </span>            : </a>
 <span class="lineNum">      77 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      78 </span><span class="lineCov">         33 : bool operator==(const Orientation&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">      78 </span><span class="lineCov">         32 : bool operator==(const Orientation&lt;VolumeDim&gt;&amp; lhs,</span>
 <span class="lineNum">      79 </span>            :                 const Orientation&lt;VolumeDim&gt;&amp; rhs) noexcept {
-<span class="lineNum">      80 </span><span class="lineCov">         62 :   return (lhs.mapped_directions_ == rhs.mapped_directions_ and</span>
-<span class="lineNum">      81 </span><span class="lineCov">         62 :           lhs.is_aligned_ == rhs.is_aligned_);</span>
+<span class="lineNum">      80 </span><span class="lineCov">         61 :   return (lhs.mapped_directions_ == rhs.mapped_directions_ and</span>
+<span class="lineNum">      81 </span><span class="lineCov">         61 :           lhs.is_aligned_ == rhs.is_aligned_);</span>
 <span class="lineNum">      82 </span>            : }
 <a name="83"><span class="lineNum">      83 </span>            : </a>
 <span class="lineNum">      84 </span>            : template &lt;size_t VolumeDim&gt;

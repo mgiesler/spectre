@@ -121,7 +121,7 @@ var searchData=
   ['do_5fwiden',['do_widen',['http://en.cppreference.com/w/cpp/locale/ctype/widen.html',1,'std::ctype::do_widen()'],['http://en.cppreference.com/w/cpp/locale/ctype/widen.html',1,'std::ctype_byname::do_widen()']]],
   ['domain_5ferror',['domain_error',['http://en.cppreference.com/w/cpp/error/domain_error.html',1,'std::domain_error'],['http://en.cppreference.com/w/cpp/error/domain_error.html',1,'std::domain_error::domain_error()']]],
   ['domain_20creators',['Domain Creators',['../group__DomainCreators.html',1,'']]],
-  ['duration',['duration',['http://en.cppreference.com/w/cpp/chrono/duration.html',1,'std::chrono::duration'],['http://en.cppreference.com/w/cpp/chrono/duration/duration.html',1,'std::chrono::duration::duration()']]],
+  ['duration',['duration',['http://en.cppreference.com/w/cpp/chrono/duration.html',1,'std::chrono::duration'],['http://en.cppreference.com/w/cpp/chrono/duration/duration.html',1,'std::chrono::duration::duration()'],['../classSlab.html#a7ed34eb406b0c49a9497172162d33b8c',1,'Slab::duration()']]],
   ['duration_5fcast',['duration_cast',['http://en.cppreference.com/w/cpp/chrono/duration/duration_cast.html',1,'std::chrono']]],
   ['duration_5fvalues',['duration_values',['http://en.cppreference.com/w/cpp/chrono/duration_values.html',1,'std::chrono']]],
   ['documentation_20overview',['Documentation Overview',['../index.html',1,'']]]

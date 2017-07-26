@@ -1,0 +1,191 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: src/Time/TimeSteppers/TimeStepper.hpp Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_6d42c479b681f7aa7aab0056c47bbf92.html">Time</a></li><li class="navelem"><a class="el" href="dir_1e22b2075e2afbf9d423851024810a20.html">TimeSteppers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TimeStepper.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="TimeStepper_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Distributed under the MIT License.</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// See LICENSE.txt for details.</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/deque.html">deque</a>&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/tuple.html">tuple</a>&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Time_8hpp.html">Time/Time.hpp</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FakeVirtual_8hpp.html">Utilities/FakeVirtual.hpp</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceTimeSteppers.html">TimeSteppers</a> {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">class </span>AdamsBashforthN;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">class </span>RungeKutta3;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}  <span class="comment">// namespace TimeSteppers</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceTimeStepper__detail.html">TimeStepper_detail</a> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<a class="code" href="group__Utilities.html#ga265f35910bd218c59dd33acffe0c0b69">DEFINE_FAKE_VIRTUAL</a>(update_u)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}  <span class="comment">// namespace TimeStepper_detail</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classTimeStepper.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeStepper.html">TimeStepper</a> <span class="comment">/*: public Factory&lt;TimeStepper&gt;*/</span> {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; <span class="keyword">public</span>:</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classTimeStepper.html#a1f6563e5c89738cecb15bd0ede9792f4">   32</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classTimeStepper.html#a1f6563e5c89738cecb15bd0ede9792f4">Inherit</a> = TimeStepper_detail::FakeVirtualInherit_update_u&lt;TimeStepper&gt;;</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classTimeStepper.html#a8b79bad7274f7d8e7c9ed68a7e5f422a">   33</a></span>&#160;  <span class="keyword">static</span> <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> <a class="code" href="classTimeStepper.html#a8b79bad7274f7d8e7c9ed68a7e5f422a">class_id</a>() noexcept { <span class="keywordflow">return</span> <span class="stringliteral">&quot;TimeStepper&quot;</span>; }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">using</span> <a class="code" href="classTimeStepper.html#a534027b9836116ca99cec2ffcc0611e7">creatable_classes</a> = <a class="code" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a>&lt;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <a class="code" href="classTimeSteppers_1_1AdamsBashforthN.html">TimeSteppers::AdamsBashforthN</a>,</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classTimeStepper.html#a534027b9836116ca99cec2ffcc0611e7">   36</a></span>&#160;      <a class="code" href="classTimeSteppers_1_1RungeKutta3.html">TimeSteppers::RungeKutta3</a>&gt;;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classTimeStepper.html">TimeStepper</a>() noexcept = default;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="classTimeStepper.html">TimeStepper</a>(const <a class="code" href="classTimeStepper.html">TimeStepper</a>&amp;) noexcept = default;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classTimeStepper.html">TimeStepper</a>&amp; operator=(const <a class="code" href="classTimeStepper.html">TimeStepper</a>&amp;) noexcept = default;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classTimeStepper.html">TimeStepper</a>(<a class="code" href="classTimeStepper.html">TimeStepper</a>&amp;&amp;) noexcept = default;             <span class="comment">// NOLINT</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classTimeStepper.html">TimeStepper</a>&amp; operator=(<a class="code" href="classTimeStepper.html">TimeStepper</a>&amp;&amp;) noexcept = default;  <span class="comment">// NOLINT</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  virtual ~<a class="code" href="classTimeStepper.html">TimeStepper</a>() noexcept = default;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  template &lt;typename Vars, typename DerivVars&gt;</div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classTimeStepper.html#af72ec04ba8f5987e8a4f93adf6b12a91">   53</a></span>&#160;  <a class="code" href="classTimeDelta.html">TimeDelta</a> update_u(</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      Vars&amp; u,</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      const <a class="code" href="namespacestd.html">std</a>::deque&lt;<a class="code" href="namespacestd.html">std</a>::tuple&lt;Vars, DerivVars, <a class="code" href="classTimeDelta.html">TimeDelta</a>&gt;&gt;&amp; history,</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      const <a class="code" href="classTimeDelta.html">TimeDelta</a>&amp; time_step) const noexcept {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> TimeStepper_detail::fake_virtual_update_u&lt;creatable_classes&gt;(</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">this</span>, u, history, time_step);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> number_of_substeps() <span class="keyword">const</span> noexcept = 0;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> number_of_past_steps() <span class="keyword">const</span> noexcept = 0;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> is_self_starting() <span class="keyword">const</span> noexcept = 0;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> stable_step() <span class="keyword">const</span> noexcept = 0;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AdamsBashforthN_8hpp.html">Time/TimeSteppers/AdamsBashforthN.hpp</a>&quot;</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RungeKutta3_8hpp.html">Time/TimeSteppers/RungeKutta3.hpp</a>&quot;</span></div><div class="ttc" id="classTimeStepper_html_a1f6563e5c89738cecb15bd0ede9792f4"><div class="ttname"><a href="classTimeStepper.html#a1f6563e5c89738cecb15bd0ede9792f4">TimeStepper::Inherit</a></div><div class="ttdeci">TimeStepper_detail::FakeVirtualInherit_update_u&lt; TimeStepper &gt; Inherit</div><div class="ttdef"><b>Definition:</b> TimeStepper.hpp:32</div></div>
+<div class="ttc" id="classTimeStepper_html"><div class="ttname"><a href="classTimeStepper.html">TimeStepper</a></div><div class="ttdoc">Abstract base class for TimeSteppers. </div><div class="ttdef"><b>Definition:</b> TimeStepper.hpp:30</div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="classTimeStepper_html_a8b79bad7274f7d8e7c9ed68a7e5f422a"><div class="ttname"><a href="classTimeStepper.html#a8b79bad7274f7d8e7c9ed68a7e5f422a">TimeStepper::class_id</a></div><div class="ttdeci">static std::string class_id() noexcept</div><div class="ttdef"><b>Definition:</b> TimeStepper.hpp:33</div></div>
+<div class="ttc" id="basic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
+<div class="ttc" id="group__Utilities_html_ga4dabf6319ff36d72095831fba701afc1"><div class="ttname"><a href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a></div><div class="ttdeci">tmpl::list&lt; Ts... &gt; typelist</div><div class="ttdoc">Construct a typelist of types Ts. </div><div class="ttdef"><b>Definition:</b> TMPL.hpp:470</div></div>
+<div class="ttc" id="Time_8hpp_html"><div class="ttname"><a href="Time_8hpp.html">Time.hpp</a></div><div class="ttdoc">Defines Time and TimeDelta. </div></div>
+<div class="ttc" id="deque_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/deque.html">deque</a></div></div>
+<div class="ttc" id="RungeKutta3_8hpp_html"><div class="ttname"><a href="RungeKutta3_8hpp.html">RungeKutta3.hpp</a></div><div class="ttdoc">Defines class RungeKutta3. </div></div>
+<div class="ttc" id="classTimeDelta_html"><div class="ttname"><a href="classTimeDelta.html">TimeDelta</a></div><div class="ttdoc">Represents an interval of time within a single slab. </div><div class="ttdef"><b>Definition:</b> Time.hpp:73</div></div>
+<div class="ttc" id="group__Utilities_html_ga265f35910bd218c59dd33acffe0c0b69"><div class="ttname"><a href="group__Utilities.html#ga265f35910bd218c59dd33acffe0c0b69">DEFINE_FAKE_VIRTUAL</a></div><div class="ttdeci">#define DEFINE_FAKE_VIRTUAL(function)</div><div class="ttdoc">Define a function that acts similarly to a virtual function, but can take template parameters...</div><div class="ttdef"><b>Definition:</b> FakeVirtual.hpp:46</div></div>
+<div class="ttc" id="tuple_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/tuple.html">tuple</a></div></div>
+<div class="ttc" id="FakeVirtual_8hpp_html"><div class="ttname"><a href="FakeVirtual_8hpp.html">FakeVirtual.hpp</a></div></div>
+<div class="ttc" id="AdamsBashforthN_8hpp_html"><div class="ttname"><a href="AdamsBashforthN_8hpp.html">AdamsBashforthN.hpp</a></div><div class="ttdoc">Defines class AdamsBashforthN. </div></div>
+<div class="ttc" id="classTimeSteppers_1_1RungeKutta3_html"><div class="ttname"><a href="classTimeSteppers_1_1RungeKutta3.html">TimeSteppers::RungeKutta3</a></div><div class="ttdoc">A &quot;strong stability-preserving&quot; 3rd-order Runge-Kutta time-stepper. Major reference: J...</div><div class="ttdef"><b>Definition:</b> RungeKutta3.hpp:24</div></div>
+<div class="ttc" id="namespaceTimeSteppers_html"><div class="ttname"><a href="namespaceTimeSteppers.html">TimeSteppers</a></div><div class="ttdoc">Holds classes that take time steps. </div><div class="ttdef"><b>Definition:</b> AdamsBashforthN.cpp:10</div></div>
+<div class="ttc" id="namespaceTimeStepper__detail_html"><div class="ttname"><a href="namespaceTimeStepper__detail.html">TimeStepper_detail</a></div><div class="ttdef"><b>Definition:</b> TimeStepper.hpp:23</div></div>
+<div class="ttc" id="classTimeSteppers_1_1AdamsBashforthN_html"><div class="ttname"><a href="classTimeSteppers_1_1AdamsBashforthN.html">TimeSteppers::AdamsBashforthN</a></div><div class="ttdoc">An Nth Adams-Bashforth time stepper. </div><div class="ttdef"><b>Definition:</b> AdamsBashforthN.hpp:28</div></div>
+<div class="ttc" id="classTimeStepper_html_a534027b9836116ca99cec2ffcc0611e7"><div class="ttname"><a href="classTimeStepper.html#a534027b9836116ca99cec2ffcc0611e7">TimeStepper::creatable_classes</a></div><div class="ttdeci">typelist&lt; TimeSteppers::AdamsBashforthN, TimeSteppers::RungeKutta3 &gt; creatable_classes</div><div class="ttdef"><b>Definition:</b> TimeStepper.hpp:36</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

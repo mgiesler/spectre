@@ -8,6 +8,8 @@ var searchData=
   ['shared_5fmutex',['shared_mutex',['http://en.cppreference.com/w/cpp/header/shared_mutex.html',1,'']]],
   ['side_2ecpp',['Side.cpp',['../Side_8cpp.html',1,'']]],
   ['side_2ehpp',['Side.hpp',['../Side_8hpp.html',1,'']]],
+  ['slab_2ecpp',['Slab.cpp',['../Slab_8cpp.html',1,'']]],
+  ['slab_2ehpp',['Slab.hpp',['../Slab_8hpp.html',1,'']]],
   ['sliceiterator_2ecpp',['SliceIterator.cpp',['../SliceIterator_8cpp.html',1,'']]],
   ['sliceiterator_2ehpp',['SliceIterator.hpp',['../SliceIterator_8hpp.html',1,'']]],
   ['sstream',['sstream',['http://en.cppreference.com/w/cpp/header/sstream.html',1,'']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['rational_5ft',['rational_t',['../classTime.html#a972879e4b28f729ceb318816b22366c8',1,'Time::rational_t()'],['../classTimeDelta.html#aaf35c2b99dc7590139719682b6d5200e',1,'TimeDelta::rational_t()']]],
   ['reference',['reference',['../classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a37b572a2daa5ce85f049a5cd1faefd7d',1,'Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;']]],
   ['remove_5ftags_5ffrom_5fkeep_5ftags',['remove_tags_from_keep_tags',['../group__DataBoxGroup.html#ga83130cc62cdf8bc37abf06f30bccb628',1,'db']]],
   ['removetags',['RemoveTags',['../group__DataBoxGroup.html#gadf6bf67ad628b138f450dbdbdedf76da',1,'db']]],

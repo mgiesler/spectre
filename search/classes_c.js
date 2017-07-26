@@ -9,7 +9,7 @@ var searchData=
   ['make_5fsigned_5ft',['make_signed_t',['http://en.cppreference.com/w/cpp/types/make_signed.html',1,'std']]],
   ['make_5funsigned',['make_unsigned',['http://en.cppreference.com/w/cpp/types/make_unsigned.html',1,'std']]],
   ['make_5funsigned_5ft',['make_unsigned_t',['http://en.cppreference.com/w/cpp/types/make_unsigned.html',1,'std']]],
-  ['map',['map',['http://en.cppreference.com/w/cpp/container/map.html',1,'std::pmr::map'],['http://en.cppreference.com/w/cpp/container/map.html',1,'std::map']]],
+  ['map',['map',['http://en.cppreference.com/w/cpp/container/map.html',1,'std::map'],['http://en.cppreference.com/w/cpp/container/map.html',1,'std::pmr::map']]],
   ['mask',['mask',['http://en.cppreference.com/w/cpp/locale/ctype_base.html',1,'std::ctype::mask'],['http://en.cppreference.com/w/cpp/locale/ctype_base.html',1,'std::ctype_base::mask'],['http://en.cppreference.com/w/cpp/locale/ctype_base.html',1,'std::ctype_byname::mask']]],
   ['mask_5farray',['mask_array',['http://en.cppreference.com/w/cpp/numeric/valarray/mask_array.html',1,'std']]],
   ['match_5fresults',['match_results',['http://en.cppreference.com/w/cpp/regex/match_results.html',1,'std']]],
@@ -43,6 +43,6 @@ var searchData=
   ['mt19937_5f64',['mt19937_64',['http://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine.html',1,'std']]],
   ['multimap',['multimap',['http://en.cppreference.com/w/cpp/container/multimap.html',1,'std::multimap'],['http://en.cppreference.com/w/cpp/container/multimap.html',1,'std::pmr::multimap']]],
   ['multiplies',['multiplies',['http://en.cppreference.com/w/cpp/utility/functional/multiplies.html',1,'std']]],
-  ['multiset',['multiset',['http://en.cppreference.com/w/cpp/container/multiset.html',1,'std::multiset'],['http://en.cppreference.com/w/cpp/container/multiset.html',1,'std::pmr::multiset']]],
+  ['multiset',['multiset',['http://en.cppreference.com/w/cpp/container/multiset.html',1,'std::pmr::multiset'],['http://en.cppreference.com/w/cpp/container/multiset.html',1,'std::multiset']]],
   ['mutex',['mutex',['http://en.cppreference.com/w/cpp/thread/mutex.html',1,'std']]]
 ];

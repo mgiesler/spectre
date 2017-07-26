@@ -31,6 +31,7 @@ var searchData=
   ['formatted_5fstring',['formatted_string',['../group__Utilities.html#ga9a7c7ee897f581360154a3676d5f7ab9',1,'StdHelpers.hpp']]],
   ['forward_5flist',['forward_list',['http://en.cppreference.com/w/cpp/container/forward_list/forward_list.html',1,'std::forward_list::forward_list()'],['http://en.cppreference.com/w/cpp/container/forward_list/forward_list.html',1,'std::pmr::forward_list::forward_list()']]],
   ['frac_5fdigits',['frac_digits',['http://en.cppreference.com/w/cpp/locale/moneypunct/frac_digits.html',1,'std::moneypunct::frac_digits()'],['http://en.cppreference.com/w/cpp/locale/moneypunct/frac_digits.html',1,'std::moneypunct_byname::frac_digits()']]],
+  ['fraction',['fraction',['../classTime.html#aed10f4565d5539c164a375832ed6069f',1,'Time::fraction()'],['../classTimeDelta.html#a74c308dc9d2cce516c1af4def1da1b46',1,'TimeDelta::fraction()']]],
   ['freeze',['freeze',['http://en.cppreference.com/w/cpp/io/ostrstream/freeze.html',1,'std::ostrstream::freeze()'],['http://en.cppreference.com/w/cpp/io/strstream/freeze.html',1,'std::strstream::freeze()'],['http://en.cppreference.com/w/cpp/io/strstreambuf/freeze.html',1,'std::strstreambuf::freeze()']]],
   ['from_5fbytes',['from_bytes',['http://en.cppreference.com/w/cpp/locale/wstring_convert/from_bytes.html',1,'std::wstring_convert']]],
   ['from_5ftime_5ft',['from_time_t',['http://en.cppreference.com/w/cpp/chrono/system_clock/from_time_t.html',1,'std::chrono::system_clock']]],

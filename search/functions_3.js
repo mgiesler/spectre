@@ -82,6 +82,6 @@ var searchData=
   ['do_5funshift',['do_unshift',['http://en.cppreference.com/w/cpp/locale/codecvt/unshift.html',1,'std::codecvt::do_unshift()'],['http://en.cppreference.com/w/cpp/locale/codecvt/unshift.html',1,'std::codecvt_byname::do_unshift()'],['http://en.cppreference.com/w/cpp/locale/codecvt/unshift.html',1,'std::codecvt_utf16::do_unshift()'],['http://en.cppreference.com/w/cpp/locale/codecvt/unshift.html',1,'std::codecvt_utf8::do_unshift()'],['http://en.cppreference.com/w/cpp/locale/codecvt/unshift.html',1,'std::codecvt_utf8_utf16::do_unshift()']]],
   ['do_5fwiden',['do_widen',['http://en.cppreference.com/w/cpp/locale/ctype/widen.html',1,'std::ctype::do_widen()'],['http://en.cppreference.com/w/cpp/locale/ctype/widen.html',1,'std::ctype_byname::do_widen()']]],
   ['domain_5ferror',['domain_error',['http://en.cppreference.com/w/cpp/error/domain_error.html',1,'std::domain_error']]],
-  ['duration',['duration',['http://en.cppreference.com/w/cpp/chrono/duration/duration.html',1,'std::chrono::duration']]],
+  ['duration',['duration',['http://en.cppreference.com/w/cpp/chrono/duration/duration.html',1,'std::chrono::duration::duration()'],['../classSlab.html#a7ed34eb406b0c49a9497172162d33b8c',1,'Slab::duration()']]],
   ['duration_5fcast',['duration_cast',['http://en.cppreference.com/w/cpp/chrono/duration/duration_cast.html',1,'std::chrono']]]
 ];

@@ -1,0 +1,607 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: Time Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classTime-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Time Class Reference<div class="ingroups"><a class="el" href="group__TimeGroup.html">Time</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The time in a simulation. Times can be safely compared for exact equality as long as they do not belong to overlapping unequal slabs.  
+ <a href="classTime.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Time_8hpp_source.html">Time.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a972879e4b28f729ceb318816b22366c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">rational_t</a> = boost::rational&lt; ssize_t &gt;</td></tr>
+<tr class="separator:a972879e4b28f729ceb318816b22366c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a53999bba9e1e32f01b05356d055d638f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a53999bba9e1e32f01b05356d055d638f">Time</a> () noexcept</td></tr>
+<tr class="memdesc:a53999bba9e1e32f01b05356d055d638f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor gives an invalid <a class="el" href="classTime.html" title="The time in a simulation. Times can be safely compared for exact equality as long as they do not belo...">Time</a>.  <a href="#a53999bba9e1e32f01b05356d055d638f">More...</a><br /></td></tr>
+<tr class="separator:a53999bba9e1e32f01b05356d055d638f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c7fc5ad1ddfd8a1f58e8d1542e5e61"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a68c7fc5ad1ddfd8a1f58e8d1542e5e61">Time</a> (<a class="el" href="classSlab.html">Slab</a> <a class="el" href="classTime.html#ae38299b28d8e7263931560fe0d53fc8b">slab</a>, <a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">rational_t</a> <a class="el" href="classTime.html#aed10f4565d5539c164a375832ed6069f">fraction</a>) noexcept</td></tr>
+<tr class="memdesc:a68c7fc5ad1ddfd8a1f58e8d1542e5e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">A time a given fraction of the way through the given slab.  <a href="#a68c7fc5ad1ddfd8a1f58e8d1542e5e61">More...</a><br /></td></tr>
+<tr class="separator:a68c7fc5ad1ddfd8a1f58e8d1542e5e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a7ff313b94976ea8c9a2247941a97f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a17a7ff313b94976ea8c9a2247941a97f">with_slab</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;new_slab) const noexcept</td></tr>
+<tr class="memdesc:a17a7ff313b94976ea8c9a2247941a97f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the time to a different slab. The time must be at an end of the current slab and the new slab must share that endpoint.  <a href="#a17a7ff313b94976ea8c9a2247941a97f">More...</a><br /></td></tr>
+<tr class="separator:a17a7ff313b94976ea8c9a2247941a97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c8c55e27a0978f532824b24e4b2244"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#ad0c8c55e27a0978f532824b24e4b2244">value</a> () const noexcept</td></tr>
+<tr class="memdesc:ad0c8c55e27a0978f532824b24e4b2244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximate numerical value of the <a class="el" href="classTime.html" title="The time in a simulation. Times can be safely compared for exact equality as long as they do not belo...">Time</a>.  <a href="#ad0c8c55e27a0978f532824b24e4b2244">More...</a><br /></td></tr>
+<tr class="separator:ad0c8c55e27a0978f532824b24e4b2244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38299b28d8e7263931560fe0d53fc8b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#ae38299b28d8e7263931560fe0d53fc8b">slab</a> () const noexcept</td></tr>
+<tr class="separator:ae38299b28d8e7263931560fe0d53fc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed10f4565d5539c164a375832ed6069f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">rational_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aed10f4565d5539c164a375832ed6069f">fraction</a> () const noexcept</td></tr>
+<tr class="separator:aed10f4565d5539c164a375832ed6069f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1613227ea45b2852e6aaee422fbc18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a1f1613227ea45b2852e6aaee422fbc18">operator+=</a> (const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;delta) noexcept</td></tr>
+<tr class="separator:a1f1613227ea45b2852e6aaee422fbc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af726eb228c2e3e46582daf9dd0c469"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a2af726eb228c2e3e46582daf9dd0c469">operator-=</a> (const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;delta) noexcept</td></tr>
+<tr class="separator:a2af726eb228c2e3e46582daf9dd0c469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dde2b69e10d5bb341dad1ed162b0bc7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a4dde2b69e10d5bb341dad1ed162b0bc7">is_at_slab_start</a> () const noexcept</td></tr>
+<tr class="separator:a4dde2b69e10d5bb341dad1ed162b0bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620400464927d43df94fb8ede975cc58"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a620400464927d43df94fb8ede975cc58">is_at_slab_end</a> () const noexcept</td></tr>
+<tr class="separator:a620400464927d43df94fb8ede975cc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04af4fbd48e1771806d4aa2bf8acb0db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a04af4fbd48e1771806d4aa2bf8acb0db">is_at_slab_boundary</a> () const noexcept</td></tr>
+<tr class="separator:a04af4fbd48e1771806d4aa2bf8acb0db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5b90b6716b53c4daa39180a54ee9c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a3d5b90b6716b53c4daa39180a54ee9c6">pup</a> (PUP::er &amp;p) noexcept</td></tr>
+<tr class="separator:a3d5b90b6716b53c4daa39180a54ee9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a6aa1e6bcd10d41eea214de428b4f3ba1">TimeDelta</a></td></tr>
+<tr class="separator:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The time in a simulation. Times can be safely compared for exact equality as long as they do not belong to overlapping unequal slabs. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a972879e4b28f729ceb318816b22366c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a972879e4b28f729ceb318816b22366c8">&#9670;&nbsp;</a></span>rational_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">Time::rational_t</a> =  boost::rational&lt;ssize_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a53999bba9e1e32f01b05356d055d638f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53999bba9e1e32f01b05356d055d638f">&#9670;&nbsp;</a></span>Time() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Time::Time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor gives an invalid <a class="el" href="classTime.html" title="The time in a simulation. Times can be safely compared for exact equality as long as they do not belo...">Time</a>. </p>
+
+</div>
+</div>
+<a id="a68c7fc5ad1ddfd8a1f58e8d1542e5e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c7fc5ad1ddfd8a1f58e8d1542e5e61">&#9670;&nbsp;</a></span>Time() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Time::Time </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSlab.html">Slab</a>&#160;</td>
+          <td class="paramname"><em>slab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">rational_t</a>&#160;</td>
+          <td class="paramname"><em>fraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A time a given fraction of the way through the given slab. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aed10f4565d5539c164a375832ed6069f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed10f4565d5539c164a375832ed6069f">&#9670;&nbsp;</a></span>fraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classTime.html#a972879e4b28f729ceb318816b22366c8">rational_t</a>&amp; Time::fraction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespaceblaze.html#a0d9980b7d75b7c1f790f42874aaebb33">blaze::operator+=()</a>, and <a class="el" href="namespaceblaze.html#a458d8fd8ed8c94a74af9d44e8ecac344">blaze::operator-=()</a>.</p>
+
+</div>
+</div>
+<a id="a04af4fbd48e1771806d4aa2bf8acb0db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04af4fbd48e1771806d4aa2bf8acb0db">&#9670;&nbsp;</a></span>is_at_slab_boundary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Time::is_at_slab_boundary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a620400464927d43df94fb8ede975cc58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620400464927d43df94fb8ede975cc58">&#9670;&nbsp;</a></span>is_at_slab_end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Time::is_at_slab_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classTime.html#ad0c8c55e27a0978f532824b24e4b2244">value()</a>.</p>
+
+</div>
+</div>
+<a id="a4dde2b69e10d5bb341dad1ed162b0bc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dde2b69e10d5bb341dad1ed162b0bc7">&#9670;&nbsp;</a></span>is_at_slab_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Time::is_at_slab_start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f1613227ea45b2852e6aaee422fbc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1613227ea45b2852e6aaee422fbc18">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a> &amp; Time::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classTime.html#a17a7ff313b94976ea8c9a2247941a97f">with_slab()</a>.</p>
+
+</div>
+</div>
+<a id="a2af726eb228c2e3e46582daf9dd0c469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af726eb228c2e3e46582daf9dd0c469">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a> &amp; Time::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>delta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classTime.html#a17a7ff313b94976ea8c9a2247941a97f">with_slab()</a>.</p>
+
+</div>
+</div>
+<a id="a3d5b90b6716b53c4daa39180a54ee9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5b90b6716b53c4daa39180a54ee9c6">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Time::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae38299b28d8e7263931560fe0d53fc8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38299b28d8e7263931560fe0d53fc8b">&#9670;&nbsp;</a></span>slab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classSlab.html">Slab</a>&amp; Time::slab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad0c8c55e27a0978f532824b24e4b2244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c8c55e27a0978f532824b24e4b2244">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Time::value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Approximate numerical value of the <a class="el" href="classTime.html" title="The time in a simulation. Times can be safely compared for exact equality as long as they do not belo...">Time</a>. </p>
+
+<p class="reference">References <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">Slab::duration()</a>, and <a class="el" href="classTime.html#a620400464927d43df94fb8ede975cc58">is_at_slab_end()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>.</p>
+
+</div>
+</div>
+<a id="a17a7ff313b94976ea8c9a2247941a97f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a7ff313b94976ea8c9a2247941a97f">&#9670;&nbsp;</a></span>with_slab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a> Time::with_slab </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>new_slab</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move the time to a different slab. The time must be at an end of the current slab and the new slab must share that endpoint. </p>
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classTime.html#a1f1613227ea45b2852e6aaee422fbc18">operator+=()</a>, and <a class="el" href="classTime.html#a2af726eb228c2e3e46582daf9dd0c469">operator-=()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a6aa1e6bcd10d41eea214de428b4f3ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa1e6bcd10d41eea214de428b4f3ba1">&#9670;&nbsp;</a></span>TimeDelta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classTimeDelta.html">TimeDelta</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classTimeDelta.html#a6465ec69bf00aa0b4ae589ac04a64ab7">TimeDelta::operator-()</a>, and <a class="el" href="Time_8hpp.html#a7a29176d8ffe4822421f2a00ec4e44d3">operator-()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Time/<a class="el" href="Time_8hpp_source.html">Time.hpp</a></li>
+<li>src/Time/<a class="el" href="Time_8cpp.html">Time.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

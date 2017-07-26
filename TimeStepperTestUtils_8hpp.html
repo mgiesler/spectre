@@ -1,0 +1,512 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: tests/Unit/Time/TimeSteppers/TimeStepperTestUtils.hpp File Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b497178cadb39805d133065ab0572e16.html">tests</a></li><li class="navelem"><a class="el" href="dir_ce50313da0d2c933363a59ba466c07e3.html">Unit</a></li><li class="navelem"><a class="el" href="dir_ab06fd1674052606309c32dc23f72176.html">Time</a></li><li class="navelem"><a class="el" href="dir_ea632cdb489a890932f36285b32c4253.html">TimeSteppers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">TimeStepperTestUtils.hpp File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;catch.hpp&gt;</code><br />
+<code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/cmath.html">cmath</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/deque.html">deque</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/tuple.html">tuple</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Assert_8hpp_source.html">ErrorHandling/Assert.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Slab_8hpp_source.html">Time/Slab.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Time_8hpp_source.html">Time/Time.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ConstantExpressions_8hpp_source.html">Utilities/ConstantExpressions.hpp</a>&quot;</code><br />
+</div>
+<p><a href="TimeStepperTestUtils_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8a1bca4e7e3c713b2604275add6a6717"><td class="memTemplParams" colspan="2">template&lt;typename Stepper , typename F &gt; </td></tr>
+<tr class="memitem:a8a1bca4e7e3c713b2604275add6a6717"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#a8a1bca4e7e3c713b2604275add6a6717">take_step</a> (<a class="el" href="classTime.html">Time</a> &amp;time, double &amp;y, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; <a class="el" href="classTime.html">Time</a>, double, double &gt;&gt; &amp;history, const Stepper &amp;stepper, F &amp;&amp;rhs, const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;step_size) noexcept</td></tr>
+<tr class="separator:a8a1bca4e7e3c713b2604275add6a6717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca7a06d4b8500f16f6dd0b2a622fffc"><td class="memTemplParams" colspan="2">template&lt;typename Stepper , typename F1 , typename F2 &gt; </td></tr>
+<tr class="memitem:aaca7a06d4b8500f16f6dd0b2a622fffc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#aaca7a06d4b8500f16f6dd0b2a622fffc">initialize_history</a> (<a class="el" href="classTime.html">Time</a> time, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; <a class="el" href="classTime.html">Time</a>, double, double &gt;&gt; &amp;history, const Stepper &amp;stepper, F1 &amp;&amp;analytic, F2 &amp;&amp;rhs, <a class="el" href="classTimeDelta.html">TimeDelta</a> step_size) noexcept</td></tr>
+<tr class="separator:aaca7a06d4b8500f16f6dd0b2a622fffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac796f2b9bd9df9f6a6b843be308a937d"><td class="memTemplParams" colspan="2">template&lt;typename Stepper &gt; </td></tr>
+<tr class="memitem:ac796f2b9bd9df9f6a6b843be308a937d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#ac796f2b9bd9df9f6a6b843be308a937d">check_multistep_properties</a> (const Stepper &amp;stepper) noexcept</td></tr>
+<tr class="separator:ac796f2b9bd9df9f6a6b843be308a937d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4b9fd08e2d192f447d07da2fdd2b41"><td class="memTemplParams" colspan="2">template&lt;typename Stepper &gt; </td></tr>
+<tr class="memitem:adb4b9fd08e2d192f447d07da2fdd2b41"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#adb4b9fd08e2d192f447d07da2fdd2b41">check_substep_properties</a> (const Stepper &amp;stepper) noexcept</td></tr>
+<tr class="separator:adb4b9fd08e2d192f447d07da2fdd2b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe25149f186d01abfa10f8b9801256e"><td class="memTemplParams" colspan="2">template&lt;typename Stepper &gt; </td></tr>
+<tr class="memitem:aabe25149f186d01abfa10f8b9801256e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test</a> (const Stepper &amp;stepper, const double integration_time, const double epsilon) noexcept</td></tr>
+<tr class="separator:aabe25149f186d01abfa10f8b9801256e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8ae4d98d6d4b230c2ca3de2ea58e48"><td class="memTemplParams" colspan="2">template&lt;typename Stepper &gt; </td></tr>
+<tr class="memitem:abb8ae4d98d6d4b230c2ca3de2ea58e48"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test</a> (const Stepper &amp;stepper, const double epsilon) noexcept</td></tr>
+<tr class="separator:abb8ae4d98d6d4b230c2ca3de2ea58e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae1b98563e882ae56ededbf67840cd7"><td class="memTemplParams" colspan="2">template&lt;typename Stepper &gt; </td></tr>
+<tr class="memitem:a1ae1b98563e882ae56ededbf67840cd7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test</a> (const Stepper &amp;stepper) noexcept</td></tr>
+<tr class="separator:a1ae1b98563e882ae56ededbf67840cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac796f2b9bd9df9f6a6b843be308a937d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac796f2b9bd9df9f6a6b843be308a937d">&#9670;&nbsp;</a></span>check_multistep_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_multistep_properties </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb4b9fd08e2d192f447d07da2fdd2b41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4b9fd08e2d192f447d07da2fdd2b41">&#9670;&nbsp;</a></span>check_substep_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_substep_properties </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaca7a06d4b8500f16f6dd0b2a622fffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca7a06d4b8500f16f6dd0b2a622fffc">&#9670;&nbsp;</a></span>initialize_history()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper , typename F1 , typename F2 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initialize_history </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a>&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; <a class="el" href="classTime.html">Time</a>, double, double &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>history</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F1 &amp;&amp;&#160;</td>
+          <td class="paramname"><em>analytic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F2 &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTimeDelta.html">TimeDelta</a>&#160;</td>
+          <td class="paramname"><em>step_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test()</a>.</p>
+
+</div>
+</div>
+<a id="aabe25149f186d01abfa10f8b9801256e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe25149f186d01abfa10f8b9801256e">&#9670;&nbsp;</a></span>integrate_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void integrate_test </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>integration_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>epsilon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">Slab::duration()</a>, <a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">Slab::end()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#aaca7a06d4b8500f16f6dd0b2a622fffc">initialize_history()</a>, <a class="el" href="group__ConstantExpressions.html#ga4acefaccfb2d2ff1d491ac107f8bb2a8">square()</a>, <a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">Slab::start()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#a8a1bca4e7e3c713b2604275add6a6717">take_step()</a>, <a class="el" href="classTime.html#ad0c8c55e27a0978f532824b24e4b2244">Time::value()</a>, <a class="el" href="classSlab.html#abff95dd0be14d83ce9a0012979970005">Slab::with_duration_from_start()</a>, and <a class="el" href="classSlab.html#a280a4bf315fa71f92e43adaaa589d0ea">Slab::with_duration_to_end()</a>.</p>
+
+</div>
+</div>
+<a id="abb8ae4d98d6d4b230c2ca3de2ea58e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8ae4d98d6d4b230c2ca3de2ea58e48">&#9670;&nbsp;</a></span>integrate_variable_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void integrate_variable_test </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>epsilon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a117d991e2dff0d574471a9215d89c2a8">Slab::advance()</a>, <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">Slab::duration()</a>, <a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">Slab::end()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#aaca7a06d4b8500f16f6dd0b2a622fffc">initialize_history()</a>, <a class="el" href="group__ConstantExpressions.html#ga4acefaccfb2d2ff1d491ac107f8bb2a8">square()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#a8a1bca4e7e3c713b2604275add6a6717">take_step()</a>, <a class="el" href="classTime.html#ad0c8c55e27a0978f532824b24e4b2244">Time::value()</a>, <a class="el" href="classSlab.html#abff95dd0be14d83ce9a0012979970005">Slab::with_duration_from_start()</a>, and <a class="el" href="classSlab.html#a280a4bf315fa71f92e43adaaa589d0ea">Slab::with_duration_to_end()</a>.</p>
+
+</div>
+</div>
+<a id="a1ae1b98563e882ae56ededbf67840cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae1b98563e882ae56ededbf67840cd7">&#9670;&nbsp;</a></span>stability_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stability_test </td>
+          <td>(</td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">Slab::duration()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#aaca7a06d4b8500f16f6dd0b2a622fffc">initialize_history()</a>, <a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">Slab::start()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#a8a1bca4e7e3c713b2604275add6a6717">take_step()</a>, and <a class="el" href="classSlab.html#abff95dd0be14d83ce9a0012979970005">Slab::with_duration_from_start()</a>.</p>
+
+</div>
+</div>
+<a id="a8a1bca4e7e3c713b2604275add6a6717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1bca4e7e3c713b2604275add6a6717">&#9670;&nbsp;</a></span>take_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Stepper , typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void take_step </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; <a class="el" href="classTime.html">Time</a>, double, double &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>history</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Stepper &amp;&#160;</td>
+          <td class="paramname"><em>stepper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>step_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

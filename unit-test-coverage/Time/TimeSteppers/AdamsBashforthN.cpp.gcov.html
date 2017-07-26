@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - e1356bd2d3fce54f9e58d67bcbad40dbd1677077 - Time/TimeSteppers/AdamsBashforthN.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">SpECTRE Unit Test Code Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Time/TimeSteppers</a> - AdamsBashforthN.cpp<span style="font-size: 80%;"> (source / <a href="AdamsBashforthN.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e1356bd2d3fce54f9e58d67bcbad40dbd1677077">e1356bd2d3fce54f9e58d67bcbad40dbd1677077</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntry">75</td>
+            <td class="headerCovTableEntryHi">98.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-07-26 02:16:56</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Distributed under the MIT License.</a>
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : #include &quot;Time/TimeSteppers/AdamsBashforthN.hpp&quot;
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : #include &lt;algorithm&gt;
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : #include &quot;Utilities/Gsl.hpp&quot;
+<span class="lineNum">       9 </span>            : 
+<a name="10"><span class="lineNum">      10 </span>            : namespace TimeSteppers {</a>
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span><span class="lineCov">         56 : AdamsBashforthN::AdamsBashforthN(size_t target_order, bool self_start) noexcept</span>
+<span class="lineNum">      13 </span><span class="lineCov">         56 :     : target_order_(target_order), is_self_starting_(self_start) {</span>
+<span class="lineNum">      14 </span><span class="lineCov">         56 :   if (target_order_ &lt; 1 or target_order_ &gt; maximum_order) {</span>
+<span class="lineNum">      15 </span><span class="lineNoCov">          0 :     ERROR(&quot;The order for Adams-Bashforth Nth order must be 1 &lt;= order &lt;= &quot;</span>
+<span class="lineNum">      16 </span>            :           &lt;&lt; maximum_order);
+<span class="lineNum">      17 </span>            :   }
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">         56 : }</span></a>
+<span class="lineNum">      19 </span>            : 
+<span class="lineNum">      20 </span><span class="lineCov">     163452 : size_t AdamsBashforthN::number_of_substeps() const noexcept {</span>
+<span class="lineNum">      21 </span><span class="lineCov">     163452 :   return 1;</span>
+<a name="22"><span class="lineNum">      22 </span>            : }</a>
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span><span class="lineCov">     163532 : size_t AdamsBashforthN::number_of_past_steps() const noexcept {</span>
+<span class="lineNum">      25 </span><span class="lineCov">     163532 :   return target_order_ - 1;</span>
+<a name="26"><span class="lineNum">      26 </span>            : }</a>
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span><span class="lineCov">         64 : bool AdamsBashforthN::is_self_starting() const noexcept {</span>
+<span class="lineNum">      29 </span><span class="lineCov">         64 :   return is_self_starting_;</span>
+<a name="30"><span class="lineNum">      30 </span>            : }</a>
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span><span class="lineCov">         16 : double AdamsBashforthN::stable_step() const noexcept {</span>
+<span class="lineNum">      33 </span><span class="lineCov">         16 :   if (target_order_ == 1) {</span>
+<span class="lineNum">      34 </span><span class="lineCov">          2 :     return 1.;</span>
+<span class="lineNum">      35 </span>            :   }
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            :   // This is the condition that the characteristic polynomial of the
+<span class="lineNum">      38 </span>            :   // recurrence relation defined by the method has the correct sign at
+<span class="lineNum">      39 </span>            :   // -1.  It is not clear whether this is actually sufficient.
+<span class="lineNum">      40 </span><span class="lineCov">         28 :   const auto&amp; coefficients = gsl::at(coefficients_, target_order_ - 2);</span>
+<span class="lineNum">      41 </span><span class="lineCov">         14 :   double invstep = 0.;</span>
+<span class="lineNum">      42 </span><span class="lineCov">         14 :   double sign = 1.;</span>
+<span class="lineNum">      43 </span><span class="lineCov">        168 :   for (const auto coef : coefficients) {</span>
+<span class="lineNum">      44 </span><span class="lineCov">         70 :     invstep += sign * coef;</span>
+<span class="lineNum">      45 </span><span class="lineCov">         70 :     sign = -sign;</span>
+<span class="lineNum">      46 </span>            :   }
+<span class="lineNum">      47 </span><span class="lineCov">         14 :   return 1. / invstep;</span>
+<a name="48"><span class="lineNum">      48 </span>            : }</a>
+<span class="lineNum">      49 </span>            : 
+<span class="lineNum">      50 </span><span class="lineCov">      81718 : std::vector&lt;double&gt; AdamsBashforthN::get_coefficients_impl(</span>
+<span class="lineNum">      51 </span>            :     const std::vector&lt;double&gt;&amp; steps) noexcept {
+<span class="lineNum">      52 </span><span class="lineCov">      81718 :   const size_t order = steps.size();</span>
+<span class="lineNum">      53 </span><span class="lineCov">      81718 :   ASSERT(order &gt;= 1 and order &lt;= maximum_order, &quot;Bad order&quot; &lt;&lt; order);</span>
+<span class="lineNum">      54 </span><span class="lineCov">      81718 :   if (order == 1) {</span>
+<span class="lineNum">      55 </span><span class="lineCov">       9834 :     return {1.};</span>
+<a name="56"><span class="lineNum">      56 </span>            :   }</a>
+<span class="lineNum">      57 </span><span class="lineCov">      71884 :   if (std::all_of(steps.begin(), steps.end(),</span>
+<span class="lineNum">      58 </span><span class="lineCov">     320349 :                   [=](const double&amp; s) { return s == 1.; })) {</span>
+<span class="lineNum">      59 </span><span class="lineCov">     121386 :     return gsl::at(coefficients_, order - 2);</span>
+<span class="lineNum">      60 </span>            :   }
+<span class="lineNum">      61 </span>            : 
+<span class="lineNum">      62 </span><span class="lineCov">      11191 :   return variable_coefficients(steps);</span>
+<a name="63"><span class="lineNum">      63 </span>            : }</a>
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span><span class="lineCov">      11191 : std::vector&lt;double&gt; AdamsBashforthN::variable_coefficients(</span>
+<span class="lineNum">      66 </span>            :     const std::vector&lt;double&gt;&amp; steps) noexcept {
+<span class="lineNum">      67 </span><span class="lineCov">      11191 :   const size_t order = steps.size();</span>
+<span class="lineNum">      68 </span>            : 
+<span class="lineNum">      69 </span>            :   // polynomials[coefficient][term exponent]
+<span class="lineNum">      70 </span>            :   std::vector&lt;std::vector&lt;double&gt;&gt; polynomials(order,
+<span class="lineNum">      71 </span><span class="lineCov">      22382 :                                                std::vector&lt;double&gt;(order, 0.));</span>
+<span class="lineNum">      72 </span><span class="lineCov">      67095 :   for (auto&amp; poly : polynomials) {</span>
+<span class="lineNum">      73 </span><span class="lineCov">      55904 :     poly[0] = 1.;</span>
+<span class="lineNum">      74 </span>            :   }
+<span class="lineNum">      75 </span>            :   {
+<span class="lineNum">      76 </span><span class="lineCov">      11191 :     double step_sum = 0.;</span>
+<span class="lineNum">      77 </span><span class="lineCov">      67095 :     for (size_t m = 0; m &lt; order; ++m) {</span>
+<span class="lineNum">      78 </span><span class="lineCov">      55904 :       const double step = steps[order - m - 1];</span>
+<span class="lineNum">      79 </span><span class="lineCov">      55904 :       step_sum += step;</span>
+<span class="lineNum">      80 </span><span class="lineCov">     379928 :       for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">      81 </span><span class="lineCov">     324024 :         if (m == j) {</span>
+<span class="lineNum">      82 </span><span class="lineCov">      55904 :           continue;</span>
+<span class="lineNum">      83 </span>            :         }
+<span class="lineNum">      84 </span><span class="lineCov">     268120 :         auto&amp; poly = polynomials[j];</span>
+<span class="lineNum">      85 </span><span class="lineCov">    1139147 :         for (size_t i = m + (m &gt; j ? 0 : 1); i &gt; 0; --i) {</span>
+<span class="lineNum">      86 </span><span class="lineCov">     871027 :           poly[i] = poly[i - 1] - step_sum * poly[i];</span>
+<span class="lineNum">      87 </span>            :         }
+<span class="lineNum">      88 </span><span class="lineCov">     268120 :         poly[0] *= -step_sum;</span>
+<span class="lineNum">      89 </span>            :       }
+<span class="lineNum">      90 </span>            :     }
+<span class="lineNum">      91 </span>            :   }
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span><span class="lineCov">      22382 :   std::vector&lt;double&gt; denominators;</span>
+<span class="lineNum">      94 </span><span class="lineCov">      11191 :   denominators.reserve(order);</span>
+<span class="lineNum">      95 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">      96 </span><span class="lineCov">      55904 :     double denom = 1.;</span>
+<span class="lineNum">      97 </span><span class="lineCov">      55904 :     double step_sum = 0.;</span>
+<span class="lineNum">      98 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; j; ++m) {</span>
+<span class="lineNum">      99 </span><span class="lineCov">     134060 :       const double step = steps[order - j + m - 1];</span>
+<span class="lineNum">     100 </span><span class="lineCov">     134060 :       step_sum += step;</span>
+<span class="lineNum">     101 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
+<span class="lineNum">     102 </span>            :     }
+<span class="lineNum">     103 </span><span class="lineCov">      55904 :     step_sum = 0.;</span>
+<span class="lineNum">     104 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; order - j - 1; ++m) {</span>
+<span class="lineNum">     105 </span><span class="lineCov">     134060 :       const double step = steps[order - j - m - 2];</span>
+<span class="lineNum">     106 </span><span class="lineCov">     134060 :       step_sum += step;</span>
+<span class="lineNum">     107 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
+<span class="lineNum">     108 </span>            :     }
+<span class="lineNum">     109 </span><span class="lineCov">      55904 :     denominators.push_back(denom);</span>
+<span class="lineNum">     110 </span>            :   }
+<span class="lineNum">     111 </span>            : 
+<span class="lineNum">     112 </span><span class="lineCov">      11191 :   std::vector&lt;double&gt; result;</span>
+<span class="lineNum">     113 </span><span class="lineCov">      11191 :   result.reserve(order);</span>
+<span class="lineNum">     114 </span><span class="lineCov">      11191 :   double overall_sign = order % 2 == 0 ? -1. : 1.;</span>
+<span class="lineNum">     115 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">     116 </span><span class="lineCov">      55904 :     const auto&amp; poly = polynomials[j];</span>
+<span class="lineNum">     117 </span><span class="lineCov">      55904 :     double integral = 0.;</span>
+<span class="lineNum">     118 </span><span class="lineCov">     379928 :     for (size_t i = 0; i &lt; order; ++i) {</span>
+<span class="lineNum">     119 </span><span class="lineCov">     324024 :       integral += poly[i] / (i + 1);</span>
+<span class="lineNum">     120 </span>            :     }
+<span class="lineNum">     121 </span><span class="lineCov">      55904 :     result.push_back(overall_sign * integral / denominators[j]);</span>
+<span class="lineNum">     122 </span><span class="lineCov">      55904 :     overall_sign = -overall_sign;</span>
+<span class="lineNum">     123 </span>            :   }
+<span class="lineNum">     124 </span><span class="lineCov">      22382 :   return result;</span>
+<span class="lineNum">     125 </span>            : }
+<span class="lineNum">     126 </span>            : 
+<span class="lineNum">     127 </span>            : const std::array&lt;std::vector&lt;double&gt;, AdamsBashforthN::maximum_order&gt;
+<span class="lineNum">     128 </span><span class="lineCov">        205 : AdamsBashforthN::coefficients_{{</span>
+<span class="lineNum">     129 </span>            :     {1.5, -0.5},                                           // 2nd order
+<span class="lineNum">     130 </span>            :     {23.0 / 12.0, -4.0 / 3.0, 5.0 / 12.0},                 // 3rd order
+<span class="lineNum">     131 </span>            :     {55.0 / 24.0, -59.0 / 24.0, 37.0 / 24.0, -3.0 / 8.0},  // 4th order
+<span class="lineNum">     132 </span>            :     {1901.0 / 720.0, -1387.0 / 360.0, 109.0 / 30.0, -637.0 / 360.0,
+<span class="lineNum">     133 </span>            :      251.0 / 720.0},  // 5th order
+<span class="lineNum">     134 </span>            :     {4277.0 / 1440.0, -2641.0 / 480.0, 4991.0 / 720.0, -3649.0 / 720.0,
+<span class="lineNum">     135 </span>            :      959.0 / 480.0, -95.0 / 288.0},  // 6th order
+<span class="lineNum">     136 </span>            :     {198721.0 / 60480.0, -18637.0 / 2520.0, 235183.0 / 20160.0,
+<span class="lineNum">     137 </span>            :      -10754.0 / 945.0, 135713.0 / 20160.0, -5603.0 / 2520.0,
+<span class="lineNum">     138 </span>            :      19087.0 / 60480.0},  // 7th order
+<span class="lineNum">     139 </span>            :     {16083.0 / 4480.0, -1152169.0 / 120960.0, 242653.0 / 13440.0,
+<span class="lineNum">     140 </span>            :      -296053.0 / 13440.0, 2102243.0 / 120960.0, -115747.0 / 13440.0,
+<span class="lineNum">     141 </span>            :      32863.0 / 13440.0, -5257.0 / 17280.0},  // 8th order
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">        205 : }};</span></a>
+<span class="lineNum">     143 </span>            : 
+<span class="lineNum">     144 </span><span class="lineCov">        615 : }  // namespace TimeSteppers</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

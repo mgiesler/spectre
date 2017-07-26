@@ -21,7 +21,7 @@ var searchData=
   ['ratio_5fsubtract',['ratio_subtract',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_subtract.html',1,'std']]],
   ['raw_5finvocation_5ftype',['raw_invocation_type',['http://en.cppreference.com/w/cpp/experimental/raw_invocation_type.html',1,'std::experimental']]],
   ['raw_5fstorage_5fiterator',['raw_storage_iterator',['http://en.cppreference.com/w/cpp/memory/raw_storage_iterator.html',1,'std']]],
-  ['recursive_5fdirectory_5fiterator',['recursive_directory_iterator',['http://en.cppreference.com/w/cpp/experimental/fs/recursive_directory_iterator.html',1,'std::experimental::filesystem::recursive_directory_iterator'],['http://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator.html',1,'std::filesystem::recursive_directory_iterator']]],
+  ['recursive_5fdirectory_5fiterator',['recursive_directory_iterator',['http://en.cppreference.com/w/cpp/filesystem/recursive_directory_iterator.html',1,'std::filesystem::recursive_directory_iterator'],['http://en.cppreference.com/w/cpp/experimental/fs/recursive_directory_iterator.html',1,'std::experimental::filesystem::recursive_directory_iterator']]],
   ['recursive_5fmutex',['recursive_mutex',['http://en.cppreference.com/w/cpp/thread/recursive_mutex.html',1,'std']]],
   ['recursive_5ftimed_5fmutex',['recursive_timed_mutex',['http://en.cppreference.com/w/cpp/thread/recursive_timed_mutex.html',1,'std']]],
   ['reference',['reference',['http://en.cppreference.com/w/cpp/utility/bitset/reference.html',1,'std::bitset']]],
@@ -52,6 +52,7 @@ var searchData=
   ['rotation',['Rotation',['../classEmbeddingMaps_1_1Rotation.html',1,'EmbeddingMaps']]],
   ['rotation_3c_202_20_3e',['Rotation&lt; 2 &gt;',['../classEmbeddingMaps_1_1Rotation_3_012_01_4.html',1,'EmbeddingMaps']]],
   ['rotation_3c_203_20_3e',['Rotation&lt; 3 &gt;',['../classEmbeddingMaps_1_1Rotation_3_013_01_4.html',1,'EmbeddingMaps']]],
+  ['rungekutta3',['RungeKutta3',['../classTimeSteppers_1_1RungeKutta3.html',1,'TimeSteppers']]],
   ['runtests',['RunTests',['../classRunTests.html',1,'']]],
   ['runtime_5ferror',['runtime_error',['http://en.cppreference.com/w/cpp/error/runtime_error.html',1,'std']]]
 ];

@@ -1,0 +1,871 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: Slab Class Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classSlab-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Slab Class Reference<div class="ingroups"><a class="el" href="group__TimeGroup.html">Time</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes time steps to get there. The simulation can only be assumed to have global data available at slab boundaries.  
+ <a href="classSlab.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Slab_8hpp_source.html">Slab.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5388cc71a956bd71c8f14f2abea7612b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a5388cc71a956bd71c8f14f2abea7612b">Slab</a> () noexcept</td></tr>
+<tr class="memdesc:a5388cc71a956bd71c8f14f2abea7612b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor gives an invalid <a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a>.  <a href="#a5388cc71a956bd71c8f14f2abea7612b">More...</a><br /></td></tr>
+<tr class="separator:a5388cc71a956bd71c8f14f2abea7612b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3964838e05f860b01282785b40c779bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a3964838e05f860b01282785b40c779bd">Slab</a> (double <a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">start</a>, double <a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">end</a>) noexcept</td></tr>
+<tr class="memdesc:a3964838e05f860b01282785b40c779bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a slab running between two times (exactly).  <a href="#a3964838e05f860b01282785b40c779bd">More...</a><br /></td></tr>
+<tr class="separator:a3964838e05f860b01282785b40c779bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb765a06573e3c40f2a265dcf3f2823"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">start</a> () const noexcept</td></tr>
+<tr class="separator:aedb765a06573e3c40f2a265dcf3f2823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6685b2c18b2cfdec66f5c495759ace"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTime.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">end</a> () const noexcept</td></tr>
+<tr class="separator:adb6685b2c18b2cfdec66f5c495759ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed34eb406b0c49a9497172162d33b8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTimeDelta.html">TimeDelta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration</a> () const noexcept</td></tr>
+<tr class="separator:a7ed34eb406b0c49a9497172162d33b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117d991e2dff0d574471a9215d89c2a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a117d991e2dff0d574471a9215d89c2a8">advance</a> () const noexcept</td></tr>
+<tr class="memdesc:a117d991e2dff0d574471a9215d89c2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new slab immediately following this one with the same (up to roundoff) duration.  <a href="#a117d991e2dff0d574471a9215d89c2a8">More...</a><br /></td></tr>
+<tr class="separator:a117d991e2dff0d574471a9215d89c2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1d34a6d9d0a193dc46a5e2f38dab67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a5b1d34a6d9d0a193dc46a5e2f38dab67">retreat</a> () const noexcept</td></tr>
+<tr class="memdesc:a5b1d34a6d9d0a193dc46a5e2f38dab67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new slab immediately preceeding this one with the same (up to roundoff) duration.  <a href="#a5b1d34a6d9d0a193dc46a5e2f38dab67">More...</a><br /></td></tr>
+<tr class="separator:a5b1d34a6d9d0a193dc46a5e2f38dab67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b884d03838ae8ac517cdc8767b29e70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a7b884d03838ae8ac517cdc8767b29e70">advance_towards</a> (const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;dt) const noexcept</td></tr>
+<tr class="memdesc:a7b884d03838ae8ac517cdc8767b29e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a slab adjacent to this one in the direction indicated by the argument, as with <a class="el" href="classSlab.html#a117d991e2dff0d574471a9215d89c2a8" title="Create a new slab immediately following this one with the same (up to roundoff) duration. ">advance()</a> or <a class="el" href="classSlab.html#a5b1d34a6d9d0a193dc46a5e2f38dab67" title="Create a new slab immediately preceeding this one with the same (up to roundoff) duration. ">retreat()</a>.  <a href="#a7b884d03838ae8ac517cdc8767b29e70">More...</a><br /></td></tr>
+<tr class="separator:a7b884d03838ae8ac517cdc8767b29e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7100066b400cc926665f08d18779fc83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a7100066b400cc926665f08d18779fc83">with_duration_from_start</a> (double <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration</a>) const noexcept</td></tr>
+<tr class="memdesc:a7100066b400cc926665f08d18779fc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new slab with the same start time as this one with the given duration (up to roundoff).  <a href="#a7100066b400cc926665f08d18779fc83">More...</a><br /></td></tr>
+<tr class="separator:a7100066b400cc926665f08d18779fc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d1c4a71394ba74f83b1b58be95fdda6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a9d1c4a71394ba74f83b1b58be95fdda6">with_duration_to_end</a> (double <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration</a>) const noexcept</td></tr>
+<tr class="memdesc:a9d1c4a71394ba74f83b1b58be95fdda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new slab with the same end time as this one with the given duration (up to roundoff).  <a href="#a9d1c4a71394ba74f83b1b58be95fdda6">More...</a><br /></td></tr>
+<tr class="separator:a9d1c4a71394ba74f83b1b58be95fdda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae974e1042192fdc40e66bc4fc2b50044"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#ae974e1042192fdc40e66bc4fc2b50044">is_followed_by</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;other) const noexcept</td></tr>
+<tr class="memdesc:ae974e1042192fdc40e66bc4fc2b50044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this slab is immediately followed by the other slab.  <a href="#ae974e1042192fdc40e66bc4fc2b50044">More...</a><br /></td></tr>
+<tr class="separator:ae974e1042192fdc40e66bc4fc2b50044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d77890e76eb83300fbd69824ab0188b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a3d77890e76eb83300fbd69824ab0188b">is_preceeded_by</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;other) const noexcept</td></tr>
+<tr class="memdesc:a3d77890e76eb83300fbd69824ab0188b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this slab is immediately preceeded by the other slab.  <a href="#a3d77890e76eb83300fbd69824ab0188b">More...</a><br /></td></tr>
+<tr class="separator:a3d77890e76eb83300fbd69824ab0188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaddddd956fe843d8d6632a82b3fbc3ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#aaddddd956fe843d8d6632a82b3fbc3ed">pup</a> (PUP::er &amp;p) noexcept</td></tr>
+<tr class="separator:aaddddd956fe843d8d6632a82b3fbc3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abff95dd0be14d83ce9a0012979970005"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#abff95dd0be14d83ce9a0012979970005">with_duration_from_start</a> (double <a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">start</a>, double <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration</a>) noexcept</td></tr>
+<tr class="memdesc:abff95dd0be14d83ce9a0012979970005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a slab with a given start time and duration. The actual duration may differ by roundoff from the supplied value.  <a href="#abff95dd0be14d83ce9a0012979970005">More...</a><br /></td></tr>
+<tr class="separator:abff95dd0be14d83ce9a0012979970005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280a4bf315fa71f92e43adaaa589d0ea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSlab.html">Slab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a280a4bf315fa71f92e43adaaa589d0ea">with_duration_to_end</a> (double <a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">end</a>, double <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration</a>) noexcept</td></tr>
+<tr class="memdesc:a280a4bf315fa71f92e43adaaa589d0ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a slab with a given end time and duration. The actual duration may differ by roundoff from the supplied value.  <a href="#a280a4bf315fa71f92e43adaaa589d0ea">More...</a><br /></td></tr>
+<tr class="separator:a280a4bf315fa71f92e43adaaa589d0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4638b7e7c4a9d32a59f736fe6e5ff8a2"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a4638b7e7c4a9d32a59f736fe6e5ff8a2">Time</a></td></tr>
+<tr class="separator:a4638b7e7c4a9d32a59f736fe6e5ff8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a6aa1e6bcd10d41eea214de428b4f3ba1">TimeDelta</a></td></tr>
+<tr class="separator:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a7cc11c9b22260d0bc21562c61c5bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#ad3a7cc11c9b22260d0bc21562c61c5bd">operator==</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;, const <a class="el" href="classSlab.html">Slab</a> &amp;) noexcept</td></tr>
+<tr class="separator:ad3a7cc11c9b22260d0bc21562c61c5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549e97790e62da7208c4a1d35e859510"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a549e97790e62da7208c4a1d35e859510">operator&lt;</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;, const <a class="el" href="classSlab.html">Slab</a> &amp;) noexcept</td></tr>
+<tr class="memdesc:a549e97790e62da7208c4a1d35e859510"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a> comparison operators give the time ordering. Overlapping unequal slabs should not be compared (and will trigger an assertion).  <a href="#a549e97790e62da7208c4a1d35e859510">More...</a><br /></td></tr>
+<tr class="separator:a549e97790e62da7208c4a1d35e859510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6291693747d8f350c3aa938dbf837cfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a6291693747d8f350c3aa938dbf837cfd">operator==</a> (const <a class="el" href="classTime.html">Time</a> &amp;, const <a class="el" href="classTime.html">Time</a> &amp;) noexcept</td></tr>
+<tr class="separator:a6291693747d8f350c3aa938dbf837cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes time steps to get there. The simulation can only be assumed to have global data available at slab boundaries. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5388cc71a956bd71c8f14f2abea7612b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5388cc71a956bd71c8f14f2abea7612b">&#9670;&nbsp;</a></span>Slab() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Slab::Slab </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor gives an invalid <a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a>. </p>
+
+</div>
+</div>
+<a id="a3964838e05f860b01282785b40c779bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3964838e05f860b01282785b40c779bd">&#9670;&nbsp;</a></span>Slab() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Slab::Slab </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a slab running between two times (exactly). </p>
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a117d991e2dff0d574471a9215d89c2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a117d991e2dff0d574471a9215d89c2a8">&#9670;&nbsp;</a></span>advance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlab.html">Slab</a> Slab::advance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new slab immediately following this one with the same (up to roundoff) duration. </p>
+
+<p class="reference">Referenced by <a class="el" href="classSlab.html#a7b884d03838ae8ac517cdc8767b29e70">advance_towards()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>.</p>
+
+</div>
+</div>
+<a id="a7b884d03838ae8ac517cdc8767b29e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b884d03838ae8ac517cdc8767b29e70">&#9670;&nbsp;</a></span>advance_towards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlab.html">Slab</a> Slab::advance_towards </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTimeDelta.html">TimeDelta</a> &amp;&#160;</td>
+          <td class="paramname"><em>dt</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a slab adjacent to this one in the direction indicated by the argument, as with <a class="el" href="classSlab.html#a117d991e2dff0d574471a9215d89c2a8" title="Create a new slab immediately following this one with the same (up to roundoff) duration. ">advance()</a> or <a class="el" href="classSlab.html#a5b1d34a6d9d0a193dc46a5e2f38dab67" title="Create a new slab immediately preceeding this one with the same (up to roundoff) duration. ">retreat()</a>. </p>
+
+<p class="reference">References <a class="el" href="classSlab.html#a117d991e2dff0d574471a9215d89c2a8">advance()</a>, <a class="el" href="group__ErrorHandling.html#gaf170f3984e3d0f809b2558dbd981ca35">ASSERT</a>, and <a class="el" href="classSlab.html#a5b1d34a6d9d0a193dc46a5e2f38dab67">retreat()</a>.</p>
+
+</div>
+</div>
+<a id="a7ed34eb406b0c49a9497172162d33b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed34eb406b0c49a9497172162d33b8c">&#9670;&nbsp;</a></span>duration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTimeDelta.html">TimeDelta</a> Slab::duration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a6aa1e6bcd10d41eea214de428b4f3ba1">TimeDelta</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test()</a>, and <a class="el" href="classTime.html#ad0c8c55e27a0978f532824b24e4b2244">Time::value()</a>.</p>
+
+</div>
+</div>
+<a id="adb6685b2c18b2cfdec66f5c495759ace"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6685b2c18b2cfdec66f5c495759ace">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a> Slab::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a4638b7e7c4a9d32a59f736fe6e5ff8a2">Time</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>.</p>
+
+</div>
+</div>
+<a id="ae974e1042192fdc40e66bc4fc2b50044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae974e1042192fdc40e66bc4fc2b50044">&#9670;&nbsp;</a></span>is_followed_by()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Slab::is_followed_by </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if this slab is immediately followed by the other slab. </p>
+
+<p class="reference">Referenced by <a class="el" href="classSlab.html#a3d77890e76eb83300fbd69824ab0188b">is_preceeded_by()</a>.</p>
+
+</div>
+</div>
+<a id="a3d77890e76eb83300fbd69824ab0188b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d77890e76eb83300fbd69824ab0188b">&#9670;&nbsp;</a></span>is_preceeded_by()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Slab::is_preceeded_by </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if this slab is immediately preceeded by the other slab. </p>
+
+<p class="reference">References <a class="el" href="classSlab.html#ae974e1042192fdc40e66bc4fc2b50044">is_followed_by()</a>.</p>
+
+</div>
+</div>
+<a id="aaddddd956fe843d8d6632a82b3fbc3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddddd956fe843d8d6632a82b3fbc3ed">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Slab::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b1d34a6d9d0a193dc46a5e2f38dab67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1d34a6d9d0a193dc46a5e2f38dab67">&#9670;&nbsp;</a></span>retreat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlab.html">Slab</a> Slab::retreat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new slab immediately preceeding this one with the same (up to roundoff) duration. </p>
+
+<p class="reference">Referenced by <a class="el" href="classSlab.html#a7b884d03838ae8ac517cdc8767b29e70">advance_towards()</a>.</p>
+
+</div>
+</div>
+<a id="aedb765a06573e3c40f2a265dcf3f2823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb765a06573e3c40f2a265dcf3f2823">&#9670;&nbsp;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTime.html">Time</a> Slab::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classSlab.html#a4638b7e7c4a9d32a59f736fe6e5ff8a2">Time</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test()</a>.</p>
+
+</div>
+</div>
+<a id="abff95dd0be14d83ce9a0012979970005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff95dd0be14d83ce9a0012979970005">&#9670;&nbsp;</a></span>with_duration_from_start() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classSlab.html">Slab</a> Slab::with_duration_from_start </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>duration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a slab with a given start time and duration. The actual duration may differ by roundoff from the supplied value. </p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#a1ae1b98563e882ae56ededbf67840cd7">stability_test()</a>.</p>
+
+</div>
+</div>
+<a id="a7100066b400cc926665f08d18779fc83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7100066b400cc926665f08d18779fc83">&#9670;&nbsp;</a></span>with_duration_from_start() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlab.html">Slab</a> Slab::with_duration_from_start </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>duration</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new slab with the same start time as this one with the given duration (up to roundoff). </p>
+
+</div>
+</div>
+<a id="a280a4bf315fa71f92e43adaaa589d0ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280a4bf315fa71f92e43adaaa589d0ea">&#9670;&nbsp;</a></span>with_duration_to_end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classSlab.html">Slab</a> Slab::with_duration_to_end </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>duration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a slab with a given end time and duration. The actual duration may differ by roundoff from the supplied value. </p>
+
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, and <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>.</p>
+
+</div>
+</div>
+<a id="a9d1c4a71394ba74f83b1b58be95fdda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d1c4a71394ba74f83b1b58be95fdda6">&#9670;&nbsp;</a></span>with_duration_to_end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlab.html">Slab</a> Slab::with_duration_to_end </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>duration</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new slab with the same end time as this one with the given duration (up to roundoff). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a549e97790e62da7208c4a1d35e859510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a549e97790e62da7208c4a1d35e859510">&#9670;&nbsp;</a></span>operator<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a> comparison operators give the time ordering. Overlapping unequal slabs should not be compared (and will trigger an assertion). </p>
+
+</div>
+</div>
+<a id="ad3a7cc11c9b22260d0bc21562c61c5bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a7cc11c9b22260d0bc21562c61c5bd">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classSlab.html">Slab</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6291693747d8f350c3aa938dbf837cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6291693747d8f350c3aa938dbf837cfd">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTime.html">Time</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTime.html">Time</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4638b7e7c4a9d32a59f736fe6e5ff8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4638b7e7c4a9d32a59f736fe6e5ff8a2">&#9670;&nbsp;</a></span>Time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classTime.html">Time</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classSlab.html#adb6685b2c18b2cfdec66f5c495759ace">end()</a>, and <a class="el" href="classSlab.html#aedb765a06573e3c40f2a265dcf3f2823">start()</a>.</p>
+
+</div>
+</div>
+<a id="a6aa1e6bcd10d41eea214de428b4f3ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa1e6bcd10d41eea214de428b4f3ba1">&#9670;&nbsp;</a></span>TimeDelta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classTimeDelta.html">TimeDelta</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classSlab.html#a7ed34eb406b0c49a9497172162d33b8c">duration()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Time/<a class="el" href="Slab_8hpp_source.html">Slab.hpp</a></li>
+<li>src/Time/<a class="el" href="Slab_8cpp.html">Slab.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

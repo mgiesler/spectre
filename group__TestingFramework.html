@@ -169,6 +169,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4439208ed8accb2887ff47388e91e58b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#ga4439208ed8accb2887ff47388e91e58b">ASSERTION_TEST</a>()</td></tr>
 <tr class="memdesc:ga4439208ed8accb2887ff47388e91e58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark a test to be checking an ASSERT.  <a href="#ga4439208ed8accb2887ff47388e91e58b">More...</a><br /></td></tr>
 <tr class="separator:ga4439208ed8accb2887ff47388e91e58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec8dcdc783140fb14fe617cc0cc1dcae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#gaec8dcdc783140fb14fe617cc0cc1dcae">CHECK_OP</a>(a,  op,  b,  c)</td></tr>
+<tr class="memdesc:gaec8dcdc783140fb14fe617cc0cc1dcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check a op b == c and also the op= version.  <a href="#gaec8dcdc783140fb14fe617cc0cc1dcae">More...</a><br /></td></tr>
+<tr class="separator:gaec8dcdc783140fb14fe617cc0cc1dcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -176,6 +179,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2895e57f4cacd63d2549655bb29bba7b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#ga2895e57f4cacd63d2549655bb29bba7b">serialize_and_deserialize</a> (const T &amp;t)</td></tr>
 <tr class="memdesc:ga2895e57f4cacd63d2549655bb29bba7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes and deserializes an object <code>t</code> of type <code>T</code>  <a href="#ga2895e57f4cacd63d2549655bb29bba7b">More...</a><br /></td></tr>
 <tr class="separator:ga2895e57f4cacd63d2549655bb29bba7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad421daceb296d17cccff74f162601ccd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gad421daceb296d17cccff74f162601ccd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#gad421daceb296d17cccff74f162601ccd">check_cmp</a> (const T &amp;less, const T &amp;greater)</td></tr>
+<tr class="memdesc:gad421daceb296d17cccff74f162601ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to test comparison operators. Pass values with less &lt; greater.  <a href="#gad421daceb296d17cccff74f162601ccd">More...</a><br /></td></tr>
+<tr class="separator:gad421daceb296d17cccff74f162601ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
 <tr class="memitem:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#gaf4ce9d1bca3b738adf3235e0d6740208">get_output</a> (const Container &amp;c)</td></tr>
 <tr class="memdesc:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the streamed output <code>c</code> as a <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></code>  <a href="#gaf4ce9d1bca3b738adf3235e0d6740208">More...</a><br /></td></tr>
@@ -223,7 +230,49 @@ Functions</h2></td></tr>
 <p>Testing error handling is just as important as testing functionality. Tests that are supposed to exit with an error must be annotated with the attribute </p><div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, The regex that should be found in the output]]</span></div></div><!-- fragment --><p> Note that the regex only needs to be a sub-expression of the error message, that is, there are implicit wildcards before and after the string.</p>
 <p>In order to test ASSERT's properly the test must also fail for release builds. This is done by adding this macro at the beginning for the test.</p>
 <h3>Example</h3>
-<p>snippet Test_Time.cpp example_of_error_test </p>
+<div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, Out of range slab fraction]]</span></div><div class="line">[[noreturn]] TEST_CASE(<span class="stringliteral">&quot;Unit.Time.Time.Init.0&quot;</span>, <span class="stringliteral">&quot;[Unit][Time]&quot;</span>) {</div><div class="line">  <a class="code" href="group__TestingFramework.html#ga4439208ed8accb2887ff47388e91e58b">ASSERTION_TEST</a>();</div><div class="line"><span class="preprocessor">#ifdef SPECTRE_DEBUG</span></div><div class="line">  <a class="code" href="classTime.html">Time</a>(<a class="code" href="classSlab.html">Slab</a>(0., 1.), -1);</div><div class="line">  <a class="code" href="group__ErrorHandling.html#ga1d27028c1827976007fe9d29ad3a2f66">ERROR</a>(<span class="stringliteral">&quot;Bad end&quot;</span>);</div><div class="line"><span class="preprocessor">#endif</span></div><div class="line">}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="gaec8dcdc783140fb14fe617cc0cc1dcae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec8dcdc783140fb14fe617cc0cc1dcae">&#9670;&nbsp;</a></span>CHECK_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHECK_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                          \</div><div class="line">    const <span class="keyword">auto</span>&amp; a_ = <a class="code" href="namespacetnsr.html#a2fda2cdde3d605b04b814e6efa6339b5">a</a>;         \</div><div class="line">    const <span class="keyword">auto</span>&amp; b_ = b;         \</div><div class="line">    const <span class="keyword">auto</span>&amp; c_ = c;         \</div><div class="line">    CHECK(a_ op b_ == c_);      \</div><div class="line">    auto f = a_;                \</div><div class="line">    CHECK((f op## = b_) == c_); \</div><div class="line">    CHECK(f == c_);             \</div><div class="line">  } <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div><div class="ttc" id="namespacetnsr_html_a2fda2cdde3d605b04b814e6efa6339b5"><div class="ttname"><a href="namespacetnsr.html#a2fda2cdde3d605b04b814e6efa6339b5">tnsr::a</a></div><div class="ttdeci">Tensor&lt; DataType, tmpl::integral_list&lt; std::int32_t, 1 &gt;, index_list&lt; Tensor_detail::TensorIndexType&lt; SpatialDim, UpLo::Lo, Fr, Index &gt; &gt;&gt; a</div><div class="ttdef"><b>Definition:</b> TypeAliases.hpp:37</div></div>
+</div><!-- fragment -->
+<p>Check a op b == c and also the op= version. </p>
 
 </div>
 </div>
@@ -250,6 +299,38 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="gad421daceb296d17cccff74f162601ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad421daceb296d17cccff74f162601ccd">&#9670;&nbsp;</a></span>check_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void check_cmp </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>less</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>greater</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to test comparison operators. Pass values with less &lt; greater. </p>
+
+</div>
+</div>
 <a id="gaf4ce9d1bca3b738adf3235e0d6740208"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf4ce9d1bca3b738adf3235e0d6740208">&#9670;&nbsp;</a></span>get_output()</h2>
 

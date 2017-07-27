@@ -52,6 +52,7 @@ var searchData=
   ['_7emonotonic_5fbuffer_5fresource',['~monotonic_buffer_resource',['http://en.cppreference.com/w/cpp/memory/monotonic_buffer_resource.html',1,'std::pmr::monotonic_buffer_resource']]],
   ['_7emultimap',['~multimap',['http://en.cppreference.com/w/cpp/container/multimap/~multimap.html',1,'std::multimap::~multimap()'],['http://en.cppreference.com/w/cpp/container/multimap/~multimap.html',1,'std::pmr::multimap::~multimap()']]],
   ['_7emultiset',['~multiset',['http://en.cppreference.com/w/cpp/container/multiset/~multiset.html',1,'std::multiset::~multiset()'],['http://en.cppreference.com/w/cpp/container/multiset/~multiset.html',1,'std::pmr::multiset::~multiset()']]],
+  ['_7eneighbors',['~Neighbors',['../classNeighbors.html#a6fde389a5a97b87cf4987b805acf4544',1,'Neighbors']]],
   ['_7enested_5fexception',['~nested_exception',['http://en.cppreference.com/w/cpp/error/nested_exception/~nested_exception.html',1,'std::nested_exception']]],
   ['_7enum_5fget',['~num_get',['http://en.cppreference.com/w/cpp/locale/num_get/~num_get.html',1,'std::num_get']]],
   ['_7enum_5fput',['~num_put',['http://en.cppreference.com/w/cpp/locale/num_put/~num_put.html',1,'std::num_put']]],

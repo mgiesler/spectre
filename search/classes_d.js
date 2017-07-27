@@ -5,6 +5,7 @@ var searchData=
   ['negate',['negate',['http://en.cppreference.com/w/cpp/utility/functional/negate.html',1,'std']]],
   ['negation',['negation',['http://en.cppreference.com/w/cpp/types/negation.html',1,'std::negation'],['../structcpp17_1_1negation.html',1,'cpp17::negation&lt; B &gt;']]],
   ['negative_5fbinomial_5fdistribution',['negative_binomial_distribution',['http://en.cppreference.com/w/cpp/numeric/random/negative_binomial_distribution.html',1,'std']]],
+  ['neighbors',['Neighbors',['../classNeighbors.html',1,'']]],
   ['nested_5fexception',['nested_exception',['http://en.cppreference.com/w/cpp/error/nested_exception.html',1,'std']]],
   ['new_5fdelete_5fresource',['new_delete_resource',['http://en.cppreference.com/w/cpp/experimental/new_delete_resource.html',1,'std::experimental::pmr']]],
   ['new_5fhandler',['new_handler',['http://en.cppreference.com/w/cpp/memory/new/new_handler.html',1,'std']]],

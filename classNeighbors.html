@@ -1,0 +1,777 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: Neighbors&lt; VolumeDim &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classNeighbors-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Neighbors&lt; VolumeDim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__ComputationalDomain.html">Computational Domain</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Information about the neighbors of an Element in a particular direction.  
+ <a href="classNeighbors.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Neighbors_8hpp_source.html">Neighbors.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a41ab08657e65fa6ee61cbbb9f2b2f270"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a41ab08657e65fa6ee61cbbb9f2b2f270">Neighbors</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt; <a class="el" href="classNeighbors.html#a152f63b628337978c06111a4acbb189b">ids</a>, <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; <a class="el" href="classNeighbors.html#a9220756f9fe266fc2590ea77e4c83794">orientation</a>)</td></tr>
+<tr class="memdesc:a41ab08657e65fa6ee61cbbb9f2b2f270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with the ids and orientation of the neighbors.  <a href="#a41ab08657e65fa6ee61cbbb9f2b2f270">More...</a><br /></td></tr>
+<tr class="separator:a41ab08657e65fa6ee61cbbb9f2b2f270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80992b0c8c26446ad7ee4e899af5542b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a80992b0c8c26446ad7ee4e899af5542b">Neighbors</a> ()=default</td></tr>
+<tr class="memdesc:a80992b0c8c26446ad7ee4e899af5542b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for Charm++ serialization.  <a href="#a80992b0c8c26446ad7ee4e899af5542b">More...</a><br /></td></tr>
+<tr class="separator:a80992b0c8c26446ad7ee4e899af5542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fde389a5a97b87cf4987b805acf4544"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a6fde389a5a97b87cf4987b805acf4544">~Neighbors</a> ()=default</td></tr>
+<tr class="separator:a6fde389a5a97b87cf4987b805acf4544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a4ab0b4d80fede333573c1cf6ea700c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a0a4ab0b4d80fede333573c1cf6ea700c">Neighbors</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;neighbor)=default</td></tr>
+<tr class="separator:a0a4ab0b4d80fede333573c1cf6ea700c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace1a7654a2fdb2e58ed0481e6dd2eeef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#ace1a7654a2fdb2e58ed0481e6dd2eeef">Neighbors</a> (<a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:ace1a7654a2fdb2e58ed0481e6dd2eeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9c6d76664210e45fec3c0fe4ecb165"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a3f9c6d76664210e45fec3c0fe4ecb165">operator=</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;rhs)=default</td></tr>
+<tr class="separator:a3f9c6d76664210e45fec3c0fe4ecb165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a684ef5d0f2f6f09a47e316a9930c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a03a684ef5d0f2f6f09a47e316a9930c2">operator=</a> (<a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&amp;) noexcept</td></tr>
+<tr class="separator:a03a684ef5d0f2f6f09a47e316a9930c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152f63b628337978c06111a4acbb189b"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a152f63b628337978c06111a4acbb189b">ids</a> () const noexcept</td></tr>
+<tr class="separator:a152f63b628337978c06111a4acbb189b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9220756f9fe266fc2590ea77e4c83794"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a9220756f9fe266fc2590ea77e4c83794">orientation</a> () const noexcept</td></tr>
+<tr class="separator:a9220756f9fe266fc2590ea77e4c83794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71faeb20376e85ca0511812a74f3a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#ad71faeb20376e85ca0511812a74f3a83">set_ids_to</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt; new_ids) noexcept</td></tr>
+<tr class="memdesc:ad71faeb20376e85ca0511812a74f3a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the ids of the neighbors.  <a href="#ad71faeb20376e85ca0511812a74f3a83">More...</a><br /></td></tr>
+<tr class="separator:ad71faeb20376e85ca0511812a74f3a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fb80cb865f157d2b96e915e2fba3aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#ac9fb80cb865f157d2b96e915e2fba3aa">add_ids</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt; &amp;additional_ids)</td></tr>
+<tr class="memdesc:ac9fb80cb865f157d2b96e915e2fba3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add ids of neighbors. Adding an existing neighbor is allowed.  <a href="#ac9fb80cb865f157d2b96e915e2fba3aa">More...</a><br /></td></tr>
+<tr class="separator:ac9fb80cb865f157d2b96e915e2fba3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66cd5bbe333f4e480a23f157900a23c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a66cd5bbe333f4e480a23f157900a23c1">pup</a> (PUP::er &amp;p)</td></tr>
+<tr class="memdesc:a66cd5bbe333f4e480a23f157900a23c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization for Charm++.  <a href="#a66cd5bbe333f4e480a23f157900a23c1">More...</a><br /></td></tr>
+<tr class="separator:a66cd5bbe333f4e480a23f157900a23c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6b4bbd566590b93b9f209797e20af3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a1d6b4bbd566590b93b9f209797e20af3">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a1d6b4bbd566590b93b9f209797e20af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of neighbors.  <a href="#a1d6b4bbd566590b93b9f209797e20af3">More...</a><br /></td></tr>
+<tr class="separator:a1d6b4bbd566590b93b9f209797e20af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42b1a7b5621c4e182812841331228ad"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#aa42b1a7b5621c4e182812841331228ad">begin</a> ()</td></tr>
+<tr class="separator:aa42b1a7b5621c4e182812841331228ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65b7fcfdc87ec65b16c333fd7e13e61"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#aa65b7fcfdc87ec65b16c333fd7e13e61">end</a> ()</td></tr>
+<tr class="separator:aa65b7fcfdc87ec65b16c333fd7e13e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa64c52a216a4e94eb2ac8a14fc968c6e"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#aa64c52a216a4e94eb2ac8a14fc968c6e">begin</a> () const</td></tr>
+<tr class="separator:aa64c52a216a4e94eb2ac8a14fc968c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d9d236c3a32559f0a45f7772fd81ca"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a84d9d236c3a32559f0a45f7772fd81ca">end</a> () const</td></tr>
+<tr class="separator:a84d9d236c3a32559f0a45f7772fd81ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a624fb25b4149a40bc7284f0d28d5c8be"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a624fb25b4149a40bc7284f0d28d5c8be">cbegin</a> () const</td></tr>
+<tr class="separator:a624fb25b4149a40bc7284f0d28d5c8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417c5f406bf482506e8de0bb8e33c4c5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html#a417c5f406bf482506e8de0bb8e33c4c5">cend</a> () const</td></tr>
+<tr class="separator:a417c5f406bf482506e8de0bb8e33c4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t VolumeDim&gt;<br />
+class Neighbors&lt; VolumeDim &gt;</h3>
+
+<p>Information about the neighbors of an Element in a particular direction. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">VolumeDim</td><td>the volume dimension. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a41ab08657e65fa6ee61cbbb9f2b2f270"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ab08657e65fa6ee61cbbb9f2b2f270">&#9670;&nbsp;</a></span>Neighbors() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::<a class="el" href="classNeighbors.html">Neighbors</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt;&#160;</td>
+          <td class="paramname"><em>ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classOrientation.html">Orientation</a>&lt; VolumeDim &gt;&#160;</td>
+          <td class="paramname"><em>orientation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct with the ids and orientation of the neighbors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ids</td><td>the ids of the neighbors. </td></tr>
+    <tr><td class="paramname">orientation</td><td>the <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of the neighbors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a80992b0c8c26446ad7ee4e899af5542b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80992b0c8c26446ad7ee4e899af5542b">&#9670;&nbsp;</a></span>Neighbors() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::<a class="el" href="classNeighbors.html">Neighbors</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor for Charm++ serialization. </p>
+
+</div>
+</div>
+<a id="a6fde389a5a97b87cf4987b805acf4544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fde389a5a97b87cf4987b805acf4544">&#9670;&nbsp;</a></span>~Neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::~<a class="el" href="classNeighbors.html">Neighbors</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a4ab0b4d80fede333573c1cf6ea700c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4ab0b4d80fede333573c1cf6ea700c">&#9670;&nbsp;</a></span>Neighbors() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::<a class="el" href="classNeighbors.html">Neighbors</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>neighbor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace1a7654a2fdb2e58ed0481e6dd2eeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace1a7654a2fdb2e58ed0481e6dd2eeef">&#9670;&nbsp;</a></span>Neighbors() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::<a class="el" href="classNeighbors.html">Neighbors</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac9fb80cb865f157d2b96e915e2fba3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9fb80cb865f157d2b96e915e2fba3aa">&#9670;&nbsp;</a></span>add_ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::add_ids </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>additional_ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add ids of neighbors. Adding an existing neighbor is allowed. </p>
+
+<p class="reference">Referenced by <a class="el" href="classNeighbors.html#ad71faeb20376e85ca0511812a74f3a83">Neighbors&lt; VolumeDim &gt;::set_ids_to()</a>.</p>
+
+</div>
+</div>
+<a id="aa42b1a7b5621c4e182812841331228ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42b1a7b5621c4e182812841331228ad">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa64c52a216a4e94eb2ac8a14fc968c6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64c52a216a4e94eb2ac8a14fc968c6e">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::const_iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a624fb25b4149a40bc7284f0d28d5c8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a624fb25b4149a40bc7284f0d28d5c8be">&#9670;&nbsp;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::const_iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a417c5f406bf482506e8de0bb8e33c4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417c5f406bf482506e8de0bb8e33c4c5">&#9670;&nbsp;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::const_iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="Neighbors_8hpp.html#aae23696be6ee8a66c5c25704a8a0188c">operator!=()</a>, and <a class="el" href="Neighbors_8hpp.html#abfae2bcfcc6aa082639cefb8ec218274">operator==()</a>.</p>
+
+</div>
+</div>
+<a id="aa65b7fcfdc87ec65b16c333fd7e13e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65b7fcfdc87ec65b16c333fd7e13e61">&#9670;&nbsp;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84d9d236c3a32559f0a45f7772fd81ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d9d236c3a32559f0a45f7772fd81ca">&#9670;&nbsp;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;::const_iterator <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a152f63b628337978c06111a4acbb189b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152f63b628337978c06111a4acbb189b">&#9670;&nbsp;</a></span>ids()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classElementId.html">ElementId</a>&lt;VolumeDim&gt; &gt;&amp; <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::ids </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f9c6d76664210e45fec3c0fe4ecb165"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9c6d76664210e45fec3c0fe4ecb165">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03a684ef5d0f2f6f09a47e316a9930c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03a684ef5d0f2f6f09a47e316a9930c2">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNeighbors.html">Neighbors</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9220756f9fe266fc2590ea77e4c83794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9220756f9fe266fc2590ea77e4c83794">&#9670;&nbsp;</a></span>orientation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classOrientation.html">Orientation</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::orientation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66cd5bbe333f4e480a23f157900a23c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66cd5bbe333f4e480a23f157900a23c1">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization for Charm++. </p>
+
+<p class="reference">References <a class="el" href="Neighbors_8cpp.html#aae23696be6ee8a66c5c25704a8a0188c">operator!=()</a>, and <a class="el" href="Neighbors_8cpp.html#abfae2bcfcc6aa082639cefb8ec218274">operator==()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classNeighbors.html#ad71faeb20376e85ca0511812a74f3a83">Neighbors&lt; VolumeDim &gt;::set_ids_to()</a>.</p>
+
+</div>
+</div>
+<a id="ad71faeb20376e85ca0511812a74f3a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad71faeb20376e85ca0511812a74f3a83">&#9670;&nbsp;</a></span>set_ids_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::set_ids_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt;&gt;&#160;</td>
+          <td class="paramname"><em>new_ids</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the ids of the neighbors. </p>
+
+<p class="reference">References <a class="el" href="classNeighbors.html#ac9fb80cb865f157d2b96e915e2fba3aa">Neighbors&lt; VolumeDim &gt;::add_ids()</a>, and <a class="el" href="classNeighbors.html#a66cd5bbe333f4e480a23f157900a23c1">Neighbors&lt; VolumeDim &gt;::pup()</a>.</p>
+
+</div>
+</div>
+<a id="a1d6b4bbd566590b93b9f209797e20af3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6b4bbd566590b93b9f209797e20af3">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The number of neighbors. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Domain/<a class="el" href="Neighbors_8hpp_source.html">Neighbors.hpp</a></li>
+<li>src/Domain/<a class="el" href="Neighbors_8cpp.html">Neighbors.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

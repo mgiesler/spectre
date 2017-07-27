@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - e1356bd2d3fce54f9e58d67bcbad40dbd1677077 - Domain/SegmentId.cpp</title>
+  <title>LCOV - 3c659dc890998a95a4eca1a3ed3321d241b1e0a4 - Domain/SegmentId.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e1356bd2d3fce54f9e58d67bcbad40dbd1677077">e1356bd2d3fce54f9e58d67bcbad40dbd1677077</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3c659dc890998a95a4eca1a3ed3321d241b1e0a4">3c659dc890998a95a4eca1a3ed3321d241b1e0a4</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">11</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-07-26 02:16:56</td>
+            <td class="headerValue">2017-07-27 02:18:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -77,20 +77,20 @@
 <span class="lineNum">       7 </span>            : #include &lt;limits&gt;
 <a name="8"><span class="lineNum">       8 </span>            : #include &lt;ostream&gt;</a>
 <span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">        265 : SegmentId::SegmentId(const size_t refinement_level, const size_t index)</span>
-<span class="lineNum">      11 </span><span class="lineCov">        265 :     : refinement_level_(refinement_level), index_(index) {</span>
-<span class="lineNum">      12 </span><span class="lineCov">        265 :   ASSERT(index &lt; two_to_the(refinement_level),</span>
+<span class="lineNum">      10 </span><span class="lineCov">        289 : SegmentId::SegmentId(const size_t refinement_level, const size_t index)</span>
+<span class="lineNum">      11 </span><span class="lineCov">        289 :     : refinement_level_(refinement_level), index_(index) {</span>
+<span class="lineNum">      12 </span><span class="lineCov">        289 :   ASSERT(index &lt; two_to_the(refinement_level),</span>
 <span class="lineNum">      13 </span>            :          &quot;index = &quot; &lt;&lt; index &lt;&lt; &quot;, refinement_level = &quot; &lt;&lt; refinement_level);
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">        265 : }</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">        289 : }</span></a>
 <span class="lineNum">      15 </span>            : 
-<span class="lineNum">      16 </span><span class="lineCov">         12 : void SegmentId::pup(PUP::er&amp; p) {</span>
-<span class="lineNum">      17 </span><span class="lineCov">         12 :   p | refinement_level_;</span>
-<span class="lineNum">      18 </span><span class="lineCov">         12 :   p | index_;</span>
-<a name="19"><span class="lineNum">      19 </span><span class="lineCov">         12 : }</span></a>
+<span class="lineNum">      16 </span><span class="lineCov">         66 : void SegmentId::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">      17 </span><span class="lineCov">         66 :   p | refinement_level_;</span>
+<span class="lineNum">      18 </span><span class="lineCov">         66 :   p | index_;</span>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">         66 : }</span></a>
 <span class="lineNum">      20 </span>            : 
-<span class="lineNum">      21 </span><span class="lineCov">        310 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const SegmentId&amp; id) {</span>
-<span class="lineNum">      22 </span><span class="lineCov">        310 :   os &lt;&lt; 'L' &lt;&lt; id.refinement_level() &lt;&lt; 'I' &lt;&lt; id.index();</span>
-<span class="lineNum">      23 </span><span class="lineCov">        310 :   return os;</span>
+<span class="lineNum">      21 </span><span class="lineCov">        460 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const SegmentId&amp; id) {</span>
+<span class="lineNum">      22 </span><span class="lineCov">        460 :   os &lt;&lt; 'L' &lt;&lt; id.refinement_level() &lt;&lt; 'I' &lt;&lt; id.index();</span>
+<span class="lineNum">      23 </span><span class="lineCov">        460 :   return os;</span>
 <span class="lineNum">      24 </span>            : }
 <span class="lineNum">      25 </span>            : 
 <span class="lineNum">      26 </span>            : // LCOV_EXCL_START

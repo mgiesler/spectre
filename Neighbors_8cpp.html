@@ -1,0 +1,577 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: src/Domain/Neighbors.cpp File Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_7afaef6ae7a94ddf3cc0ef59b99b3f6c.html">Domain</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Neighbors.cpp File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="Neighbors_8hpp_source.html">Domain/Neighbors.hpp</a>&quot;</code><br />
+<code>#include &lt;charm.h&gt;</code><br />
+<code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/ostream.html">ostream</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="ElementId_8hpp_source.html">Domain/ElementId.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PupStlCpp11_8hpp_source.html">Parallel/PupStlCpp11.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="StdHelpers_8hpp_source.html">Utilities/StdHelpers.hpp</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3408d7975c0503605751d5494a824944"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim&gt; </td></tr>
+<tr class="memitem:a3408d7975c0503605751d5494a824944"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a3408d7975c0503605751d5494a824944">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;n)</td></tr>
+<tr class="memdesc:a3408d7975c0503605751d5494a824944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output operator for Neighborss.  <a href="#a3408d7975c0503605751d5494a824944">More...</a><br /></td></tr>
+<tr class="separator:a3408d7975c0503605751d5494a824944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfae2bcfcc6aa082639cefb8ec218274"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim&gt; </td></tr>
+<tr class="memitem:abfae2bcfcc6aa082639cefb8ec218274"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#abfae2bcfcc6aa082639cefb8ec218274">operator==</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;lhs, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:abfae2bcfcc6aa082639cefb8ec218274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae23696be6ee8a66c5c25704a8a0188c"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim&gt; </td></tr>
+<tr class="memitem:aae23696be6ee8a66c5c25704a8a0188c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#aae23696be6ee8a66c5c25704a8a0188c">operator!=</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;lhs, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:aae23696be6ee8a66c5c25704a8a0188c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4788d0db71894c58bb69ee92f55064"><td class="memItemLeft" align="right" valign="top">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a0b4788d0db71894c58bb69ee92f55064">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;)</td></tr>
+<tr class="separator:a0b4788d0db71894c58bb69ee92f55064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82fd47db66a76c812101c02aeb2fd897"><td class="memItemLeft" align="right" valign="top">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a82fd47db66a76c812101c02aeb2fd897">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;)</td></tr>
+<tr class="separator:a82fd47db66a76c812101c02aeb2fd897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b231ebcf5ca852ecee36b06e590068"><td class="memItemLeft" align="right" valign="top">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a83b231ebcf5ca852ecee36b06e590068">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;)</td></tr>
+<tr class="separator:a83b231ebcf5ca852ecee36b06e590068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaadf51ebe0f8344cd37935c5881b071c"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#aaadf51ebe0f8344cd37935c5881b071c">operator==</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;)</td></tr>
+<tr class="separator:aaadf51ebe0f8344cd37935c5881b071c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5413705f05269ae244ca3b05676ee954"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a5413705f05269ae244ca3b05676ee954">operator==</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;)</td></tr>
+<tr class="separator:a5413705f05269ae244ca3b05676ee954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96e74eaff6601f3bef7672bdac4819e"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#ac96e74eaff6601f3bef7672bdac4819e">operator==</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;)</td></tr>
+<tr class="separator:ac96e74eaff6601f3bef7672bdac4819e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fa99cf6f47a6e298044b94aee2a52b"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#ae5fa99cf6f47a6e298044b94aee2a52b">operator!=</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;)</td></tr>
+<tr class="separator:ae5fa99cf6f47a6e298044b94aee2a52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d949a885de5c769f63c4c74d43c1e2"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#aa7d949a885de5c769f63c4c74d43c1e2">operator!=</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;)</td></tr>
+<tr class="separator:aa7d949a885de5c769f63c4c74d43c1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e9c06dd230976602561b4c8ccaa4fb"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Neighbors_8cpp.html#a74e9c06dd230976602561b4c8ccaa4fb">operator!=</a> (const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;, const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;)</td></tr>
+<tr class="separator:a74e9c06dd230976602561b4c8ccaa4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aae23696be6ee8a66c5c25704a8a0188c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae23696be6ee8a66c5c25704a8a0188c">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classNeighbors.html#a417c5f406bf482506e8de0bb8e33c4c5">Neighbors&lt; VolumeDim &gt;::cend()</a>, and <a class="el" href="classNeighbors.html#a66cd5bbe333f4e480a23f157900a23c1">Neighbors&lt; VolumeDim &gt;::pup()</a>.</p>
+
+</div>
+</div>
+<a id="ae5fa99cf6f47a6e298044b94aee2a52b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fa99cf6f47a6e298044b94aee2a52b">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7d949a885de5c769f63c4c74d43c1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d949a885de5c769f63c4c74d43c1e2">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74e9c06dd230976602561b4c8ccaa4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e9c06dd230976602561b4c8ccaa4fb">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3408d7975c0503605751d5494a824944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3408d7975c0503605751d5494a824944">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Output operator for Neighborss. </p>
+
+</div>
+</div>
+<a id="a0b4788d0db71894c58bb69ee92f55064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4788d0db71894c58bb69ee92f55064">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82fd47db66a76c812101c02aeb2fd897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82fd47db66a76c812101c02aeb2fd897">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83b231ebcf5ca852ecee36b06e590068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b231ebcf5ca852ecee36b06e590068">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfae2bcfcc6aa082639cefb8ec218274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfae2bcfcc6aa082639cefb8ec218274">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classNeighbors.html#a417c5f406bf482506e8de0bb8e33c4c5">Neighbors&lt; VolumeDim &gt;::cend()</a>, and <a class="el" href="classNeighbors.html#a66cd5bbe333f4e480a23f157900a23c1">Neighbors&lt; VolumeDim &gt;::pup()</a>.</p>
+
+</div>
+</div>
+<a id="aaadf51ebe0f8344cd37935c5881b071c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaadf51ebe0f8344cd37935c5881b071c">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 1 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5413705f05269ae244ca3b05676ee954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5413705f05269ae244ca3b05676ee954">&#9670;&nbsp;</a></span>operator==() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 2 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac96e74eaff6601f3bef7672bdac4819e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96e74eaff6601f3bef7672bdac4819e">&#9670;&nbsp;</a></span>operator==() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classNeighbors.html">Neighbors</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

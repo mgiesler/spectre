@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3c659dc890998a95a4eca1a3ed3321d241b1e0a4 - Domain/Direction.cpp</title>
+  <title>LCOV - 4a29d6dda869141d1dd26d577a0c273e3e5098d8 - Domain/Direction.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3c659dc890998a95a4eca1a3ed3321d241b1e0a4">3c659dc890998a95a4eca1a3ed3321d241b1e0a4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/4a29d6dda869141d1dd26d577a0c273e3e5098d8">4a29d6dda869141d1dd26d577a0c273e3e5098d8</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">26</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-01 02:20:55</td>
+            <td class="headerValue">2017-08-02 02:21:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -78,7 +78,7 @@
 <span class="lineNum">       8 </span>            : #include &quot;ErrorHandling/Assert.hpp&quot;
 <a name="9"><span class="lineNum">       9 </span>            : </a>
 <span class="lineNum">      10 </span>            : template &lt;&gt;
-<span class="lineNum">      11 </span><span class="lineCov">          3 : Direction&lt;1&gt;::Direction(const size_t dimension, const Side side) {</span>
+<span class="lineNum">      11 </span><span class="lineCov">          3 : Direction&lt;1&gt;::Direction(const size_t dimension, const Side side) noexcept {</span>
 <span class="lineNum">      12 </span><span class="lineCov">          3 :   ASSERT(</span>
 <span class="lineNum">      13 </span>            :       0 == dimension,
 <span class="lineNum">      14 </span>            :       &quot;dim = &quot; &lt;&lt; dimension &lt;&lt; &quot;, for Direction&lt;1&gt; only dim = 0 is allowed.&quot;);
@@ -87,7 +87,7 @@
 <span class="lineNum">      17 </span><span class="lineCov">          2 : }</span>
 <a name="18"><span class="lineNum">      18 </span>            : </a>
 <span class="lineNum">      19 </span>            : template &lt;&gt;
-<span class="lineNum">      20 </span><span class="lineCov">          8 : Direction&lt;2&gt;::Direction(const size_t dimension, const Side side) {</span>
+<span class="lineNum">      20 </span><span class="lineCov">          8 : Direction&lt;2&gt;::Direction(const size_t dimension, const Side side) noexcept {</span>
 <span class="lineNum">      21 </span><span class="lineCov">          8 :   ASSERT(0 == dimension or 1 == dimension,</span>
 <span class="lineNum">      22 </span>            :          &quot;dim = &quot; &lt;&lt; dimension
 <span class="lineNum">      23 </span>            :                   &lt;&lt; &quot;, for Direction&lt;2&gt; only dim = 0 or dim = 1 are allowed.&quot;);
@@ -96,7 +96,7 @@
 <span class="lineNum">      26 </span><span class="lineCov">          7 : }</span>
 <a name="27"><span class="lineNum">      27 </span>            : </a>
 <span class="lineNum">      28 </span>            : template &lt;&gt;
-<span class="lineNum">      29 </span><span class="lineCov">         13 : Direction&lt;3&gt;::Direction(const size_t dimension, const Side side) {</span>
+<span class="lineNum">      29 </span><span class="lineCov">         13 : Direction&lt;3&gt;::Direction(const size_t dimension, const Side side) noexcept {</span>
 <span class="lineNum">      30 </span><span class="lineCov">         13 :   ASSERT(0 == dimension or 1 == dimension or 2 == dimension,</span>
 <span class="lineNum">      31 </span>            :          &quot;dim = &quot; &lt;&lt; dimension &lt;&lt; &quot;, for Direction&lt;3&gt; only dim = 0, dim = 1, &quot;
 <span class="lineNum">      32 </span>            :                                   &quot;or dim = 2 are allowed.&quot;);

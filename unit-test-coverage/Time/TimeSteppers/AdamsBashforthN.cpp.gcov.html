@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3c659dc890998a95a4eca1a3ed3321d241b1e0a4 - Time/TimeSteppers/AdamsBashforthN.cpp</title>
+  <title>LCOV - 4a29d6dda869141d1dd26d577a0c273e3e5098d8 - Time/TimeSteppers/AdamsBashforthN.cpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3c659dc890998a95a4eca1a3ed3321d241b1e0a4">3c659dc890998a95a4eca1a3ed3321d241b1e0a4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/4a29d6dda869141d1dd26d577a0c273e3e5098d8">4a29d6dda869141d1dd26d577a0c273e3e5098d8</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">74</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-01 02:20:55</td>
+            <td class="headerValue">2017-08-02 02:21:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -134,84 +134,97 @@
 <span class="lineNum">      64 </span>            : 
 <span class="lineNum">      65 </span><span class="lineCov">      11191 : std::vector&lt;double&gt; AdamsBashforthN::variable_coefficients(</span>
 <span class="lineNum">      66 </span>            :     const std::vector&lt;double&gt;&amp; steps) noexcept {
-<span class="lineNum">      67 </span><span class="lineCov">      11191 :   const size_t order = steps.size();</span>
+<span class="lineNum">      67 </span><span class="lineCov">      11191 :   const size_t order = steps.size();  // &quot;k&quot; in below equations</span>
 <span class="lineNum">      68 </span>            : 
-<span class="lineNum">      69 </span>            :   // polynomials[coefficient][term exponent]
-<span class="lineNum">      70 </span>            :   std::vector&lt;std::vector&lt;double&gt;&gt; polynomials(order,
-<span class="lineNum">      71 </span><span class="lineCov">      22382 :                                                std::vector&lt;double&gt;(order, 0.));</span>
-<span class="lineNum">      72 </span><span class="lineCov">      67095 :   for (auto&amp; poly : polynomials) {</span>
-<span class="lineNum">      73 </span><span class="lineCov">      55904 :     poly[0] = 1.;</span>
-<span class="lineNum">      74 </span>            :   }
-<span class="lineNum">      75 </span>            :   {
-<span class="lineNum">      76 </span><span class="lineCov">      11191 :     double step_sum = 0.;</span>
-<span class="lineNum">      77 </span><span class="lineCov">      67095 :     for (size_t m = 0; m &lt; order; ++m) {</span>
-<span class="lineNum">      78 </span><span class="lineCov">      55904 :       const double step = steps[order - m - 1];</span>
-<span class="lineNum">      79 </span><span class="lineCov">      55904 :       step_sum += step;</span>
-<span class="lineNum">      80 </span><span class="lineCov">     379928 :       for (size_t j = 0; j &lt; order; ++j) {</span>
-<span class="lineNum">      81 </span><span class="lineCov">     324024 :         if (m == j) {</span>
-<span class="lineNum">      82 </span><span class="lineCov">      55904 :           continue;</span>
-<span class="lineNum">      83 </span>            :         }
-<span class="lineNum">      84 </span><span class="lineCov">     268120 :         auto&amp; poly = polynomials[j];</span>
-<span class="lineNum">      85 </span><span class="lineCov">    1139147 :         for (size_t i = m + (m &gt; j ? 0 : 1); i &gt; 0; --i) {</span>
-<span class="lineNum">      86 </span><span class="lineCov">     871027 :           poly[i] = poly[i - 1] - step_sum * poly[i];</span>
-<span class="lineNum">      87 </span>            :         }
-<span class="lineNum">      88 </span><span class="lineCov">     268120 :         poly[0] *= -step_sum;</span>
-<span class="lineNum">      89 </span>            :       }
-<span class="lineNum">      90 </span>            :     }
-<span class="lineNum">      91 </span>            :   }
-<span class="lineNum">      92 </span>            : 
-<span class="lineNum">      93 </span><span class="lineCov">      22382 :   std::vector&lt;double&gt; denominators;</span>
-<span class="lineNum">      94 </span><span class="lineCov">      11191 :   denominators.reserve(order);</span>
-<span class="lineNum">      95 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
-<span class="lineNum">      96 </span><span class="lineCov">      55904 :     double denom = 1.;</span>
-<span class="lineNum">      97 </span><span class="lineCov">      55904 :     double step_sum = 0.;</span>
-<span class="lineNum">      98 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; j; ++m) {</span>
-<span class="lineNum">      99 </span><span class="lineCov">     134060 :       const double step = steps[order - j + m - 1];</span>
-<span class="lineNum">     100 </span><span class="lineCov">     134060 :       step_sum += step;</span>
-<span class="lineNum">     101 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
-<span class="lineNum">     102 </span>            :     }
-<span class="lineNum">     103 </span><span class="lineCov">      55904 :     step_sum = 0.;</span>
-<span class="lineNum">     104 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; order - j - 1; ++m) {</span>
-<span class="lineNum">     105 </span><span class="lineCov">     134060 :       const double step = steps[order - j - m - 2];</span>
-<span class="lineNum">     106 </span><span class="lineCov">     134060 :       step_sum += step;</span>
-<span class="lineNum">     107 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
-<span class="lineNum">     108 </span>            :     }
-<span class="lineNum">     109 </span><span class="lineCov">      55904 :     denominators.push_back(denom);</span>
-<span class="lineNum">     110 </span>            :   }
-<span class="lineNum">     111 </span>            : 
-<span class="lineNum">     112 </span><span class="lineCov">      11191 :   std::vector&lt;double&gt; result;</span>
-<span class="lineNum">     113 </span><span class="lineCov">      11191 :   result.reserve(order);</span>
-<span class="lineNum">     114 </span><span class="lineCov">      11191 :   double overall_sign = order % 2 == 0 ? -1. : 1.;</span>
-<span class="lineNum">     115 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
-<span class="lineNum">     116 </span><span class="lineCov">      55904 :     const auto&amp; poly = polynomials[j];</span>
-<span class="lineNum">     117 </span><span class="lineCov">      55904 :     double integral = 0.;</span>
-<span class="lineNum">     118 </span><span class="lineCov">     379928 :     for (size_t i = 0; i &lt; order; ++i) {</span>
-<span class="lineNum">     119 </span><span class="lineCov">     324024 :       integral += poly[i] / (i + 1);</span>
-<span class="lineNum">     120 </span>            :     }
-<span class="lineNum">     121 </span><span class="lineCov">      55904 :     result.push_back(overall_sign * integral / denominators[j]);</span>
-<span class="lineNum">     122 </span><span class="lineCov">      55904 :     overall_sign = -overall_sign;</span>
-<span class="lineNum">     123 </span>            :   }
-<span class="lineNum">     124 </span><span class="lineCov">      22382 :   return result;</span>
-<span class="lineNum">     125 </span>            : }
-<span class="lineNum">     126 </span>            : 
-<span class="lineNum">     127 </span>            : const std::array&lt;std::vector&lt;double&gt;, AdamsBashforthN::maximum_order&gt;
-<span class="lineNum">     128 </span><span class="lineCov">        208 : AdamsBashforthN::coefficients_{{</span>
-<span class="lineNum">     129 </span>            :     {1.5, -0.5},                                           // 2nd order
-<span class="lineNum">     130 </span>            :     {23.0 / 12.0, -4.0 / 3.0, 5.0 / 12.0},                 // 3rd order
-<span class="lineNum">     131 </span>            :     {55.0 / 24.0, -59.0 / 24.0, 37.0 / 24.0, -3.0 / 8.0},  // 4th order
-<span class="lineNum">     132 </span>            :     {1901.0 / 720.0, -1387.0 / 360.0, 109.0 / 30.0, -637.0 / 360.0,
-<span class="lineNum">     133 </span>            :      251.0 / 720.0},  // 5th order
-<span class="lineNum">     134 </span>            :     {4277.0 / 1440.0, -2641.0 / 480.0, 4991.0 / 720.0, -3649.0 / 720.0,
-<span class="lineNum">     135 </span>            :      959.0 / 480.0, -95.0 / 288.0},  // 6th order
-<span class="lineNum">     136 </span>            :     {198721.0 / 60480.0, -18637.0 / 2520.0, 235183.0 / 20160.0,
-<span class="lineNum">     137 </span>            :      -10754.0 / 945.0, 135713.0 / 20160.0, -5603.0 / 2520.0,
-<span class="lineNum">     138 </span>            :      19087.0 / 60480.0},  // 7th order
-<span class="lineNum">     139 </span>            :     {16083.0 / 4480.0, -1152169.0 / 120960.0, 242653.0 / 13440.0,
-<span class="lineNum">     140 </span>            :      -296053.0 / 13440.0, 2102243.0 / 120960.0, -115747.0 / 13440.0,
-<span class="lineNum">     141 </span>            :      32863.0 / 13440.0, -5257.0 / 17280.0},  // 8th order
-<a name="142"><span class="lineNum">     142 </span><span class="lineCov">        208 : }};</span></a>
-<span class="lineNum">     143 </span>            : 
-<span class="lineNum">     144 </span><span class="lineCov">        624 : }  // namespace TimeSteppers</span>
+<span class="lineNum">      69 </span>            :   // The `steps` vector contains the relative step sizes:
+<span class="lineNum">      70 </span>            :   //   steps = {dt_{n-k+1}/dt_n, ..., dt_n/dt_n}
+<span class="lineNum">      71 </span>            :   // Our goal is to calculate, for each j, the coefficient given by
+<span class="lineNum">      72 </span>            :   //   \int_0^1 dt ell_j(t; 1, (dt_n + dt_{n-1})/dt_n, ...,
+<span class="lineNum">      73 </span>            :   //                        (dt_n + ... + dt_{n-k+1})/dt_n)
+<span class="lineNum">      74 </span>            :   // (Where the ell_j are the Lagrange interpolating polynomials.)
+<span class="lineNum">      75 </span>            : 
+<span class="lineNum">      76 </span>            :   // Calculate coefficients of the numerators of the Lagrange interpolating
+<span class="lineNum">      77 </span>            :   // polynomial, in the standard form.
+<span class="lineNum">      78 </span>            :   std::vector&lt;std::vector&lt;double&gt;&gt; polynomials(order,
+<span class="lineNum">      79 </span><span class="lineCov">      22382 :                                                std::vector&lt;double&gt;(order, 0.));</span>
+<span class="lineNum">      80 </span><span class="lineCov">      67095 :   for (auto&amp; poly : polynomials) {</span>
+<span class="lineNum">      81 </span><span class="lineCov">      55904 :     poly[0] = 1.;</span>
+<span class="lineNum">      82 </span>            :   }
+<span class="lineNum">      83 </span>            :   {
+<span class="lineNum">      84 </span><span class="lineCov">      11191 :     double step_sum = 0.;</span>
+<span class="lineNum">      85 </span><span class="lineCov">      67095 :     for (size_t m = 0; m &lt; order; ++m) {</span>
+<span class="lineNum">      86 </span><span class="lineCov">      55904 :       const double step = steps[order - m - 1];</span>
+<span class="lineNum">      87 </span><span class="lineCov">      55904 :       step_sum += step;</span>
+<span class="lineNum">      88 </span><span class="lineCov">     379928 :       for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">      89 </span><span class="lineCov">     324024 :         if (m == j) {</span>
+<span class="lineNum">      90 </span><span class="lineCov">      55904 :           continue;</span>
+<span class="lineNum">      91 </span>            :         }
+<span class="lineNum">      92 </span><span class="lineCov">     268120 :         auto&amp; poly = polynomials[j];</span>
+<span class="lineNum">      93 </span><span class="lineCov">    1139147 :         for (size_t i = m + (m &gt; j ? 0 : 1); i &gt; 0; --i) {</span>
+<span class="lineNum">      94 </span><span class="lineCov">     871027 :           poly[i] = poly[i - 1] - step_sum * poly[i];</span>
+<span class="lineNum">      95 </span>            :         }
+<span class="lineNum">      96 </span><span class="lineCov">     268120 :         poly[0] *= -step_sum;</span>
+<span class="lineNum">      97 </span>            :       }
+<span class="lineNum">      98 </span>            :     }
+<span class="lineNum">      99 </span>            :   }
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            :   // Calculate the denominators of the Lagrange interpolating polynomials.
+<span class="lineNum">     102 </span><span class="lineCov">      22382 :   std::vector&lt;double&gt; denominators;</span>
+<span class="lineNum">     103 </span><span class="lineCov">      11191 :   denominators.reserve(order);</span>
+<span class="lineNum">     104 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">     105 </span><span class="lineCov">      55904 :     double denom = 1.;</span>
+<span class="lineNum">     106 </span><span class="lineCov">      55904 :     double step_sum = 0.;</span>
+<span class="lineNum">     107 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; j; ++m) {</span>
+<span class="lineNum">     108 </span><span class="lineCov">     134060 :       const double step = steps[order - j + m - 1];</span>
+<span class="lineNum">     109 </span><span class="lineCov">     134060 :       step_sum += step;</span>
+<span class="lineNum">     110 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
+<span class="lineNum">     111 </span>            :     }
+<span class="lineNum">     112 </span><span class="lineCov">      55904 :     step_sum = 0.;</span>
+<span class="lineNum">     113 </span><span class="lineCov">     189964 :     for (size_t m = 0; m &lt; order - j - 1; ++m) {</span>
+<span class="lineNum">     114 </span><span class="lineCov">     134060 :       const double step = steps[order - j - m - 2];</span>
+<span class="lineNum">     115 </span><span class="lineCov">     134060 :       step_sum += step;</span>
+<span class="lineNum">     116 </span><span class="lineCov">     134060 :       denom *= step_sum;</span>
+<span class="lineNum">     117 </span>            :     }
+<span class="lineNum">     118 </span><span class="lineCov">      55904 :     denominators.push_back(denom);</span>
+<span class="lineNum">     119 </span>            :   }
+<span class="lineNum">     120 </span>            : 
+<span class="lineNum">     121 </span>            :   // At this point, the Lagrange interpolating polynomials are given by:
+<span class="lineNum">     122 </span>            :   //   ell_j(t; ...) = +/- sum_m t^m polynomials[j][m] / denominators[j]
+<span class="lineNum">     123 </span>            : 
+<span class="lineNum">     124 </span>            :   // Integrate, term by term.
+<span class="lineNum">     125 </span><span class="lineCov">      11191 :   std::vector&lt;double&gt; result;</span>
+<span class="lineNum">     126 </span><span class="lineCov">      11191 :   result.reserve(order);</span>
+<span class="lineNum">     127 </span><span class="lineCov">      11191 :   double overall_sign = order % 2 == 0 ? -1. : 1.;</span>
+<span class="lineNum">     128 </span><span class="lineCov">      67095 :   for (size_t j = 0; j &lt; order; ++j) {</span>
+<span class="lineNum">     129 </span><span class="lineCov">      55904 :     const auto&amp; poly = polynomials[j];</span>
+<span class="lineNum">     130 </span><span class="lineCov">      55904 :     double integral = 0.;</span>
+<span class="lineNum">     131 </span><span class="lineCov">     379928 :     for (size_t i = 0; i &lt; order; ++i) {</span>
+<span class="lineNum">     132 </span><span class="lineCov">     324024 :       integral += poly[i] / (i + 1);</span>
+<span class="lineNum">     133 </span>            :     }
+<span class="lineNum">     134 </span><span class="lineCov">      55904 :     result.push_back(overall_sign * integral / denominators[j]);</span>
+<span class="lineNum">     135 </span><span class="lineCov">      55904 :     overall_sign = -overall_sign;</span>
+<span class="lineNum">     136 </span>            :   }
+<span class="lineNum">     137 </span><span class="lineCov">      22382 :   return result;</span>
+<span class="lineNum">     138 </span>            : }
+<span class="lineNum">     139 </span>            : 
+<span class="lineNum">     140 </span>            : const std::array&lt;std::vector&lt;double&gt;, AdamsBashforthN::maximum_order&gt;
+<span class="lineNum">     141 </span><span class="lineCov">        208 : AdamsBashforthN::coefficients_{{</span>
+<span class="lineNum">     142 </span>            :     {1.5, -0.5},                                           // 2nd order
+<span class="lineNum">     143 </span>            :     {23.0 / 12.0, -4.0 / 3.0, 5.0 / 12.0},                 // 3rd order
+<span class="lineNum">     144 </span>            :     {55.0 / 24.0, -59.0 / 24.0, 37.0 / 24.0, -3.0 / 8.0},  // 4th order
+<span class="lineNum">     145 </span>            :     {1901.0 / 720.0, -1387.0 / 360.0, 109.0 / 30.0, -637.0 / 360.0,
+<span class="lineNum">     146 </span>            :      251.0 / 720.0},  // 5th order
+<span class="lineNum">     147 </span>            :     {4277.0 / 1440.0, -2641.0 / 480.0, 4991.0 / 720.0, -3649.0 / 720.0,
+<span class="lineNum">     148 </span>            :      959.0 / 480.0, -95.0 / 288.0},  // 6th order
+<span class="lineNum">     149 </span>            :     {198721.0 / 60480.0, -18637.0 / 2520.0, 235183.0 / 20160.0,
+<span class="lineNum">     150 </span>            :      -10754.0 / 945.0, 135713.0 / 20160.0, -5603.0 / 2520.0,
+<span class="lineNum">     151 </span>            :      19087.0 / 60480.0},  // 7th order
+<span class="lineNum">     152 </span>            :     {16083.0 / 4480.0, -1152169.0 / 120960.0, 242653.0 / 13440.0,
+<span class="lineNum">     153 </span>            :      -296053.0 / 13440.0, 2102243.0 / 120960.0, -115747.0 / 13440.0,
+<span class="lineNum">     154 </span>            :      32863.0 / 13440.0, -5257.0 / 17280.0},  // 8th order
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">        208 : }};</span></a>
+<span class="lineNum">     156 </span>            : 
+<span class="lineNum">     157 </span><span class="lineCov">        624 : }  // namespace TimeSteppers</span>
 </pre>
       </td>
     </tr>

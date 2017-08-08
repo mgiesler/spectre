@@ -185,28 +185,28 @@ Functions</h2></td></tr>
 <tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; decltype(tmpl::front&lt; Ls &gt;::value)&gt;, tmpl::size&lt; Ls &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga09be92d0bb8581e96be39b82b18871df">make_array_from_list</a> ()</td></tr>
 <tr class="memdesc:ga09be92d0bb8581e96be39b82b18871df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an array from a typelist that holds <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>'s all of which have the same <code>value_type</code>  <a href="#ga09be92d0bb8581e96be39b82b18871df">More...</a><br /></td></tr>
 <tr class="separator:ga09be92d0bb8581e96be39b82b18871df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22d722db24272fd3f3990e6b66b3867f"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga22d722db24272fd3f3990e6b66b3867f">cstring_length</a> (const char *str)</td></tr>
-<tr class="memdesc:ga22d722db24272fd3f3990e6b66b3867f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the length of a const char* at compile time.  <a href="#ga22d722db24272fd3f3990e6b66b3867f">More...</a><br /></td></tr>
-<tr class="separator:ga22d722db24272fd3f3990e6b66b3867f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf311bd0981ec7e61d7faf84ddf81c757"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#gaf311bd0981ec7e61d7faf84ddf81c757">cstring_hash</a> (const char *str)</td></tr>
-<tr class="memdesc:gaf311bd0981ec7e61d7faf84ddf81c757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a hash of a const char* at compile time.  <a href="#gaf311bd0981ec7e61d7faf84ddf81c757">More...</a><br /></td></tr>
-<tr class="separator:gaf311bd0981ec7e61d7faf84ddf81c757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86291f00ac1c63ccb6c8135d89416c46"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga86291f00ac1c63ccb6c8135d89416c46">cstring_length</a> (const char *str) noexcept</td></tr>
+<tr class="memdesc:ga86291f00ac1c63ccb6c8135d89416c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the length of a const char* at compile time.  <a href="#ga86291f00ac1c63ccb6c8135d89416c46">More...</a><br /></td></tr>
+<tr class="separator:ga86291f00ac1c63ccb6c8135d89416c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab925d824ee9991214c82e77ce1aebd9a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#gab925d824ee9991214c82e77ce1aebd9a">cstring_hash</a> (const char *str) noexcept</td></tr>
+<tr class="memdesc:gab925d824ee9991214c82e77ce1aebd9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a hash of a const char* at compile time.  <a href="#gab925d824ee9991214c82e77ce1aebd9a">More...</a><br /></td></tr>
+<tr class="separator:gab925d824ee9991214c82e77ce1aebd9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67df32bbc36ce9e80f16019b14345ba8"><td class="memTemplParams" colspan="2">template&lt;size_t I, typename T , size_t Size&gt; </td></tr>
 <tr class="memitem:ga67df32bbc36ce9e80f16019b14345ba8"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; T &gt;, Size &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga67df32bbc36ce9e80f16019b14345ba8">replace_at</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Size &gt; &amp;arr, T value)</td></tr>
 <tr class="memdesc:ga67df32bbc36ce9e80f16019b14345ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace at compile time the <code>I</code>th entry in the array with <code>value</code>  <a href="#ga67df32bbc36ce9e80f16019b14345ba8">More...</a><br /></td></tr>
 <tr class="separator:ga67df32bbc36ce9e80f16019b14345ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ba185e114b03850b947f1482bf73d5f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , size_t size&gt; </td></tr>
-<tr class="memitem:ga4ba185e114b03850b947f1482bf73d5f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga4ba185e114b03850b947f1482bf73d5f">array_equal</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, size &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; S, size &gt; &amp;rhs, const size_t i=0)</td></tr>
-<tr class="memdesc:ga4ba185e114b03850b947f1482bf73d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check at compile time if two <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a></code>s are equal.  <a href="#ga4ba185e114b03850b947f1482bf73d5f">More...</a><br /></td></tr>
-<tr class="separator:ga4ba185e114b03850b947f1482bf73d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ea880e99a7630ae00b9f5ab31f58183"><td class="memTemplParams" colspan="2">template&lt;typename T , typename S , size_t size&gt; </td></tr>
+<tr class="memitem:ga0ea880e99a7630ae00b9f5ab31f58183"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga0ea880e99a7630ae00b9f5ab31f58183">array_equal</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, size &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; S, size &gt; &amp;rhs, const size_t i=0) noexcept</td></tr>
+<tr class="memdesc:ga0ea880e99a7630ae00b9f5ab31f58183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check at compile time if two <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a></code>s are equal.  <a href="#ga0ea880e99a7630ae00b9f5ab31f58183">More...</a><br /></td></tr>
+<tr class="separator:ga0ea880e99a7630ae00b9f5ab31f58183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Contains an assortment of constexpr functions. </p>
 <h3>Description</h3>
 <p>Contains an assortment of constexpr functions that are useful for metaprogramming, or efficient mathematical computations, such as exponentiating to an integer power, where the power is known at compile time. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga4ba185e114b03850b947f1482bf73d5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4ba185e114b03850b947f1482bf73d5f">&#9670;&nbsp;</a></span>array_equal()</h2>
+<a id="ga0ea880e99a7630ae00b9f5ab31f58183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ea880e99a7630ae00b9f5ab31f58183">&#9670;&nbsp;</a></span>array_equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,20 +242,25 @@ template&lt;typename T , typename S , size_t size&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Check at compile time if two <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a></code>s are equal. </p>
 
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
 </div>
 </div>
-<a id="gaf311bd0981ec7e61d7faf84ddf81c757"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf311bd0981ec7e61d7faf84ddf81c757">&#9670;&nbsp;</a></span>cstring_hash()</h2>
+<a id="gab925d824ee9991214c82e77ce1aebd9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab925d824ee9991214c82e77ce1aebd9a">&#9670;&nbsp;</a></span>cstring_hash()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">constexpr size_t cstring_hash </td>
@@ -265,6 +270,11 @@ template&lt;typename T , typename S , size_t size&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Compute a hash of a const char* at compile time. </p>
@@ -273,11 +283,14 @@ template&lt;typename T , typename S , size_t size&gt; </div>
 
 </div>
 </div>
-<a id="ga22d722db24272fd3f3990e6b66b3867f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga22d722db24272fd3f3990e6b66b3867f">&#9670;&nbsp;</a></span>cstring_length()</h2>
+<a id="ga86291f00ac1c63ccb6c8135d89416c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86291f00ac1c63ccb6c8135d89416c46">&#9670;&nbsp;</a></span>cstring_length()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">constexpr size_t cstring_length </td>
@@ -287,6 +300,11 @@ template&lt;typename T , typename S , size_t size&gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Compute the length of a const char* at compile time. </p>

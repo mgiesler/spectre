@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cc6261f8b84841db807cb976ebb329ddbaf189f5 - ErrorHandling/Error.hpp</title>
+  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - ErrorHandling/Error.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/cc6261f8b84841db807cb976ebb329ddbaf189f5">cc6261f8b84841db807cb976ebb329ddbaf189f5</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">2</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-07 02:24:15</td>
+            <td class="headerValue">2017-08-08 02:24:16</td>
             <td></td>
           </tr>
           <tr>
@@ -101,28 +101,29 @@
 <span class="lineNum">      35 </span><span class="lineCov">          2 : #define ERROR(m)                                                 \</span>
 <span class="lineNum">      36 </span>            :   do {                                                           \
 <span class="lineNum">      37 </span>            :     std::ostringstream avoid_name_collisions_ERROR;              \
-<span class="lineNum">      38 </span>            :     avoid_name_collisions_ERROR &lt;&lt; m; /* NOLINT */               \
-<span class="lineNum">      39 </span>            :     abort_with_error_message(__FILE__, __LINE__,                 \
-<span class="lineNum">      40 </span>            :                              avoid_name_collisions_ERROR.str()); \
-<span class="lineNum">      41 </span>            :   } while (false)
-<span class="lineNum">      42 </span>            : 
-<span class="lineNum">      43 </span>            : /*!
-<span class="lineNum">      44 </span>            :  * \ingroup ErrorHandling
-<span class="lineNum">      45 </span>            :  * \brief prints an error message to the standard error and aborts the
-<span class="lineNum">      46 </span>            :  * program.
-<span class="lineNum">      47 </span>            :  *
-<span class="lineNum">      48 </span>            :  * CERROR is just like ERROR and so the same guidelines apply. However, because
-<span class="lineNum">      49 </span>            :  * it does not use std::stringstream it can be used in some constexpr
-<span class="lineNum">      50 </span>            :  * functions where ERROR cannot be.
-<span class="lineNum">      51 </span>            :  * \param m error message as a string, may need to use string literals
-<span class="lineNum">      52 </span>            :  */
-<span class="lineNum">      53 </span><span class="lineCov">          2 : #define CERROR(m)                                                          \</span>
-<span class="lineNum">      54 </span>            :   do {                                                                     \
-<span class="lineNum">      55 </span>            :     Parallel::abort(&quot;\n################ ERROR ################\nLine: &quot;s + \
-<span class="lineNum">      56 </span>            :                     std::to_string(__LINE__) + &quot; of file '&quot;s + __FILE__ +  \
-<span class="lineNum">      57 </span>            :                     &quot;'\n&quot;s + m + /* NOLINT */                              \
-<span class="lineNum">      58 </span>            :                     &quot;\n#######################################\n&quot;s);       \
-<span class="lineNum">      59 </span>            :   } while (false)
+<span class="lineNum">      38 </span>            :     /* clang-tidy: macro arg in parentheses */                   \
+<span class="lineNum">      39 </span>            :     avoid_name_collisions_ERROR &lt;&lt; m; /* NOLINT */               \
+<span class="lineNum">      40 </span>            :     abort_with_error_message(__FILE__, __LINE__,                 \
+<span class="lineNum">      41 </span>            :                              avoid_name_collisions_ERROR.str()); \
+<span class="lineNum">      42 </span>            :   } while (false)
+<span class="lineNum">      43 </span>            : 
+<span class="lineNum">      44 </span>            : /*!
+<span class="lineNum">      45 </span>            :  * \ingroup ErrorHandling
+<span class="lineNum">      46 </span>            :  * \brief prints an error message to the standard error and aborts the
+<span class="lineNum">      47 </span>            :  * program.
+<span class="lineNum">      48 </span>            :  *
+<span class="lineNum">      49 </span>            :  * CERROR is just like ERROR and so the same guidelines apply. However, because
+<span class="lineNum">      50 </span>            :  * it does not use std::stringstream it can be used in some constexpr
+<span class="lineNum">      51 </span>            :  * functions where ERROR cannot be.
+<span class="lineNum">      52 </span>            :  * \param m error message as a string, may need to use string literals
+<span class="lineNum">      53 </span>            :  */
+<span class="lineNum">      54 </span><span class="lineCov">          2 : #define CERROR(m)                                                          \</span>
+<span class="lineNum">      55 </span>            :   do {                                                                     \
+<span class="lineNum">      56 </span>            :     Parallel::abort(&quot;\n################ ERROR ################\nLine: &quot;s + \
+<span class="lineNum">      57 </span>            :                     std::to_string(__LINE__) + &quot; of file '&quot;s + __FILE__ +  \
+<span class="lineNum">      58 </span>            :                     &quot;'\n&quot;s + m + /* NOLINT */                              \
+<span class="lineNum">      59 </span>            :                     &quot;\n#######################################\n&quot;s);       \
+<span class="lineNum">      60 </span>            :   } while (false)
 </pre>
       </td>
     </tr>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cc6261f8b84841db807cb976ebb329ddbaf189f5 - DataStructures/StripeIterator.hpp</title>
+  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - DataStructures/StripeIterator.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/cc6261f8b84841db807cb976ebb329ddbaf189f5">cc6261f8b84841db807cb976ebb329ddbaf189f5</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">7</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-07 02:24:15</td>
+            <td class="headerValue">2017-08-08 02:24:16</td>
             <td></td>
           </tr>
           <tr>
@@ -94,7 +94,7 @@
 <span class="lineNum">      28 </span><span class="lineCov">          1 :   StripeIterator() = delete;</span>
 <span class="lineNum">      29 </span>            : 
 <span class="lineNum">      30 </span>            :   /// Returns `true` if the iterator is valid
-<span class="lineNum">      31 </span><span class="lineCov">          1 :   operator bool() const noexcept { return offset_ &lt; size_; }</span>
+<span class="lineNum">      31 </span><span class="lineCov">          1 :   explicit operator bool() const noexcept { return offset_ &lt; size_; }</span>
 <span class="lineNum">      32 </span>            : 
 <span class="lineNum">      33 </span>            :   /// Increment to the next stripe.
 <span class="lineNum">      34 </span><span class="lineCov">          1 :   StripeIterator&amp; operator++();</span>

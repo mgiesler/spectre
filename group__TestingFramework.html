@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 <h3>Usage</h3>
 <p>To run the tests, type <code>ctest</code> in the build directory. You can specify a regex to match the test name using <code>ctest -R Unit.Blah</code>, or run all tests with a certain tag using <code>ctest -L tag</code>.</p>
 <h3>Attributes</h3>
-<p>Attributes allow you to modify properties of the test. Attributes are specified as follows: </p><div class="fragment"><div class="line"><span class="comment">// [[TimeOut, 10]]</span></div><div class="line"><span class="comment">// [[ErrorRegex, The error message expected from the test]]</span></div><div class="line">TEST_CASE(<span class="stringliteral">&quot;Unit.Blah&quot;</span>, <span class="stringliteral">&quot;[Unit]&quot;</span>) {</div></div><!-- fragment --><p>Available attributes are:</p>
+<p>Attributes allow you to modify properties of the test. Attributes are specified as follows: </p><div class="fragment"><div class="line"><span class="comment">// [[TimeOut, 10]]</span></div><div class="line"><span class="comment">// [[ErrorRegex, The error message expected from the test]]</span></div><div class="line">SPECTRE_TEST_CASE(<span class="stringliteral">&quot;Unit.Blah&quot;</span>, <span class="stringliteral">&quot;[Unit]&quot;</span>) {</div></div><!-- fragment --><p>Available attributes are:</p>
 <table class="doxtable">
 <tr>
 <th>Attribute </th><th>Description   </th></tr>
@@ -230,7 +230,7 @@ Functions</h2></td></tr>
 <p>Testing error handling is just as important as testing functionality. Tests that are supposed to exit with an error must be annotated with the attribute </p><div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, The regex that should be found in the output]]</span></div></div><!-- fragment --><p> Note that the regex only needs to be a sub-expression of the error message, that is, there are implicit wildcards before and after the string.</p>
 <p>In order to test ASSERT's properly the test must also fail for release builds. This is done by adding this macro at the beginning for the test.</p>
 <h3>Example</h3>
-<div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, Out of range slab fraction]]</span></div><div class="line">[[noreturn]] TEST_CASE(<span class="stringliteral">&quot;Unit.Time.Time.Init.0&quot;</span>, <span class="stringliteral">&quot;[Unit][Time]&quot;</span>) {</div><div class="line">  <a class="code" href="group__TestingFramework.html#ga4439208ed8accb2887ff47388e91e58b">ASSERTION_TEST</a>();</div><div class="line"><span class="preprocessor">#ifdef SPECTRE_DEBUG</span></div><div class="line">  <a class="code" href="classTime.html">Time</a>(<a class="code" href="classSlab.html">Slab</a>(0., 1.), -1);</div><div class="line">  <a class="code" href="group__ErrorHandling.html#ga1d27028c1827976007fe9d29ad3a2f66">ERROR</a>(<span class="stringliteral">&quot;Bad end&quot;</span>);</div><div class="line"><span class="preprocessor">#endif</span></div><div class="line">}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, Out of range slab fraction]]</span></div><div class="line">[[noreturn]] SPECTRE_TEST_CASE(<span class="stringliteral">&quot;Unit.Time.Time.Init.0&quot;</span>, <span class="stringliteral">&quot;[Unit][Time]&quot;</span>) {</div><div class="line">  <a class="code" href="group__TestingFramework.html#ga4439208ed8accb2887ff47388e91e58b">ASSERTION_TEST</a>();</div><div class="line"><span class="preprocessor">#ifdef SPECTRE_DEBUG</span></div><div class="line">  <a class="code" href="classTime.html">Time</a>(<a class="code" href="classSlab.html">Slab</a>(0., 1.), -1);</div><div class="line">  <a class="code" href="group__ErrorHandling.html#ga1d27028c1827976007fe9d29ad3a2f66">ERROR</a>(<span class="stringliteral">&quot;Bad end&quot;</span>);</div><div class="line"><span class="preprocessor">#endif</span></div><div class="line">}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="gaec8dcdc783140fb14fe617cc0cc1dcae"></a>
@@ -293,9 +293,9 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                                                    \</div><div class="line">    std::signal(SIGABRT, spectre_testing_signal_handler); \</div><div class="line">  } <span class="keywordflow">while</span> (<span class="keyword">false</span>)</div></div><!-- fragment -->
 <p>Mark a test as checking a call to ERROR. </p>
 <h3>Details</h3>
-<p>In order to properly handle aborting with Catch versions newer than 1.6.1 we must install a signal handler after Catch does, which means inside the TEST_CASE itself. The <a class="el" href="group__TestingFramework.html#gaf962c28abc1a1f014f2a6b32c6f01680" title="Mark a test as checking a call to ERROR. ">ERROR_TEST()</a> macro should be the first line in the TEST_CASE.</p>
+<p>In order to properly handle aborting with Catch versions newer than 1.6.1 we must install a signal handler after Catch does, which means inside the SPECTRE_TEST_CASE itself. The <a class="el" href="group__TestingFramework.html#gaf962c28abc1a1f014f2a6b32c6f01680" title="Mark a test as checking a call to ERROR. ">ERROR_TEST()</a> macro should be the first line in the SPECTRE_TEST_CASE.</p>
 <h3>Example</h3>
-<div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, I failed]]</span></div><div class="line">TEST_CASE(<span class="stringliteral">&quot;TestFramework.Abort&quot;</span>, <span class="stringliteral">&quot;[Unit]&quot;</span>) {</div><div class="line">  <a class="code" href="group__TestingFramework.html#gaf962c28abc1a1f014f2a6b32c6f01680">ERROR_TEST</a>();</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><span class="comment">// [[OutputRegex, I failed]]</span></div><div class="line">SPECTRE_TEST_CASE(<span class="stringliteral">&quot;TestFramework.Abort&quot;</span>, <span class="stringliteral">&quot;[Unit]&quot;</span>) {</div><div class="line">  <a class="code" href="group__TestingFramework.html#gaf962c28abc1a1f014f2a6b32c6f01680">ERROR_TEST</a>();</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -376,6 +376,8 @@ template&lt;typename T &gt; </div>
 <p>To test serialization of copyable types use:</p>
 <p>snippet <a class="el" href="Test__PupStlCpp11_8cpp.html">Test_PupStlCpp11.cpp</a> example_serialize_copyable</p>
 <p>and for non-copyable types use: snippet <a class="el" href="Test__PupStlCpp11_8cpp.html">Test_PupStlCpp11.cpp</a> example_serialize_non_copyable </p>
+
+<p class="reference">Referenced by <a class="el" href="Test__Neighbors_8cpp.html#a5abf5249dbe852546745801269750aaa">TEST_CASE()</a>.</p>
 
 </div>
 </div>

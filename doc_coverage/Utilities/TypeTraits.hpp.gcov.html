@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cc6261f8b84841db807cb976ebb329ddbaf189f5 - Utilities/TypeTraits.hpp</title>
+  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - Utilities/TypeTraits.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/cc6261f8b84841db807cb976ebb329ddbaf189f5">cc6261f8b84841db807cb976ebb329ddbaf189f5</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">53</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-07 02:24:15</td>
+            <td class="headerValue">2017-08-08 02:24:16</td>
             <td></td>
           </tr>
           <tr>
@@ -645,11 +645,11 @@
 <span class="lineNum">     579 </span>            :   // compiler prefer the first one. If it cannot be used because there's no
 <span class="lineNum">     580 </span>            :   // call operator, then it uses the second one.
 <span class="lineNum">     581 </span>            :   template &lt;typename T, typename... Args&gt;
-<span class="lineNum">     582 </span>            :   static auto test_callable(int)
+<span class="lineNum">     582 </span>            :   static auto test_callable(int) noexcept
 <span class="lineNum">     583 </span>            :       -&gt; decltype(std::declval&lt;T&gt;()(std::declval&lt;Args&gt;()...), std::true_type());
 <span class="lineNum">     584 </span>            : 
 <span class="lineNum">     585 </span>            :   template &lt;typename, typename...&gt;
-<span class="lineNum">     586 </span>            :   static auto test_callable(...) -&gt; std::false_type;
+<span class="lineNum">     586 </span>            :   static auto test_callable(...) noexcept -&gt; std::false_type;
 <span class="lineNum">     587 </span>            :   /// \endcond
 <span class="lineNum">     588 </span>            : 
 <span class="lineNum">     589 </span>            :  public:

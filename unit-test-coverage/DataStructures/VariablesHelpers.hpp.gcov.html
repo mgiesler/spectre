@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cc6261f8b84841db807cb976ebb329ddbaf189f5 - DataStructures/VariablesHelpers.hpp</title>
+  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - DataStructures/VariablesHelpers.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/cc6261f8b84841db807cb976ebb329ddbaf189f5">cc6261f8b84841db807cb976ebb329ddbaf189f5</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-07 02:23:45</td>
+            <td class="headerValue">2017-08-08 02:23:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -104,12 +104,14 @@
 <span class="lineNum">      34 </span><span class="lineCov">          3 :   double* interface_vars_data = interface_vars.data();</span>
 <span class="lineNum">      35 </span><span class="lineCov">         29 :   for (SliceIterator si(element_extents, sliced_dim, slice_point); si; ++si) {</span>
 <span class="lineNum">      36 </span><span class="lineCov">        104 :     for (size_t i = 0; i &lt; number_of_independent_components; ++i) {</span>
-<span class="lineNum">      37 </span><span class="lineCov">        156 :       interface_vars_data[si.slice_offset() + i * interface_grid_points] =</span>
-<span class="lineNum">      38 </span><span class="lineCov">         78 :           vars_data[si.volume_offset() + i * volume_grid_points];</span>
-<span class="lineNum">      39 </span>            :     }
-<span class="lineNum">      40 </span>            :   }
-<span class="lineNum">      41 </span><span class="lineCov">          3 :   return interface_vars;</span>
-<span class="lineNum">      42 </span>            : }
+<span class="lineNum">      37 </span>            :       // clang-tidy: do not use pointer arithmetic
+<span class="lineNum">      38 </span><span class="lineCov">        234 :       interface_vars_data[si.slice_offset() +                      // NOLINT</span>
+<span class="lineNum">      39 </span><span class="lineCov">        234 :                           i * interface_grid_points] =             // NOLINT</span>
+<span class="lineNum">      40 </span><span class="lineCov">         78 :           vars_data[si.volume_offset() + i * volume_grid_points];  // NOLINT</span>
+<span class="lineNum">      41 </span>            :     }
+<span class="lineNum">      42 </span>            :   }
+<span class="lineNum">      43 </span><span class="lineCov">          3 :   return interface_vars;</span>
+<span class="lineNum">      44 </span>            : }
 </pre>
       </td>
     </tr>

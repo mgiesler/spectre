@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - cc6261f8b84841db807cb976ebb329ddbaf189f5 - DataStructures/Tensor/EagerMath/Magnitude.hpp</title>
+  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - DataStructures/Tensor/EagerMath/Magnitude.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/cc6261f8b84841db807cb976ebb329ddbaf189f5">cc6261f8b84841db807cb976ebb329ddbaf189f5</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">11</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-07 02:23:45</td>
+            <td class="headerValue">2017-08-08 02:23:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -112,20 +112,20 @@
 <span class="lineNum">      42 </span>            :  * metric.
 <a name="43"><span class="lineNum">      43 </span>            :  */</a>
 <span class="lineNum">      44 </span>            : template &lt;typename DataType, typename Index0, typename Index1&gt;
-<span class="lineNum">      45 </span><span class="lineCov">          5 : DataType magnitude(</span>
+<span class="lineNum">      45 </span><span class="lineCov">          4 : DataType magnitude(</span>
 <span class="lineNum">      46 </span>            :     const Tensor&lt;DataType, Symmetry&lt;1&gt;, typelist&lt;Index0&gt;&gt;&amp; tensor,
 <span class="lineNum">      47 </span>            :     const Tensor&lt;DataType, Symmetry&lt;1, 1&gt;, typelist&lt;Index1, Index1&gt;&gt;&amp;
 <span class="lineNum">      48 </span>            :         metric) {
 <span class="lineNum">      49 </span>            :   static_assert(std::is_same&lt;Index0, change_index_up_lo&lt;Index1&gt;&gt;::value,
 <span class="lineNum">      50 </span>            :                 &quot;The indices of the tensor and metric must be the same, &quot;
 <span class="lineNum">      51 </span>            :                 &quot;except for their valence which must be opposite&quot;);
-<span class="lineNum">      52 </span><span class="lineCov">         10 :   auto magnitude_squared = make_arithmetic_value(tensor.template get&lt;0&gt;(), 0.);</span>
-<span class="lineNum">      53 </span><span class="lineCov">         16 :   for (size_t a = 0; a &lt; Index0::dim; ++a) {</span>
-<span class="lineNum">      54 </span><span class="lineCov">         40 :     for (size_t b = 0; b &lt; Index0::dim; ++b) {</span>
-<span class="lineNum">      55 </span><span class="lineCov">         29 :       magnitude_squared += tensor.get(a) * tensor.get(b) * metric.get(a, b);</span>
+<span class="lineNum">      52 </span><span class="lineCov">          8 :   auto magnitude_squared = make_arithmetic_value(tensor.template get&lt;0&gt;(), 0.);</span>
+<span class="lineNum">      53 </span><span class="lineCov">         12 :   for (size_t a = 0; a &lt; Index0::dim; ++a) {</span>
+<span class="lineNum">      54 </span><span class="lineCov">         28 :     for (size_t b = 0; b &lt; Index0::dim; ++b) {</span>
+<span class="lineNum">      55 </span><span class="lineCov">         20 :       magnitude_squared += tensor.get(a) * tensor.get(b) * metric.get(a, b);</span>
 <span class="lineNum">      56 </span>            :     }
 <span class="lineNum">      57 </span>            :   }
-<span class="lineNum">      58 </span><span class="lineCov">          7 :   return sqrt(magnitude_squared);</span>
+<span class="lineNum">      58 </span><span class="lineCov">          6 :   return sqrt(magnitude_squared);</span>
 <span class="lineNum">      59 </span>            : }
 </pre>
       </td>

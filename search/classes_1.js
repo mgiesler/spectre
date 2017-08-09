@@ -37,6 +37,7 @@ var searchData=
   ['bit_5fnot',['bit_not',['http://en.cppreference.com/w/cpp/utility/functional/bit_not.html',1,'std']]],
   ['bit_5for',['bit_or',['http://en.cppreference.com/w/cpp/utility/functional/bit_or.html',1,'std']]],
   ['bitset',['bitset',['http://en.cppreference.com/w/cpp/utility/bitset.html',1,'std']]],
+  ['block',['Block',['../classBlock.html',1,'']]],
   ['blockneighbor',['BlockNeighbor',['../classBlockNeighbor.html',1,'']]],
   ['bool_5fconstant',['bool_constant',['http://en.cppreference.com/w/cpp/types/integral_constant.html',1,'std']]],
   ['boyer_5fmoore_5fhorspool_5fsearcher',['boyer_moore_horspool_searcher',['http://en.cppreference.com/w/cpp/utility/functional/boyer_moore_horspool_searcher.html',1,'std::boyer_moore_horspool_searcher'],['http://en.cppreference.com/w/cpp/experimental/boyer_moore_horspool_searcher.html',1,'std::experimental::boyer_moore_horspool_searcher']]],

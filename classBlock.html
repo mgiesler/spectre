@@ -1,0 +1,583 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: Block&lt; VolumeDim &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classBlock-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">Block&lt; VolumeDim &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__ComputationalDomain.html">Computational Domain</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root node of a tree which is used to construct the Elements that cover a region of the computational domain.  
+ <a href="classBlock.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Block_8hpp_source.html">Block.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3b081913b53631381ac31cc9fbd9c0d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a3b081913b53631381ac31cc9fbd9c0d3">Block</a> (const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; VolumeDim, VolumeDim &gt; &amp;<a class="el" href="classBlock.html#a440f977fef4a4869c37c9403a4c8a167">embedding_map</a>, size_t <a class="el" href="classBlock.html#a600cc27d531293fdf883b4c4fec9d773">id</a>, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, <a class="el" href="classBlockNeighbor.html">BlockNeighbor</a>&lt; VolumeDim &gt;&gt; &amp;&amp;<a class="el" href="classBlock.html#a0fc3b72eacb8b03b4293b43504492e21">neighbors</a>)</td></tr>
+<tr class="separator:a3b081913b53631381ac31cc9fbd9c0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123db9a464a7bc35d42eded87ba90dad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a123db9a464a7bc35d42eded87ba90dad">Block</a> ()=default</td></tr>
+<tr class="separator:a123db9a464a7bc35d42eded87ba90dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac543a42e1cc1c9b18c555db3678df82e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ac543a42e1cc1c9b18c555db3678df82e">~Block</a> ()=default</td></tr>
+<tr class="separator:ac543a42e1cc1c9b18c555db3678df82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07a4aa2fd1c390354abac1f55a9376a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a07a4aa2fd1c390354abac1f55a9376a9">Block</a> (const <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;)=delete</td></tr>
+<tr class="separator:a07a4aa2fd1c390354abac1f55a9376a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2556f350c8105d5c8899a39e2e33e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#aac2556f350c8105d5c8899a39e2e33e9">Block</a> (<a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:aac2556f350c8105d5c8899a39e2e33e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f030018ebad27b20b8e6eaf7eb7e1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#ad2f030018ebad27b20b8e6eaf7eb7e1f">operator=</a> (const <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;)=delete</td></tr>
+<tr class="separator:ad2f030018ebad27b20b8e6eaf7eb7e1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbab3cb57e9cdae4d3a7d0c914288b2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#afbab3cb57e9cdae4d3a7d0c914288b2d">operator=</a> (<a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:afbab3cb57e9cdae4d3a7d0c914288b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440f977fef4a4869c37c9403a4c8a167"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; VolumeDim, VolumeDim &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a440f977fef4a4869c37c9403a4c8a167">embedding_map</a> () const noexcept</td></tr>
+<tr class="separator:a440f977fef4a4869c37c9403a4c8a167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600cc27d531293fdf883b4c4fec9d773"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a600cc27d531293fdf883b4c4fec9d773">id</a> () const noexcept</td></tr>
+<tr class="memdesc:a600cc27d531293fdf883b4c4fec9d773"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique identifier for the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> that is in the range [0, number_of_blocks -1] where number_of_blocks is the number of Blocks that cover the computational domain.  <a href="#a600cc27d531293fdf883b4c4fec9d773">More...</a><br /></td></tr>
+<tr class="separator:a600cc27d531293fdf883b4c4fec9d773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc3b72eacb8b03b4293b43504492e21"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, <a class="el" href="classBlockNeighbor.html">BlockNeighbor</a>&lt; VolumeDim &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a0fc3b72eacb8b03b4293b43504492e21">neighbors</a> () const noexcept</td></tr>
+<tr class="memdesc:a0fc3b72eacb8b03b4293b43504492e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about the neighboring Blocks.  <a href="#a0fc3b72eacb8b03b4293b43504492e21">More...</a><br /></td></tr>
+<tr class="separator:a0fc3b72eacb8b03b4293b43504492e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8b1b2ab2eea9dae2fcf432201d8bf1"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a0d8b1b2ab2eea9dae2fcf432201d8bf1">external_boundaries</a> () const noexcept</td></tr>
+<tr class="memdesc:a0d8b1b2ab2eea9dae2fcf432201d8bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The directions of the faces of the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> that are external boundaries.  <a href="#a0d8b1b2ab2eea9dae2fcf432201d8bf1">More...</a><br /></td></tr>
+<tr class="separator:a0d8b1b2ab2eea9dae2fcf432201d8bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec7b3be4f788a904f89e5c4730485c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html#a8ec7b3be4f788a904f89e5c4730485c7">pup</a> (PUP::er &amp;p)</td></tr>
+<tr class="memdesc:a8ec7b3be4f788a904f89e5c4730485c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization for Charm++.  <a href="#a8ec7b3be4f788a904f89e5c4730485c7">More...</a><br /></td></tr>
+<tr class="separator:a8ec7b3be4f788a904f89e5c4730485c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t VolumeDim&gt;<br />
+class Block&lt; VolumeDim &gt;</h3>
+
+<p>A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root node of a tree which is used to construct the Elements that cover a region of the computational domain. </p>
+<p>Each codimension 1 boundary of a Block&lt;VolumeDim&gt; is either an external boundary or identical to a boundary of one other <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a>.</p>
+<p>A <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> has logical coordinates that go from -1 to +1 in each dimension. The global coordinates are obtained from the logical coordinates from the <a class="el" href="classEmbeddingMap.html" title="Base class representing a coordinate mapping from a DimOfDomain-dimensional space (coordinates ) to a...">EmbeddingMap</a>: EmbeddingMap::operator() takes Points in the Logical <a class="el" href="namespaceFrame.html" title="Indicates the Frame that a TensorIndexType is in. ">Frame</a> (i.e., logical coordinates) and returns Points in the Grid <a class="el" href="namespaceFrame.html" title="Indicates the Frame that a TensorIndexType is in. ">Frame</a> (i.e., global coordinates).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">VolumeDim</td><td>the dimension of the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> (i.e. the volume dimension). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3b081913b53631381ac31cc9fbd9c0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b081913b53631381ac31cc9fbd9c0d3">&#9670;&nbsp;</a></span>Block() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::<a class="el" href="classBlock.html">Block</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt; VolumeDim, VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>embedding_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt; <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt;, <a class="el" href="classBlockNeighbor.html">BlockNeighbor</a>&lt; VolumeDim &gt;&gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>neighbors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">embedding_map</td><td>the <a class="el" href="classEmbeddingMap.html" title="Base class representing a coordinate mapping from a DimOfDomain-dimensional space (coordinates ) to a...">EmbeddingMap</a>. </td></tr>
+    <tr><td class="paramname">id</td><td>a unique ID. </td></tr>
+    <tr><td class="paramname">neighbors</td><td>info about the Blocks that share a codimension 1 boundary with this <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a123db9a464a7bc35d42eded87ba90dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a123db9a464a7bc35d42eded87ba90dad">&#9670;&nbsp;</a></span>Block() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::<a class="el" href="classBlock.html">Block</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac543a42e1cc1c9b18c555db3678df82e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac543a42e1cc1c9b18c555db3678df82e">&#9670;&nbsp;</a></span>~Block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::~<a class="el" href="classBlock.html">Block</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07a4aa2fd1c390354abac1f55a9376a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07a4aa2fd1c390354abac1f55a9376a9">&#9670;&nbsp;</a></span>Block() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::<a class="el" href="classBlock.html">Block</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac2556f350c8105d5c8899a39e2e33e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2556f350c8105d5c8899a39e2e33e9">&#9670;&nbsp;</a></span>Block() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::<a class="el" href="classBlock.html">Block</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a440f977fef4a4869c37c9403a4c8a167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a440f977fef4a4869c37c9403a4c8a167">&#9670;&nbsp;</a></span>embedding_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classEmbeddingMap.html">EmbeddingMap</a>&lt;VolumeDim, VolumeDim&gt;&amp; <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::embedding_map </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d8b1b2ab2eea9dae2fcf432201d8bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8b1b2ab2eea9dae2fcf432201d8bf1">&#9670;&nbsp;</a></span>external_boundaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt;<a class="el" href="classDirection.html">Direction</a>&lt;VolumeDim&gt; &gt;&amp; <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::external_boundaries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The directions of the faces of the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> that are external boundaries. </p>
+
+<p class="reference">References <a class="el" href="Block_8hpp.html#a59d86d05d1f53d1c407eb905f3f16fa1">operator!=()</a>, <a class="el" href="Block_8hpp.html#a6beb8a58ca48d9cbfa4131142e74765a">operator==()</a>, and <a class="el" href="classBlock.html#a8ec7b3be4f788a904f89e5c4730485c7">Block&lt; VolumeDim &gt;::pup()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Test__Block_8cpp.html#a3e9a29b9aeca16113d88f1617176ed29">TEST_CASE()</a>.</p>
+
+</div>
+</div>
+<a id="a600cc27d531293fdf883b4c4fec9d773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600cc27d531293fdf883b4c4fec9d773">&#9670;&nbsp;</a></span>id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A unique identifier for the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> that is in the range [0, number_of_blocks -1] where number_of_blocks is the number of Blocks that cover the computational domain. </p>
+
+<p class="reference">Referenced by <a class="el" href="Test__Block_8cpp.html#a3e9a29b9aeca16113d88f1617176ed29">TEST_CASE()</a>.</p>
+
+</div>
+</div>
+<a id="a0fc3b72eacb8b03b4293b43504492e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc3b72eacb8b03b4293b43504492e21">&#9670;&nbsp;</a></span>neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_map.html">std::unordered_map</a>&lt;<a class="el" href="classDirection.html">Direction</a>&lt;VolumeDim&gt;, <a class="el" href="classBlockNeighbor.html">BlockNeighbor</a>&lt;VolumeDim&gt; &gt;&amp; <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::neighbors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Information about the neighboring Blocks. </p>
+
+<p class="reference">Referenced by <a class="el" href="Test__Block_8cpp.html#a3e9a29b9aeca16113d88f1617176ed29">TEST_CASE()</a>.</p>
+
+</div>
+</div>
+<a id="ad2f030018ebad27b20b8e6eaf7eb7e1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f030018ebad27b20b8e6eaf7eb7e1f">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbab3cb57e9cdae4d3a7d0c914288b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbab3cb57e9cdae4d3a7d0c914288b2d">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBlock.html">Block</a>&lt;VolumeDim&gt;&amp; <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ec7b3be4f788a904f89e5c4730485c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec7b3be4f788a904f89e5c4730485c7">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBlock.html">Block</a>&lt; VolumeDim &gt;::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialization for Charm++. </p>
+
+<p class="reference">Referenced by <a class="el" href="classBlock.html#a0d8b1b2ab2eea9dae2fcf432201d8bf1">Block&lt; VolumeDim &gt;::external_boundaries()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/Domain/<a class="el" href="Block_8hpp_source.html">Block.hpp</a></li>
+<li>src/Domain/<a class="el" href="Block_8cpp.html">Block.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

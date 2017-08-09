@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 0e46d42611e3b48e5551f118204a1c93d31d22fd - Domain/Direction.hpp</title>
+  <title>LCOV - f7399f3f3680b387c8a7273fb77bd3d4ec9f249f - Domain/Direction.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,21 +28,21 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0e46d42611e3b48e5551f118204a1c93d31d22fd">0e46d42611e3b48e5551f118204a1c93d31d22fd</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7399f3f3680b387c8a7273fb77bd3d4ec9f249f">f7399f3f3680b387c8a7273fb77bd3d4ec9f249f</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">37</td>
+            <td class="headerCovTableEntryMed">81.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-08 02:23:49</td>
+            <td class="headerValue">2017-08-09 02:24:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">45</td>
-            <td class="headerCovTableEntry">45</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">51</td>
+            <td class="headerCovTableEntryMed">88.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -204,26 +204,26 @@
 <span class="lineNum">     134 </span><span class="lineCov">         13 : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::opposite() const noexcept {</span>
 <span class="lineNum">     135 </span><span class="lineCov">         13 :   return Direction&lt;VolumeDim&gt;(axis_, ::opposite(side_));</span>
 <span class="lineNum">     136 </span>            : }
-<span class="lineNum">     137 </span>            : 
+<a name="137"><span class="lineNum">     137 </span>            : </a>
 <span class="lineNum">     138 </span>            : template &lt;&gt;
-<span class="lineNum">     139 </span>            : inline std::array&lt;Direction&lt;1&gt;, 2&gt; Direction&lt;1&gt;::all_directions() noexcept {
+<span class="lineNum">     139 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;1&gt;, 2&gt; Direction&lt;1&gt;::all_directions() noexcept {</span>
 <span class="lineNum">     140 </span>            :   return std::array&lt;Direction&lt;1&gt;, 2&gt;{
-<span class="lineNum">     141 </span>            :       {Direction&lt;1&gt;::upper_xi(), Direction&lt;1&gt;::lower_xi()}};
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 :       {Direction&lt;1&gt;::upper_xi(), Direction&lt;1&gt;::lower_xi()}};</span>
 <span class="lineNum">     142 </span>            : }
-<span class="lineNum">     143 </span>            : 
+<a name="143"><span class="lineNum">     143 </span>            : </a>
 <span class="lineNum">     144 </span>            : template &lt;&gt;
-<span class="lineNum">     145 </span>            : inline std::array&lt;Direction&lt;2&gt;, 4&gt; Direction&lt;2&gt;::all_directions() noexcept {
+<span class="lineNum">     145 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;2&gt;, 4&gt; Direction&lt;2&gt;::all_directions() noexcept {</span>
 <span class="lineNum">     146 </span>            :   return std::array&lt;Direction&lt;2&gt;, 4&gt;{
 <span class="lineNum">     147 </span>            :       {Direction&lt;2&gt;::upper_xi(), Direction&lt;2&gt;::lower_xi(),
-<span class="lineNum">     148 </span>            :        Direction&lt;2&gt;::upper_eta(), Direction&lt;2&gt;::lower_eta()}};
+<span class="lineNum">     148 </span><span class="lineNoCov">          0 :        Direction&lt;2&gt;::upper_eta(), Direction&lt;2&gt;::lower_eta()}};</span>
 <span class="lineNum">     149 </span>            : }
-<span class="lineNum">     150 </span>            : 
+<a name="150"><span class="lineNum">     150 </span>            : </a>
 <span class="lineNum">     151 </span>            : template &lt;&gt;
-<span class="lineNum">     152 </span>            : inline std::array&lt;Direction&lt;3&gt;, 6&gt; Direction&lt;3&gt;::all_directions() noexcept {
+<span class="lineNum">     152 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;3&gt;, 6&gt; Direction&lt;3&gt;::all_directions() noexcept {</span>
 <span class="lineNum">     153 </span>            :   return std::array&lt;Direction&lt;3&gt;, 6&gt;{
 <span class="lineNum">     154 </span>            :       {Direction&lt;3&gt;::upper_xi(), Direction&lt;3&gt;::lower_xi(),
 <span class="lineNum">     155 </span>            :        Direction&lt;3&gt;::upper_eta(), Direction&lt;3&gt;::lower_eta(),
-<span class="lineNum">     156 </span>            :        Direction&lt;3&gt;::upper_zeta(), Direction&lt;3&gt;::lower_zeta()}};
+<span class="lineNum">     156 </span><span class="lineNoCov">          0 :        Direction&lt;3&gt;::upper_zeta(), Direction&lt;3&gt;::lower_zeta()}};</span>
 <span class="lineNum">     157 </span>            : }
 <a name="158"><span class="lineNum">     158 </span>            : </a>
 <span class="lineNum">     159 </span>            : template &lt;size_t VolumeDim&gt;
@@ -246,9 +246,9 @@
 <span class="lineNum">     176 </span>            : 
 <span class="lineNum">     177 </span>            : // These are defined so that a Direction can be used as part of a key of an
 <span class="lineNum">     178 </span>            : // unordered_set or unordered_map.
-<span class="lineNum">     179 </span>            : namespace std {
+<a name="179"><span class="lineNum">     179 </span>            : namespace std {</a>
 <a name="180"><span class="lineNum">     180 </span>            : template &lt;size_t VolumeDim&gt;</a>
-<span class="lineNum">     181 </span>            : struct hash&lt;Direction&lt;VolumeDim&gt;&gt; {
+<span class="lineNum">     181 </span><span class="lineNoCov">          0 : struct hash&lt;Direction&lt;VolumeDim&gt;&gt; {</span>
 <span class="lineNum">     182 </span><span class="lineCov">         12 :   size_t operator()(const Direction&lt;VolumeDim&gt;&amp; d) const {</span>
 <span class="lineNum">     183 </span><span class="lineCov">         12 :     return hash&lt;size_t&gt;{}(d.dimension()) xor hash&lt;double&gt;{}(d.sign());</span>
 <span class="lineNum">     184 </span>            :   }

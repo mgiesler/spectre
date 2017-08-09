@@ -158,35 +158,35 @@ $(function() {
 <li>Logical Coordinates:<br />
  The coordinate frame of a reference cell.</li>
 <li>Domain:<br />
- The computational domain is partitioned into cells called Blocks. Furthermore, each Block must have at most one neighboring Block in each <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>.</li>
-<li>Block:<br />
+ The computational domain is partitioned into cells called Blocks. Furthermore, each <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> must have at most one neighboring <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> in each <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>.</li>
+<li><a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a>:<br />
  A reference cell embedded into a subset of the computational domain. Blocks are identified by unique integral values.</li>
 <li><a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a>:<br />
  The information of how the Logical Coordinates between Blocks are related.</li>
 <li>ref BlackNeighbor "Block Neighbor":<br />
- The identity and <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of a neighbor of a given Block.</li>
+ The identity and <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of a neighbor of a given <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a>.</li>
 <li><a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a>:<br />
  A logical coordinate axis and a label "Upper" or "Lower" depending on whether the <a class="el" href="classDirection.html" title="A particular Side along a particular coordinate Axis. ">Direction</a> is aligned with or anti-aligned with the logical coordinate axis, respectively.</li>
 <li>Refinement Level:<br />
- The number of times a Block is split in half in a given dimension.</li>
+ The number of times a <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> is split in half in a given dimension.</li>
 <li>Segment:<br />
  The specific subset of the interval \([-1, 1]\) defined by the Refinement Level and an integer label such that the Segment's interval is \([-1 + 2*(N/D), -1 + 2*(N+1)/D]\) where N is the integer label and D is \(2^{(\textrm{Refinement Level})}\).</li>
 <li>ref <a class="el" href="classSegmentId.html" title="A SegmentId labels a segment of the interval [-1,1]. A SegmentId is used to (partially) identify an E...">SegmentId</a> "Segment Identifier":<br />
  The Refinement Level and an integer labeling a Segment.</li>
 <li>Element:<br />
- A refined subregion of a Block defined by its Segments in each logical coordinate. The properties of the Element are inherited from the block, i.e. it is self-similar to the Block.</li>
+ A refined subregion of a <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> defined by its Segments in each logical coordinate. The properties of the Element are inherited from the block, i.e. it is self-similar to the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a>.</li>
 <li>ref <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> "Element Identifier":<br />
- The Block Identifier containing the Element and a Segment Identifier in each logical coordinate axis.</li>
+ The <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> Identifier containing the Element and a Segment Identifier in each logical coordinate axis.</li>
 <li>Mesh:<br />
  A regular set of grid points associated with an Element.</li>
 <li>External Boundary:<br />
- A face of a Block or Element that has no neighbor.</li>
+ A face of a <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> or Element that has no neighbor.</li>
 <li>Internal Boundary:<br />
  A boundary that is not an External Boundary.</li>
 <li>ref <a class="el" href="classNeighbors.html" title="Information about the neighbors of an Element in a particular direction. ">Neighbors</a> "Face Neighbors" (Rename C++ <a class="el" href="classNeighbors.html" title="Information about the neighbors of an Element in a particular direction. ">Neighbors</a> class to FaceNeighbors):<br />
  The identities and <a class="el" href="classOrientation.html" title="Allows one to construct a custom Orientation between two Blocks. ">Orientation</a> of the neighbors in a particular direction of a given Element.</li>
 <li>External Boundary Condition:<br />
- A prescription for updating the solution on an External Boundary. Each External Boundary of Block has exactly one External Boundary Condition associated with it. </li>
+ A prescription for updating the solution on an External Boundary. Each External Boundary of <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> has exactly one External Boundary Condition associated with it. </li>
 </ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.10-->

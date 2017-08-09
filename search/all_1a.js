@@ -12,6 +12,7 @@ var searchData=
   ['_7ebasic_5fostream',['~basic_ostream',['http://en.cppreference.com/w/cpp/io/basic_ostream/~basic_ostream.html',1,'std::basic_ostream']]],
   ['_7ebasic_5fregex',['~basic_regex',['http://en.cppreference.com/w/cpp/regex/basic_regex/~basic_regex.html',1,'std::basic_regex']]],
   ['_7ebasic_5fstreambuf',['~basic_streambuf',['http://en.cppreference.com/w/cpp/io/basic_streambuf/~basic_streambuf.html',1,'std::basic_streambuf']]],
+  ['_7eblock',['~Block',['../classBlock.html#ac543a42e1cc1c9b18c555db3678df82e',1,'Block']]],
   ['_7eblockneighbor',['~BlockNeighbor',['../classBlockNeighbor.html#a4fe1f87b698c7b4aa6bbe5c37f195bce',1,'BlockNeighbor']]],
   ['_7ecmatch',['~cmatch',['http://en.cppreference.com/w/cpp/regex/match_results/~match_results.html',1,'std::cmatch']]],
   ['_7ecodecvt',['~codecvt',['http://en.cppreference.com/w/cpp/locale/codecvt/~codecvt.html',1,'std::codecvt']]],

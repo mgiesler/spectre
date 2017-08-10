@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7399f3f3680b387c8a7273fb77bd3d4ec9f249f - DataStructures/DataVector.cpp</title>
+  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/DataVector.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7399f3f3680b387c8a7273fb77bd3d4ec9f249f">f7399f3f3680b387c8a7273fb77bd3d4ec9f249f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">3</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-09 02:24:55</td>
+            <td class="headerValue">2017-08-10 02:25:47</td>
             <td></td>
           </tr>
           <tr>
@@ -121,57 +121,59 @@
 <span class="lineNum">      55 </span>            :   if (owning_ or size_ == 0) {
 <span class="lineNum">      56 </span>            :     size_ = rhs.size_;
 <span class="lineNum">      57 </span>            :     owned_data_ = std::move(rhs.owned_data_);
-<span class="lineNum">      58 </span>            :     data_ = std::move(rhs.data_);
-<span class="lineNum">      59 </span>            :     owning_ = rhs.owning_;
-<span class="lineNum">      60 </span>            :   } else {
-<span class="lineNum">      61 </span>            :     ASSERT(rhs.size() == size(), &quot;Must copy into same size&quot;);
-<span class="lineNum">      62 </span>            :     std::copy(rhs.begin(), rhs.end(), begin());
-<span class="lineNum">      63 </span>            :   }
-<span class="lineNum">      64 </span>            :   return *this;
-<span class="lineNum">      65 </span>            : }
-<span class="lineNum">      66 </span>            : /// \endcond
-<span class="lineNum">      67 </span>            : 
-<span class="lineNum">      68 </span>            : void DataVector::set_data_ref(double* start, size_t size) {
-<span class="lineNum">      69 </span>            :   size_ = size;
-<span class="lineNum">      70 </span>            :   owned_data_ = decltype(owned_data_){};
-<span class="lineNum">      71 </span>            :   data_ = decltype(data_){start, size_};
-<span class="lineNum">      72 </span>            :   owning_ = false;
-<span class="lineNum">      73 </span>            : }
-<span class="lineNum">      74 </span>            : 
-<span class="lineNum">      75 </span>            : void DataVector::pup(PUP::er&amp; p) {  // NOLINT
-<span class="lineNum">      76 </span>            :   p | size_;
-<span class="lineNum">      77 </span>            :   if (p.isUnpacking()) {
-<span class="lineNum">      78 </span>            :     owning_ = true;
-<span class="lineNum">      79 </span>            :     p | owned_data_;
-<span class="lineNum">      80 </span>            :     data_ = decltype(data_){owned_data_.data(), size_};
-<span class="lineNum">      81 </span>            :   } else {
-<span class="lineNum">      82 </span>            :     if (not owning_) {
-<span class="lineNum">      83 </span>            :       owned_data_ =
-<span class="lineNum">      84 </span>            :           InternalStorage_t(data_.data(), data_.data() + size_);  // NOLINT
-<span class="lineNum">      85 </span>            :       p | owned_data_;
-<span class="lineNum">      86 </span>            :       owned_data_.clear();
-<span class="lineNum">      87 </span>            :     } else {
-<span class="lineNum">      88 </span>            :       p | owned_data_;
-<span class="lineNum">      89 </span>            :     }
-<span class="lineNum">      90 </span>            :   }
-<span class="lineNum">      91 </span>            : }
-<span class="lineNum">      92 </span>            : 
-<span class="lineNum">      93 </span><span class="lineCov">          1 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const DataVector&amp; d) {</span>
-<span class="lineNum">      94 </span>            :   // This function is inside the detail namespace StdHelpers.hpp
-<span class="lineNum">      95 </span>            :   StdHelpers_detail::print_helper(os, d.begin(), d.end());
-<span class="lineNum">      96 </span>            :   return os;
-<span class="lineNum">      97 </span>            : }
-<span class="lineNum">      98 </span>            : 
-<span class="lineNum">      99 </span>            : /// Equivalence operator for DataVector
-<span class="lineNum">     100 </span><span class="lineCov">          1 : bool operator==(const DataVector&amp; lhs, const DataVector&amp; rhs) {</span>
-<span class="lineNum">     101 </span>            :   return lhs.size() == rhs.size() and
-<span class="lineNum">     102 </span>            :          std::equal(lhs.begin(), lhs.end(), rhs.begin());
-<span class="lineNum">     103 </span>            : }
-<span class="lineNum">     104 </span>            : 
-<span class="lineNum">     105 </span>            : /// Inequivalence operator for DataVector
-<span class="lineNum">     106 </span><span class="lineCov">          1 : bool operator!=(const DataVector&amp; lhs, const DataVector&amp; rhs) {</span>
-<span class="lineNum">     107 </span>            :   return not(lhs == rhs);
-<span class="lineNum">     108 </span>            : }
+<span class="lineNum">      58 </span>            :     // clang-tidy: move trivially copyable type, future proof in case impl
+<span class="lineNum">      59 </span>            :     // changes
+<span class="lineNum">      60 </span>            :     data_ = std::move(rhs.data_);  // NOLINT
+<span class="lineNum">      61 </span>            :     owning_ = rhs.owning_;
+<span class="lineNum">      62 </span>            :   } else {
+<span class="lineNum">      63 </span>            :     ASSERT(rhs.size() == size(), &quot;Must copy into same size&quot;);
+<span class="lineNum">      64 </span>            :     std::copy(rhs.begin(), rhs.end(), begin());
+<span class="lineNum">      65 </span>            :   }
+<span class="lineNum">      66 </span>            :   return *this;
+<span class="lineNum">      67 </span>            : }
+<span class="lineNum">      68 </span>            : /// \endcond
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span>            : void DataVector::set_data_ref(double* start, size_t size) {
+<span class="lineNum">      71 </span>            :   size_ = size;
+<span class="lineNum">      72 </span>            :   owned_data_ = decltype(owned_data_){};
+<span class="lineNum">      73 </span>            :   data_ = decltype(data_){start, size_};
+<span class="lineNum">      74 </span>            :   owning_ = false;
+<span class="lineNum">      75 </span>            : }
+<span class="lineNum">      76 </span>            : 
+<span class="lineNum">      77 </span>            : void DataVector::pup(PUP::er&amp; p) {  // NOLINT
+<span class="lineNum">      78 </span>            :   p | size_;
+<span class="lineNum">      79 </span>            :   if (p.isUnpacking()) {
+<span class="lineNum">      80 </span>            :     owning_ = true;
+<span class="lineNum">      81 </span>            :     p | owned_data_;
+<span class="lineNum">      82 </span>            :     data_ = decltype(data_){owned_data_.data(), size_};
+<span class="lineNum">      83 </span>            :   } else {
+<span class="lineNum">      84 </span>            :     if (not owning_) {
+<span class="lineNum">      85 </span>            :       owned_data_ =
+<span class="lineNum">      86 </span>            :           InternalStorage_t(data_.data(), data_.data() + size_);  // NOLINT
+<span class="lineNum">      87 </span>            :       p | owned_data_;
+<span class="lineNum">      88 </span>            :       owned_data_.clear();
+<span class="lineNum">      89 </span>            :     } else {
+<span class="lineNum">      90 </span>            :       p | owned_data_;
+<span class="lineNum">      91 </span>            :     }
+<span class="lineNum">      92 </span>            :   }
+<span class="lineNum">      93 </span>            : }
+<span class="lineNum">      94 </span>            : 
+<span class="lineNum">      95 </span><span class="lineCov">          1 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const DataVector&amp; d) {</span>
+<span class="lineNum">      96 </span>            :   // This function is inside the detail namespace StdHelpers.hpp
+<span class="lineNum">      97 </span>            :   StdHelpers_detail::print_helper(os, d.begin(), d.end());
+<span class="lineNum">      98 </span>            :   return os;
+<span class="lineNum">      99 </span>            : }
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            : /// Equivalence operator for DataVector
+<span class="lineNum">     102 </span><span class="lineCov">          1 : bool operator==(const DataVector&amp; lhs, const DataVector&amp; rhs) {</span>
+<span class="lineNum">     103 </span>            :   return lhs.size() == rhs.size() and
+<span class="lineNum">     104 </span>            :          std::equal(lhs.begin(), lhs.end(), rhs.begin());
+<span class="lineNum">     105 </span>            : }
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span>            : /// Inequivalence operator for DataVector
+<span class="lineNum">     108 </span><span class="lineCov">          1 : bool operator!=(const DataVector&amp; lhs, const DataVector&amp; rhs) {</span>
+<span class="lineNum">     109 </span>            :   return not(lhs == rhs);
+<span class="lineNum">     110 </span>            : }
 </pre>
       </td>
     </tr>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7399f3f3680b387c8a7273fb77bd3d4ec9f249f - DataStructures/Variables.hpp</title>
+  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Variables.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7399f3f3680b387c8a7273fb77bd3d4ec9f249f">f7399f3f3680b387c8a7273fb77bd3d4ec9f249f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">115</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-09 02:24:30</td>
+            <td class="headerValue">2017-08-10 02:25:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">58</td>
@@ -345,21 +345,21 @@
 <span class="lineNum">     275 </span><span class="lineCov">          3 : Variables&lt;tmpl::list&lt;Tags...&gt;&gt;&amp; Variables&lt;tmpl::list&lt;Tags...&gt;&gt;::operator=(</span>
 <span class="lineNum">     276 </span>            :     const Variables&lt;tmpl::list&lt;Tags...&gt;&gt;&amp; rhs) {
 <span class="lineNum">     277 </span><span class="lineCov">          3 :   if (&amp;rhs == this) {</span>
-<span class="lineNum">     278 </span><span class="lineCov">          1 :     return *this;  // NOLINT</span>
+<span class="lineNum">     278 </span><span class="lineCov">          1 :     return *this;</span>
 <span class="lineNum">     279 </span>            :   }
 <span class="lineNum">     280 </span><span class="lineCov">          2 :   variable_data_impl_ = rhs.variable_data_impl_;</span>
 <span class="lineNum">     281 </span><span class="lineCov">          2 :   variable_data_.reset(variable_data_impl_.data(), variable_data_impl_.size());</span>
 <span class="lineNum">     282 </span><span class="lineCov">          2 :   size_ = rhs.size_;</span>
 <span class="lineNum">     283 </span><span class="lineCov">          2 :   number_of_grid_points_ = rhs.number_of_grid_points();</span>
 <span class="lineNum">     284 </span><span class="lineCov">          2 :   add_reference_variable_data(typelist&lt;Tags...&gt;{});</span>
-<span class="lineNum">     285 </span><span class="lineCov">          2 :   return *this;  // NOLINT</span>
+<span class="lineNum">     285 </span><span class="lineCov">          2 :   return *this;</span>
 <span class="lineNum">     286 </span>            : }
 <a name="287"><span class="lineNum">     287 </span>            : </a>
 <span class="lineNum">     288 </span>            : template &lt;typename... Tags&gt;
 <span class="lineNum">     289 </span><span class="lineCov">          2 : Variables&lt;tmpl::list&lt;Tags...&gt;&gt;&amp; Variables&lt;tmpl::list&lt;Tags...&gt;&gt;::operator=(</span>
 <span class="lineNum">     290 </span>            :     Variables&lt;tmpl::list&lt;Tags...&gt;&gt;&amp;&amp; rhs) noexcept {
 <span class="lineNum">     291 </span><span class="lineCov">          2 :   if (this == &amp;rhs) {</span>
-<span class="lineNum">     292 </span><span class="lineCov">          1 :     return *this;  // NOLINT</span>
+<span class="lineNum">     292 </span><span class="lineCov">          1 :     return *this;</span>
 <span class="lineNum">     293 </span>            :   }
 <span class="lineNum">     294 </span><span class="lineCov">          1 :   variable_data_impl_ = std::move(rhs.variable_data_impl_);</span>
 <span class="lineNum">     295 </span><span class="lineCov">          1 :   variable_data_.reset(variable_data_impl_.data(), variable_data_impl_.size());</span>

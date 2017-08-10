@@ -13,6 +13,7 @@ var searchData=
   ['nonpupableclass',['NonpupableClass',['../classNonpupableClass.html',1,'']]],
   ['normal_5fdistribution',['normal_distribution',['http://en.cppreference.com/w/cpp/numeric/random/normal_distribution.html',1,'std']]],
   ['not_5fequal_5fto',['not_equal_to',['http://en.cppreference.com/w/cpp/utility/functional/not_equal_to.html',1,'std']]],
+  ['not_5fnull',['not_null',['../classgsl_1_1not__null.html',1,'gsl']]],
   ['nothrow_5ft',['nothrow_t',['http://en.cppreference.com/w/cpp/memory/new/nothrow_t.html',1,'std']]],
   ['null_5fmemory_5fresource',['null_memory_resource',['http://en.cppreference.com/w/cpp/experimental/null_Memory_resource.html',1,'std::experimental::pmr']]],
   ['nullopt_5ft',['nullopt_t',['http://en.cppreference.com/w/cpp/utility/optional/nullopt_t.html',1,'std']]],

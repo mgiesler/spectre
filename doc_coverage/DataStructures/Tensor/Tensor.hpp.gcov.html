@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7399f3f3680b387c8a7273fb77bd3d4ec9f249f - DataStructures/Tensor/Tensor.hpp</title>
+  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Tensor/Tensor.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7399f3f3680b387c8a7273fb77bd3d4ec9f249f">f7399f3f3680b387c8a7273fb77bd3d4ec9f249f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">35</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-09 02:24:55</td>
+            <td class="headerValue">2017-08-10 02:25:47</td>
             <td></td>
           </tr>
           <tr>
@@ -177,9 +177,9 @@
 <span class="lineNum">     111 </span><span class="lineNoCov">          0 :   Tensor() = default;</span>
 <span class="lineNum">     112 </span><span class="lineNoCov">          0 :   ~Tensor() = default;</span>
 <span class="lineNum">     113 </span><span class="lineNoCov">          0 :   Tensor(const Tensor&amp;) = default;</span>
-<span class="lineNum">     114 </span><span class="lineNoCov">          0 :   Tensor(Tensor&amp;&amp;) noexcept = default;  // NOLINT</span>
+<span class="lineNum">     114 </span><span class="lineNoCov">          0 :   Tensor(Tensor&amp;&amp;) noexcept = default;</span>
 <span class="lineNum">     115 </span><span class="lineNoCov">          0 :   Tensor&amp; operator=(const Tensor&amp;) = default;</span>
-<span class="lineNum">     116 </span><span class="lineNoCov">          0 :   Tensor&amp; operator=(Tensor&amp;&amp;) noexcept = default;  // NOLINT</span>
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :   Tensor&amp; operator=(Tensor&amp;&amp;) noexcept = default;</span>
 <span class="lineNum">     117 </span>            : 
 <span class="lineNum">     118 </span>            :   /// \cond HIDDEN_SYMBOLS
 <span class="lineNum">     119 </span>            :   /// Constructor from a TensorExpression.
@@ -198,7 +198,7 @@
 <span class="lineNum">     132 </span>            :         &quot;evaluate&lt;_a_t, _b_t&gt;(G); if G has 2 free indices and you want &quot;
 <span class="lineNum">     133 </span>            :         &quot;the LHS of the equation to be F_{ab} rather than F_{ba}.&quot;);
 <span class="lineNum">     134 </span>            :     for (size_t i = 0; i &lt; size(); ++i) {
-<span class="lineNum">     135 </span>            :       data_[i] = tensor_expression.template get&lt;LhsIndices...&gt;(  // NOLINT
+<span class="lineNum">     135 </span>            :       gsl::at(data_, i) = tensor_expression.template get&lt;LhsIndices...&gt;(
 <span class="lineNum">     136 </span>            :           structure::get_canonical_tensor_index(i));
 <span class="lineNum">     137 </span>            :     }
 <span class="lineNum">     138 </span>            :   }

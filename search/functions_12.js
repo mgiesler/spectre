@@ -21,7 +21,7 @@ var searchData=
   ['serialize',['serialize',['../group__Parallel.html#gaf46b590510bd8fad34c7055079262707',1,'Serialize.hpp']]],
   ['serialize_5fand_5fdeserialize',['serialize_and_deserialize',['../group__TestingFramework.html#ga2895e57f4cacd63d2549655bb29bba7b',1,'TestHelpers.hpp']]],
   ['set',['set',['http://en.cppreference.com/w/cpp/utility/bitset/set.html',1,'std::bitset::set()'],['http://en.cppreference.com/w/cpp/container/set/set.html',1,'std::pmr::set::set()'],['http://en.cppreference.com/w/cpp/container/set/set.html',1,'std::set::set()']]],
-  ['set_5fdata_5fref',['set_data_ref',['../classDataVector.html#a8d2ea684730c8a8089952d1cf1a73dae',1,'DataVector::set_data_ref(DataVector &amp;rhs)'],['../classDataVector.html#aa1b4c75120323ced28edf7090959264a',1,'DataVector::set_data_ref(double *start, size_t size)']]],
+  ['set_5fdata_5fref',['set_data_ref',['../classDataVector.html#a18805fb91acb7d1dad235c41f3f00275',1,'DataVector::set_data_ref(gsl::not_null&lt; DataVector *&gt; rhs)'],['../classDataVector.html#aa1b4c75120323ced28edf7090959264a',1,'DataVector::set_data_ref(double *start, size_t size)']]],
   ['set_5fdefault_5fresource',['set_default_resource',['http://en.cppreference.com/w/cpp/experimental/set_default_resource.html',1,'std::experimental::pmr::set_default_resource()'],['http://en.cppreference.com/w/cpp/memory/set_default_resource.html',1,'std::pmr::set_default_resource()']]],
   ['set_5fexception',['set_exception',['http://en.cppreference.com/w/cpp/thread/promise/set_exception.html',1,'std::promise']]],
   ['set_5fexception_5fat_5fthread_5fexit',['set_exception_at_thread_exit',['http://en.cppreference.com/w/cpp/thread/promise/set_exception_at_thread_exit.html',1,'std::promise']]],

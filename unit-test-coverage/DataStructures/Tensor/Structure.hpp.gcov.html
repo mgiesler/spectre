@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - f7399f3f3680b387c8a7273fb77bd3d4ec9f249f - DataStructures/Tensor/Structure.hpp</title>
+  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Tensor/Structure.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/f7399f3f3680b387c8a7273fb77bd3d4ec9f249f">f7399f3f3680b387c8a7273fb77bd3d4ec9f249f</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">64</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-09 02:24:30</td>
+            <td class="headerValue">2017-08-10 02:25:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">42</td>
@@ -123,17 +123,17 @@
 <span class="lineNum">      53 </span><span class="lineCov">        255 :     std::array&lt;std::string, Structure::rank()&gt; labels = axis_labels;</span>
 <span class="lineNum">      54 </span><span class="lineCov">        129 :     constexpr auto index_dim = Structure::dims();</span>
 <span class="lineNum">      55 </span><span class="lineCov">        946 :     for (size_t i = 0; i &lt; Structure::rank(); ++i) {</span>
-<span class="lineNum">      56 </span><span class="lineCov">        347 :       if (labels[i].length() == 0) {                                // NOLINT</span>
-<span class="lineNum">      57 </span><span class="lineCov">        226 :         if (Structure::index_types()[i] == IndexType::Spacetime) {  // NOLINT</span>
+<span class="lineNum">      56 </span><span class="lineCov">        347 :       if (gsl::at(labels, i).length() == 0) {</span>
+<span class="lineNum">      57 </span><span class="lineCov">        452 :         if (gsl::at(Structure::index_types(), i) == IndexType::Spacetime) {</span>
 <span class="lineNum">      58 </span><span class="lineCov">        140 :           switch (gsl::at(index_dim, i)) {</span>
 <span class="lineNum">      59 </span>            :             case 2:
-<span class="lineNum">      60 </span><span class="lineCov">          2 :               labels[i] = &quot;tx&quot;;  // NOLINT</span>
+<span class="lineNum">      60 </span><span class="lineCov">          2 :               gsl::at(labels, i) = &quot;tx&quot;;</span>
 <span class="lineNum">      61 </span><span class="lineCov">          2 :               break;</span>
 <span class="lineNum">      62 </span>            :             case 3:
-<span class="lineNum">      63 </span><span class="lineCov">          9 :               labels[i] = &quot;txy&quot;;  // NOLINT</span>
+<span class="lineNum">      63 </span><span class="lineCov">          9 :               gsl::at(labels, i) = &quot;txy&quot;;</span>
 <span class="lineNum">      64 </span><span class="lineCov">          9 :               break;</span>
 <span class="lineNum">      65 </span>            :             case 4:
-<span class="lineNum">      66 </span><span class="lineCov">        128 :               labels[i] = &quot;txyz&quot;;  // NOLINT</span>
+<span class="lineNum">      66 </span><span class="lineCov">        128 :               gsl::at(labels, i) = &quot;txyz&quot;;</span>
 <span class="lineNum">      67 </span><span class="lineCov">        128 :               break;</span>
 <span class="lineNum">      68 </span>            :             default:
 <span class="lineNum">      69 </span><span class="lineCov">          1 :               ERROR(&quot;Tensor dim[&quot;</span>
@@ -143,13 +143,13 @@
 <span class="lineNum">      73 </span>            :         } else {
 <span class="lineNum">      74 </span><span class="lineCov">         86 :           switch (gsl::at(index_dim, i)) {</span>
 <span class="lineNum">      75 </span>            :             case 1:
-<span class="lineNum">      76 </span><span class="lineCov">          4 :               labels[i] = &quot;x&quot;;  // NOLINT</span>
+<span class="lineNum">      76 </span><span class="lineCov">          4 :               gsl::at(labels, i) = &quot;x&quot;;</span>
 <span class="lineNum">      77 </span><span class="lineCov">          4 :               break;</span>
 <span class="lineNum">      78 </span>            :             case 2:
-<span class="lineNum">      79 </span><span class="lineCov">         18 :               labels[i] = &quot;xy&quot;;  // NOLINT</span>
+<span class="lineNum">      79 </span><span class="lineCov">         18 :               gsl::at(labels, i) = &quot;xy&quot;;</span>
 <span class="lineNum">      80 </span><span class="lineCov">         18 :               break;</span>
 <span class="lineNum">      81 </span>            :             case 3:
-<span class="lineNum">      82 </span><span class="lineCov">         63 :               labels[i] = &quot;xyz&quot;;  // NOLINT</span>
+<span class="lineNum">      82 </span><span class="lineCov">         63 :               gsl::at(labels, i) = &quot;xyz&quot;;</span>
 <span class="lineNum">      83 </span><span class="lineCov">         63 :               break;</span>
 <span class="lineNum">      84 </span>            :             default:
 <span class="lineNum">      85 </span><span class="lineCov">          1 :               ERROR(&quot;Tensor dim[&quot;</span>
@@ -158,11 +158,11 @@
 <span class="lineNum">      88 </span>            :           }
 <span class="lineNum">      89 </span>            :         }
 <span class="lineNum">      90 </span>            :       } else {
-<span class="lineNum">      91 </span><span class="lineCov">        242 :         if (axis_labels[i].length() != gsl::at(index_dim, i)) {  // NOLINT</span>
-<span class="lineNum">      92 </span><span class="lineCov">          3 :           ERROR(&quot;Dimension mismatch: Tensor has dim = &quot;</span>
+<span class="lineNum">      91 </span><span class="lineCov">        242 :         if (gsl::at(axis_labels, i).length() != gsl::at(index_dim, i)) {</span>
+<span class="lineNum">      92 </span><span class="lineCov">          5 :           ERROR(&quot;Dimension mismatch: Tensor has dim = &quot;</span>
 <span class="lineNum">      93 </span>            :                 &lt;&lt; gsl::at(index_dim, i) &lt;&lt; &quot;, but you specified &quot;
-<span class="lineNum">      94 </span>            :                 &lt;&lt; axis_labels[i].length() &lt;&lt; &quot; different labels in &quot;
-<span class="lineNum">      95 </span>            :                 &lt;&lt; axis_labels[i]);
+<span class="lineNum">      94 </span>            :                 &lt;&lt; gsl::at(axis_labels, i).length() &lt;&lt; &quot; different labels in &quot;
+<span class="lineNum">      95 </span>            :                 &lt;&lt; gsl::at(axis_labels, i));
 <span class="lineNum">      96 </span>            :         }
 <span class="lineNum">      97 </span>            :       }
 <span class="lineNum">      98 </span>            :     }
@@ -171,7 +171,7 @@
 <span class="lineNum">     101 </span>            :     const auto&amp; canonical_tensor_index =
 <span class="lineNum">     102 </span><span class="lineCov">        126 :         Structure::get_canonical_tensor_index(storage_index);</span>
 <span class="lineNum">     103 </span><span class="lineCov">        940 :     for (size_t r = 0; r &lt; Structure::rank(); ++r) {</span>
-<span class="lineNum">     104 </span><span class="lineCov">        344 :       ss &lt;&lt; labels[r][canonical_tensor_index[r]];  // NOLINT</span>
+<span class="lineNum">     104 </span><span class="lineCov">       1032 :       ss &lt;&lt; gsl::at(labels, r)[gsl::at(canonical_tensor_index, r)];</span>
 <span class="lineNum">     105 </span>            :     }
 <span class="lineNum">     106 </span><span class="lineCov">        252 :     return ss.str();</span>
 <span class="lineNum">     107 </span>            :   }

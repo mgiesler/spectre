@@ -162,6 +162,9 @@ $(function() {
 , <a class="el" href="classSliceIterator.html#a1d494794a7cbf788798f35f714d497f2">SliceIterator</a>
 , <a class="el" href="classStripeIterator.html#a7ed009013e3a77986fa08ba69eeb67d0">StripeIterator</a>
 </li>
+<li>operator T()
+: <a class="el" href="classgsl_1_1not__null.html#a8804c862bd626c57167326e558ca192a">gsl::not_null&lt; T &gt;</a>
+</li>
 <li>operator!=
 : <a class="el" href="structTaggedTuple.html#aefb2ace8783ebb179816be353455cfe0">TaggedTuple&lt; Tags &gt;</a>
 </li>
@@ -183,8 +186,9 @@ $(function() {
 </li>
 <li>operator*()
 : <a class="el" href="classDataVector.html#a1bd29f2cfcf0e25ab998b7a9722d6e7e">DataVector</a>
+, <a class="el" href="classgsl_1_1not__null.html#a2099ebe56c81dd43399911bbfcf4c2b7">gsl::not_null&lt; T &gt;</a>
 , <a class="el" href="classIndexIterator.html#a3f93259ac692939bc3c8dcc3bcff56d6">IndexIterator&lt; Dim &gt;</a>
-, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#aa94266f5cf3f72a403c99a7bb9c8f8f2">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
+, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#a49c8cd96d6e27303acfb7922fe8464fd">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
 <li>operator*=()
 : <a class="el" href="classDataVector.html#a8dd255dd30350db81b22ebb84dedad42">DataVector</a>
@@ -197,33 +201,42 @@ $(function() {
 , <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#a5b8cad51f180fa756b95a80e19952935">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
 <li>operator++()
-: <a class="el" href="classIndexIterator.html#a7bb77160ada17993d4f9ee53b0794f52">IndexIterator&lt; Dim &gt;</a>
+: <a class="el" href="classgsl_1_1not__null.html#a2bcefc1bbe21584b4bfe57dc2e0daf11">gsl::not_null&lt; T &gt;</a>
+, <a class="el" href="classIndexIterator.html#a7bb77160ada17993d4f9ee53b0794f52">IndexIterator&lt; Dim &gt;</a>
 , <a class="el" href="classSliceIterator.html#abd67c431a05bd915dc49646deea0d140">SliceIterator</a>
 , <a class="el" href="classStripeIterator.html#a4388a8a998819bdb3e6098d985570e3d">StripeIterator</a>
 </li>
 <li>operator+=()
 : <a class="el" href="classDataVector.html#abf34da76340a33f966190f5fb073facb">DataVector</a>
+, <a class="el" href="classgsl_1_1not__null.html#a8a3d27d4d3d4d84a8274a12f580c8a49">gsl::not_null&lt; T &gt;</a>
 , <a class="el" href="classTime.html#a1f1613227ea45b2852e6aaee422fbc18">Time</a>
 , <a class="el" href="classTimeDelta.html#a50a04664e6f14c431f0c9bb834665dea">TimeDelta</a>
 , <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#ab5840b5a72fe6b2d2b63b9c314f42d3f">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
 <li>operator-()
-: <a class="el" href="classDataVector.html#a542de600fdd570cc2a1c7ebe4d1a1c69">DataVector</a>
+: <a class="el" href="classDataVector.html#a09f8208493623ff27b26eda6464313d2">DataVector</a>
 , <a class="el" href="classTimeDelta.html#a6465ec69bf00aa0b4ae589ac04a64ab7">TimeDelta</a>
-, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#aca6e028437c65c265d3bfe03b5e5d47f">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
+, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#a1577f1e83263fa35681351dbf982dd03">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
+</li>
+<li>operator--()
+: <a class="el" href="classgsl_1_1not__null.html#a5b6bc7279d8cb257a7604f292485fc37">gsl::not_null&lt; T &gt;</a>
 </li>
 <li>operator-=()
 : <a class="el" href="classDataVector.html#a3b15bc05e4cb3c28bcaea500b2521c57">DataVector</a>
+, <a class="el" href="classgsl_1_1not__null.html#ac48eb97bc85082c6bfc3149270b14a19">gsl::not_null&lt; T &gt;</a>
 , <a class="el" href="classTime.html#a2af726eb228c2e3e46582daf9dd0c469">Time</a>
 , <a class="el" href="classTimeDelta.html#ae0b102701dc045f143a289df3bf9f71d">TimeDelta</a>
 , <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#aca14d80d1960d12dae915ad0c18a04c4">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
+</li>
+<li>operator-&gt;()
+: <a class="el" href="classgsl_1_1not__null.html#a5fbb3ebb67f4613051892756655a4215">gsl::not_null&lt; T &gt;</a>
 </li>
 <li>operator/()
 : <a class="el" href="classDataVector.html#a6d537b3ce27eedd05a2bf91798010ea4">DataVector</a>
 , <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#a5136d2a917b95cfb92ed10c74e851ab0">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
 <li>operator/=()
-: <a class="el" href="classDataVector.html#a8ed8663faa4e4a33eaac26741e6284e2">DataVector</a>
+: <a class="el" href="classDataVector.html#a151dfb4835ef08b82b13f9c98307fdc2">DataVector</a>
 , <a class="el" href="classTimeDelta.html#a68bb2e77c4280a2900577f3a6d206ed6">TimeDelta</a>
 , <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#a893847beeaed73d74afb0cdfa3847c3b">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
@@ -243,18 +256,19 @@ $(function() {
 , <a class="el" href="classBlockNeighbor.html#aca920c1f2cd25d79a073bb45b77261d5">BlockNeighbor&lt; VolumeDim &gt;</a>
 , <a class="el" href="classDataVector.html#a4d01400af1d0d86065fe31479ae4283a">DataVector</a>
 , <a class="el" href="classEmbeddingMap.html#a48f8b0d151a57912731684fc5679cb58">EmbeddingMap&lt; DimOfDomain, DimOfRange &gt;</a>
-, <a class="el" href="classEmbeddingMaps_1_1AffineMap.html#a1ab688d8ae74c095054262bd0008d8b7">EmbeddingMaps::AffineMap</a>
-, <a class="el" href="classEmbeddingMaps_1_1Identity.html#a67835a1b497353445b73ae2b9d85ce61">EmbeddingMaps::Identity&lt; Dim &gt;</a>
-, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#a4dcbab3abd21d84e4a34b551c8ce99b2">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;</a>
-, <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a71aace5f7cb912b61222e249c8047a9c">EmbeddingMaps::ProductOf3Maps</a>
-, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_012_01_4.html#a93fb077f0951b30dc5b8bb2ba1dc784d">EmbeddingMaps::Rotation&lt; 2 &gt;</a>
-, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#a58afecd1c8c132744705f20046e6140f">EmbeddingMaps::Rotation&lt; 3 &gt;</a>
-, <a class="el" href="classNeighbors.html#a3f9c6d76664210e45fec3c0fe4ecb165">Neighbors&lt; VolumeDim &gt;</a>
-, <a class="el" href="classOrientation.html#a6c64f11f751be49bb4b32e295ff18bc4">Orientation&lt; VolumeDim &gt;</a>
-, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a6a26775b60811e89da91995410115f64">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;</a>
-, <a class="el" href="classTimeSteppers_1_1AdamsBashforthN.html#a8a37accb612f725604629e091a997653">TimeSteppers::AdamsBashforthN</a>
-, <a class="el" href="classTimeSteppers_1_1RungeKutta3.html#a97b23e21ca4449e6e2e3f43165143d50">TimeSteppers::RungeKutta3</a>
-, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#ae4c98f0d85e4cdd19a1d2dd705d6ddec">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
+, <a class="el" href="classEmbeddingMaps_1_1AffineMap.html#a09f363de92772a0b1884c3e5eb6230f9">EmbeddingMaps::AffineMap</a>
+, <a class="el" href="classEmbeddingMaps_1_1Identity.html#a6288cf04f259ea7d45614a36bebf196b">EmbeddingMaps::Identity&lt; Dim &gt;</a>
+, <a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html#a226c74e83b71f01295cc6e95189b13d6">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;</a>
+, <a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html#a83aee8e3dba4784a8ebdd5deb5da79ab">EmbeddingMaps::ProductOf3Maps</a>
+, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_012_01_4.html#a24223f18f4a3a75d34d13f87a4a852ad">EmbeddingMaps::Rotation&lt; 2 &gt;</a>
+, <a class="el" href="classEmbeddingMaps_1_1Rotation_3_013_01_4.html#af53464b69bcb455612bfff9814e7afea">EmbeddingMaps::Rotation&lt; 3 &gt;</a>
+, <a class="el" href="classgsl_1_1not__null.html#a73cc2ae084c7cdfba8815410eed09350">gsl::not_null&lt; T &gt;</a>
+, <a class="el" href="classNeighbors.html#aabf7fcd2f6079050cee317bf5e4e922a">Neighbors&lt; VolumeDim &gt;</a>
+, <a class="el" href="classOrientation.html#ad41252b614e4c15f08dda458aeed5942">Orientation&lt; VolumeDim &gt;</a>
+, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a475e0ab0493fa184e5113365e5e0bdbd">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;</a>
+, <a class="el" href="classTimeSteppers_1_1AdamsBashforthN.html#a859d1245eb3abad140b95078076ce06a">TimeSteppers::AdamsBashforthN</a>
+, <a class="el" href="classTimeSteppers_1_1RungeKutta3.html#a6408bfb2ad84b2880c58ce0469eb045f">TimeSteppers::RungeKutta3</a>
+, <a class="el" href="classVariables_3_01tmpl_1_1list_3_01Tags_8_8_8_01_4_01_4.html#affc784248a25da925d58b5677dabe5c0">Variables&lt; tmpl::list&lt; Tags... &gt; &gt;</a>
 </li>
 <li>operator==
 : <a class="el" href="structDerivedInPupStlCpp11.html#ab10b5bcc93894562046880c36df1fb21">DerivedInPupStlCpp11</a>
@@ -270,9 +284,10 @@ $(function() {
 : <a class="el" href="structTaggedTuple.html#a3a78c853ad4530728be5d66778e6be01">TaggedTuple&lt; Tags &gt;</a>
 </li>
 <li>operator[]()
-: <a class="el" href="classDataVector.html#a23eb797350187aa4cddaaab933aacc48">DataVector</a>
-, <a class="el" href="classIndex.html#ae94c13676006986b619b2d543bd8ea06">Index&lt; Dim &gt;</a>
-, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a6f8e204896288321f539d77958e1faea">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;</a>
+: <a class="el" href="classDataVector.html#a125506183d0cf74b93e978c6e5172417">DataVector</a>
+, <a class="el" href="classgsl_1_1not__null.html#a10b45462edec3b8bf2c9af1c5a48dc4e">gsl::not_null&lt; T &gt;</a>
+, <a class="el" href="classIndex.html#ae23a2daa951682bb261b706d8a77fdc2">Index&lt; Dim &gt;</a>
+, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a4067a7a842055dc2a1644cb713d9587b">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;</a>
 , <a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#a5abfa3f92aadab4b7297f7ff92091e3f">TensorExpression&lt; Derived, DataType, Symm, IndexLs, ArgsLs&lt; Args... &gt; &gt;</a>
 , <a class="el" href="structTensorExpressions_1_1AddSub_3_01T1_00_01T2_00_01ArgsLs1_3_01Args1_8_8_8_01_4_00_01ArgsLs2_dd965ff16ece69e5a58457285dbba0d9.html#a3d324f43cd64690336dba4b35b1d0c11">TensorExpressions::AddSub&lt; T1, T2, ArgsLs1&lt; Args1... &gt;, ArgsLs2&lt; Args2... &gt;, Sign &gt;</a>
 </li>
@@ -287,7 +302,7 @@ $(function() {
 , <a class="el" href="classNeighbors.html#a9220756f9fe266fc2590ea77e4c83794">Neighbors&lt; VolumeDim &gt;</a>
 </li>
 <li>Orientation()
-: <a class="el" href="classOrientation.html#a748ed52162bdd1c6dc261f707824ec9f">Orientation&lt; VolumeDim &gt;</a>
+: <a class="el" href="classOrientation.html#ac8265a8779ee89d0ac4b17793458461f">Orientation&lt; VolumeDim &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

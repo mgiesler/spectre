@@ -151,6 +151,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">gsl Namespace Reference<div class="ingroups"><a class="el" href="group__Utilities.html">Utilities</a></div></div>  </div>
@@ -160,6 +161,12 @@ $(function() {
 <p>Implementations from the Guideline Support Library.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgsl_1_1not__null.html">not_null</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Require a pointer to not be a <code>nullptr</code>  <a href="classgsl_1_1not__null.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga2da8b404f35c108209c4ce27c8d50e1c"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
@@ -170,6 +177,39 @@ Functions</h2></td></tr>
 <tr class="memitem:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gafaf6db75ede2a9bc2fa4b6b17b8ef128">narrow</a> (U u)</td></tr>
 <tr class="memdesc:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="mdescLeft">&#160;</td><td class="mdescRight">A checked version of <a class="el" href="group__Utilities.html#ga2da8b404f35c108209c4ce27c8d50e1c" title="Cast u to a type T where the cast may result in narrowing. ">narrow_cast()</a> that ERRORs if the cast changed the value.  <a href="group__Utilities.html#gafaf6db75ede2a9bc2fa4b6b17b8ef128">More...</a><br /></td></tr>
 <tr class="separator:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf9aacd6e4ced63717fc25919017210"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aacf9aacd6e4ced63717fc25919017210"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#aacf9aacd6e4ced63717fc25919017210">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;val)</td></tr>
+<tr class="separator:aacf9aacd6e4ced63717fc25919017210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773feb84b64c2530a04d6138301a9d62"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a773feb84b64c2530a04d6138301a9d62"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a773feb84b64c2530a04d6138301a9d62">operator==</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()==rhs.get())</td></tr>
+<tr class="separator:a773feb84b64c2530a04d6138301a9d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323d83175a12259d8ddc526eca17de75"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a323d83175a12259d8ddc526eca17de75"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a323d83175a12259d8ddc526eca17de75">operator!=</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() !=rhs.get())</td></tr>
+<tr class="separator:a323d83175a12259d8ddc526eca17de75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34b354d5fb778ae0ba0604eb7253f09"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af34b354d5fb778ae0ba0604eb7253f09"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#af34b354d5fb778ae0ba0604eb7253f09">operator&lt;</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()&lt; rhs.get())</td></tr>
+<tr class="separator:af34b354d5fb778ae0ba0604eb7253f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2026223071918e2eb101307e6fb98ab"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af2026223071918e2eb101307e6fb98ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#af2026223071918e2eb101307e6fb98ab">operator&lt;=</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()&lt;=rhs.get())</td></tr>
+<tr class="separator:af2026223071918e2eb101307e6fb98ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a19ee416f40f5e2d7a5e93dbdb6738023">operator&gt;</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() &gt; rhs.get())</td></tr>
+<tr class="separator:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ce746fecaa6c3668f422fef382eabd"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a81ce746fecaa6c3668f422fef382eabd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a81ce746fecaa6c3668f422fef382eabd">operator&gt;=</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() &gt;=rhs.get())</td></tr>
+<tr class="separator:a81ce746fecaa6c3668f422fef382eabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#ac2bd1fda01707d84e7bcd6663058f69e">operator-</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;)=delete</td></tr>
+<tr class="separator:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a43c338ed4eedd00c95d8cc1ff5ff2a11">operator-</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>)=delete</td></tr>
+<tr class="separator:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e954994edc47de5f000dfe8faf856b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad6e954994edc47de5f000dfe8faf856b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#ad6e954994edc47de5f000dfe8faf856b">operator+</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>)=delete</td></tr>
+<tr class="separator:ad6e954994edc47de5f000dfe8faf856b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a6a0e3b39cd436aad0e69cec2eba20bdb">operator+</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>, const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;)=delete</td></tr>
+<tr class="separator:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ga818f101f2f8bd824a3bc7c2c2361c560"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t N, typename Size &gt; </td></tr>
 <tr class="memitem:ga818f101f2f8bd824a3bc7c2c2361c560"><td class="memTemplItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">at</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, N &gt; &amp;arr, Size index)</td></tr>
@@ -186,7 +226,380 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementations from the Guideline Support Library. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a323d83175a12259d8ddc526eca17de75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a323d83175a12259d8ddc526eca17de75">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() != rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6e954994edc47de5f000dfe8faf856b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e954994edc47de5f000dfe8faf856b">&#9670;&nbsp;</a></span>operator+() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt;T&gt; gsl::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="namespacegsl.html#a81ce746fecaa6c3668f422fef382eabd">operator&gt;=()</a>.</p>
+
+</div>
+</div>
+<a id="a6a0e3b39cd436aad0e69cec2eba20bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0e3b39cd436aad0e69cec2eba20bdb">&#9670;&nbsp;</a></span>operator+() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt;T&gt; gsl::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2bd1fda01707d84e7bcd6663058f69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2bd1fda01707d84e7bcd6663058f69e">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a> gsl::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="namespacegsl.html#a81ce746fecaa6c3668f422fef382eabd">operator&gt;=()</a>.</p>
+
+</div>
+</div>
+<a id="a43c338ed4eedd00c95d8cc1ff5ff2a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c338ed4eedd00c95d8cc1ff5ff2a11">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt;T&gt; gsl::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af34b354d5fb778ae0ba0604eb7253f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34b354d5fb778ae0ba0604eb7253f09">&#9670;&nbsp;</a></span>operator<()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() &lt; rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classgsl_1_1not__null.html#a3f443311626c00b2a8923158e3099bb1">gsl::not_null&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="aacf9aacd6e4ced63717fc25919017210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacf9aacd6e4ced63717fc25919017210">&#9670;&nbsp;</a></span>operator<<()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; gsl::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2026223071918e2eb101307e6fb98ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2026223071918e2eb101307e6fb98ab">&#9670;&nbsp;</a></span>operator<=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() &lt;= rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="classgsl_1_1not__null.html#a3f443311626c00b2a8923158e3099bb1">gsl::not_null&lt; T &gt;::get()</a>.</p>
+
+</div>
+</div>
+<a id="a773feb84b64c2530a04d6138301a9d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a773feb84b64c2530a04d6138301a9d62">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() == rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19ee416f40f5e2d7a5e93dbdb6738023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ee416f40f5e2d7a5e93dbdb6738023">&#9670;&nbsp;</a></span>operator>()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() &gt; rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81ce746fecaa6c3668f422fef382eabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ce746fecaa6c3668f422fef382eabd">&#9670;&nbsp;</a></span>operator>=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto gsl::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(lhs.get() &gt;= rhs.get()) </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="namespacegsl.html#ad6e954994edc47de5f000dfe8faf856b">operator+()</a>, and <a class="el" href="namespacegsl.html#ac2bd1fda01707d84e7bcd6663058f69e">operator-()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.10-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

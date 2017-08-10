@@ -155,6 +155,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -172,6 +173,12 @@ $(function() {
 </div>
 <p><a href="Gsl_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgsl_1_1not__null.html">gsl::not_null&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Require a pointer to not be a <code>nullptr</code>  <a href="classgsl_1_1not__null.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacegsl"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegsl.html">gsl</a></td></tr>
@@ -195,6 +202,39 @@ Functions</h2></td></tr>
 <tr class="memitem:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gafaf6db75ede2a9bc2fa4b6b17b8ef128">gsl::narrow</a> (U u)</td></tr>
 <tr class="memdesc:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="mdescLeft">&#160;</td><td class="mdescRight">A checked version of <a class="el" href="group__Utilities.html#ga2da8b404f35c108209c4ce27c8d50e1c" title="Cast u to a type T where the cast may result in narrowing. ">narrow_cast()</a> that ERRORs if the cast changed the value.  <a href="group__Utilities.html#gafaf6db75ede2a9bc2fa4b6b17b8ef128">More...</a><br /></td></tr>
 <tr class="separator:gafaf6db75ede2a9bc2fa4b6b17b8ef128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf9aacd6e4ced63717fc25919017210"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aacf9aacd6e4ced63717fc25919017210"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#aacf9aacd6e4ced63717fc25919017210">gsl::operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const not_null&lt; T &gt; &amp;val)</td></tr>
+<tr class="separator:aacf9aacd6e4ced63717fc25919017210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773feb84b64c2530a04d6138301a9d62"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a773feb84b64c2530a04d6138301a9d62"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a773feb84b64c2530a04d6138301a9d62">gsl::operator==</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()==rhs.get())</td></tr>
+<tr class="separator:a773feb84b64c2530a04d6138301a9d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a323d83175a12259d8ddc526eca17de75"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a323d83175a12259d8ddc526eca17de75"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a323d83175a12259d8ddc526eca17de75">gsl::operator!=</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() !=rhs.get())</td></tr>
+<tr class="separator:a323d83175a12259d8ddc526eca17de75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34b354d5fb778ae0ba0604eb7253f09"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af34b354d5fb778ae0ba0604eb7253f09"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#af34b354d5fb778ae0ba0604eb7253f09">gsl::operator&lt;</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()&lt; rhs.get())</td></tr>
+<tr class="separator:af34b354d5fb778ae0ba0604eb7253f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2026223071918e2eb101307e6fb98ab"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af2026223071918e2eb101307e6fb98ab"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#af2026223071918e2eb101307e6fb98ab">gsl::operator&lt;=</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get()&lt;=rhs.get())</td></tr>
+<tr class="separator:af2026223071918e2eb101307e6fb98ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a19ee416f40f5e2d7a5e93dbdb6738023">gsl::operator&gt;</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() &gt; rhs.get())</td></tr>
+<tr class="separator:a19ee416f40f5e2d7a5e93dbdb6738023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ce746fecaa6c3668f422fef382eabd"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a81ce746fecaa6c3668f422fef382eabd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a81ce746fecaa6c3668f422fef382eabd">gsl::operator&gt;=</a> (const not_null&lt; T &gt; &amp;lhs, const not_null&lt; U &gt; &amp;rhs) -&gt; decltype(lhs.get() &gt;=rhs.get())</td></tr>
+<tr class="separator:a81ce746fecaa6c3668f422fef382eabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#ac2bd1fda01707d84e7bcd6663058f69e">gsl::operator-</a> (const not_null&lt; T &gt; &amp;, const not_null&lt; U &gt; &amp;)=delete</td></tr>
+<tr class="separator:ac2bd1fda01707d84e7bcd6663058f69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memTemplItemLeft" align="right" valign="top">not_null&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a43c338ed4eedd00c95d8cc1ff5ff2a11">gsl::operator-</a> (const not_null&lt; T &gt; &amp;, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>)=delete</td></tr>
+<tr class="separator:a43c338ed4eedd00c95d8cc1ff5ff2a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e954994edc47de5f000dfe8faf856b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad6e954994edc47de5f000dfe8faf856b"><td class="memTemplItemLeft" align="right" valign="top">not_null&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#ad6e954994edc47de5f000dfe8faf856b">gsl::operator+</a> (const not_null&lt; T &gt; &amp;, <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>)=delete</td></tr>
+<tr class="separator:ad6e954994edc47de5f000dfe8faf856b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memTemplItemLeft" align="right" valign="top">not_null&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegsl.html#a6a0e3b39cd436aad0e69cec2eba20bdb">gsl::operator+</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a>, const not_null&lt; T &gt; &amp;)=delete</td></tr>
+<tr class="separator:a6a0e3b39cd436aad0e69cec2eba20bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ga818f101f2f8bd824a3bc7c2c2361c560"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t N, typename Size &gt; </td></tr>
 <tr class="memitem:ga818f101f2f8bd824a3bc7c2c2361c560"><td class="memTemplItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, N &gt; &amp;arr, Size index)</td></tr>

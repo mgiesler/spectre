@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/CoordinateMaps/AffineMap.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">SpECTRE Unit Test Code Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Domain/CoordinateMaps</a> - AffineMap.cpp<span style="font-size: 80%;"> (source / <a href="AffineMap.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-08-14 02:27:15</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntryLo">61.9 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Distributed under the MIT License.</a>
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : #include &quot;Domain/CoordinateMaps/AffineMap.hpp&quot;
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : #include &quot;DataStructures/DataVector.hpp&quot;
+<span class="lineNum">       7 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;
+<span class="lineNum">       8 </span>            : 
+<a name="9"><span class="lineNum">       9 </span>            : namespace CoordinateMaps {</a>
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span><span class="lineCov">         20 : AffineMap::AffineMap(const double A, const double B, const double a,</span>
+<span class="lineNum">      12 </span><span class="lineCov">         20 :                      const double b)</span>
+<span class="lineNum">      13 </span>            :     : A_(A),
+<span class="lineNum">      14 </span>            :       B_(B),
+<span class="lineNum">      15 </span>            :       a_(a),
+<span class="lineNum">      16 </span>            :       b_(b),
+<span class="lineNum">      17 </span><span class="lineCov">         20 :       length_of_domain_(B - A),</span>
+<span class="lineNum">      18 </span><span class="lineCov">         20 :       length_of_range_(b - a),</span>
+<span class="lineNum">      19 </span><span class="lineCov">         20 :       jacobian_(length_of_range_ / length_of_domain_),</span>
+<span class="lineNum">      20 </span><span class="lineCov">         80 :       inverse_jacobian_(length_of_domain_ / length_of_range_) {}</span>
+<a name="21"><span class="lineNum">      21 </span>            : </a>
+<span class="lineNum">      22 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      23 </span><span class="lineCov">        261 : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 1&gt; AffineMap::</span>
+<span class="lineNum">      24 </span>            : operator()(const std::array&lt;T, 1&gt;&amp; xi) const {
+<span class="lineNum">      25 </span><span class="lineCov">        261 :   return {{(length_of_range_ * xi[0] + a_ * B_ - b_ * A_) / length_of_domain_}};</span>
+<span class="lineNum">      26 </span>            : }
+<span class="lineNum">      27 </span>            : 
+<a name="28"><span class="lineNum">      28 </span>            : template &lt;typename T&gt;</a>
+<span class="lineNum">      29 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 1&gt;
+<span class="lineNum">      30 </span><span class="lineCov">        141 : AffineMap::inverse(const std::array&lt;T, 1&gt;&amp; x) const {</span>
+<span class="lineNum">      31 </span><span class="lineCov">        141 :   return {{(length_of_domain_ * x[0] - a_ * B_ + b_ * A_) / length_of_range_}};</span>
+<span class="lineNum">      32 </span>            : }
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      35 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      36 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<a name="37"><span class="lineNum">      37 </span>            :        index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,</a>
+<span class="lineNum">      38 </span>            :                   SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      39 </span><span class="lineCov">        146 : AffineMap::jacobian(const std::array&lt;T, 1&gt;&amp; /*xi*/) const {</span>
+<span class="lineNum">      40 </span>            :   return Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      41 </span>            :                 tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      42 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      43 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;{
+<span class="lineNum">      44 </span><span class="lineCov">        146 :       jacobian_};</span>
+<span class="lineNum">      45 </span>            : }
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      48 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      49 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<a name="50"><span class="lineNum">      50 </span>            :        index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,</a>
+<span class="lineNum">      51 </span>            :                   SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      52 </span><span class="lineCov">        146 : AffineMap::inv_jacobian(const std::array&lt;T, 1&gt;&amp; /*xi*/) const {</span>
+<span class="lineNum">      53 </span>            :   return Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      54 </span>            :                 tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      55 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      56 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;{
+<span class="lineNum">      57 </span><span class="lineCov">        146 :       inverse_jacobian_};</span>
+<a name="58"><span class="lineNum">      58 </span>            : }</a>
+<span class="lineNum">      59 </span>            : 
+<span class="lineNum">      60 </span><span class="lineCov">          3 : void AffineMap::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">      61 </span><span class="lineCov">          3 :   p | A_;</span>
+<span class="lineNum">      62 </span><span class="lineCov">          3 :   p | B_;</span>
+<span class="lineNum">      63 </span><span class="lineCov">          3 :   p | a_;</span>
+<span class="lineNum">      64 </span><span class="lineCov">          3 :   p | b_;</span>
+<span class="lineNum">      65 </span><span class="lineCov">          3 :   p | length_of_domain_;</span>
+<span class="lineNum">      66 </span><span class="lineCov">          3 :   p | length_of_range_;</span>
+<span class="lineNum">      67 </span><span class="lineCov">          3 :   p | jacobian_;</span>
+<span class="lineNum">      68 </span><span class="lineCov">          3 :   p | inverse_jacobian_;</span>
+<a name="69"><span class="lineNum">      69 </span><span class="lineCov">          3 : }</span></a>
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span><span class="lineCov">          2 : bool operator==(const CoordinateMaps::AffineMap&amp; lhs,</span>
+<span class="lineNum">      72 </span>            :                 const CoordinateMaps::AffineMap&amp; rhs) noexcept {
+<span class="lineNum">      73 </span><span class="lineCov">          6 :   return lhs.A_ == rhs.A_ and lhs.B_ == rhs.B_ and lhs.a_ == rhs.a_ and</span>
+<span class="lineNum">      74 </span><span class="lineCov">          6 :          lhs.b_ == rhs.b_ and lhs.length_of_domain_ == rhs.length_of_domain_ and</span>
+<span class="lineNum">      75 </span><span class="lineCov">          4 :          lhs.length_of_range_ == rhs.length_of_range_ and</span>
+<span class="lineNum">      76 </span><span class="lineCov">          6 :          lhs.jacobian_ == rhs.jacobian_ and</span>
+<span class="lineNum">      77 </span><span class="lineCov">          4 :          lhs.inverse_jacobian_ == rhs.inverse_jacobian_;</span>
+<span class="lineNum">      78 </span>            : }
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            : // Explicit instantiations
+<span class="lineNum">      81 </span>            : template std::array&lt;double, 1&gt; AffineMap::operator()(
+<span class="lineNum">      82 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">      83 </span>            : template std::array&lt;double, 1&gt; AffineMap::operator()(
+<span class="lineNum">      84 </span>            :     const std::array&lt;double, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">      85 </span>            : template std::array&lt;DataVector, 1&gt; AffineMap::operator()(
+<span class="lineNum">      86 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 1&gt;&amp; /*xi*/)
+<span class="lineNum">      87 </span>            :     const;
+<span class="lineNum">      88 </span>            : template std::array&lt;DataVector, 1&gt; AffineMap::operator()(
+<span class="lineNum">      89 </span>            :     const std::array&lt;DataVector, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">      90 </span>            : 
+<span class="lineNum">      91 </span>            : template std::array&lt;double, 1&gt; AffineMap::inverse(
+<span class="lineNum">      92 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">      93 </span>            : template std::array&lt;double, 1&gt; AffineMap::inverse(
+<span class="lineNum">      94 </span>            :     const std::array&lt;double, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">      95 </span>            : template std::array&lt;DataVector, 1&gt; AffineMap::inverse(
+<span class="lineNum">      96 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 1&gt;&amp; /*xi*/)
+<span class="lineNum">      97 </span>            :     const;
+<span class="lineNum">      98 </span>            : template std::array&lt;DataVector, 1&gt; AffineMap::inverse(
+<span class="lineNum">      99 </span>            :     const std::array&lt;DataVector, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     102 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     103 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     104 </span>            : AffineMap::jacobian(
+<span class="lineNum">     105 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     106 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     107 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     108 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     109 </span>            : AffineMap::jacobian(const std::array&lt;double, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     110 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     111 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     112 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     113 </span>            : AffineMap::jacobian(const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;,
+<span class="lineNum">     114 </span>            :                                      1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     115 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     116 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     117 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     118 </span>            : AffineMap::jacobian(const std::array&lt;DataVector, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     119 </span>            : 
+<span class="lineNum">     120 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     121 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     122 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     123 </span>            : AffineMap::inv_jacobian(
+<span class="lineNum">     124 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     125 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     126 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     127 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     128 </span>            : AffineMap::inv_jacobian(const std::array&lt;double, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     129 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     130 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     131 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     132 </span>            : AffineMap::inv_jacobian(
+<span class="lineNum">     133 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 1&gt;&amp; /*xi*/)
+<span class="lineNum">     134 </span>            :     const;
+<span class="lineNum">     135 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     136 </span>            :                 index_list&lt;SpatialIndex&lt;1, UpLo::Up, Frame::NoFrame&gt;,
+<a name="137"><span class="lineNum">     137 </span>            :                            SpatialIndex&lt;1, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;</a>
+<span class="lineNum">     138 </span>            : AffineMap::inv_jacobian(const std::array&lt;DataVector, 1&gt;&amp; /*xi*/) const;
+<span class="lineNum">     139 </span><span class="lineCov">        642 : }  // namespace CoordinateMaps</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

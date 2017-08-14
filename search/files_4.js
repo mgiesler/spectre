@@ -2,7 +2,6 @@ var searchData=
 [
   ['elementid_2ecpp',['ElementId.cpp',['../ElementId_8cpp.html',1,'']]],
   ['elementid_2ehpp',['ElementId.hpp',['../ElementId_8hpp.html',1,'']]],
-  ['embeddingmap_2ehpp',['EmbeddingMap.hpp',['../EmbeddingMap_8hpp.html',1,'']]],
   ['error_2ehpp',['Error.hpp',['../Error_8hpp.html',1,'']]],
   ['evaluate_2ehpp',['Evaluate.hpp',['../Evaluate_8hpp.html',1,'']]],
   ['exception',['exception',['http://en.cppreference.com/w/cpp/header/exception.html',1,'']]],

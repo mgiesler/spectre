@@ -152,7 +152,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Computational Domain</div>  </div>
 </div><!--header-->
@@ -163,20 +164,20 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html">Block&lt; VolumeDim &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlock.html">Block&lt; Map &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root node of a tree which is used to construct the Elements that cover a region of the computational domain.  <a href="classBlock.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBlockNeighbor.html">BlockNeighbor&lt; VolumeDim &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about the neighbor of a <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> in a particular direction.  <a href="classBlockNeighbor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMap.html">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A coordinate map or composition of coordinate maps.  <a href="classCoordinateMap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirection.html">Direction&lt; VolumeDim &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A particular Side along a particular coordinate Axis.  <a href="classDirection.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classElementId.html">ElementId&lt; VolumeDim &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="classElementId.html" title="An ElementId uniquely labels a Element. It is constructed from the BlockId of the Block to which the ...">ElementId</a> uniquely labels a Element. It is constructed from the BlockId of the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> to which the Element belongs and the VolumeDim SegementIds that label the segments of the <a class="el" href="classBlock.html" title="A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational domain that defines the root ...">Block</a> that the Element covers.  <a href="classElementId.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMap.html">EmbeddingMap&lt; DimOfDomain, DimOfRange &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class representing a coordinate mapping from a <code>DimOfDomain</code>-dimensional space (coordinates \(\xi^I\)) to a <code>DimOfRange</code>-dimensional space (coordinates \(x^i\)).  <a href="classEmbeddingMap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeighbors.html">Neighbors&lt; VolumeDim &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about the neighbors of an Element in a particular direction.  <a href="classNeighbors.html#details">More...</a><br /></td></tr>
@@ -192,6 +193,13 @@ Enumerations</h2></td></tr>
  }<tr class="memdesc:ga8c0137d7160ad71b6ed265c53c99ed00"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label for the side of a manifold.  <a href="group__ComputationalDomain.html#ga8c0137d7160ad71b6ed265c53c99ed00">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:ga8c0137d7160ad71b6ed265c53c99ed00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae72599c9671b96f52d0d8f001943fbd2"><td class="memTemplParams" colspan="2">template&lt;typename SourceFrame , typename TargetFrame , typename... Maps&gt; </td></tr>
+<tr class="memitem:gae72599c9671b96f52d0d8f001943fbd2"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; SourceFrame, TargetFrame, Maps... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ComputationalDomain.html#gae72599c9671b96f52d0d8f001943fbd2">make_coordinate_map</a> (Maps &amp;&amp;... maps)</td></tr>
+<tr class="memdesc:gae72599c9671b96f52d0d8f001943fbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classCoordinateMap.html" title="A coordinate map or composition of coordinate maps. ">CoordinateMap</a> of <code>maps...</code>  <a href="#gae72599c9671b96f52d0d8f001943fbd2">More...</a><br /></td></tr>
+<tr class="separator:gae72599c9671b96f52d0d8f001943fbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The building blocks used to describe the computational domain. </p>
@@ -224,6 +232,29 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga8c0137d7160ad71b6ed265c53c99ed00ab75fcdd2d72d9e000beab48622402d93"></a>Lower&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="gga8c0137d7160ad71b6ed265c53c99ed00a19de5b94f7b83900d4b296d9fa491aec"></a>Upper&#160;</td><td class="fielddoc"></td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gae72599c9671b96f52d0d8f001943fbd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae72599c9671b96f52d0d8f001943fbd2">&#9670;&nbsp;</a></span>make_coordinate_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SourceFrame , typename TargetFrame , typename... Maps&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt;SourceFrame, TargetFrame, Maps...&gt; make_coordinate_map </td>
+          <td>(</td>
+          <td class="paramtype">Maps &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>maps</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classCoordinateMap.html" title="A coordinate map or composition of coordinate maps. ">CoordinateMap</a> of <code>maps...</code> </p>
 
 </div>
 </div>

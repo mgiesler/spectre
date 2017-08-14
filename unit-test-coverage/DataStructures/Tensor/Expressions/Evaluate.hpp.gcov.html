@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Tensor/Expressions/Evaluate.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - DataStructures/Tensor/Expressions/Evaluate.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">2</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:25:38</td>
+            <td class="headerValue">2017-08-14 02:27:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -78,21 +78,21 @@
 <span class="lineNum">       8 </span>            : 
 <span class="lineNum">       9 </span>            : #include &quot;DataStructures/Tensor/Expressions/TensorExpression.hpp&quot;
 <span class="lineNum">      10 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;
-<span class="lineNum">      11 </span>            : 
-<span class="lineNum">      12 </span>            : namespace TensorExpressions {
-<span class="lineNum">      13 </span>            : 
-<span class="lineNum">      14 </span>            : /*!
-<span class="lineNum">      15 </span>            :  * \ingroup TensorExpressions
-<span class="lineNum">      16 </span>            :  * \brief Evaluate a Tensor Expression with LHS indices set in the template
-<span class="lineNum">      17 </span>            :  * parameters
-<span class="lineNum">      18 </span>            :  *
-<span class="lineNum">      19 </span>            :  * @tparam LhsIndices the indices on the left hand side of the tensor expression
-<span class="lineNum">      20 </span>            :  * @return Tensor&lt;typename T::type, typename T::symmetry, typename
-<span class="lineNum">      21 </span>            :  * T::index_list&gt;
-<span class="lineNum">      22 </span>            :  */
-<span class="lineNum">      23 </span>            : template &lt;typename... LhsIndices, typename T,
-<a name="24"><span class="lineNum">      24 </span>            :           typename std::enable_if&lt;</a>
-<span class="lineNum">      25 </span>            :               std::is_base_of&lt;Expression, T&gt;::value&gt;::type* = nullptr&gt;
+<span class="lineNum">      11 </span>            : #include &quot;Utilities/Requires.hpp&quot;
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span>            : namespace TensorExpressions {
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span>            : /*!
+<span class="lineNum">      16 </span>            :  * \ingroup TensorExpressions
+<span class="lineNum">      17 </span>            :  * \brief Evaluate a Tensor Expression with LHS indices set in the template
+<span class="lineNum">      18 </span>            :  * parameters
+<span class="lineNum">      19 </span>            :  *
+<span class="lineNum">      20 </span>            :  * @tparam LhsIndices the indices on the left hand side of the tensor expression
+<span class="lineNum">      21 </span>            :  * @return Tensor&lt;typename T::type, typename T::symmetry, typename
+<span class="lineNum">      22 </span>            :  * T::index_list&gt;
+<span class="lineNum">      23 </span>            :  */
+<a name="24"><span class="lineNum">      24 </span>            : template &lt;typename... LhsIndices, typename T,</a>
+<span class="lineNum">      25 </span>            :           Requires&lt;std::is_base_of&lt;Expression, T&gt;::value&gt; = nullptr&gt;
 <span class="lineNum">      26 </span><span class="lineCov">          6 : auto evaluate(const T&amp; te) {</span>
 <span class="lineNum">      27 </span>            :   static_assert(
 <span class="lineNum">      28 </span>            :       sizeof...(LhsIndices) == tmpl::size&lt;typename T::args_list&gt;::value,

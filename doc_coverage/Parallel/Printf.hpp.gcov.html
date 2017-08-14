@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - Parallel/Printf.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Parallel/Printf.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">1</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:26:05</td>
+            <td class="headerValue">2017-08-14 02:27:43</td>
             <td></td>
           </tr>
           <tr>
@@ -77,20 +77,20 @@
 <span class="lineNum">      11 </span>            : #include &lt;string&gt;
 <span class="lineNum">      12 </span>            : #include &lt;type_traits&gt;
 <span class="lineNum">      13 </span>            : 
-<span class="lineNum">      14 </span>            : #include &quot;Utilities/TypeTraits.hpp&quot;
-<span class="lineNum">      15 </span>            : 
-<span class="lineNum">      16 </span>            : namespace Parallel {
-<span class="lineNum">      17 </span>            : namespace detail {
-<span class="lineNum">      18 </span>            : /*!
-<span class="lineNum">      19 </span>            :  * Fundamentals and pointers are already printable so there is no conversion
-<span class="lineNum">      20 </span>            :  * to a std::string necessary.
-<span class="lineNum">      21 </span>            :  */
-<span class="lineNum">      22 </span>            : template &lt;typename T,
-<span class="lineNum">      23 </span>            :           typename std::enable_if_t&lt;
-<span class="lineNum">      24 </span>            :               std::is_fundamental&lt;std::decay_t&lt;
-<span class="lineNum">      25 </span>            :                   std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value or
-<span class="lineNum">      26 </span>            :               std::is_pointer&lt;T&gt;::value or
-<span class="lineNum">      27 </span>            :               std::is_pointer&lt;std::decay_t&lt;T&gt;&gt;::value&gt;* = nullptr&gt;
+<span class="lineNum">      14 </span>            : #include &quot;Utilities/Requires.hpp&quot;
+<span class="lineNum">      15 </span>            : #include &quot;Utilities/TypeTraits.hpp&quot;
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span>            : namespace Parallel {
+<span class="lineNum">      18 </span>            : namespace detail {
+<span class="lineNum">      19 </span>            : /*!
+<span class="lineNum">      20 </span>            :  * Fundamentals and pointers are already printable so there is no conversion
+<span class="lineNum">      21 </span>            :  * to a std::string necessary.
+<span class="lineNum">      22 </span>            :  */
+<span class="lineNum">      23 </span>            : template &lt;typename T,
+<span class="lineNum">      24 </span>            :           Requires&lt;std::is_fundamental&lt;std::decay_t&lt;
+<span class="lineNum">      25 </span>            :                        std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value or
+<span class="lineNum">      26 </span>            :                    std::is_pointer&lt;T&gt;::value or
+<span class="lineNum">      27 </span>            :                    std::is_pointer&lt;std::decay_t&lt;T&gt;&gt;::value&gt; = nullptr&gt;
 <span class="lineNum">      28 </span>            : inline constexpr T stream_object_to_string(T&amp;&amp; t) {
 <span class="lineNum">      29 </span>            :   return t;
 <span class="lineNum">      30 </span>            : }
@@ -101,61 +101,59 @@
 <span class="lineNum">      35 </span>            :  * We need a 2-phase call so that the std::string doesn't go out of scope before
 <span class="lineNum">      36 </span>            :  * the C-style string is passed to printf.
 <span class="lineNum">      37 </span>            :  */
-<span class="lineNum">      38 </span>            : template &lt;
-<span class="lineNum">      39 </span>            :     typename T,
-<span class="lineNum">      40 </span>            :     typename std::enable_if_t&lt;std::is_class&lt;std::decay_t&lt;T&gt;&gt;::value&gt;* = nullptr&gt;
-<span class="lineNum">      41 </span>            : inline std::string stream_object_to_string(T&amp;&amp; t) {
-<span class="lineNum">      42 </span>            :   static_assert(tt::is_streamable&lt;std::stringstream, T&gt;::value,
-<span class="lineNum">      43 </span>            :                 &quot;Cannot stream type and therefore it cannot be printed. Please &quot;
-<span class="lineNum">      44 </span>            :                 &quot;define a stream operator for the type.&quot;);
-<span class="lineNum">      45 </span>            :   std::stringstream ss;
-<span class="lineNum">      46 </span>            :   ss &lt;&lt; t;
-<span class="lineNum">      47 </span>            :   return ss.str();
-<span class="lineNum">      48 </span>            : }
-<span class="lineNum">      49 </span>            : 
-<span class="lineNum">      50 </span>            : /*!
-<span class="lineNum">      51 </span>            :  * Fundamentals are already printable, so nothing to do.
-<span class="lineNum">      52 </span>            :  */
-<span class="lineNum">      53 </span>            : template &lt;typename T,
-<span class="lineNum">      54 </span>            :           typename std::enable_if_t&lt;std::is_fundamental&lt;std::decay_t&lt;
-<span class="lineNum">      55 </span>            :               std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value&gt;* = nullptr&gt;
-<span class="lineNum">      56 </span>            : inline constexpr T get_printable_type(T&amp;&amp; t) {
-<span class="lineNum">      57 </span>            :   return t;
-<span class="lineNum">      58 </span>            : }
-<span class="lineNum">      59 </span>            : 
-<span class="lineNum">      60 </span>            : /*!
-<span class="lineNum">      61 </span>            :  * Get the pointer of the std::string so it can be passed to CkPrintf which
-<span class="lineNum">      62 </span>            :  * only works on fundamentals
-<span class="lineNum">      63 </span>            :  */
-<span class="lineNum">      64 </span>            : inline const typename std::string::value_type* get_printable_type(
-<span class="lineNum">      65 </span>            :     const std::string&amp; t) {
-<span class="lineNum">      66 </span>            :   return t.c_str();
-<span class="lineNum">      67 </span>            : }
-<span class="lineNum">      68 </span>            : 
-<span class="lineNum">      69 </span>            : template &lt;typename... Ts&gt;
-<span class="lineNum">      70 </span>            : inline void print_helper(const std::string&amp; format, Ts&amp;&amp;... t) {
-<span class="lineNum">      71 </span>            :   CkPrintf(format.c_str(),                               // NOLINT
-<span class="lineNum">      72 </span>            :            get_printable_type(std::forward&lt;Ts&gt;(t))...);  // NOLINT
-<span class="lineNum">      73 </span>            : }
-<span class="lineNum">      74 </span>            : }  // namespace detail
-<span class="lineNum">      75 </span>            : 
-<span class="lineNum">      76 </span>            : /*!
-<span class="lineNum">      77 </span>            :    * \ingroup Parallel
-<span class="lineNum">      78 </span>            :    * \brief Print an atomic message to stdout with C printf usage.
-<span class="lineNum">      79 </span>            :    *
-<span class="lineNum">      80 </span>            :    * Similar to Python, you can print any object that's streamable by passing it
-<span class="lineNum">      81 </span>            :    * in as an argument and using the formatter &quot;%s&quot;. For example,
-<span class="lineNum">      82 </span>            :    * \code
-<span class="lineNum">      83 </span>            :    * std::vector&lt;double&gt; a{0.8, 73, 9.8};
-<span class="lineNum">      84 </span>            :    * Parallel::printf(&quot;%s\n&quot;, a);
-<span class="lineNum">      85 </span>            :    * \endcode
-<span class="lineNum">      86 </span>            :    */
-<span class="lineNum">      87 </span>            : template &lt;typename... Args&gt;
-<span class="lineNum">      88 </span><span class="lineCov">          2 : inline void printf(const std::string&amp; format, Args&amp;&amp;... args) {</span>
-<span class="lineNum">      89 </span>            :   detail::print_helper(
-<span class="lineNum">      90 </span>            :       format, detail::stream_object_to_string(std::forward&lt;Args&gt;(args))...);
-<span class="lineNum">      91 </span>            : }
-<span class="lineNum">      92 </span>            : }  // namespace Parallel
+<span class="lineNum">      38 </span>            : template &lt;typename T, Requires&lt;std::is_class&lt;std::decay_t&lt;T&gt;&gt;::value&gt; = nullptr&gt;
+<span class="lineNum">      39 </span>            : inline std::string stream_object_to_string(T&amp;&amp; t) {
+<span class="lineNum">      40 </span>            :   static_assert(tt::is_streamable&lt;std::stringstream, T&gt;::value,
+<span class="lineNum">      41 </span>            :                 &quot;Cannot stream type and therefore it cannot be printed. Please &quot;
+<span class="lineNum">      42 </span>            :                 &quot;define a stream operator for the type.&quot;);
+<span class="lineNum">      43 </span>            :   std::stringstream ss;
+<span class="lineNum">      44 </span>            :   ss &lt;&lt; t;
+<span class="lineNum">      45 </span>            :   return ss.str();
+<span class="lineNum">      46 </span>            : }
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span>            : /*!
+<span class="lineNum">      49 </span>            :  * Fundamentals are already printable, so nothing to do.
+<span class="lineNum">      50 </span>            :  */
+<span class="lineNum">      51 </span>            : template &lt;typename T,
+<span class="lineNum">      52 </span>            :           Requires&lt;std::is_fundamental&lt;std::decay_t&lt;
+<span class="lineNum">      53 </span>            :               std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value&gt; = nullptr&gt;
+<span class="lineNum">      54 </span>            : inline constexpr T get_printable_type(T&amp;&amp; t) {
+<span class="lineNum">      55 </span>            :   return t;
+<span class="lineNum">      56 </span>            : }
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span>            : /*!
+<span class="lineNum">      59 </span>            :  * Get the pointer of the std::string so it can be passed to CkPrintf which
+<span class="lineNum">      60 </span>            :  * only works on fundamentals
+<span class="lineNum">      61 </span>            :  */
+<span class="lineNum">      62 </span>            : inline const typename std::string::value_type* get_printable_type(
+<span class="lineNum">      63 </span>            :     const std::string&amp; t) {
+<span class="lineNum">      64 </span>            :   return t.c_str();
+<span class="lineNum">      65 </span>            : }
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span>            : template &lt;typename... Ts&gt;
+<span class="lineNum">      68 </span>            : inline void print_helper(const std::string&amp; format, Ts&amp;&amp;... t) {
+<span class="lineNum">      69 </span>            :   CkPrintf(format.c_str(),                               // NOLINT
+<span class="lineNum">      70 </span>            :            get_printable_type(std::forward&lt;Ts&gt;(t))...);  // NOLINT
+<span class="lineNum">      71 </span>            : }
+<span class="lineNum">      72 </span>            : }  // namespace detail
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            : /*!
+<span class="lineNum">      75 </span>            :    * \ingroup Parallel
+<span class="lineNum">      76 </span>            :    * \brief Print an atomic message to stdout with C printf usage.
+<span class="lineNum">      77 </span>            :    *
+<span class="lineNum">      78 </span>            :    * Similar to Python, you can print any object that's streamable by passing it
+<span class="lineNum">      79 </span>            :    * in as an argument and using the formatter &quot;%s&quot;. For example,
+<span class="lineNum">      80 </span>            :    * \code
+<span class="lineNum">      81 </span>            :    * std::vector&lt;double&gt; a{0.8, 73, 9.8};
+<span class="lineNum">      82 </span>            :    * Parallel::printf(&quot;%s\n&quot;, a);
+<span class="lineNum">      83 </span>            :    * \endcode
+<span class="lineNum">      84 </span>            :    */
+<span class="lineNum">      85 </span>            : template &lt;typename... Args&gt;
+<span class="lineNum">      86 </span><span class="lineCov">          2 : inline void printf(const std::string&amp; format, Args&amp;&amp;... args) {</span>
+<span class="lineNum">      87 </span>            :   detail::print_helper(
+<span class="lineNum">      88 </span>            :       format, detail::stream_object_to_string(std::forward&lt;Args&gt;(args))...);
+<span class="lineNum">      89 </span>            : }
+<span class="lineNum">      90 </span>            : }  // namespace Parallel
 </pre>
       </td>
     </tr>

@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - Domain/Direction.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/Direction.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">11</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:26:05</td>
+            <td class="headerValue">2017-08-14 02:27:43</td>
             <td></td>
           </tr>
           <tr>
@@ -144,112 +144,114 @@
 <span class="lineNum">      78 </span>            : // INLINE DEFINITIONS
 <span class="lineNum">      79 </span>            : //##############################################################################
 <span class="lineNum">      80 </span>            : 
-<span class="lineNum">      81 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      82 </span>            : Direction&lt;VolumeDim&gt;::Direction() noexcept = default;
-<span class="lineNum">      83 </span>            : 
-<span class="lineNum">      84 </span>            : // Needed in order to address warning; ignorning -Wpedantic is needed.
-<span class="lineNum">      85 </span>            : // Bug 61491
-<span class="lineNum">      86 </span>            : // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61491
-<span class="lineNum">      87 </span>            : #pragma GCC diagnostic push
-<span class="lineNum">      88 </span>            : #pragma GCC diagnostic ignored &quot;-Wpedantic&quot;
-<span class="lineNum">      89 </span>            : template &lt;&gt;
-<span class="lineNum">      90 </span><span class="lineNoCov">          0 : enum class Direction&lt;1&gt;::Axis{Xi = 0};</span>
-<span class="lineNum">      91 </span>            : 
-<span class="lineNum">      92 </span>            : template &lt;&gt;
-<span class="lineNum">      93 </span><span class="lineNoCov">          0 : enum class Direction&lt;2&gt;::Axis{Xi = 0, Eta = 1};</span>
-<span class="lineNum">      94 </span>            : 
-<span class="lineNum">      95 </span>            : template &lt;&gt;
-<span class="lineNum">      96 </span><span class="lineNoCov">          0 : enum class Direction&lt;3&gt;::Axis{Xi = 0, Eta = 1, Zeta = 2};</span>
-<span class="lineNum">      97 </span>            : #pragma GCC diagnostic pop
-<span class="lineNum">      98 </span>            : 
-<span class="lineNum">      99 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     100 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_xi() noexcept {
-<span class="lineNum">     101 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Lower);
-<span class="lineNum">     102 </span>            : }
-<span class="lineNum">     103 </span>            : 
-<span class="lineNum">     104 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     105 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_xi() noexcept {
-<span class="lineNum">     106 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Upper);
-<span class="lineNum">     107 </span>            : }
-<span class="lineNum">     108 </span>            : 
-<span class="lineNum">     109 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     110 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_eta() noexcept {
-<span class="lineNum">     111 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
-<span class="lineNum">     112 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Lower);
-<span class="lineNum">     113 </span>            : }
-<span class="lineNum">     114 </span>            : 
-<span class="lineNum">     115 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     116 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_eta() noexcept {
-<span class="lineNum">     117 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
-<span class="lineNum">     118 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Upper);
-<span class="lineNum">     119 </span>            : }
-<span class="lineNum">     120 </span>            : 
-<span class="lineNum">     121 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     122 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_zeta() noexcept {
-<span class="lineNum">     123 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
-<span class="lineNum">     124 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Lower);
-<span class="lineNum">     125 </span>            : }
-<span class="lineNum">     126 </span>            : 
-<span class="lineNum">     127 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     128 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_zeta() noexcept {
-<span class="lineNum">     129 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
-<span class="lineNum">     130 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Upper);
-<span class="lineNum">     131 </span>            : }
-<span class="lineNum">     132 </span>            : 
-<span class="lineNum">     133 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     134 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::opposite() const noexcept {
-<span class="lineNum">     135 </span>            :   return Direction&lt;VolumeDim&gt;(axis_, ::opposite(side_));
-<span class="lineNum">     136 </span>            : }
-<span class="lineNum">     137 </span>            : 
-<span class="lineNum">     138 </span>            : template &lt;&gt;
-<span class="lineNum">     139 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;1&gt;, 2&gt; Direction&lt;1&gt;::all_directions() noexcept {</span>
-<span class="lineNum">     140 </span>            :   return std::array&lt;Direction&lt;1&gt;, 2&gt;{
-<span class="lineNum">     141 </span>            :       {Direction&lt;1&gt;::upper_xi(), Direction&lt;1&gt;::lower_xi()}};
-<span class="lineNum">     142 </span>            : }
-<span class="lineNum">     143 </span>            : 
-<span class="lineNum">     144 </span>            : template &lt;&gt;
-<span class="lineNum">     145 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;2&gt;, 4&gt; Direction&lt;2&gt;::all_directions() noexcept {</span>
-<span class="lineNum">     146 </span>            :   return std::array&lt;Direction&lt;2&gt;, 4&gt;{
-<span class="lineNum">     147 </span>            :       {Direction&lt;2&gt;::upper_xi(), Direction&lt;2&gt;::lower_xi(),
-<span class="lineNum">     148 </span>            :        Direction&lt;2&gt;::upper_eta(), Direction&lt;2&gt;::lower_eta()}};
-<span class="lineNum">     149 </span>            : }
-<span class="lineNum">     150 </span>            : 
-<span class="lineNum">     151 </span>            : template &lt;&gt;
-<span class="lineNum">     152 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;3&gt;, 6&gt; Direction&lt;3&gt;::all_directions() noexcept {</span>
-<span class="lineNum">     153 </span>            :   return std::array&lt;Direction&lt;3&gt;, 6&gt;{
-<span class="lineNum">     154 </span>            :       {Direction&lt;3&gt;::upper_xi(), Direction&lt;3&gt;::lower_xi(),
-<span class="lineNum">     155 </span>            :        Direction&lt;3&gt;::upper_eta(), Direction&lt;3&gt;::lower_eta(),
-<span class="lineNum">     156 </span>            :        Direction&lt;3&gt;::upper_zeta(), Direction&lt;3&gt;::lower_zeta()}};
-<span class="lineNum">     157 </span>            : }
-<span class="lineNum">     158 </span>            : 
-<span class="lineNum">     159 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     160 </span>            : void Direction&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {
-<span class="lineNum">     161 </span>            :   p | axis_;
-<span class="lineNum">     162 </span>            :   p | side_;
-<span class="lineNum">     163 </span>            : }
-<span class="lineNum">     164 </span>            : 
-<span class="lineNum">     165 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     166 </span><span class="lineNoCov">          0 : inline bool operator==(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
-<span class="lineNum">     167 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
-<span class="lineNum">     168 </span>            :   return lhs.dimension() == rhs.dimension() and lhs.sign() == rhs.sign();
-<span class="lineNum">     169 </span>            : }
-<span class="lineNum">     170 </span>            : 
-<span class="lineNum">     171 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     172 </span><span class="lineNoCov">          0 : inline bool operator!=(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
-<span class="lineNum">     173 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
-<span class="lineNum">     174 </span>            :   return not(lhs == rhs);
-<span class="lineNum">     175 </span>            : }
-<span class="lineNum">     176 </span>            : 
-<span class="lineNum">     177 </span>            : // These are defined so that a Direction can be used as part of a key of an
-<span class="lineNum">     178 </span>            : // unordered_set or unordered_map.
-<span class="lineNum">     179 </span>            : namespace std {
-<span class="lineNum">     180 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">     181 </span>            : struct hash&lt;Direction&lt;VolumeDim&gt;&gt; {
-<span class="lineNum">     182 </span>            :   size_t operator()(const Direction&lt;VolumeDim&gt;&amp; d) const {
-<span class="lineNum">     183 </span>            :     return hash&lt;size_t&gt;{}(d.dimension()) xor hash&lt;double&gt;{}(d.sign());
-<span class="lineNum">     184 </span>            :   }
-<span class="lineNum">     185 </span>            : };
-<span class="lineNum">     186 </span>            : }  // namespace std
+<span class="lineNum">      81 </span>            : // clang-tidy: redundant declaration false positive. Needs to be here because of
+<span class="lineNum">      82 </span>            : // the Axis enum, otherwise won't compile.
+<span class="lineNum">      83 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">      84 </span>            : Direction&lt;VolumeDim&gt;::Direction() noexcept = default;  // NOLINT
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span>            : // Needed in order to address warning; ignorning -Wpedantic is needed.
+<span class="lineNum">      87 </span>            : // Bug 61491
+<span class="lineNum">      88 </span>            : // https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61491
+<span class="lineNum">      89 </span>            : #pragma GCC diagnostic push
+<span class="lineNum">      90 </span>            : #pragma GCC diagnostic ignored &quot;-Wpedantic&quot;
+<span class="lineNum">      91 </span>            : template &lt;&gt;
+<span class="lineNum">      92 </span><span class="lineNoCov">          0 : enum class Direction&lt;1&gt;::Axis{Xi = 0};</span>
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span>            : template &lt;&gt;
+<span class="lineNum">      95 </span><span class="lineNoCov">          0 : enum class Direction&lt;2&gt;::Axis{Xi = 0, Eta = 1};</span>
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span>            : template &lt;&gt;
+<span class="lineNum">      98 </span><span class="lineNoCov">          0 : enum class Direction&lt;3&gt;::Axis{Xi = 0, Eta = 1, Zeta = 2};</span>
+<span class="lineNum">      99 </span>            : #pragma GCC diagnostic pop
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     102 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_xi() noexcept {
+<span class="lineNum">     103 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Lower);
+<span class="lineNum">     104 </span>            : }
+<span class="lineNum">     105 </span>            : 
+<span class="lineNum">     106 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     107 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_xi() noexcept {
+<span class="lineNum">     108 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Xi, Side::Upper);
+<span class="lineNum">     109 </span>            : }
+<span class="lineNum">     110 </span>            : 
+<span class="lineNum">     111 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     112 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_eta() noexcept {
+<span class="lineNum">     113 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
+<span class="lineNum">     114 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Lower);
+<span class="lineNum">     115 </span>            : }
+<span class="lineNum">     116 </span>            : 
+<span class="lineNum">     117 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     118 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_eta() noexcept {
+<span class="lineNum">     119 </span>            :   static_assert(VolumeDim == 2 or VolumeDim == 3, &quot;VolumeDim must be 2 or 3.&quot;);
+<span class="lineNum">     120 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Eta, Side::Upper);
+<span class="lineNum">     121 </span>            : }
+<span class="lineNum">     122 </span>            : 
+<span class="lineNum">     123 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     124 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::lower_zeta() noexcept {
+<span class="lineNum">     125 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
+<span class="lineNum">     126 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Lower);
+<span class="lineNum">     127 </span>            : }
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     130 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::upper_zeta() noexcept {
+<span class="lineNum">     131 </span>            :   static_assert(VolumeDim == 3, &quot;VolumeDim must be 3.&quot;);
+<span class="lineNum">     132 </span>            :   return Direction(Direction&lt;VolumeDim&gt;::Axis::Zeta, Side::Upper);
+<span class="lineNum">     133 </span>            : }
+<span class="lineNum">     134 </span>            : 
+<span class="lineNum">     135 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     136 </span>            : inline Direction&lt;VolumeDim&gt; Direction&lt;VolumeDim&gt;::opposite() const noexcept {
+<span class="lineNum">     137 </span>            :   return Direction&lt;VolumeDim&gt;(axis_, ::opposite(side_));
+<span class="lineNum">     138 </span>            : }
+<span class="lineNum">     139 </span>            : 
+<span class="lineNum">     140 </span>            : template &lt;&gt;
+<span class="lineNum">     141 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;1&gt;, 2&gt; Direction&lt;1&gt;::all_directions() noexcept {</span>
+<span class="lineNum">     142 </span>            :   return std::array&lt;Direction&lt;1&gt;, 2&gt;{
+<span class="lineNum">     143 </span>            :       {Direction&lt;1&gt;::upper_xi(), Direction&lt;1&gt;::lower_xi()}};
+<span class="lineNum">     144 </span>            : }
+<span class="lineNum">     145 </span>            : 
+<span class="lineNum">     146 </span>            : template &lt;&gt;
+<span class="lineNum">     147 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;2&gt;, 4&gt; Direction&lt;2&gt;::all_directions() noexcept {</span>
+<span class="lineNum">     148 </span>            :   return std::array&lt;Direction&lt;2&gt;, 4&gt;{
+<span class="lineNum">     149 </span>            :       {Direction&lt;2&gt;::upper_xi(), Direction&lt;2&gt;::lower_xi(),
+<span class="lineNum">     150 </span>            :        Direction&lt;2&gt;::upper_eta(), Direction&lt;2&gt;::lower_eta()}};
+<span class="lineNum">     151 </span>            : }
+<span class="lineNum">     152 </span>            : 
+<span class="lineNum">     153 </span>            : template &lt;&gt;
+<span class="lineNum">     154 </span><span class="lineNoCov">          0 : inline std::array&lt;Direction&lt;3&gt;, 6&gt; Direction&lt;3&gt;::all_directions() noexcept {</span>
+<span class="lineNum">     155 </span>            :   return std::array&lt;Direction&lt;3&gt;, 6&gt;{
+<span class="lineNum">     156 </span>            :       {Direction&lt;3&gt;::upper_xi(), Direction&lt;3&gt;::lower_xi(),
+<span class="lineNum">     157 </span>            :        Direction&lt;3&gt;::upper_eta(), Direction&lt;3&gt;::lower_eta(),
+<span class="lineNum">     158 </span>            :        Direction&lt;3&gt;::upper_zeta(), Direction&lt;3&gt;::lower_zeta()}};
+<span class="lineNum">     159 </span>            : }
+<span class="lineNum">     160 </span>            : 
+<span class="lineNum">     161 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     162 </span>            : void Direction&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {
+<span class="lineNum">     163 </span>            :   p | axis_;
+<span class="lineNum">     164 </span>            :   p | side_;
+<span class="lineNum">     165 </span>            : }
+<span class="lineNum">     166 </span>            : 
+<span class="lineNum">     167 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     168 </span><span class="lineNoCov">          0 : inline bool operator==(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">     169 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
+<span class="lineNum">     170 </span>            :   return lhs.dimension() == rhs.dimension() and lhs.sign() == rhs.sign();
+<span class="lineNum">     171 </span>            : }
+<span class="lineNum">     172 </span>            : 
+<span class="lineNum">     173 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     174 </span><span class="lineNoCov">          0 : inline bool operator!=(const Direction&lt;VolumeDim&gt;&amp; lhs,</span>
+<span class="lineNum">     175 </span>            :                        const Direction&lt;VolumeDim&gt;&amp; rhs) {
+<span class="lineNum">     176 </span>            :   return not(lhs == rhs);
+<span class="lineNum">     177 </span>            : }
+<span class="lineNum">     178 </span>            : 
+<span class="lineNum">     179 </span>            : // These are defined so that a Direction can be used as part of a key of an
+<span class="lineNum">     180 </span>            : // unordered_set or unordered_map.
+<span class="lineNum">     181 </span>            : namespace std {
+<span class="lineNum">     182 </span>            : template &lt;size_t VolumeDim&gt;
+<span class="lineNum">     183 </span>            : struct hash&lt;Direction&lt;VolumeDim&gt;&gt; {
+<span class="lineNum">     184 </span>            :   size_t operator()(const Direction&lt;VolumeDim&gt;&amp; d) const {
+<span class="lineNum">     185 </span>            :     return hash&lt;size_t&gt;{}(d.dimension()) xor hash&lt;double&gt;{}(d.sign());
+<span class="lineNum">     186 </span>            :   }
+<span class="lineNum">     187 </span>            : };
+<span class="lineNum">     188 </span>            : }  // namespace std
 </pre>
       </td>
     </tr>

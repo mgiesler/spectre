@@ -179,19 +179,19 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#abcb717185281b720818d9c29da5806c4">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#ae53792fb4235e29dad57e489e7f9ff49">get</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; ArrayValueType, <a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#a373afc1d682d3290f30e362678e2c48d">num_tensor_indices</a> &gt; &amp;tensor_index) const</td></tr>
 <tr class="memdesc:ae53792fb4235e29dad57e489e7f9ff49"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the value of type DataType with tensor index <code>tensor_index</code>  <a href="#ae53792fb4235e29dad57e489e7f9ff49">More...</a><br /></td></tr>
 <tr class="separator:ae53792fb4235e29dad57e489e7f9ff49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ae53792fb4235e29dad57e489e7f9ff49"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#abcb717185281b720818d9c29da5806c4">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#ae53792fb4235e29dad57e489e7f9ff49">get</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; ArrayValueType, <a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#a373afc1d682d3290f30e362678e2c48d">num_tensor_indices</a> &gt; &amp;tensor_index) const</td></tr>
 <tr class="memdesc:ae53792fb4235e29dad57e489e7f9ff49"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the value of type DataType with tensor index <code>tensor_index</code>  <a href="#ae53792fb4235e29dad57e489e7f9ff49">More...</a><br /></td></tr>
 <tr class="separator:ae53792fb4235e29dad57e489e7f9ff49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5abfa3f92aadab4b7297f7ff92091e3f"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a5abfa3f92aadab4b7297f7ff92091e3f"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a5abfa3f92aadab4b7297f7ff92091e3f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#abcb717185281b720818d9c29da5806c4">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#a5abfa3f92aadab4b7297f7ff92091e3f">operator[]</a> (const size_t i) const</td></tr>
 <tr class="memdesc:a5abfa3f92aadab4b7297f7ff92091e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the i'th entry of the <a class="el" href="classTensor.html">Tensor</a> being held.  <a href="#a5abfa3f92aadab4b7297f7ff92091e3f">More...</a><br /></td></tr>
 <tr class="separator:a5abfa3f92aadab4b7297f7ff92091e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6fa81dfd701c03453179de101ac02a"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:abb6fa81dfd701c03453179de101ac02a"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:abb6fa81dfd701c03453179de101ac02a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#abb6fa81dfd701c03453179de101ac02a">TensorExpression</a> ()</td></tr>
 <tr class="memdesc:abb6fa81dfd701c03453179de101ac02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TensorExpression from another TensorExpression.  <a href="#abb6fa81dfd701c03453179de101ac02a">More...</a><br /></td></tr>
 <tr class="separator:abb6fa81dfd701c03453179de101ac02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,12 +199,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a94c4e6a11a2a07ad8421d4325e3c1e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TensorExpression from a <a class="el" href="classTensor.html">Tensor</a>.  <a href="#a94c4e6a11a2a07ad8421d4325e3c1e07">More...</a><br /></td></tr>
 <tr class="separator:a94c4e6a11a2a07ad8421d4325e3c1e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a39b915e74889fe6b0cc9d38bcf82d8c7"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a39b915e74889fe6b0cc9d38bcf82d8c7"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a39b915e74889fe6b0cc9d38bcf82d8c7"><td class="memTemplItemLeft" align="right" valign="top">const Derived &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#a39b915e74889fe6b0cc9d38bcf82d8c7">operator~</a> () const</td></tr>
 <tr class="memdesc:a39b915e74889fe6b0cc9d38bcf82d8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast down to the derived class. This is enabled by the <a href="https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern">CRTP</a>  <a href="#a39b915e74889fe6b0cc9d38bcf82d8c7">More...</a><br /></td></tr>
 <tr class="separator:a39b915e74889fe6b0cc9d38bcf82d8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ae25a629004e8b4ce730395ea123bf7c6"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae25a629004e8b4ce730395ea123bf7c6"><td class="memTemplParams" colspan="2">template&lt;typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ae25a629004e8b4ce730395ea123bf7c6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpression_3_01Derived_00_01DataType_00_01Symm_00_01IndexLs_00_01ArgsLs_3_01Args_8_8_8_01_4_01_4.html#ae25a629004e8b4ce730395ea123bf7c6">operator~</a> () const</td></tr>
 <tr class="memdesc:ae25a629004e8b4ce730395ea123bf7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the Derived class is a <a class="el" href="classTensor.html">Tensor</a> return a const reference to a TensorExpression.  <a href="#ae25a629004e8b4ce730395ea123bf7c6">More...</a><br /></td></tr>
 <tr class="separator:ae25a629004e8b4ce730395ea123bf7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -305,7 +305,7 @@ template&lt;typename Derived , typename DataType , typename Symm , typename Inde
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -369,7 +369,7 @@ template&lt;typename Derived , typename DataType , typename Symm , typename Inde
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -432,7 +432,7 @@ end for
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -483,7 +483,7 @@ template&lt;typename... LhsIndices, typename ArrayValueType , typename V  = Deri
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -515,7 +515,7 @@ template&lt;typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tens
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename V  = Derived, Requires&lt; not tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -546,7 +546,7 @@ template&lt;typename V  = Derived, typename std::enable_if&lt; not tt::is_a&lt; 
 <div class="memtemplate">
 template&lt;typename Derived , typename DataType , typename Symm , typename IndexLs , template&lt; typename... &gt; class ArgsLs, typename... Args&gt; </div>
 <div class="memtemplate">
-template&lt;typename V  = Derived, typename std::enable_if&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;::type *  = nullptr&gt; </div>
+template&lt;typename V  = Derived, Requires&lt; tt::is_a&lt; Tensor, V &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

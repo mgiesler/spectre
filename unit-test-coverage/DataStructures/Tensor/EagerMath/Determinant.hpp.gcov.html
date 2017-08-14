@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Tensor/EagerMath/Determinant.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - DataStructures/Tensor/EagerMath/Determinant.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">79</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:25:38</td>
+            <td class="headerValue">2017-08-14 02:27:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -79,11 +79,11 @@
 <span class="lineNum">       9 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;
 <span class="lineNum">      10 </span>            : 
 <span class="lineNum">      11 </span>            : namespace detail {
-<span class="lineNum">      12 </span>            : template &lt;typename Symm, typename Index, typename = void&gt;
+<span class="lineNum">      12 </span>            : template &lt;typename Symm, typename Index, typename = std::nullptr_t&gt;
 <span class="lineNum">      13 </span>            : struct DeterminantImpl;
 <span class="lineNum">      14 </span>            : 
 <span class="lineNum">      15 </span>            : template &lt;typename Symm, typename Index&gt;
-<a name="16"><span class="lineNum">      16 </span>            : struct DeterminantImpl&lt;Symm, Index, std::enable_if_t&lt;Index::dim == 1&gt;&gt; {</a>
+<a name="16"><span class="lineNum">      16 </span>            : struct DeterminantImpl&lt;Symm, Index, Requires&lt;Index::dim == 1&gt;&gt; {</a>
 <span class="lineNum">      17 </span>            :   template &lt;typename T&gt;
 <span class="lineNum">      18 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
 <span class="lineNum">      19 </span><span class="lineCov">          1 :     return tensor.template get&lt;0, 0&gt;();</span>
@@ -91,7 +91,7 @@
 <span class="lineNum">      21 </span>            : };
 <span class="lineNum">      22 </span>            : 
 <span class="lineNum">      23 </span>            : template &lt;typename Symm, typename Index&gt;
-<a name="24"><span class="lineNum">      24 </span>            : struct DeterminantImpl&lt;Symm, Index, std::enable_if_t&lt;Index::dim == 2&gt;&gt; {</a>
+<a name="24"><span class="lineNum">      24 </span>            : struct DeterminantImpl&lt;Symm, Index, Requires&lt;Index::dim == 2&gt;&gt; {</a>
 <span class="lineNum">      25 </span>            :   template &lt;typename T&gt;
 <span class="lineNum">      26 </span><span class="lineCov">          4 :   static typename T::type apply(const T&amp; tensor) {</span>
 <span class="lineNum">      27 </span><span class="lineCov">          4 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
@@ -103,121 +103,117 @@
 <span class="lineNum">      33 </span>            : };
 <span class="lineNum">      34 </span>            : 
 <span class="lineNum">      35 </span>            : template &lt;typename Index&gt;
-<span class="lineNum">      36 </span>            : struct DeterminantImpl&lt;Symmetry&lt;2, 1&gt;, Index,
-<a name="37"><span class="lineNum">      37 </span>            :                        std::enable_if_t&lt;Index::dim == 3&gt;&gt; {</a>
-<span class="lineNum">      38 </span>            :   template &lt;typename T&gt;
-<span class="lineNum">      39 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
-<span class="lineNum">      40 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
-<span class="lineNum">      41 </span><span class="lineCov">          1 :     const auto&amp; t01 = tensor.template get&lt;0, 1&gt;();</span>
-<span class="lineNum">      42 </span><span class="lineCov">          1 :     const auto&amp; t02 = tensor.template get&lt;0, 2&gt;();</span>
-<span class="lineNum">      43 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
-<span class="lineNum">      44 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
-<span class="lineNum">      45 </span><span class="lineCov">          1 :     const auto&amp; t12 = tensor.template get&lt;1, 2&gt;();</span>
-<span class="lineNum">      46 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
-<span class="lineNum">      47 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
-<span class="lineNum">      48 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
-<span class="lineNum">      49 </span><span class="lineCov">          1 :     return t00 * (t11 * t22 - t21 * t12) - t01 * (t10 * t22 - t20 * t12) +</span>
-<span class="lineNum">      50 </span><span class="lineCov">          1 :            t02 * (t10 * t21 - t20 * t11);</span>
-<span class="lineNum">      51 </span>            :   }
-<span class="lineNum">      52 </span>            : };
-<span class="lineNum">      53 </span>            : 
-<span class="lineNum">      54 </span>            : template &lt;typename Index&gt;
-<span class="lineNum">      55 </span>            : struct DeterminantImpl&lt;Symmetry&lt;1, 1&gt;, Index,
-<a name="56"><span class="lineNum">      56 </span>            :                        std::enable_if_t&lt;Index::dim == 3&gt;&gt; {</a>
-<span class="lineNum">      57 </span>            :   template &lt;typename T&gt;
-<span class="lineNum">      58 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
-<span class="lineNum">      59 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
-<span class="lineNum">      60 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
-<span class="lineNum">      61 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
-<span class="lineNum">      62 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
-<span class="lineNum">      63 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
-<span class="lineNum">      64 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
-<span class="lineNum">      65 </span><span class="lineCov">          1 :     return t00 * (t11 * t22 - t21 * t21) - t10 * (t10 * t22 - 2 * t20 * t21) -</span>
-<span class="lineNum">      66 </span><span class="lineCov">          1 :            t11 * t20 * t20;</span>
-<span class="lineNum">      67 </span>            :   }
-<span class="lineNum">      68 </span>            : };
-<span class="lineNum">      69 </span>            : 
-<span class="lineNum">      70 </span>            : template &lt;typename Index&gt;
-<span class="lineNum">      71 </span>            : struct DeterminantImpl&lt;Symmetry&lt;2, 1&gt;, Index,
-<a name="72"><span class="lineNum">      72 </span>            :                        std::enable_if_t&lt;Index::dim == 4&gt;&gt; {</a>
-<span class="lineNum">      73 </span>            :   template &lt;typename T&gt;
-<span class="lineNum">      74 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
-<span class="lineNum">      75 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
-<span class="lineNum">      76 </span><span class="lineCov">          1 :     const auto&amp; t01 = tensor.template get&lt;0, 1&gt;();</span>
-<span class="lineNum">      77 </span><span class="lineCov">          1 :     const auto&amp; t02 = tensor.template get&lt;0, 2&gt;();</span>
-<span class="lineNum">      78 </span><span class="lineCov">          1 :     const auto&amp; t03 = tensor.template get&lt;0, 3&gt;();</span>
-<span class="lineNum">      79 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
-<span class="lineNum">      80 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
-<span class="lineNum">      81 </span><span class="lineCov">          1 :     const auto&amp; t12 = tensor.template get&lt;1, 2&gt;();</span>
-<span class="lineNum">      82 </span><span class="lineCov">          1 :     const auto&amp; t13 = tensor.template get&lt;1, 3&gt;();</span>
-<span class="lineNum">      83 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
-<span class="lineNum">      84 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
-<span class="lineNum">      85 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
-<span class="lineNum">      86 </span><span class="lineCov">          1 :     const auto&amp; t23 = tensor.template get&lt;2, 3&gt;();</span>
-<span class="lineNum">      87 </span><span class="lineCov">          1 :     const auto&amp; t30 = tensor.template get&lt;3, 0&gt;();</span>
-<span class="lineNum">      88 </span><span class="lineCov">          1 :     const auto&amp; t31 = tensor.template get&lt;3, 1&gt;();</span>
-<span class="lineNum">      89 </span><span class="lineCov">          1 :     const auto&amp; t32 = tensor.template get&lt;3, 2&gt;();</span>
-<span class="lineNum">      90 </span><span class="lineCov">          1 :     const auto&amp; t33 = tensor.template get&lt;3, 3&gt;();</span>
-<span class="lineNum">      91 </span><span class="lineCov">          1 :     const auto tmp1 = t22 * t33 - t32 * t23;</span>
-<span class="lineNum">      92 </span><span class="lineCov">          1 :     const auto tmp2 = t21 * t33 - t31 * t23;</span>
-<span class="lineNum">      93 </span><span class="lineCov">          1 :     const auto tmp3 = t21 * t32 - t31 * t22;</span>
-<span class="lineNum">      94 </span><span class="lineCov">          1 :     const auto tmp4 = t02 * t13 - t12 * t03;</span>
-<span class="lineNum">      95 </span><span class="lineCov">          1 :     const auto tmp5 = t01 * t13 - t11 * t03;</span>
-<span class="lineNum">      96 </span><span class="lineCov">          1 :     const auto tmp6 = t01 * t12 - t02 * t11;</span>
-<span class="lineNum">      97 </span><span class="lineCov">          2 :     return t00 * (t11 * tmp1 - t12 * tmp2 + t13 * tmp3) -</span>
-<span class="lineNum">      98 </span><span class="lineCov">          2 :            t10 * (t01 * tmp1 - t02 * tmp2 + t03 * tmp3) +</span>
-<span class="lineNum">      99 </span><span class="lineCov">          1 :            t20 * (t31 * tmp4 - t32 * tmp5 + t33 * tmp6) -</span>
-<span class="lineNum">     100 </span><span class="lineCov">          1 :            t30 * (t21 * tmp4 - t22 * tmp5 + t23 * tmp6);</span>
-<span class="lineNum">     101 </span>            :   }
-<span class="lineNum">     102 </span>            : };
-<span class="lineNum">     103 </span>            : 
-<span class="lineNum">     104 </span>            : template &lt;typename Index&gt;
-<span class="lineNum">     105 </span>            : struct DeterminantImpl&lt;Symmetry&lt;1, 1&gt;, Index,
-<a name="106"><span class="lineNum">     106 </span>            :                        std::enable_if_t&lt;Index::dim == 4&gt;&gt; {</a>
-<span class="lineNum">     107 </span>            :   template &lt;typename T&gt;
-<span class="lineNum">     108 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
-<span class="lineNum">     109 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
-<span class="lineNum">     110 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
-<span class="lineNum">     111 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
-<span class="lineNum">     112 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
-<span class="lineNum">     113 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
-<span class="lineNum">     114 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
-<span class="lineNum">     115 </span><span class="lineCov">          1 :     const auto&amp; t30 = tensor.template get&lt;3, 0&gt;();</span>
-<span class="lineNum">     116 </span><span class="lineCov">          1 :     const auto&amp; t31 = tensor.template get&lt;3, 1&gt;();</span>
-<span class="lineNum">     117 </span><span class="lineCov">          1 :     const auto&amp; t32 = tensor.template get&lt;3, 2&gt;();</span>
-<span class="lineNum">     118 </span><span class="lineCov">          1 :     const auto&amp; t33 = tensor.template get&lt;3, 3&gt;();</span>
-<span class="lineNum">     119 </span><span class="lineCov">          1 :     const auto tmp1 = t22 * t33 - t32 * t32;</span>
-<span class="lineNum">     120 </span><span class="lineCov">          1 :     const auto tmp2 = t21 * t33 - t31 * t32;</span>
-<span class="lineNum">     121 </span><span class="lineCov">          1 :     const auto tmp3 = t21 * t32 - t31 * t22;</span>
-<span class="lineNum">     122 </span><span class="lineCov">          1 :     const auto tmp4 = t20 * t31 - t21 * t30;</span>
-<span class="lineNum">     123 </span><span class="lineCov">          1 :     const auto tmp5 = t10 * t31 - t11 * t30;</span>
-<span class="lineNum">     124 </span><span class="lineCov">          1 :     const auto tmp6 = t10 * t21 - t20 * t11;</span>
-<span class="lineNum">     125 </span><span class="lineCov">          2 :     return t00 * (t11 * tmp1 - t21 * tmp2 + t31 * tmp3) -</span>
-<span class="lineNum">     126 </span><span class="lineCov">          2 :            t10 * (t10 * tmp1 - t20 * tmp2 + t30 * tmp3) +</span>
-<span class="lineNum">     127 </span><span class="lineCov">          1 :            t20 * (t31 * tmp4 - t32 * tmp5 + t33 * tmp6) -</span>
-<span class="lineNum">     128 </span><span class="lineCov">          1 :            t30 * (t21 * tmp4 - t22 * tmp5 + t32 * tmp6);</span>
-<span class="lineNum">     129 </span>            :   }
-<span class="lineNum">     130 </span>            : };
-<span class="lineNum">     131 </span>            : }  // namespace detail
-<span class="lineNum">     132 </span>            : 
-<span class="lineNum">     133 </span>            : /*! \ingroup Functors
-<span class="lineNum">     134 </span>            :  * \brief Computes the determinant of a rank-2 Tensor `tensor`.
-<span class="lineNum">     135 </span>            :  *
-<span class="lineNum">     136 </span>            :  * \returns The determinant of `tensor`.
-<span class="lineNum">     137 </span>            :  * \requires That `tensor` be a rank-2 Tensor, with both indices sharing the
-<span class="lineNum">     138 </span>            :  *           same dimension and type.
-<a name="139"><span class="lineNum">     139 </span>            :  */</a>
-<span class="lineNum">     140 </span>            : template &lt;typename T, typename Symm, typename Index0, typename Index1&gt;
-<span class="lineNum">     141 </span><span class="lineCov">          9 : Scalar&lt;T&gt; determinant(</span>
-<span class="lineNum">     142 </span>            :     const Tensor&lt;T, Symm, index_list&lt;Index0, Index1&gt;&gt;&amp; tensor) {
-<span class="lineNum">     143 </span>            :   static_assert(Index0::dim == Index1::dim,
-<span class="lineNum">     144 </span>            :                 &quot;Cannot take the determinant of a Tensor whose Indices are not &quot;
-<span class="lineNum">     145 </span>            :                 &quot;of the same dimensionality.&quot;);
-<span class="lineNum">     146 </span>            :   static_assert(Index0::index_type == Index1::index_type,
-<span class="lineNum">     147 </span>            :                 &quot;Taking the determinant of a mixed Spatial and Spacetime index &quot;
-<span class="lineNum">     148 </span>            :                 &quot;Tensor is not allowed since it's not clear what that means.&quot;);
-<span class="lineNum">     149 </span><span class="lineCov">          9 :   return Scalar&lt;T&gt;{detail::DeterminantImpl&lt;Symm, Index0&gt;::apply(tensor)};</span>
-<span class="lineNum">     150 </span>            : }
+<a name="36"><span class="lineNum">      36 </span>            : struct DeterminantImpl&lt;Symmetry&lt;2, 1&gt;, Index, Requires&lt;Index::dim == 3&gt;&gt; {</a>
+<span class="lineNum">      37 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      38 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
+<span class="lineNum">      39 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
+<span class="lineNum">      40 </span><span class="lineCov">          1 :     const auto&amp; t01 = tensor.template get&lt;0, 1&gt;();</span>
+<span class="lineNum">      41 </span><span class="lineCov">          1 :     const auto&amp; t02 = tensor.template get&lt;0, 2&gt;();</span>
+<span class="lineNum">      42 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
+<span class="lineNum">      43 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
+<span class="lineNum">      44 </span><span class="lineCov">          1 :     const auto&amp; t12 = tensor.template get&lt;1, 2&gt;();</span>
+<span class="lineNum">      45 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
+<span class="lineNum">      46 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
+<span class="lineNum">      47 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
+<span class="lineNum">      48 </span><span class="lineCov">          1 :     return t00 * (t11 * t22 - t21 * t12) - t01 * (t10 * t22 - t20 * t12) +</span>
+<span class="lineNum">      49 </span><span class="lineCov">          1 :            t02 * (t10 * t21 - t20 * t11);</span>
+<span class="lineNum">      50 </span>            :   }
+<span class="lineNum">      51 </span>            : };
+<span class="lineNum">      52 </span>            : 
+<span class="lineNum">      53 </span>            : template &lt;typename Index&gt;
+<a name="54"><span class="lineNum">      54 </span>            : struct DeterminantImpl&lt;Symmetry&lt;1, 1&gt;, Index, Requires&lt;Index::dim == 3&gt;&gt; {</a>
+<span class="lineNum">      55 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      56 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
+<span class="lineNum">      57 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
+<span class="lineNum">      58 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
+<span class="lineNum">      59 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
+<span class="lineNum">      60 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
+<span class="lineNum">      61 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
+<span class="lineNum">      62 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
+<span class="lineNum">      63 </span><span class="lineCov">          1 :     return t00 * (t11 * t22 - t21 * t21) - t10 * (t10 * t22 - 2 * t20 * t21) -</span>
+<span class="lineNum">      64 </span><span class="lineCov">          1 :            t11 * t20 * t20;</span>
+<span class="lineNum">      65 </span>            :   }
+<span class="lineNum">      66 </span>            : };
+<span class="lineNum">      67 </span>            : 
+<span class="lineNum">      68 </span>            : template &lt;typename Index&gt;
+<a name="69"><span class="lineNum">      69 </span>            : struct DeterminantImpl&lt;Symmetry&lt;2, 1&gt;, Index, Requires&lt;Index::dim == 4&gt;&gt; {</a>
+<span class="lineNum">      70 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      71 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
+<span class="lineNum">      72 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
+<span class="lineNum">      73 </span><span class="lineCov">          1 :     const auto&amp; t01 = tensor.template get&lt;0, 1&gt;();</span>
+<span class="lineNum">      74 </span><span class="lineCov">          1 :     const auto&amp; t02 = tensor.template get&lt;0, 2&gt;();</span>
+<span class="lineNum">      75 </span><span class="lineCov">          1 :     const auto&amp; t03 = tensor.template get&lt;0, 3&gt;();</span>
+<span class="lineNum">      76 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
+<span class="lineNum">      77 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
+<span class="lineNum">      78 </span><span class="lineCov">          1 :     const auto&amp; t12 = tensor.template get&lt;1, 2&gt;();</span>
+<span class="lineNum">      79 </span><span class="lineCov">          1 :     const auto&amp; t13 = tensor.template get&lt;1, 3&gt;();</span>
+<span class="lineNum">      80 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
+<span class="lineNum">      81 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
+<span class="lineNum">      82 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
+<span class="lineNum">      83 </span><span class="lineCov">          1 :     const auto&amp; t23 = tensor.template get&lt;2, 3&gt;();</span>
+<span class="lineNum">      84 </span><span class="lineCov">          1 :     const auto&amp; t30 = tensor.template get&lt;3, 0&gt;();</span>
+<span class="lineNum">      85 </span><span class="lineCov">          1 :     const auto&amp; t31 = tensor.template get&lt;3, 1&gt;();</span>
+<span class="lineNum">      86 </span><span class="lineCov">          1 :     const auto&amp; t32 = tensor.template get&lt;3, 2&gt;();</span>
+<span class="lineNum">      87 </span><span class="lineCov">          1 :     const auto&amp; t33 = tensor.template get&lt;3, 3&gt;();</span>
+<span class="lineNum">      88 </span><span class="lineCov">          1 :     const auto tmp1 = t22 * t33 - t32 * t23;</span>
+<span class="lineNum">      89 </span><span class="lineCov">          1 :     const auto tmp2 = t21 * t33 - t31 * t23;</span>
+<span class="lineNum">      90 </span><span class="lineCov">          1 :     const auto tmp3 = t21 * t32 - t31 * t22;</span>
+<span class="lineNum">      91 </span><span class="lineCov">          1 :     const auto tmp4 = t02 * t13 - t12 * t03;</span>
+<span class="lineNum">      92 </span><span class="lineCov">          1 :     const auto tmp5 = t01 * t13 - t11 * t03;</span>
+<span class="lineNum">      93 </span><span class="lineCov">          1 :     const auto tmp6 = t01 * t12 - t02 * t11;</span>
+<span class="lineNum">      94 </span><span class="lineCov">          2 :     return t00 * (t11 * tmp1 - t12 * tmp2 + t13 * tmp3) -</span>
+<span class="lineNum">      95 </span><span class="lineCov">          2 :            t10 * (t01 * tmp1 - t02 * tmp2 + t03 * tmp3) +</span>
+<span class="lineNum">      96 </span><span class="lineCov">          1 :            t20 * (t31 * tmp4 - t32 * tmp5 + t33 * tmp6) -</span>
+<span class="lineNum">      97 </span><span class="lineCov">          1 :            t30 * (t21 * tmp4 - t22 * tmp5 + t23 * tmp6);</span>
+<span class="lineNum">      98 </span>            :   }
+<span class="lineNum">      99 </span>            : };
+<span class="lineNum">     100 </span>            : 
+<span class="lineNum">     101 </span>            : template &lt;typename Index&gt;
+<a name="102"><span class="lineNum">     102 </span>            : struct DeterminantImpl&lt;Symmetry&lt;1, 1&gt;, Index, Requires&lt;Index::dim == 4&gt;&gt; {</a>
+<span class="lineNum">     103 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">     104 </span><span class="lineCov">          1 :   static typename T::type apply(const T&amp; tensor) {</span>
+<span class="lineNum">     105 </span><span class="lineCov">          1 :     const auto&amp; t00 = tensor.template get&lt;0, 0&gt;();</span>
+<span class="lineNum">     106 </span><span class="lineCov">          1 :     const auto&amp; t10 = tensor.template get&lt;1, 0&gt;();</span>
+<span class="lineNum">     107 </span><span class="lineCov">          1 :     const auto&amp; t11 = tensor.template get&lt;1, 1&gt;();</span>
+<span class="lineNum">     108 </span><span class="lineCov">          1 :     const auto&amp; t20 = tensor.template get&lt;2, 0&gt;();</span>
+<span class="lineNum">     109 </span><span class="lineCov">          1 :     const auto&amp; t21 = tensor.template get&lt;2, 1&gt;();</span>
+<span class="lineNum">     110 </span><span class="lineCov">          1 :     const auto&amp; t22 = tensor.template get&lt;2, 2&gt;();</span>
+<span class="lineNum">     111 </span><span class="lineCov">          1 :     const auto&amp; t30 = tensor.template get&lt;3, 0&gt;();</span>
+<span class="lineNum">     112 </span><span class="lineCov">          1 :     const auto&amp; t31 = tensor.template get&lt;3, 1&gt;();</span>
+<span class="lineNum">     113 </span><span class="lineCov">          1 :     const auto&amp; t32 = tensor.template get&lt;3, 2&gt;();</span>
+<span class="lineNum">     114 </span><span class="lineCov">          1 :     const auto&amp; t33 = tensor.template get&lt;3, 3&gt;();</span>
+<span class="lineNum">     115 </span><span class="lineCov">          1 :     const auto tmp1 = t22 * t33 - t32 * t32;</span>
+<span class="lineNum">     116 </span><span class="lineCov">          1 :     const auto tmp2 = t21 * t33 - t31 * t32;</span>
+<span class="lineNum">     117 </span><span class="lineCov">          1 :     const auto tmp3 = t21 * t32 - t31 * t22;</span>
+<span class="lineNum">     118 </span><span class="lineCov">          1 :     const auto tmp4 = t20 * t31 - t21 * t30;</span>
+<span class="lineNum">     119 </span><span class="lineCov">          1 :     const auto tmp5 = t10 * t31 - t11 * t30;</span>
+<span class="lineNum">     120 </span><span class="lineCov">          1 :     const auto tmp6 = t10 * t21 - t20 * t11;</span>
+<span class="lineNum">     121 </span><span class="lineCov">          2 :     return t00 * (t11 * tmp1 - t21 * tmp2 + t31 * tmp3) -</span>
+<span class="lineNum">     122 </span><span class="lineCov">          2 :            t10 * (t10 * tmp1 - t20 * tmp2 + t30 * tmp3) +</span>
+<span class="lineNum">     123 </span><span class="lineCov">          1 :            t20 * (t31 * tmp4 - t32 * tmp5 + t33 * tmp6) -</span>
+<span class="lineNum">     124 </span><span class="lineCov">          1 :            t30 * (t21 * tmp4 - t22 * tmp5 + t32 * tmp6);</span>
+<span class="lineNum">     125 </span>            :   }
+<span class="lineNum">     126 </span>            : };
+<span class="lineNum">     127 </span>            : }  // namespace detail
+<span class="lineNum">     128 </span>            : 
+<span class="lineNum">     129 </span>            : /*! \ingroup Functors
+<span class="lineNum">     130 </span>            :  * \brief Computes the determinant of a rank-2 Tensor `tensor`.
+<span class="lineNum">     131 </span>            :  *
+<span class="lineNum">     132 </span>            :  * \returns The determinant of `tensor`.
+<span class="lineNum">     133 </span>            :  * \requires That `tensor` be a rank-2 Tensor, with both indices sharing the
+<span class="lineNum">     134 </span>            :  *           same dimension and type.
+<a name="135"><span class="lineNum">     135 </span>            :  */</a>
+<span class="lineNum">     136 </span>            : template &lt;typename T, typename Symm, typename Index0, typename Index1&gt;
+<span class="lineNum">     137 </span><span class="lineCov">          9 : Scalar&lt;T&gt; determinant(</span>
+<span class="lineNum">     138 </span>            :     const Tensor&lt;T, Symm, index_list&lt;Index0, Index1&gt;&gt;&amp; tensor) {
+<span class="lineNum">     139 </span>            :   static_assert(Index0::dim == Index1::dim,
+<span class="lineNum">     140 </span>            :                 &quot;Cannot take the determinant of a Tensor whose Indices are not &quot;
+<span class="lineNum">     141 </span>            :                 &quot;of the same dimensionality.&quot;);
+<span class="lineNum">     142 </span>            :   static_assert(Index0::index_type == Index1::index_type,
+<span class="lineNum">     143 </span>            :                 &quot;Taking the determinant of a mixed Spatial and Spacetime index &quot;
+<span class="lineNum">     144 </span>            :                 &quot;Tensor is not allowed since it's not clear what that means.&quot;);
+<span class="lineNum">     145 </span><span class="lineCov">          9 :   return Scalar&lt;T&gt;{detail::DeterminantImpl&lt;Symm, Index0&gt;::apply(tensor)};</span>
+<span class="lineNum">     146 </span>            : }
 </pre>
       </td>
     </tr>

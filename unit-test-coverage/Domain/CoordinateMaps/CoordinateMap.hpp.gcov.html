@@ -1,0 +1,335 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/CoordinateMaps/CoordinateMap.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">SpECTRE Unit Test Code Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Domain/CoordinateMaps</a> - CoordinateMap.hpp<span style="font-size: 80%;"> (source / <a href="CoordinateMap.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-08-14 02:27:15</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">130</td>
+            <td class="headerCovTableEntry">130</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : // Distributed under the MIT License.</a>
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : /// \file
+<span class="lineNum">       5 </span>            : /// Defines class CoordinateMap
+<span class="lineNum">       6 </span>            : 
+<span class="lineNum">       7 </span>            : #pragma once
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #include &lt;memory&gt;
+<span class="lineNum">      10 </span>            : 
+<span class="lineNum">      11 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;
+<span class="lineNum">      12 </span>            : #include &quot;Parallel/CharmPupable.hpp&quot;
+<span class="lineNum">      13 </span>            : #include &quot;Utilities/Gsl.hpp&quot;
+<span class="lineNum">      14 </span>            : #include &quot;Utilities/MakeArithmeticValue.hpp&quot;
+<span class="lineNum">      15 </span>            : #include &quot;Utilities/Tuple.hpp&quot;
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span>            : /// Contains all embedding maps.
+<span class="lineNum">      18 </span>            : namespace CoordinateMaps {
+<span class="lineNum">      19 </span>            : template &lt;typename FirstMap, typename... Maps&gt;
+<span class="lineNum">      20 </span>            : constexpr size_t map_dim = FirstMap::dim;
+<span class="lineNum">      21 </span>            : }  // namespace CoordinateMaps
+<span class="lineNum">      22 </span>            : 
+<span class="lineNum">      23 </span>            : /*!
+<span class="lineNum">      24 </span>            :  * \ingroup ComputationalDomain
+<span class="lineNum">      25 </span>            :  * \ingroup CoordinateMapsGroup
+<span class="lineNum">      26 </span>            :  * \brief A coordinate map or composition of coordinate maps
+<span class="lineNum">      27 </span>            :  *
+<span class="lineNum">      28 </span>            :  * Maps coordinates from the `SourceFrame` to the `TargetFrame` using the
+<span class="lineNum">      29 </span>            :  * coordinate maps `Maps...`. The individual maps are applied left to right
+<span class="lineNum">      30 </span>            :  * from the source to the target Frame. The inverse map, as well as Jacobian
+<span class="lineNum">      31 </span>            :  * and inverse Jacobian are also provided. The `CoordinateMap` class must
+<span class="lineNum">      32 </span>            :  * be used even if just wrapping a single coordinate map. It is designed to
+<span class="lineNum">      33 </span>            :  * be an extremely minimal interface to the underlying coordinate maps. For
+<span class="lineNum">      34 </span>            :  * a list of all coordinate maps see the CoordinateMaps group or namespace.
+<span class="lineNum">      35 </span>            :  *
+<span class="lineNum">      36 </span>            :  * Each coordinate map must contain a `static constexpr size_t dim` variable
+<span class="lineNum">      37 </span>            :  * that is equal to the dimensionality of the map. The Coordinatemap class
+<span class="lineNum">      38 </span>            :  * contains a member `static constexpr size_t dim`, a type alias `source_frame`,
+<span class="lineNum">      39 </span>            :  * a type alias `target_frame` and `typelist of the `Maps...`.
+<a name="40"><span class="lineNum">      40 </span>            :  */</a>
+<span class="lineNum">      41 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">      42 </span><span class="lineCov">         10 : class CoordinateMap {</span>
+<span class="lineNum">      43 </span>            :   static_assert(sizeof...(Maps) &gt; 0, &quot;Must have at least one map&quot;);
+<span class="lineNum">      44 </span>            :   static_assert(
+<span class="lineNum">      45 </span>            :       tmpl::all&lt;tmpl::integral_list&lt;size_t, Maps::dim...&gt;,
+<span class="lineNum">      46 </span>            :                 std::is_same&lt;tmpl::integral_constant&lt;
+<span class="lineNum">      47 </span>            :                                  size_t, CoordinateMaps::map_dim&lt;Maps...&gt;&gt;,
+<span class="lineNum">      48 </span>            :                              tmpl::_1&gt;&gt;::value,
+<span class="lineNum">      49 </span>            :       &quot;All Maps passed to CoordinateMap must be of the same dimensionality.&quot;);
+<span class="lineNum">      50 </span>            : 
+<span class="lineNum">      51 </span>            :  public:
+<span class="lineNum">      52 </span>            :   static constexpr size_t dim = CoordinateMaps::map_dim&lt;Maps...&gt;;
+<span class="lineNum">      53 </span>            :   using source_frame = SourceFrame;
+<span class="lineNum">      54 </span>            :   using target_frame = TargetFrame;
+<span class="lineNum">      55 </span>            :   using maps_list = tmpl::list&lt;Maps...&gt;;
+<a name="56"><span class="lineNum">      56 </span>            : </a>
+<span class="lineNum">      57 </span>            :   /// Used for Charm++ serialization
+<span class="lineNum">      58 </span><span class="lineCov">          6 :   CoordinateMap() = default;</span>
+<span class="lineNum">      59 </span>            : 
+<span class="lineNum">      60 </span>            :   constexpr explicit CoordinateMap(Maps... maps);
+<span class="lineNum">      61 </span>            : 
+<span class="lineNum">      62 </span>            :   /// Apply the `Maps...` to the point(s) `source_point`
+<span class="lineNum">      63 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      64 </span>            :   constexpr tnsr::I&lt;T, dim, TargetFrame&gt; operator()(
+<span class="lineNum">      65 </span>            :       const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const;
+<span class="lineNum">      66 </span>            : 
+<span class="lineNum">      67 </span>            :   /// Apply the inverse `Maps...` to the point(s) `target_point`
+<span class="lineNum">      68 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      69 </span>            :   constexpr tnsr::I&lt;T, dim, SourceFrame&gt; inverse(
+<span class="lineNum">      70 </span>            :       const tnsr::I&lt;T, dim, TargetFrame&gt;&amp; target_point) const;
+<span class="lineNum">      71 </span>            : 
+<span class="lineNum">      72 </span>            :   /// Compute the inverse Jacobian of the `Maps...` at the point(s)
+<span class="lineNum">      73 </span>            :   /// `source_point`
+<span class="lineNum">      74 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      75 </span>            :   constexpr Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      76 </span>            :                    index_list&lt;SpatialIndex&lt;dim, UpLo::Up, SourceFrame&gt;,
+<span class="lineNum">      77 </span>            :                               SpatialIndex&lt;dim, UpLo::Lo, TargetFrame&gt;&gt;&gt;
+<span class="lineNum">      78 </span>            :   inv_jacobian(const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const;
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            :   /// Compute the Jacobian of the `Maps...` at the point(s) `source_point`
+<span class="lineNum">      81 </span>            :   template &lt;typename T&gt;
+<span class="lineNum">      82 </span>            :   constexpr Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      83 </span>            :                    index_list&lt;SpatialIndex&lt;dim, UpLo::Up, TargetFrame&gt;,
+<span class="lineNum">      84 </span>            :                               SpatialIndex&lt;dim, UpLo::Lo, SourceFrame&gt;&gt;&gt;
+<span class="lineNum">      85 </span>            :   jacobian(const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const;
+<a name="86"><span class="lineNum">      86 </span>            : </a>
+<span class="lineNum">      87 </span>            :   // clang-tidy: google-runtime-references
+<span class="lineNum">      88 </span><span class="lineCov">         12 :   void pup(PUP::er&amp; p) { p | maps_; }  // NOLINT</span>
+<a name="89"><span class="lineNum">      89 </span>            : </a>
+<span class="lineNum">      90 </span>            :  private:
+<span class="lineNum">      91 </span><span class="lineCov">          4 :   friend bool operator==(const CoordinateMap&amp; lhs,</span>
+<span class="lineNum">      92 </span>            :                          const CoordinateMap&amp; rhs) noexcept {
+<span class="lineNum">      93 </span><span class="lineCov">          4 :     return lhs.maps_ == rhs.maps_;</span>
+<span class="lineNum">      94 </span>            :   }
+<span class="lineNum">      95 </span>            : 
+<span class="lineNum">      96 </span>            :   std::tuple&lt;Maps...&gt; maps_;
+<span class="lineNum">      97 </span>            : };
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span>            : ////////////////////////////////////////////////////////////////
+<span class="lineNum">     100 </span>            : // CoordinateMap definitions
+<span class="lineNum">     101 </span>            : ////////////////////////////////////////////////////////////////
+<a name="102"><span class="lineNum">     102 </span>            : </a>
+<span class="lineNum">     103 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">     104 </span><span class="lineCov">         10 : constexpr CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::CoordinateMap(</span>
+<span class="lineNum">     105 </span>            :     Maps... maps)
+<span class="lineNum">     106 </span><span class="lineCov">         10 :     : maps_(std::move(maps)...) {}</span>
+<span class="lineNum">     107 </span>            : 
+<span class="lineNum">     108 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">     109 </span>            : template &lt;typename T&gt;
+<a name="110"><span class="lineNum">     110 </span>            : constexpr tnsr::I&lt;T, CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::dim,</a>
+<span class="lineNum">     111 </span>            :                   TargetFrame&gt;
+<span class="lineNum">     112 </span><span class="lineCov">         54 : CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::operator()(</span>
+<span class="lineNum">     113 </span>            :     const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const {
+<a name="114"><span class="lineNum">     114 </span><span class="lineCov">         56 :   std::array&lt;T, dim&gt; mapped_point = make_array&lt;T, dim&gt;(source_point);</span></a>
+<span class="lineNum">     115 </span><span class="lineCov">         54 :   tuple_fold(maps_, [](const auto&amp; map,</span>
+<span class="lineNum">     116 </span><span class="lineCov">         94 :                        std::array&lt;T, dim&gt;&amp; point) { point = map(point); },</span>
+<span class="lineNum">     117 </span>            :              mapped_point);
+<span class="lineNum">     118 </span><span class="lineCov">         56 :   return tnsr::I&lt;T, dim, TargetFrame&gt;(std::move(mapped_point));</span>
+<span class="lineNum">     119 </span>            : }
+<span class="lineNum">     120 </span>            : 
+<span class="lineNum">     121 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">     122 </span>            : template &lt;typename T&gt;
+<a name="123"><span class="lineNum">     123 </span>            : constexpr tnsr::I&lt;T, CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::dim,</a>
+<span class="lineNum">     124 </span>            :                   SourceFrame&gt;
+<span class="lineNum">     125 </span><span class="lineCov">         54 : CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::inverse(</span>
+<span class="lineNum">     126 </span>            :     const tnsr::I&lt;T, dim, TargetFrame&gt;&amp; target_point) const {
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">         56 :   std::array&lt;T, dim&gt; mapped_point = make_array&lt;T, dim&gt;(target_point);</span></a>
+<span class="lineNum">     128 </span><span class="lineCov">         54 :   tuple_fold&lt;true&gt;(maps_,</span>
+<span class="lineNum">     129 </span><span class="lineCov">         94 :                    [](const auto&amp; map, std::array&lt;T, dim&gt;&amp; point) {</span>
+<span class="lineNum">     130 </span><span class="lineCov">         94 :                      point = map.inverse(point);</span>
+<span class="lineNum">     131 </span><span class="lineCov">         94 :                    },</span>
+<span class="lineNum">     132 </span>            :                    mapped_point);
+<span class="lineNum">     133 </span><span class="lineCov">         56 :   return tnsr::I&lt;T, dim, SourceFrame&gt;(std::move(mapped_point));</span>
+<span class="lineNum">     134 </span>            : }
+<span class="lineNum">     135 </span>            : 
+<a name="136"><span class="lineNum">     136 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;</a>
+<span class="lineNum">     137 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     138 </span><span class="lineCov">         52 : constexpr auto CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::inv_jacobian(</span>
+<span class="lineNum">     139 </span>            :     const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const
+<span class="lineNum">     140 </span>            :     -&gt; Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     141 </span>            :               index_list&lt;SpatialIndex&lt;dim, UpLo::Up, SourceFrame&gt;,
+<span class="lineNum">     142 </span>            :                          SpatialIndex&lt;dim, UpLo::Lo, TargetFrame&gt;&gt;&gt; {
+<span class="lineNum">     143 </span><span class="lineCov">         54 :   std::array&lt;T, dim&gt; mapped_point = make_array&lt;T, dim&gt;(source_point);</span>
+<span class="lineNum">     144 </span>            : 
+<span class="lineNum">     145 </span>            :   Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     146 </span>            :          index_list&lt;SpatialIndex&lt;dim, UpLo::Up, SourceFrame&gt;,
+<span class="lineNum">     147 </span>            :                     SpatialIndex&lt;dim, UpLo::Lo, TargetFrame&gt;&gt;&gt;
+<span class="lineNum">     148 </span><span class="lineCov">         52 :       inv_jac{};</span>
+<span class="lineNum">     149 </span>            : 
+<span class="lineNum">     150 </span><span class="lineCov">         52 :   tuple_transform(</span>
+<a name="151"><span class="lineNum">     151 </span>            :       maps_,</a>
+<span class="lineNum">     152 </span>            :       [&amp;inv_jac, &amp;mapped_point](const auto&amp; map, auto index,
+<span class="lineNum">     153 </span><span class="lineCov">       1227 :                                 const std::tuple&lt;Maps...&gt;&amp; maps) {</span>
+<span class="lineNum">     154 </span><span class="lineCov">         92 :         constexpr const size_t count = decltype(index)::value;</span>
+<span class="lineNum">     155 </span><span class="lineCov">         96 :         auto temp_inv_jac = map.inv_jacobian(mapped_point);</span>
+<span class="lineNum">     156 </span>            : 
+<span class="lineNum">     157 </span>            :         if (LIKELY(count != 0)) {
+<span class="lineNum">     158 </span><span class="lineCov">         42 :           mapped_point =</span>
+<span class="lineNum">     159 </span><span class="lineCov">         40 :               std::get&lt;(count != 0 ? count - 1 : 0)&gt;(maps)(mapped_point);</span>
+<span class="lineNum">     160 </span><span class="lineCov">         42 :           std::array&lt;T, dim&gt; temp{};</span>
+<span class="lineNum">     161 </span><span class="lineCov">        125 :           for (size_t source = 0; source &lt; dim; ++source) {</span>
+<span class="lineNum">     162 </span><span class="lineCov">        290 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     163 </span><span class="lineCov">        397 :               gsl::at(temp, target) =</span>
+<span class="lineNum">     164 </span><span class="lineCov">        423 :                   inv_jac.get(source, 0) * temp_inv_jac.get(0, target);</span>
+<span class="lineNum">     165 </span><span class="lineCov">        535 :               for (size_t dummy = 1; dummy &lt; dim; ++dummy) {</span>
+<span class="lineNum">     166 </span><span class="lineCov">        704 :                 gsl::at(temp, target) += inv_jac.get(source, dummy) *</span>
+<span class="lineNum">     167 </span>            :                                          temp_inv_jac.get(dummy, target);
+<span class="lineNum">     168 </span>            :               }
+<span class="lineNum">     169 </span>            :             }
+<span class="lineNum">     170 </span><span class="lineCov">        290 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     171 </span><span class="lineCov">        423 :               inv_jac.get(source, target) = std::move(gsl::at(temp, target));</span>
+<span class="lineNum">     172 </span>            :             }
+<span class="lineNum">     173 </span>            :           }
+<span class="lineNum">     174 </span>            :         } else {
+<span class="lineNum">     175 </span><span class="lineCov">        161 :           for (size_t source = 0; source &lt; dim; ++source) {</span>
+<span class="lineNum">     176 </span><span class="lineCov">        370 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     177 </span><span class="lineCov">        509 :               inv_jac.get(source, target) =</span>
+<span class="lineNum">     178 </span><span class="lineCov">        261 :                   std::move(temp_inv_jac.get(source, target));</span>
+<span class="lineNum">     179 </span>            :             }
+<span class="lineNum">     180 </span>            :           }
+<span class="lineNum">     181 </span>            :         }
+<span class="lineNum">     182 </span><span class="lineCov">         92 :       },</span>
+<span class="lineNum">     183 </span>            :       maps_);
+<span class="lineNum">     184 </span><span class="lineCov">         54 :   return inv_jac;</span>
+<span class="lineNum">     185 </span>            : }
+<span class="lineNum">     186 </span>            : 
+<a name="187"><span class="lineNum">     187 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;</a>
+<span class="lineNum">     188 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     189 </span><span class="lineCov">         52 : constexpr auto CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;::jacobian(</span>
+<span class="lineNum">     190 </span>            :     const tnsr::I&lt;T, dim, SourceFrame&gt;&amp; source_point) const
+<span class="lineNum">     191 </span>            :     -&gt; Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     192 </span>            :               index_list&lt;SpatialIndex&lt;dim, UpLo::Up, TargetFrame&gt;,
+<span class="lineNum">     193 </span>            :                          SpatialIndex&lt;dim, UpLo::Lo, SourceFrame&gt;&gt;&gt; {
+<span class="lineNum">     194 </span><span class="lineCov">         54 :   std::array&lt;T, dim&gt; mapped_point = make_array&lt;T, dim&gt;(source_point);</span>
+<span class="lineNum">     195 </span>            :   Tensor&lt;T, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     196 </span>            :          index_list&lt;SpatialIndex&lt;dim, UpLo::Up, TargetFrame&gt;,
+<span class="lineNum">     197 </span>            :                     SpatialIndex&lt;dim, UpLo::Lo, SourceFrame&gt;&gt;&gt;
+<span class="lineNum">     198 </span><span class="lineCov">         52 :       jac{};</span>
+<span class="lineNum">     199 </span><span class="lineCov">         52 :   tuple_transform&lt;true&gt;(</span>
+<a name="200"><span class="lineNum">     200 </span>            :       maps_,</a>
+<span class="lineNum">     201 </span>            :       [&amp;jac, &amp;mapped_point](const auto&amp; map, auto index,
+<span class="lineNum">     202 </span><span class="lineCov">       1227 :                             const std::tuple&lt;Maps...&gt;&amp; maps) {</span>
+<span class="lineNum">     203 </span><span class="lineCov">         92 :         constexpr const size_t count = decltype(index)::value;</span>
+<span class="lineNum">     204 </span><span class="lineCov">         96 :         auto noframe_jac = map.jacobian(mapped_point);</span>
+<span class="lineNum">     205 </span>            : 
+<span class="lineNum">     206 </span>            :         if (LIKELY(count != sizeof...(Maps) - 1)) {
+<span class="lineNum">     207 </span><span class="lineCov">         42 :           mapped_point = std::get&lt;(</span>
+<span class="lineNum">     208 </span><span class="lineCov">         40 :               count != sizeof...(Maps) - 1 ? count : sizeof...(Maps) - 1)&gt;(</span>
+<span class="lineNum">     209 </span>            :               maps)(mapped_point);
+<span class="lineNum">     210 </span><span class="lineCov">         42 :           std::array&lt;T, dim&gt; temp{};</span>
+<span class="lineNum">     211 </span><span class="lineCov">        125 :           for (size_t source = 0; source &lt; dim; ++source) {</span>
+<span class="lineNum">     212 </span><span class="lineCov">        290 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     213 </span><span class="lineCov">        397 :               gsl::at(temp, target) =</span>
+<span class="lineNum">     214 </span><span class="lineCov">        423 :                   jac.get(source, 0) * noframe_jac.get(0, target);</span>
+<span class="lineNum">     215 </span><span class="lineCov">        535 :               for (size_t dummy = 1; dummy &lt; dim; ++dummy) {</span>
+<span class="lineNum">     216 </span><span class="lineCov">        330 :                 gsl::at(temp, target) +=</span>
+<span class="lineNum">     217 </span><span class="lineCov">        374 :                     jac.get(source, dummy) * noframe_jac.get(dummy, target);</span>
+<span class="lineNum">     218 </span>            :               }
+<span class="lineNum">     219 </span>            :             }
+<span class="lineNum">     220 </span><span class="lineCov">        290 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     221 </span><span class="lineCov">        423 :               jac.get(source, target) = std::move(gsl::at(temp, target));</span>
+<span class="lineNum">     222 </span>            :             }
+<span class="lineNum">     223 </span>            :           }
+<span class="lineNum">     224 </span>            :         } else {
+<span class="lineNum">     225 </span><span class="lineCov">        161 :           for (size_t source = 0; source &lt; dim; ++source) {</span>
+<span class="lineNum">     226 </span><span class="lineCov">        370 :             for (size_t target = 0; target &lt; dim; ++target) {</span>
+<span class="lineNum">     227 </span><span class="lineCov">        509 :               jac.get(source, target) =</span>
+<span class="lineNum">     228 </span><span class="lineCov">        261 :                   std::move(noframe_jac.get(source, target));</span>
+<span class="lineNum">     229 </span>            :             }
+<span class="lineNum">     230 </span>            :           }
+<span class="lineNum">     231 </span>            :         }
+<span class="lineNum">     232 </span><span class="lineCov">         92 :       },</span>
+<span class="lineNum">     233 </span>            :       maps_);
+<span class="lineNum">     234 </span><span class="lineCov">         54 :   return jac;</span>
+<span class="lineNum">     235 </span>            : }
+<a name="236"><span class="lineNum">     236 </span>            : </a>
+<span class="lineNum">     237 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">     238 </span><span class="lineCov">          2 : bool operator!=(</span>
+<span class="lineNum">     239 </span>            :     const CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;&amp; lhs,
+<span class="lineNum">     240 </span>            :     const CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;&amp; rhs) noexcept {
+<span class="lineNum">     241 </span><span class="lineCov">          2 :   return not(lhs == rhs);</span>
+<span class="lineNum">     242 </span>            : }
+<span class="lineNum">     243 </span>            : 
+<span class="lineNum">     244 </span>            : /// \ingroup ComputationalDomain
+<a name="245"><span class="lineNum">     245 </span>            : /// \brief Creates a CoordinateMap of `maps...`</a>
+<span class="lineNum">     246 </span>            : template &lt;typename SourceFrame, typename TargetFrame, typename... Maps&gt;
+<span class="lineNum">     247 </span><span class="lineCov">         10 : constexpr CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt; make_coordinate_map(</span>
+<span class="lineNum">     248 </span>            :     Maps&amp;&amp;... maps) {
+<span class="lineNum">     249 </span>            :   return CoordinateMap&lt;SourceFrame, TargetFrame, Maps...&gt;(
+<span class="lineNum">     250 </span><span class="lineCov">         10 :       std::forward&lt;Maps&gt;(maps)...);</span>
+<span class="lineNum">     251 </span>            : }
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

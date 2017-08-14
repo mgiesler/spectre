@@ -215,6 +215,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1is__tensor__index__type.html">is_tensor_index_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inherits from <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::true_type</a> if T is a <a class="el" href="group__Tensor.html#ga05c512b755e913cdbddce8634bdb4fa6">TensorIndexType</a>.  <a href="structtt_1_1is__tensor__index__type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1remove__reference__wrapper.html">remove_reference_wrapper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying type if the type is a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>, otherwise returns the type itself.  <a href="structtt_1_1remove__reference__wrapper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -227,6 +230,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gafb844f727c41f01d5f2f2b316b648c7a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TypeTraits.html#gafb844f727c41f01d5f2f2b316b648c7a">array_size</a> = decltype(TypeTraits_details::array_size_impl(std::declval&lt; const Array &amp; &gt;()))</td></tr>
 <tr class="memdesc:gafb844f727c41f01d5f2f2b316b648c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a> as a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>.  <a href="group__TypeTraits.html#gafb844f727c41f01d5f2f2b316b648c7a">More...</a><br /></td></tr>
 <tr class="separator:gafb844f727c41f01d5f2f2b316b648c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">remove_reference_wrapper_t</a> = typename <a class="el" href="structtt_1_1remove__reference__wrapper.html">remove_reference_wrapper</a>&lt; T &gt;::type</td></tr>
+<tr class="separator:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -574,6 +581,22 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structtt_1_1is__tensor__index__type.html" title="Inherits from std::true_type if T is a TensorIndexType. ">is_tensor_index_type</a> </dd></dl>
+
+</div>
+</div>
+<a id="ae47692e0f3f890ba58c15e71f3576a3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47692e0f3f890ba58c15e71f3576a3c">&#9670;&nbsp;</a></span>remove_reference_wrapper_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a> = typedef typename <a class="el" href="structtt_1_1remove__reference__wrapper.html">remove_reference_wrapper</a>&lt;T&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

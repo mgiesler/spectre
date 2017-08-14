@@ -161,8 +161,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;catch.hpp&gt;</code><br />
-<code>#include &quot;<a class="el" href="Block_8cpp.html">Domain/Block.cpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Identity_8hpp_source.html">Domain/EmbeddingMaps/Identity.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Block_8hpp_source.html">Domain/Block.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CoordinateMap_8hpp_source.html">Domain/CoordinateMaps/CoordinateMap.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Identity_8hpp_source.html">Domain/CoordinateMaps/Identity.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TestHelpers_8hpp_source.html">tests/Unit/TestHelpers.hpp</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -170,10 +171,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a90234211f8121006ab30e7c1a824674c"><td class="memTemplParams" colspan="2">template&lt;size_t Dim&gt; </td></tr>
 <tr class="memitem:a90234211f8121006ab30e7c1a824674c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="Test__Block_8cpp.html#a90234211f8121006ab30e7c1a824674c">test_block</a> ()</td></tr>
 <tr class="separator:a90234211f8121006ab30e7c1a824674c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10e924e5cb8fe8ce93322905dda31b8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Test__Block_8cpp.html#a10e924e5cb8fe8ce93322905dda31b8a">TEST_CASE</a> (&quot;Unit.Domain.Block.Identity&quot;, &quot;[Domain][Unit]&quot;)</td></tr>
-<tr class="separator:a10e924e5cb8fe8ce93322905dda31b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e9a29b9aeca16113d88f1617176ed29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Test__Block_8cpp.html#a3e9a29b9aeca16113d88f1617176ed29">TEST_CASE</a> (&quot;Unit.Domain.Block.Neighbors&quot;, &quot;[Domain][Unit]&quot;)</td></tr>
-<tr class="separator:a3e9a29b9aeca16113d88f1617176ed29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a90234211f8121006ab30e7c1a824674c"></a>
@@ -193,65 +190,7 @@ template&lt;size_t Dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="TestHelpers_8hpp.html#aeaaa78f64dc4d1621eb372ca969e99c9">test_move_semantics()</a>.</p>
-
-</div>
-</div>
-<a id="a10e924e5cb8fe8ce93322905dda31b8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e924e5cb8fe8ce93322905dda31b8a">&#9670;&nbsp;</a></span>TEST_CASE() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">&quot;Unit.Domain.Block.Identity&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;&quot;&#160;</td>
-          <td class="paramname">[Domain][Unit]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3e9a29b9aeca16113d88f1617176ed29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e9a29b9aeca16113d88f1617176ed29">&#9670;&nbsp;</a></span>TEST_CASE() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">&quot;Unit.Domain.Block.Neighbors&quot;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&quot;&quot;&#160;</td>
-          <td class="paramname">[Domain][Unit]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">References <a class="el" href="classBlock.html#a0d8b1b2ab2eea9dae2fcf432201d8bf1">Block&lt; VolumeDim &gt;::external_boundaries()</a>, <a class="el" href="group__TestingFramework.html#gaf4ce9d1bca3b738adf3235e0d6740208">get_output()</a>, <a class="el" href="classBlock.html#a600cc27d531293fdf883b4c4fec9d773">Block&lt; VolumeDim &gt;::id()</a>, <a class="el" href="classDirection.html#aab067198ceb0407b9d3d717463922847">Direction&lt; VolumeDim &gt;::lower_eta()</a>, <a class="el" href="classDirection.html#a1af1b1f4671857164a15009cf7d8956f">Direction&lt; VolumeDim &gt;::lower_xi()</a>, <a class="el" href="classBlock.html#a0fc3b72eacb8b03b4293b43504492e21">Block&lt; VolumeDim &gt;::neighbors()</a>, <a class="el" href="classDirection.html#a609998d0c33622a59fbeedc143551090">Direction&lt; VolumeDim &gt;::upper_eta()</a>, and <a class="el" href="classDirection.html#a49fe55566a37747faa54db11df175304">Direction&lt; VolumeDim &gt;::upper_xi()</a>.</p>
+<p class="reference">References <a class="el" href="group__TestingFramework.html#ga2895e57f4cacd63d2549655bb29bba7b">serialize_and_deserialize()</a>, and <a class="el" href="TestHelpers_8hpp.html#aeaaa78f64dc4d1621eb372ca969e99c9">test_move_semantics()</a>.</p>
 
 </div>
 </div>

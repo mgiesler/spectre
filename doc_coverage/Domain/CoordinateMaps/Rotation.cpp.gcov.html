@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/CoordinateMaps/Rotation.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title"> SpECTRE Documentation Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../index.html">top level</a> - <a href="index.html">Domain/CoordinateMaps</a> - Rotation.cpp</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+             <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2017-08-14 02:27:43</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<span class="lineNum">       1 </span>            : // Distributed under the MIT License.
+<span class="lineNum">       2 </span>            : // See LICENSE.txt for details.
+<span class="lineNum">       3 </span>            : 
+<span class="lineNum">       4 </span>            : #include &quot;Domain/CoordinateMaps/Rotation.hpp&quot;
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : namespace CoordinateMaps {
+<span class="lineNum">       7 </span>            : 
+<span class="lineNum">       8 </span>            : Rotation&lt;2&gt;::Rotation(const double rotation_angle)
+<span class="lineNum">       9 </span>            :     : rotation_angle_(rotation_angle),
+<span class="lineNum">      10 </span>            :       rotation_matrix_(std::numeric_limits&lt;double&gt;::signaling_NaN()) {
+<span class="lineNum">      11 </span>            :   const double cos_alpha = cos(rotation_angle_);
+<span class="lineNum">      12 </span>            :   const double sin_alpha = sin(rotation_angle_);
+<span class="lineNum">      13 </span>            :   rotation_matrix_.template get&lt;0, 0&gt;() = cos_alpha;
+<span class="lineNum">      14 </span>            :   rotation_matrix_.template get&lt;0, 1&gt;() = -sin_alpha;
+<span class="lineNum">      15 </span>            :   rotation_matrix_.template get&lt;1, 0&gt;() = sin_alpha;
+<span class="lineNum">      16 </span>            :   rotation_matrix_.template get&lt;1, 1&gt;() = cos_alpha;
+<span class="lineNum">      17 </span>            : }
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      20 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 2&gt; Rotation&lt;2&gt;::
+<span class="lineNum">      21 </span>            : operator()(const std::array&lt;T, 2&gt;&amp; xi) const {
+<span class="lineNum">      22 </span>            :   return {{xi[0] * rotation_matrix_.template get&lt;0, 0&gt;() +
+<span class="lineNum">      23 </span>            :                xi[1] * rotation_matrix_.template get&lt;0, 1&gt;(),
+<span class="lineNum">      24 </span>            :            xi[0] * rotation_matrix_.template get&lt;1, 0&gt;() +
+<span class="lineNum">      25 </span>            :                xi[1] * rotation_matrix_.template get&lt;1, 1&gt;()}};
+<span class="lineNum">      26 </span>            : }
+<span class="lineNum">      27 </span>            : 
+<span class="lineNum">      28 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      29 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 2&gt;
+<span class="lineNum">      30 </span>            : Rotation&lt;2&gt;::inverse(const std::array&lt;T, 2&gt;&amp; x) const {
+<span class="lineNum">      31 </span>            :   return {{x[0] * rotation_matrix_.template get&lt;0, 0&gt;() +
+<span class="lineNum">      32 </span>            :                x[1] * rotation_matrix_.template get&lt;1, 0&gt;(),
+<span class="lineNum">      33 </span>            :            x[0] * rotation_matrix_.template get&lt;0, 1&gt;() +
+<span class="lineNum">      34 </span>            :                x[1] * rotation_matrix_.template get&lt;1, 1&gt;()}};
+<span class="lineNum">      35 </span>            : }
+<span class="lineNum">      36 </span>            : 
+<span class="lineNum">      37 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      38 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      39 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      40 </span>            :        index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      41 </span>            :                   SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      42 </span>            : Rotation&lt;2&gt;::jacobian(const std::array&lt;T, 2&gt;&amp; /*xi*/) const {
+<span class="lineNum">      43 </span>            :   Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      44 </span>            :          tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      45 </span>            :          index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      46 </span>            :                     SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      47 </span>            :       jac{};
+<span class="lineNum">      48 </span>            :   jac.template get&lt;0, 0&gt;() = rotation_matrix_.template get&lt;0, 0&gt;();
+<span class="lineNum">      49 </span>            :   jac.template get&lt;1, 0&gt;() = rotation_matrix_.template get&lt;1, 0&gt;();
+<span class="lineNum">      50 </span>            :   jac.template get&lt;0, 1&gt;() = rotation_matrix_.template get&lt;0, 1&gt;();
+<span class="lineNum">      51 </span>            :   jac.template get&lt;1, 1&gt;() = rotation_matrix_.template get&lt;1, 1&gt;();
+<span class="lineNum">      52 </span>            :   return jac;
+<span class="lineNum">      53 </span>            : }
+<span class="lineNum">      54 </span>            : 
+<span class="lineNum">      55 </span>            : template &lt;typename T&gt;
+<span class="lineNum">      56 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      57 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      58 </span>            :        index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      59 </span>            :                   SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      60 </span>            : Rotation&lt;2&gt;::inv_jacobian(const std::array&lt;T, 2&gt;&amp; /*xi*/) const {
+<span class="lineNum">      61 </span>            :   Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">      62 </span>            :          tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">      63 </span>            :          index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">      64 </span>            :                     SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">      65 </span>            :       inv_jac{};
+<span class="lineNum">      66 </span>            :   inv_jac.template get&lt;0, 0&gt;() = rotation_matrix_.template get&lt;0, 0&gt;();
+<span class="lineNum">      67 </span>            :   inv_jac.template get&lt;1, 0&gt;() = rotation_matrix_.template get&lt;0, 1&gt;();
+<span class="lineNum">      68 </span>            :   inv_jac.template get&lt;0, 1&gt;() = rotation_matrix_.template get&lt;1, 0&gt;();
+<span class="lineNum">      69 </span>            :   inv_jac.template get&lt;1, 1&gt;() = rotation_matrix_.template get&lt;1, 1&gt;();
+<span class="lineNum">      70 </span>            :   return inv_jac;
+<span class="lineNum">      71 </span>            : }
+<span class="lineNum">      72 </span>            : 
+<span class="lineNum">      73 </span>            : void Rotation&lt;2&gt;::pup(PUP::er&amp; p) {
+<span class="lineNum">      74 </span>            :   p | rotation_angle_;
+<span class="lineNum">      75 </span>            :   p | rotation_matrix_;
+<span class="lineNum">      76 </span>            : }
+<span class="lineNum">      77 </span>            : 
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 : bool operator==(const Rotation&lt;2&gt;&amp; lhs, const Rotation&lt;2&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">      79 </span>            :   return lhs.rotation_angle_ == rhs.rotation_angle_;
+<span class="lineNum">      80 </span>            : }
+<span class="lineNum">      81 </span>            : 
+<span class="lineNum">      82 </span><span class="lineNoCov">          0 : bool operator!=(const Rotation&lt;2&gt;&amp; lhs, const Rotation&lt;2&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">      83 </span>            :   return not(lhs == rhs);
+<span class="lineNum">      84 </span>            : }
+<span class="lineNum">      85 </span>            : 
+<span class="lineNum">      86 </span>            : Rotation&lt;3&gt;::Rotation(const double rotation_about_z,
+<span class="lineNum">      87 </span>            :                       const double rotation_about_rotated_y,
+<span class="lineNum">      88 </span>            :                       const double rotation_about_rotated_z)
+<span class="lineNum">      89 </span>            :     : rotation_about_z_(rotation_about_z),
+<span class="lineNum">      90 </span>            :       rotation_about_rotated_y_(rotation_about_rotated_y),
+<span class="lineNum">      91 </span>            :       rotation_about_rotated_z_(rotation_about_rotated_z),
+<span class="lineNum">      92 </span>            :       rotation_matrix_(std::numeric_limits&lt;double&gt;::signaling_NaN()) {
+<span class="lineNum">      93 </span>            :   const double cos_alpha = cos(rotation_about_z_);
+<span class="lineNum">      94 </span>            :   const double sin_alpha = sin(rotation_about_z_);
+<span class="lineNum">      95 </span>            :   const double cos_beta = cos(rotation_about_rotated_y_);
+<span class="lineNum">      96 </span>            :   const double sin_beta = sin(rotation_about_rotated_y_);
+<span class="lineNum">      97 </span>            :   const double cos_gamma = cos(rotation_about_rotated_z_);
+<span class="lineNum">      98 </span>            :   const double sin_gamma = sin(rotation_about_rotated_z_);
+<span class="lineNum">      99 </span>            :   rotation_matrix_.template get&lt;0, 0&gt;() =
+<span class="lineNum">     100 </span>            :       cos_gamma * cos_beta * cos_alpha - sin_gamma * sin_alpha;
+<span class="lineNum">     101 </span>            :   rotation_matrix_.template get&lt;0, 1&gt;() =
+<span class="lineNum">     102 </span>            :       -sin_gamma * cos_beta * cos_alpha - cos_gamma * sin_alpha;
+<span class="lineNum">     103 </span>            :   rotation_matrix_.template get&lt;0, 2&gt;() = sin_beta * cos_alpha;
+<span class="lineNum">     104 </span>            :   rotation_matrix_.template get&lt;1, 0&gt;() =
+<span class="lineNum">     105 </span>            :       cos_gamma * cos_beta * sin_alpha + sin_gamma * cos_alpha;
+<span class="lineNum">     106 </span>            :   rotation_matrix_.template get&lt;1, 1&gt;() =
+<span class="lineNum">     107 </span>            :       -sin_gamma * cos_beta * sin_alpha + cos_gamma * cos_alpha;
+<span class="lineNum">     108 </span>            :   rotation_matrix_.template get&lt;1, 2&gt;() = sin_beta * sin_alpha;
+<span class="lineNum">     109 </span>            :   rotation_matrix_.template get&lt;2, 0&gt;() = -cos_gamma * sin_beta;
+<span class="lineNum">     110 </span>            :   rotation_matrix_.template get&lt;2, 1&gt;() = sin_gamma * sin_beta;
+<span class="lineNum">     111 </span>            :   rotation_matrix_.template get&lt;2, 2&gt;() = cos_beta;
+<span class="lineNum">     112 </span>            : }
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     115 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 3&gt; Rotation&lt;3&gt;::
+<span class="lineNum">     116 </span>            : operator()(const std::array&lt;T, 3&gt;&amp; xi) const {
+<span class="lineNum">     117 </span>            :   return {{xi[0] * rotation_matrix_.template get&lt;0, 0&gt;() +
+<span class="lineNum">     118 </span>            :                xi[1] * rotation_matrix_.template get&lt;0, 1&gt;() +
+<span class="lineNum">     119 </span>            :                xi[2] * rotation_matrix_.template get&lt;0, 2&gt;(),
+<span class="lineNum">     120 </span>            :            xi[0] * rotation_matrix_.template get&lt;1, 0&gt;() +
+<span class="lineNum">     121 </span>            :                xi[1] * rotation_matrix_.template get&lt;1, 1&gt;() +
+<span class="lineNum">     122 </span>            :                xi[2] * rotation_matrix_.template get&lt;1, 2&gt;(),
+<span class="lineNum">     123 </span>            :            xi[0] * rotation_matrix_.template get&lt;2, 0&gt;() +
+<span class="lineNum">     124 </span>            :                xi[1] * rotation_matrix_.template get&lt;2, 1&gt;() +
+<span class="lineNum">     125 </span>            :                xi[2] * rotation_matrix_.template get&lt;2, 2&gt;()}};
+<span class="lineNum">     126 </span>            : }
+<span class="lineNum">     127 </span>            : 
+<span class="lineNum">     128 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     129 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;, 3&gt;
+<span class="lineNum">     130 </span>            : Rotation&lt;3&gt;::inverse(const std::array&lt;T, 3&gt;&amp; x) const {
+<span class="lineNum">     131 </span>            :   // Inverse rotation matrix is the same as the transpose.
+<span class="lineNum">     132 </span>            :   return {{x[0] * rotation_matrix_.template get&lt;0, 0&gt;() +
+<span class="lineNum">     133 </span>            :                x[1] * rotation_matrix_.template get&lt;1, 0&gt;() +
+<span class="lineNum">     134 </span>            :                x[2] * rotation_matrix_.template get&lt;2, 0&gt;(),
+<span class="lineNum">     135 </span>            :            x[0] * rotation_matrix_.template get&lt;0, 1&gt;() +
+<span class="lineNum">     136 </span>            :                x[1] * rotation_matrix_.template get&lt;1, 1&gt;() +
+<span class="lineNum">     137 </span>            :                x[2] * rotation_matrix_.template get&lt;2, 1&gt;(),
+<span class="lineNum">     138 </span>            :            x[0] * rotation_matrix_.template get&lt;0, 2&gt;() +
+<span class="lineNum">     139 </span>            :                x[1] * rotation_matrix_.template get&lt;1, 2&gt;() +
+<span class="lineNum">     140 </span>            :                x[2] * rotation_matrix_.template get&lt;2, 2&gt;()}};
+<span class="lineNum">     141 </span>            : }
+<span class="lineNum">     142 </span>            : 
+<span class="lineNum">     143 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     144 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">     145 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     146 </span>            :        index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     147 </span>            :                   SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     148 </span>            : Rotation&lt;3&gt;::jacobian(const std::array&lt;T, 3&gt;&amp; /*xi*/) const {
+<span class="lineNum">     149 </span>            :   Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">     150 </span>            :          tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     151 </span>            :          index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     152 </span>            :                     SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     153 </span>            :       jac{};
+<span class="lineNum">     154 </span>            :   jac.template get&lt;0, 0&gt;() = rotation_matrix_.template get&lt;0, 0&gt;();
+<span class="lineNum">     155 </span>            :   jac.template get&lt;1, 0&gt;() = rotation_matrix_.template get&lt;1, 0&gt;();
+<span class="lineNum">     156 </span>            :   jac.template get&lt;0, 1&gt;() = rotation_matrix_.template get&lt;0, 1&gt;();
+<span class="lineNum">     157 </span>            :   jac.template get&lt;1, 1&gt;() = rotation_matrix_.template get&lt;1, 1&gt;();
+<span class="lineNum">     158 </span>            :   jac.template get&lt;2, 0&gt;() = rotation_matrix_.template get&lt;2, 0&gt;();
+<span class="lineNum">     159 </span>            :   jac.template get&lt;2, 1&gt;() = rotation_matrix_.template get&lt;2, 1&gt;();
+<span class="lineNum">     160 </span>            :   jac.template get&lt;0, 2&gt;() = rotation_matrix_.template get&lt;0, 2&gt;();
+<span class="lineNum">     161 </span>            :   jac.template get&lt;1, 2&gt;() = rotation_matrix_.template get&lt;1, 2&gt;();
+<span class="lineNum">     162 </span>            :   jac.template get&lt;2, 2&gt;() = rotation_matrix_.template get&lt;2, 2&gt;();
+<span class="lineNum">     163 </span>            :   return jac;
+<span class="lineNum">     164 </span>            : }
+<span class="lineNum">     165 </span>            : 
+<span class="lineNum">     166 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     167 </span>            : Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">     168 </span>            :        tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     169 </span>            :        index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     170 </span>            :                   SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     171 </span>            : Rotation&lt;3&gt;::inv_jacobian(const std::array&lt;T, 3&gt;&amp; /*xi*/) const {
+<span class="lineNum">     172 </span>            :   Tensor&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,
+<span class="lineNum">     173 </span>            :          tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     174 </span>            :          index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     175 </span>            :                     SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     176 </span>            :       inv_jac{};
+<span class="lineNum">     177 </span>            :   inv_jac.template get&lt;0, 0&gt;() = rotation_matrix_.template get&lt;0, 0&gt;();
+<span class="lineNum">     178 </span>            :   inv_jac.template get&lt;1, 0&gt;() = rotation_matrix_.template get&lt;0, 1&gt;();
+<span class="lineNum">     179 </span>            :   inv_jac.template get&lt;0, 1&gt;() = rotation_matrix_.template get&lt;1, 0&gt;();
+<span class="lineNum">     180 </span>            :   inv_jac.template get&lt;1, 1&gt;() = rotation_matrix_.template get&lt;1, 1&gt;();
+<span class="lineNum">     181 </span>            :   inv_jac.template get&lt;2, 0&gt;() = rotation_matrix_.template get&lt;0, 2&gt;();
+<span class="lineNum">     182 </span>            :   inv_jac.template get&lt;2, 1&gt;() = rotation_matrix_.template get&lt;1, 2&gt;();
+<span class="lineNum">     183 </span>            :   inv_jac.template get&lt;0, 2&gt;() = rotation_matrix_.template get&lt;2, 0&gt;();
+<span class="lineNum">     184 </span>            :   inv_jac.template get&lt;1, 2&gt;() = rotation_matrix_.template get&lt;2, 1&gt;();
+<span class="lineNum">     185 </span>            :   inv_jac.template get&lt;2, 2&gt;() = rotation_matrix_.template get&lt;2, 2&gt;();
+<span class="lineNum">     186 </span>            :   return inv_jac;
+<span class="lineNum">     187 </span>            : }
+<span class="lineNum">     188 </span>            : 
+<span class="lineNum">     189 </span>            : void Rotation&lt;3&gt;::pup(PUP::er&amp; p) {  // NOLINT
+<span class="lineNum">     190 </span>            :   p | rotation_about_z_;
+<span class="lineNum">     191 </span>            :   p | rotation_about_rotated_y_;
+<span class="lineNum">     192 </span>            :   p | rotation_about_rotated_z_;
+<span class="lineNum">     193 </span>            :   p | rotation_matrix_;
+<span class="lineNum">     194 </span>            : }
+<span class="lineNum">     195 </span>            : 
+<span class="lineNum">     196 </span><span class="lineNoCov">          0 : bool operator==(const Rotation&lt;3&gt;&amp; lhs, const Rotation&lt;3&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">     197 </span>            :   return lhs.rotation_about_z_ == rhs.rotation_about_z_ and
+<span class="lineNum">     198 </span>            :          lhs.rotation_about_rotated_y_ == rhs.rotation_about_rotated_y_ and
+<span class="lineNum">     199 </span>            :          lhs.rotation_about_rotated_z_ == rhs.rotation_about_rotated_z_;
+<span class="lineNum">     200 </span>            : }
+<span class="lineNum">     201 </span>            : 
+<span class="lineNum">     202 </span><span class="lineNoCov">          0 : bool operator!=(const Rotation&lt;3&gt;&amp; lhs, const Rotation&lt;3&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">     203 </span>            :   return not(lhs == rhs);
+<span class="lineNum">     204 </span>            : }
+<span class="lineNum">     205 </span>            : 
+<span class="lineNum">     206 </span>            : template std::array&lt;double, 2&gt; Rotation&lt;2&gt;::operator()(
+<span class="lineNum">     207 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     208 </span>            : template std::array&lt;double, 2&gt; Rotation&lt;2&gt;::operator()(
+<span class="lineNum">     209 </span>            :     const std::array&lt;double, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     210 </span>            : template std::array&lt;DataVector, 2&gt; Rotation&lt;2&gt;::operator()(
+<span class="lineNum">     211 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 2&gt;&amp; /*xi*/)
+<span class="lineNum">     212 </span>            :     const;
+<span class="lineNum">     213 </span>            : template std::array&lt;DataVector, 2&gt; Rotation&lt;2&gt;::operator()(
+<span class="lineNum">     214 </span>            :     const std::array&lt;DataVector, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     215 </span>            : 
+<span class="lineNum">     216 </span>            : template std::array&lt;double, 2&gt; Rotation&lt;2&gt;::inverse(
+<span class="lineNum">     217 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     218 </span>            : template std::array&lt;double, 2&gt; Rotation&lt;2&gt;::inverse(
+<span class="lineNum">     219 </span>            :     const std::array&lt;double, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     220 </span>            : template std::array&lt;DataVector, 2&gt; Rotation&lt;2&gt;::inverse(
+<span class="lineNum">     221 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 2&gt;&amp; /*xi*/)
+<span class="lineNum">     222 </span>            :     const;
+<span class="lineNum">     223 </span>            : template std::array&lt;DataVector, 2&gt; Rotation&lt;2&gt;::inverse(
+<span class="lineNum">     224 </span>            :     const std::array&lt;DataVector, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     225 </span>            : 
+<span class="lineNum">     226 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     227 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     228 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     229 </span>            : Rotation&lt;2&gt;::jacobian(
+<span class="lineNum">     230 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     231 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     232 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     233 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     234 </span>            : Rotation&lt;2&gt;::jacobian(const std::array&lt;double, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     235 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     236 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     237 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     238 </span>            : Rotation&lt;2&gt;::jacobian(const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;,
+<span class="lineNum">     239 </span>            :                                        2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     240 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     241 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     242 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     243 </span>            : Rotation&lt;2&gt;::jacobian(const std::array&lt;DataVector, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     244 </span>            : 
+<span class="lineNum">     245 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     246 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     247 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     248 </span>            : Rotation&lt;2&gt;::inv_jacobian(
+<span class="lineNum">     249 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     250 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     251 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     252 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     253 </span>            : Rotation&lt;2&gt;::inv_jacobian(const std::array&lt;double, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     254 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     255 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     256 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     257 </span>            : Rotation&lt;2&gt;::inv_jacobian(
+<span class="lineNum">     258 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 2&gt;&amp; /*xi*/)
+<span class="lineNum">     259 </span>            :     const;
+<span class="lineNum">     260 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     261 </span>            :                 index_list&lt;SpatialIndex&lt;2, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     262 </span>            :                            SpatialIndex&lt;2, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     263 </span>            : Rotation&lt;2&gt;::inv_jacobian(const std::array&lt;DataVector, 2&gt;&amp; /*xi*/) const;
+<span class="lineNum">     264 </span>            : 
+<span class="lineNum">     265 </span>            : template std::array&lt;double, 3&gt; Rotation&lt;3&gt;::operator()(
+<span class="lineNum">     266 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 3&gt;&amp; xi) const;
+<span class="lineNum">     267 </span>            : template std::array&lt;double, 3&gt; Rotation&lt;3&gt;::operator()(
+<span class="lineNum">     268 </span>            :     const std::array&lt;double, 3&gt;&amp; xi) const;
+<span class="lineNum">     269 </span>            : template std::array&lt;DataVector, 3&gt; Rotation&lt;3&gt;::operator()(
+<span class="lineNum">     270 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 3&gt;&amp; xi) const;
+<span class="lineNum">     271 </span>            : template std::array&lt;DataVector, 3&gt; Rotation&lt;3&gt;::operator()(
+<span class="lineNum">     272 </span>            :     const std::array&lt;DataVector, 3&gt;&amp; xi) const;
+<span class="lineNum">     273 </span>            : 
+<span class="lineNum">     274 </span>            : template std::array&lt;double, 3&gt; Rotation&lt;3&gt;::inverse(
+<span class="lineNum">     275 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 3&gt;&amp; xi) const;
+<span class="lineNum">     276 </span>            : template std::array&lt;double, 3&gt; Rotation&lt;3&gt;::inverse(
+<span class="lineNum">     277 </span>            :     const std::array&lt;double, 3&gt;&amp; xi) const;
+<span class="lineNum">     278 </span>            : template std::array&lt;DataVector, 3&gt; Rotation&lt;3&gt;::inverse(
+<span class="lineNum">     279 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 3&gt;&amp; xi) const;
+<span class="lineNum">     280 </span>            : template std::array&lt;DataVector, 3&gt; Rotation&lt;3&gt;::inverse(
+<span class="lineNum">     281 </span>            :     const std::array&lt;DataVector, 3&gt;&amp; xi) const;
+<span class="lineNum">     282 </span>            : 
+<span class="lineNum">     283 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     284 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     285 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     286 </span>            : Rotation&lt;3&gt;::jacobian(
+<span class="lineNum">     287 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     288 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     289 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     290 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     291 </span>            : Rotation&lt;3&gt;::jacobian(const std::array&lt;double, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     292 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     293 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     294 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     295 </span>            : Rotation&lt;3&gt;::jacobian(const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;,
+<span class="lineNum">     296 </span>            :                                        3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     297 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     298 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     299 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     300 </span>            : Rotation&lt;3&gt;::jacobian(const std::array&lt;DataVector, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     301 </span>            : 
+<span class="lineNum">     302 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     303 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     304 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     305 </span>            : Rotation&lt;3&gt;::inv_jacobian(
+<span class="lineNum">     306 </span>            :     const std::array&lt;std::reference_wrapper&lt;const double&gt;, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     307 </span>            : template Tensor&lt;double, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     308 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     309 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     310 </span>            : Rotation&lt;3&gt;::inv_jacobian(const std::array&lt;double, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     311 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     312 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     313 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     314 </span>            : Rotation&lt;3&gt;::inv_jacobian(
+<span class="lineNum">     315 </span>            :     const std::array&lt;std::reference_wrapper&lt;const DataVector&gt;, 3&gt;&amp; /*xi*/)
+<span class="lineNum">     316 </span>            :     const;
+<span class="lineNum">     317 </span>            : template Tensor&lt;DataVector, tmpl::integral_list&lt;std::int32_t, 2, 1&gt;,
+<span class="lineNum">     318 </span>            :                 index_list&lt;SpatialIndex&lt;3, UpLo::Up, Frame::NoFrame&gt;,
+<span class="lineNum">     319 </span>            :                            SpatialIndex&lt;3, UpLo::Lo, Frame::NoFrame&gt;&gt;&gt;
+<span class="lineNum">     320 </span>            : Rotation&lt;3&gt;::inv_jacobian(const std::array&lt;DataVector, 3&gt;&amp; /*xi*/) const;
+<span class="lineNum">     321 </span>            : 
+<span class="lineNum">     322 </span>            : }  // namespace CoordinateMaps
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -169,10 +169,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40099d330efb435eb3e5d97fb27d6f89"><td class="memTemplParams" colspan="2">template&lt;typename U , typename Dummy  = std::enable_if_t&lt;std::is_convertible&lt;U, T&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a40099d330efb435eb3e5d97fb27d6f89"><td class="memTemplParams" colspan="2">template&lt;typename U , Requires&lt; std::is_convertible&lt; U, T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a40099d330efb435eb3e5d97fb27d6f89"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgsl_1_1not__null.html#a40099d330efb435eb3e5d97fb27d6f89">not_null</a> (U &amp;&amp;u)</td></tr>
 <tr class="separator:a40099d330efb435eb3e5d97fb27d6f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee46f3464abd3000119b129f6abbc76"><td class="memTemplParams" colspan="2">template&lt;typename U , typename Dummy  = std::enable_if_t&lt;std::is_convertible&lt;U, T&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a7ee46f3464abd3000119b129f6abbc76"><td class="memTemplParams" colspan="2">template&lt;typename U , Requires&lt; std::is_convertible&lt; U, T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a7ee46f3464abd3000119b129f6abbc76"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgsl_1_1not__null.html#a7ee46f3464abd3000119b129f6abbc76">not_null</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a>&lt; U &gt; &amp;other)</td></tr>
 <tr class="separator:a7ee46f3464abd3000119b129f6abbc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f36fdb6a19b5d587b296e5bb22a6f98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgsl_1_1not__null.html#a8f36fdb6a19b5d587b296e5bb22a6f98">not_null</a> (const <a class="el" href="classgsl_1_1not__null.html">not_null</a> &amp;other)=default</td></tr>
@@ -229,7 +229,7 @@ class gsl::not_null&lt; T &gt;</h3>
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <div class="memtemplate">
-template&lt;typename U , typename Dummy  = std::enable_if_t&lt;std::is_convertible&lt;U, T&gt;::value&gt;&gt; </div>
+template&lt;typename U , Requires&lt; std::is_convertible&lt; U, T &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -261,7 +261,7 @@ template&lt;typename U , typename Dummy  = std::enable_if_t&lt;std::is_convertib
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <div class="memtemplate">
-template&lt;typename U , typename Dummy  = std::enable_if_t&lt;std::is_convertible&lt;U, T&gt;::value&gt;&gt; </div>
+template&lt;typename U , Requires&lt; std::is_convertible&lt; U, T &gt;::value &gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

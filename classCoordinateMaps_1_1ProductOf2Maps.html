@@ -1,0 +1,586 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.13"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: CoordinateMaps::ProductOf2Maps&lt; Map1, Map2 &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+      SpECTRE &#160;
+        <span id="projectnumber">v0.0.0</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Documentation</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" style="min-width: 150px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Reference</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div><!-- Generated by Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceCoordinateMaps.html">CoordinateMaps</a></li><li class="navelem"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classCoordinateMaps_1_1ProductOf2Maps-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">CoordinateMaps::ProductOf2Maps&lt; Map1, Map2 &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__CoordinateMapsGroup.html">Coordinate Maps</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Product of two codimension=0 <a class="el" href="namespaceCoordinateMaps.html" title="Contains all embedding maps. ">CoordinateMaps</a>.  
+ <a href="classCoordinateMaps_1_1ProductOf2Maps.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ProductMaps_8hpp_source.html">ProductMaps.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5c7300f3e033438b491b048689d1d51e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a5c7300f3e033438b491b048689d1d51e">map_list</a> = tmpl::list&lt; Map1, Map2 &gt;</td></tr>
+<tr class="separator:a5c7300f3e033438b491b048689d1d51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a22c88fe7d1d06ff5f9b670cc73f608b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a22c88fe7d1d06ff5f9b670cc73f608b4">ProductOf2Maps</a> ()=default</td></tr>
+<tr class="separator:a22c88fe7d1d06ff5f9b670cc73f608b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657107a5466d11c95dfe67f8713174f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a657107a5466d11c95dfe67f8713174f9">ProductOf2Maps</a> (Map1 map1, Map2 map2)</td></tr>
+<tr class="separator:a657107a5466d11c95dfe67f8713174f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c6a3555a30c60e32530b82391dced2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a82c6a3555a30c60e32530b82391dced2"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a82c6a3555a30c60e32530b82391dced2">operator()</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:a82c6a3555a30c60e32530b82391dced2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49e1bfb6a7a6a4e99c6bd3206774041"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab49e1bfb6a7a6a4e99c6bd3206774041"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#ab49e1bfb6a7a6a4e99c6bd3206774041">inverse</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;x) const</td></tr>
+<tr class="separator:ab49e1bfb6a7a6a4e99c6bd3206774041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f39b68b00fa9923d3409c120b59817b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5f39b68b00fa9923d3409c120b59817b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classTensor.html">Tensor</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, tmpl::integral_list&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1 &gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt; <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a5f39b68b00fa9923d3409c120b59817b">inv_jacobian</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:a5f39b68b00fa9923d3409c120b59817b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15525082e0c9b0970896b325241c04c4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a15525082e0c9b0970896b325241c04c4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classTensor.html">Tensor</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, tmpl::integral_list&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1 &gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt; <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a15525082e0c9b0970896b325241c04c4">jacobian</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:a15525082e0c9b0970896b325241c04c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf234b237800f1b5ece3e224afdc1567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#abf234b237800f1b5ece3e224afdc1567">pup</a> (PUP::er &amp;p)</td></tr>
+<tr class="separator:abf234b237800f1b5ece3e224afdc1567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f48a337dced3062115d7121f8db9b8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad4f48a337dced3062115d7121f8db9b8"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#ad4f48a337dced3062115d7121f8db9b8">operator()</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:ad4f48a337dced3062115d7121f8db9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcddd8b6626b5860028517e04fd7cd87"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adcddd8b6626b5860028517e04fd7cd87"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#adcddd8b6626b5860028517e04fd7cd87">inverse</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;x) const</td></tr>
+<tr class="separator:adcddd8b6626b5860028517e04fd7cd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7100e1c687db647c3c73c06999df65"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2f7100e1c687db647c3c73c06999df65"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classTensor.html">Tensor</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, tmpl::integral_list&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1 &gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt; <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a2f7100e1c687db647c3c73c06999df65">inv_jacobian</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:a2f7100e1c687db647c3c73c06999df65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189d7b4eeb0db9db42a13ea57d39c7d0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a189d7b4eeb0db9db42a13ea57d39c7d0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classTensor.html">Tensor</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; <a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt; T &gt; &gt;, tmpl::integral_list&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1 &gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt; <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a> &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a189d7b4eeb0db9db42a13ea57d39c7d0">jacobian</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;xi) const</td></tr>
+<tr class="separator:a189d7b4eeb0db9db42a13ea57d39c7d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a9c64578836cfc1c0571461ca768dcaf5"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> = Map1::dim + Map2::dim</td></tr>
+<tr class="separator:a9c64578836cfc1c0571461ca768dcaf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aacd5daaecf65d734954e90ca0a1289b0"><td class="memTemplParams" colspan="2">template&lt;typename Map1Op , typename Map2Op &gt; </td></tr>
+<tr class="memitem:aacd5daaecf65d734954e90ca0a1289b0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#aacd5daaecf65d734954e90ca0a1289b0">operator==</a> (const <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1Op, Map2Op &gt; &amp;lhs, const <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1Op, Map2Op &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:aacd5daaecf65d734954e90ca0a1289b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename Map1, typename Map2&gt;<br />
+class CoordinateMaps::ProductOf2Maps&lt; Map1, Map2 &gt;</h3>
+
+<p>Product of two codimension=0 <a class="el" href="namespaceCoordinateMaps.html" title="Contains all embedding maps. ">CoordinateMaps</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Map1</td><td>the map for the first coordinate(s) </td></tr>
+    <tr><td class="paramname">Map2</td><td>the map for the second coordinate(s) </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a5c7300f3e033438b491b048689d1d51e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7300f3e033438b491b048689d1d51e">&#9670;&nbsp;</a></span>map_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a5c7300f3e033438b491b048689d1d51e">map_list</a> =  tmpl::list&lt;Map1, Map2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a22c88fe7d1d06ff5f9b670cc73f608b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c88fe7d1d06ff5f9b670cc73f608b4">&#9670;&nbsp;</a></span>ProductOf2Maps() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a657107a5466d11c95dfe67f8713174f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a657107a5466d11c95dfe67f8713174f9">&#9670;&nbsp;</a></span>ProductOf2Maps() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1 , typename Map2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a> </td>
+          <td>(</td>
+          <td class="paramtype">Map1&#160;</td>
+          <td class="paramname"><em>map1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Map2&#160;</td>
+          <td class="paramname"><em>map2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5f39b68b00fa9923d3409c120b59817b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f39b68b00fa9923d3409c120b59817b">&#9670;&nbsp;</a></span>inv_jacobian() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTensor.html">Tensor</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, tmpl::integral_list&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1&gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt;<a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt; &gt; &gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::inv_jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f7100e1c687db647c3c73c06999df65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7100e1c687db647c3c73c06999df65">&#9670;&nbsp;</a></span>inv_jacobian() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTensor.html">Tensor</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, tmpl::integral_list&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1&gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt;<a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt; &gt; &gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::inv_jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab49e1bfb6a7a6a4e99c6bd3206774041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49e1bfb6a7a6a4e99c6bd3206774041">&#9670;&nbsp;</a></span>inverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>&gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::inverse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adcddd8b6626b5860028517e04fd7cd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcddd8b6626b5860028517e04fd7cd87">&#9670;&nbsp;</a></span>inverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>&gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::inverse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15525082e0c9b0970896b325241c04c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15525082e0c9b0970896b325241c04c4">&#9670;&nbsp;</a></span>jacobian() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTensor.html">Tensor</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, tmpl::integral_list&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1&gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt;<a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt; &gt; &gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a189d7b4eeb0db9db42a13ea57d39c7d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189d7b4eeb0db9db42a13ea57d39c7d0">&#9670;&nbsp;</a></span>jacobian() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTensor.html">Tensor</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, tmpl::integral_list&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integer.html">std::int32_t</a>, 2, 1&gt;, <a class="el" href="IndexType_8hpp.html#aed089afaa0428b29bb5a9b9e77c81927">index_list</a>&lt;<a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28a258f49887ef8d14ac268c92b02503aaa">UpLo::Up</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt;, <a class="el" href="group__Tensor.html#ga557beda9bce6c7f236213ec8b24b3ff3">SpatialIndex</a>&lt;<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>, <a class="el" href="group__Tensor.html#ggaab1181edf2ab2b664b0f174223f08c28aff50b4aa1c9cc2197ef898436641c911">UpLo::Lo</a>, <a class="el" href="structFrame_1_1NoFrame.html">Frame::NoFrame</a>&gt; &gt; &gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::jacobian </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82c6a3555a30c60e32530b82391dced2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c6a3555a30c60e32530b82391dced2">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>&gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4f48a337dced3062115d7121f8db9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4f48a337dced3062115d7121f8db9b8">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;<a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a>&lt;T&gt; &gt;, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt;Map1, Map2&gt;::<a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a>&gt; <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html#a9c64578836cfc1c0571461ca768dcaf5">dim</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>xi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf234b237800f1b5ece3e224afdc1567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf234b237800f1b5ece3e224afdc1567">&#9670;&nbsp;</a></span>pup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1 , typename Map2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::pup </td>
+          <td>(</td>
+          <td class="paramtype">PUP::er &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="aacd5daaecf65d734954e90ca0a1289b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacd5daaecf65d734954e90ca0a1289b0">&#9670;&nbsp;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<div class="memtemplate">
+template&lt;typename Map1Op , typename Map2Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1Op, Map2Op &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">ProductOf2Maps</a>&lt; Map1Op, Map2Op &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9c64578836cfc1c0571461ca768dcaf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c64578836cfc1c0571461ca768dcaf5">&#9670;&nbsp;</a></span>dim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Map1, typename Map2&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t <a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps</a>&lt; Map1, Map2 &gt;::dim = Map1::dim + Map2::dim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/Domain/CoordinateMaps/<a class="el" href="ProductMaps_8hpp_source.html">ProductMaps.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

@@ -166,6 +166,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="TensorExpression_8hpp_source.html">DataStructures/Tensor/Expressions/TensorExpression.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Tensor_8hpp_source.html">DataStructures/Tensor/Tensor.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Requires_8hpp_source.html">Utilities/Requires.hpp</a>&quot;</code><br />
 </div>
 <p><a href="Evaluate_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -176,7 +177,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad5daebeb92f29bc7001f7b3bb3982918"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename T , typename std::enable_if&lt; std::is_base_of&lt; Expression, T &gt;::value &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:gad5daebeb92f29bc7001f7b3bb3982918"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename T , Requires&lt; std::is_base_of&lt; Expression, T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:gad5daebeb92f29bc7001f7b3bb3982918"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TensorExpressions.html#gad5daebeb92f29bc7001f7b3bb3982918">TensorExpressions::evaluate</a> (const T &amp;te)</td></tr>
 <tr class="memdesc:gad5daebeb92f29bc7001f7b3bb3982918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a <a class="el" href="classTensor.html">Tensor</a> <a class="el" href="structExpression.html" title="Marks a class as being a TensorExpression. ">Expression</a> with LHS indices set in the template parameters.  <a href="group__TensorExpressions.html#gad5daebeb92f29bc7001f7b3bb3982918">More...</a><br /></td></tr>
 <tr class="separator:gad5daebeb92f29bc7001f7b3bb3982918"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -253,7 +253,7 @@ Variables</h2></td></tr>
 <tr class="memitem:gab3b35754fdc5faa3ab18029eac90eb86"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__DataBoxGroup.html#gab3b35754fdc5faa3ab18029eac90eb86">db::is_compute_item_v</a> = <a class="el" href="structdb_1_1is__compute__item.html">is_compute_item</a>&lt;T&gt;::value</td></tr>
 <tr class="memdesc:gab3b35754fdc5faa3ab18029eac90eb86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>T</code> derives off of <a class="el" href="structdb_1_1ComputeItemTag.html" title="Marks a DataBoxTag as being a compute item that executes a function. ">db::ComputeItemTag</a>.  <a href="group__DataBoxGroup.html#gab3b35754fdc5faa3ab18029eac90eb86">More...</a><br /></td></tr>
 <tr class="separator:gab3b35754fdc5faa3ab18029eac90eb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga95d93d7e11da3eb8a1eab5ee53453ce7"><td class="memTemplParams" colspan="2">template&lt;typename Tag , std::enable_if_t&lt; not std::is_base_of&lt; DataBoxPrefix, Tag &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga95d93d7e11da3eb8a1eab5ee53453ce7"><td class="memTemplParams" colspan="2">template&lt;typename Tag , Requires&lt; not std::is_base_of&lt; DataBoxPrefix, Tag &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ga95d93d7e11da3eb8a1eab5ee53453ce7"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__DataBoxGroup.html#ga95d93d7e11da3eb8a1eab5ee53453ce7">db::get_tag_name</a> ()</td></tr>
 <tr class="memdesc:ga95d93d7e11da3eb8a1eab5ee53453ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a <a class="el" href="structdb_1_1DataBoxTag.html" title="Tags for the DataBox inherit from this type. ">DataBoxTag</a>, including prefixes.  <a href="group__DataBoxGroup.html#ga95d93d7e11da3eb8a1eab5ee53453ce7">More...</a><br /></td></tr>
 <tr class="separator:ga95d93d7e11da3eb8a1eab5ee53453ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -680,7 +680,7 @@ template&lt;typename Type , typename TagLs &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Tag , std::enable_if_t&lt; not std::is_base_of&lt; DataBoxPrefix, Tag &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;typename Tag , Requires&lt; not std::is_base_of&lt; DataBoxPrefix, Tag &gt;::value &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> db::get_tag_name </td>

@@ -17,7 +17,7 @@ var searchData=
   ['addsub',['AddSub',['../structTensorExpressions_1_1AddSub.html',1,'TensorExpressions']]],
   ['addsub_3c_20t1_2c_20t2_2c_20argsls1_3c_20args1_2e_2e_2e_20_3e_2c_20argsls2_3c_20args2_2e_2e_2e_20_3e_2c_20sign_20_3e',['AddSub&lt; T1, T2, ArgsLs1&lt; Args1... &gt;, ArgsLs2&lt; Args2... &gt;, Sign &gt;',['../structTensorExpressions_1_1AddSub_3_01T1_00_01T2_00_01ArgsLs1_3_01Args1_8_8_8_01_4_00_01ArgsLs2_dd965ff16ece69e5a58457285dbba0d9.html',1,'TensorExpressions']]],
   ['adopt_5flock_5ft',['adopt_lock_t',['http://en.cppreference.com/w/cpp/thread/lock_tag_t.html',1,'std']]],
-  ['affinemap',['AffineMap',['../classEmbeddingMaps_1_1AffineMap.html',1,'EmbeddingMaps']]],
+  ['affinemap',['AffineMap',['../classCoordinateMaps_1_1AffineMap.html',1,'CoordinateMaps']]],
   ['align_5fval_5ft',['align_val_t',['http://en.cppreference.com/w/cpp/memory/new/align_val_t.html',1,'std']]],
   ['aligned_5fstorage',['aligned_storage',['http://en.cppreference.com/w/cpp/types/aligned_storage.html',1,'std']]],
   ['aligned_5fstorage_5ft',['aligned_storage_t',['http://en.cppreference.com/w/cpp/types/aligned_storage.html',1,'std']]],

@@ -207,6 +207,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gaf20b9d9f0e5870cc74c49bdf971e2cc6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gaf20b9d9f0e5870cc74c49bdf971e2cc6">make_boost_variant_over</a> = typename detail::make_boost_variant_over_impl&lt; Sequence &gt;::type</td></tr>
 <tr class="memdesc:gaf20b9d9f0e5870cc74c49bdf971e2cc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a boost::variant with all all the types inside the typelist Sequence.  <a href="#gaf20b9d9f0e5870cc74c49bdf971e2cc6">More...</a><br /></td></tr>
 <tr class="separator:gaf20b9d9f0e5870cc74c49bdf971e2cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f7d2749e4031319aec27cb9b56cdd92"><td class="memTemplParams" colspan="2">template&lt;bool B&gt; </td></tr>
+<tr class="memitem:ga8f7d2749e4031319aec27cb9b56cdd92"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga8f7d2749e4031319aec27cb9b56cdd92">Requires</a> = typename Requires_detail::requires_impl&lt; B &gt;::template_error_types_failed_to_meet_requirements_on_template_parameters</td></tr>
+<tr class="memdesc:ga8f7d2749e4031319aec27cb9b56cdd92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Express requirements on the template parameters of a function or class, replaces <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/enable_if.html">std::enable_if_t</a></code>  <a href="#ga8f7d2749e4031319aec27cb9b56cdd92">More...</a><br /></td></tr>
+<tr class="separator:ga8f7d2749e4031319aec27cb9b56cdd92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4dabf6319ff36d72095831fba701afc1"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
 <tr class="memitem:ga4dabf6319ff36d72095831fba701afc1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga4dabf6319ff36d72095831fba701afc1">typelist</a> = tmpl::list&lt; Ts... &gt;</td></tr>
 <tr class="memdesc:ga4dabf6319ff36d72095831fba701afc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a typelist of types <code>Ts</code>.  <a href="#ga4dabf6319ff36d72095831fba701afc1">More...</a><br /></td></tr>
@@ -256,10 +260,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; T &gt;, size &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga18e7d6f15d7089f056a7d1a32ad1b536">make_array</a> (T &amp;&amp;value)</td></tr>
 <tr class="memdesc:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class to initialize a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>.  <a href="#ga18e7d6f15d7089f056a7d1a32ad1b536">More...</a><br /></td></tr>
 <tr class="separator:ga18e7d6f15d7089f056a7d1a32ad1b536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... V, typename std::enable_if_t&lt;(sizeof...(V) &gt; 0&gt; </td></tr>
+<tr class="memitem:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... V, Requires&lt;(sizeof...(V) &gt; 0&gt; </td></tr>
 <tr class="memitem:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; typename <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; T &gt;, sizeof...(V)+1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga55b73f5c6d3e8963a3110b1b314fc463">make_array</a> (T &amp;&amp;t, V &amp;&amp;... values)</td></tr>
 <tr class="memdesc:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to initialize a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a> with varying number of arguments.  <a href="#ga55b73f5c6d3e8963a3110b1b314fc463">More...</a><br /></td></tr>
 <tr class="separator:ga55b73f5c6d3e8963a3110b1b314fc463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bb27843578fd11fee0a855ef2b0866e"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t size, typename Seq &gt; </td></tr>
+<tr class="memitem:ga4bb27843578fd11fee0a855ef2b0866e"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, size &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga4bb27843578fd11fee0a855ef2b0866e">make_array</a> (Seq &amp;&amp;seq)</td></tr>
+<tr class="memdesc:ga4bb27843578fd11fee0a855ef2b0866e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, size&gt;</code> from the first <code>size</code> values of <code>seq</code>  <a href="#ga4bb27843578fd11fee0a855ef2b0866e">More...</a><br /></td></tr>
+<tr class="separator:ga4bb27843578fd11fee0a855ef2b0866e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1eed7cb45692393b257c3987070d1da2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga1eed7cb45692393b257c3987070d1da2"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga1eed7cb45692393b257c3987070d1da2">number_of_digits</a> (const T number)</td></tr>
 <tr class="memdesc:ga1eed7cb45692393b257c3987070d1da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of digits in an integer number.  <a href="#ga1eed7cb45692393b257c3987070d1da2">More...</a><br /></td></tr>
@@ -280,7 +288,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ga81330e34bc91cfbd33c4d5272d33c53b"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga81330e34bc91cfbd33c4d5272d33c53b">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Args... &gt; &amp;t)</td></tr>
 <tr class="memdesc:ga81330e34bc91cfbd33c4d5272d33c53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for tuples.  <a href="#ga81330e34bc91cfbd33c4d5272d33c53b">More...</a><br /></td></tr>
 <tr class="separator:ga81330e34bc91cfbd33c4d5272d33c53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3d4166ba0e61c9267ef6f3fb1a5dfe8e"><td class="memTemplParams" colspan="2">template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map &gt;::value &gt; * &gt; </td></tr>
+<tr class="memitem:ga3d4166ba0e61c9267ef6f3fb1a5dfe8e"><td class="memTemplParams" colspan="2">template&lt;typename Map , Requires&lt; tt::is_maplike&lt; Map &gt;::value &gt; &gt; </td></tr>
 <tr class="memitem:ga3d4166ba0e61c9267ef6f3fb1a5dfe8e"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga3d4166ba0e61c9267ef6f3fb1a5dfe8e">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const Map &amp;m)</td></tr>
 <tr class="memdesc:ga3d4166ba0e61c9267ef6f3fb1a5dfe8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output all the key, value pairs of a map.  <a href="#ga3d4166ba0e61c9267ef6f3fb1a5dfe8e">More...</a><br /></td></tr>
 <tr class="separator:ga3d4166ba0e61c9267ef6f3fb1a5dfe8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,11 +300,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga4248026e7d2c0f6a4ea723b16668531e"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga4248026e7d2c0f6a4ea723b16668531e">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/set.html">std::set</a>&lt; T &gt; &amp;v)</td></tr>
 <tr class="memdesc:ga4248026e7d2c0f6a4ea723b16668531e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the items of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>.  <a href="#ga4248026e7d2c0f6a4ea723b16668531e">More...</a><br /></td></tr>
 <tr class="separator:ga4248026e7d2c0f6a4ea723b16668531e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a4affaa7af20b9ab232a5cae60d1fd5"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; * &gt; </td></tr>
+<tr class="memitem:ga5a4affaa7af20b9ab232a5cae60d1fd5"><td class="memTemplParams" colspan="2">template&lt;typename T , Requires&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; &gt; </td></tr>
 <tr class="memitem:ga5a4affaa7af20b9ab232a5cae60d1fd5"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga5a4affaa7af20b9ab232a5cae60d1fd5">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; T &gt; &amp;t)</td></tr>
 <tr class="memdesc:ga5a4affaa7af20b9ab232a5cae60d1fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>.  <a href="#ga5a4affaa7af20b9ab232a5cae60d1fd5">More...</a><br /></td></tr>
 <tr class="separator:ga5a4affaa7af20b9ab232a5cae60d1fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78d6a6a95d4ebc4e5fca330a272a6182"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; * &gt; </td></tr>
+<tr class="memitem:ga78d6a6a95d4ebc4e5fca330a272a6182"><td class="memTemplParams" colspan="2">template&lt;typename T , Requires&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; &gt; </td></tr>
 <tr class="memitem:ga78d6a6a95d4ebc4e5fca330a272a6182"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga78d6a6a95d4ebc4e5fca330a272a6182">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr</a>&lt; T &gt; &amp;t)</td></tr>
 <tr class="memdesc:ga78d6a6a95d4ebc4e5fca330a272a6182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr</a>.  <a href="#ga78d6a6a95d4ebc4e5fca330a272a6182">More...</a><br /></td></tr>
 <tr class="separator:ga78d6a6a95d4ebc4e5fca330a272a6182"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,7 +312,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gadcbd91b985044319a768092b12cd5045"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gadcbd91b985044319a768092b12cd5045">operator&lt;&lt;</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; T, U &gt; &amp;t)</td></tr>
 <tr class="memdesc:gadcbd91b985044319a768092b12cd5045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator for <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>.  <a href="#gadcbd91b985044319a768092b12cd5045">More...</a><br /></td></tr>
 <tr class="separator:gadcbd91b985044319a768092b12cd5045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd896d9833d9ba62f62fa48457007f7e"><td class="memTemplParams" colspan="2">template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:gacd896d9833d9ba62f62fa48457007f7e"><td class="memTemplParams" colspan="2">template&lt;typename Map , Requires&lt; tt::is_maplike_v&lt; Map &gt;&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:gacd896d9833d9ba62f62fa48457007f7e"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gacd896d9833d9ba62f62fa48457007f7e">keys_of</a> (const Map &amp;m)</td></tr>
 <tr class="memdesc:gacd896d9833d9ba62f62fa48457007f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a string containing the keys of a map.  <a href="#gacd896d9833d9ba62f62fa48457007f7e">More...</a><br /></td></tr>
 <tr class="separator:gacd896d9833d9ba62f62fa48457007f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,6 +320,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga9a7c7ee897f581360154a3676d5f7ab9">formatted_string</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;fmt, Args... args)</td></tr>
 <tr class="memdesc:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a string like printf.  <a href="#ga9a7c7ee897f581360154a3676d5f7ab9">More...</a><br /></td></tr>
 <tr class="separator:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b6ade329d6c1dbce2c67a94a58b2304"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ga8b6ade329d6c1dbce2c67a94a58b2304"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga8b6ade329d6c1dbce2c67a94a58b2304">swallow</a> (Ts &amp;&amp;...) noexcept</td></tr>
+<tr class="memdesc:ga8b6ade329d6c1dbce2c67a94a58b2304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows zero-cost unordered expansion of a parameter.  <a href="#ga8b6ade329d6c1dbce2c67a94a58b2304">More...</a><br /></td></tr>
+<tr class="separator:ga8b6ade329d6c1dbce2c67a94a58b2304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad65147320c04e61267089a58d71a6302"><td class="memTemplParams" colspan="2">template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </td></tr>
+<tr class="memitem:gad65147320c04e61267089a58d71a6302"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gad65147320c04e61267089a58d71a6302">tuple_transform</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;tuple, N_aryOp &amp;&amp;op, Args &amp;&amp;... args) noexcept(noexcept(tuple_impl_detail::tuple_transform_impl&lt; ReverseIteration &gt;(tuple, std::forward&lt; N_aryOp &gt;(op), <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt; sizeof...(Elements)&gt;{}, args...)))</td></tr>
+<tr class="memdesc:gad65147320c04e61267089a58d71a6302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a transform over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>.  <a href="#gad65147320c04e61267089a58d71a6302">More...</a><br /></td></tr>
+<tr class="separator:gad65147320c04e61267089a58d71a6302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac932a44b57087d32ce5341314437dbbd"><td class="memTemplParams" colspan="2">template&lt;bool UseLibXsmm = false&gt; </td></tr>
 <tr class="memitem:gac932a44b57087d32ce5341314437dbbd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gac932a44b57087d32ce5341314437dbbd">dgemm_</a> (const char &amp;TRANSA, const char &amp;TRANSB, const size_t &amp;M, const size_t &amp;N, const size_t &amp;K, const double &amp;ALPHA, const double *A, const size_t &amp;LDA, const double *B, const size_t &amp;LDB, const double &amp;BETA, double *C, const size_t &amp;LDC)</td></tr>
 <tr class="memdesc:gac932a44b57087d32ce5341314437dbbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a matrix-matrix multiplication.  <a href="#gac932a44b57087d32ce5341314437dbbd">More...</a><br /></td></tr>
@@ -335,6 +351,14 @@ Functions</h2></td></tr>
 <tr class="memitem:gac75622e2034e12763b1e3989b813376b"><td class="memTemplItemLeft" align="right" valign="top">constexpr const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#gac75622e2034e12763b1e3989b813376b">gsl::at</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/initializer_list.html">std::initializer_list</a>&lt; T &gt; cont, Size index)</td></tr>
 <tr class="memdesc:gac75622e2034e12763b1e3989b813376b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a entry from a container, with checks in Debug mode that the index being retrieved is valid.  <a href="group__Utilities.html#gac75622e2034e12763b1e3989b813376b">More...</a><br /></td></tr>
 <tr class="separator:gac75622e2034e12763b1e3989b813376b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91227dc4aa14972b7b2e7070719d061b"><td class="memTemplParams" colspan="2">template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </td></tr>
+<tr class="memitem:ga91227dc4aa14972b7b2e7070719d061b"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b">tuple_fold</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;tuple, N_aryOp &amp;&amp;op, Args &amp;&amp;... args) noexcept(noexcept(tuple_impl_detail::tuple_fold_impl&lt; ReverseIteration &gt;(tuple, std::forward&lt; N_aryOp &gt;(op), <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt; sizeof...(Elements)&gt;{}, args...)))</td></tr>
+<tr class="memdesc:ga91227dc4aa14972b7b2e7070719d061b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a fold over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>.  <a href="#ga91227dc4aa14972b7b2e7070719d061b">More...</a><br /></td></tr>
+<tr class="separator:ga91227dc4aa14972b7b2e7070719d061b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f67981c777b6762ada9da5ad5da11e7"><td class="memTemplParams" colspan="2">template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </td></tr>
+<tr class="memitem:ga3f67981c777b6762ada9da5ad5da11e7"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga3f67981c777b6762ada9da5ad5da11e7">tuple_counted_fold</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;tuple, N_aryOp &amp;&amp;op, Args &amp;&amp;... args) noexcept(noexcept(tuple_impl_detail::tuple_counted_fold_impl&lt; ReverseIteration &gt;(tuple, std::forward&lt; N_aryOp &gt;(op), <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt; sizeof...(Elements)&gt;{}, args...)))</td></tr>
+<tr class="memdesc:ga3f67981c777b6762ada9da5ad5da11e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a fold over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>.  <a href="#ga3f67981c777b6762ada9da5ad5da11e7">More...</a><br /></td></tr>
+<tr class="separator:ga3f67981c777b6762ada9da5ad5da11e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A collection of useful classes, functions and metafunctions. </p>
@@ -381,6 +405,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The if statement is expected to evaluate true most of the time </p>
+
+<p class="reference">Referenced by <a class="el" href="classCoordinateMap.html#a818912ca2b830a6ae82b88a47a9d7007">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::inv_jacobian()</a>, and <a class="el" href="classCoordinateMap.html#a68da84fc4d3cf95f0b8f9f3077e81379">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::jacobian()</a>.</p>
 
 </div>
 </div>
@@ -443,6 +469,26 @@ template&lt;typename Sequence &gt; </div>
 
 </div>
 </div>
+<a id="ga8f7d2749e4031319aec27cb9b56cdd92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f7d2749e4031319aec27cb9b56cdd92">&#9670;&nbsp;</a></span>Requires</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool B&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__Utilities.html#ga8f7d2749e4031319aec27cb9b56cdd92">Requires</a> =  typename Requires_detail::requires_impl&lt; B&gt;::template_error_types_failed_to_meet_requirements_on_template_parameters</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Express requirements on the template parameters of a function or class, replaces <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/enable_if.html">std::enable_if_t</a></code> </p>
+<p>Replacement for <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/enable_if.html">std::enable_if_t</a></code> and Concepts for expressing requirements on template parameters. This does not require merging of the Concepts TS (whose merit is debatable) and provides an "error message" if substitution of a template parameter failed. Specifically, the compiler error will contain "template_error_types_failed_to_meet_requirements_on_template_parameters", aiding the user of a function or class in tracking down the list of requirements on the deduced type.</p>
+<p>For example, if a function <code>foo</code> is defined as: </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Requires&lt;tt::is_a_v&lt;std::vector, T&gt;&gt; = <span class="keywordtype">nullptr</span>&gt;</div><div class="line"><a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> foo(<span class="keyword">const</span> T&amp; <span class="comment">/*unused*/</span>) {</div><div class="line">  <span class="keywordflow">return</span> <span class="stringliteral">&quot;vector&quot;</span>;</div><div class="line">}</div></div><!-- fragment --><p>then calling the function with a list, <code>foo(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/list.html">std::list</a>&lt;double&gt;{});</code> results in the following compilation error from clang: </p><div class="fragment"><div class="line">./tests/Unit/Utilities/Test_Requires.cpp:29:3: error: no matching <span class="keyword">function</span></div><div class="line">   <span class="keywordflow">for</span> call to <span class="stringliteral">&#39;foo&#39;</span></div><div class="line">  foo(<a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/list.html">std::list&lt;double&gt;</a>{});</div><div class="line">  ^~~</div><div class="line">./tests/Unit/Utilities/Test_Requires.cpp:15:13: note: candidate</div><div class="line">    <span class="keyword">template</span> ignored: substitution failure [with T = std::__1::list&lt;double,</div><div class="line">    std::__1::allocator&lt;double&gt; &gt;]: no type named</div><div class="line">    <span class="stringliteral">&#39;template_error_types_failed_to_meet_requirements_on_template_parameters&#39;</span></div><div class="line">    in <span class="stringliteral">&#39;Requires_detail::requires_impl&lt;false&gt;&#39;</span></div><div class="line"><a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> foo(<span class="keyword">const</span> T&amp;) {</div><div class="line">            ^</div><div class="line">1 error generated.</div></div><!-- fragment --><p>Here is an example of how write function overloads using <code>Requires</code> or to express constraints on the template parameters: </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Requires&lt;tt::is_a_v&lt;std::vector, T&gt;&gt; = <span class="keywordtype">nullptr</span>&gt;</div><div class="line"><a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> foo(<span class="keyword">const</span> T&amp; <span class="comment">/*unused*/</span>) {</div><div class="line">  <span class="keywordflow">return</span> <span class="stringliteral">&quot;vector&quot;</span>;</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Requires&lt;tt::is_a_v&lt;std::list, T&gt;&gt; = <span class="keywordtype">nullptr</span>&gt;</div><div class="line"><a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> foo(<span class="keyword">const</span> T&amp; <span class="comment">/*unused*/</span>) {</div><div class="line">  <span class="keywordflow">return</span> <span class="stringliteral">&quot;list&quot;</span>;</div><div class="line">}</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>Using <code>Requires</code> is safer than using <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/enable_if.html">std::enable_if_t</a></code> because the nested type alias is of type <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/nullptr_t.html">std::nullptr_t</a></code> and so usage is always: <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, Requires&lt;(<span class="keywordtype">bool</span> depending on T)&gt; = <span class="keywordtype">nullptr</span>&gt;</div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="ga4dabf6319ff36d72095831fba701afc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga4dabf6319ff36d72095831fba701afc1">&#9670;&nbsp;</a></span>typelist</h2>
 
@@ -494,7 +540,7 @@ template&lt;class T , std::size_t N, typename Size &gt; </div>
 
 <p class="reference">References <a class="el" href="group__ErrorHandling.html#ga128eed9cc242b5e850cf1391744bf099">Expects</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a7510cc158e3c4bf0f4794fe6a401f31f">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::get()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a8e6e7f0770d453cb566d30b824eba366">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::get_vector_of_data()</a>, <a class="el" href="classElementId.html#a00a9bc33c38a611b7e591ba33be4c476">ElementId&lt; VolumeDim &gt;::id_of_child()</a>, <a class="el" href="classElementId.html#a65a3308a9b02144b0949c51c91f3e12e">ElementId&lt; VolumeDim &gt;::id_of_parent()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#acc2ac290d08bad3c17813eed85fb0364">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::index_dim()</a>, <a class="el" href="ConstantExpressions_8hpp.html#a9c63793d5a8986fb6f9013033c4a2991">make_array_from_list()</a>, <a class="el" href="classIndex.html#ae94c13676006986b619b2d543bd8ea06">Index&lt; Dim &gt;::operator[]()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a6f8e204896288321f539d77958e1faea">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::operator[]()</a>, <a class="el" href="classIndex.html#a9b6ad7896736a317a819da3d576802b6">Index&lt; Dim &gt;::slice_away()</a>, and <a class="el" href="classTimeSteppers_1_1AdamsBashforthN.html#af71097416f06b566c9a7650c52391055">TimeSteppers::AdamsBashforthN::stable_step()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a7510cc158e3c4bf0f4794fe6a401f31f">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::get()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a8e6e7f0770d453cb566d30b824eba366">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::get_vector_of_data()</a>, <a class="el" href="classElementId.html#a00a9bc33c38a611b7e591ba33be4c476">ElementId&lt; VolumeDim &gt;::id_of_child()</a>, <a class="el" href="classElementId.html#a65a3308a9b02144b0949c51c91f3e12e">ElementId&lt; VolumeDim &gt;::id_of_parent()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#acc2ac290d08bad3c17813eed85fb0364">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::index_dim()</a>, <a class="el" href="classCoordinateMap.html#a818912ca2b830a6ae82b88a47a9d7007">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::inv_jacobian()</a>, <a class="el" href="classCoordinateMap.html#a68da84fc4d3cf95f0b8f9f3077e81379">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::jacobian()</a>, <a class="el" href="ConstantExpressions_8hpp.html#a9c63793d5a8986fb6f9013033c4a2991">make_array_from_list()</a>, <a class="el" href="classIndex.html#ae94c13676006986b619b2d543bd8ea06">Index&lt; Dim &gt;::operator[]()</a>, <a class="el" href="classTensor_3_01X_00_01Symm_00_01IndexLs_3_01Indices_8_8_8_01_4_01_4.html#a6f8e204896288321f539d77958e1faea">Tensor&lt; X, Symm, IndexLs&lt; Indices... &gt; &gt;::operator[]()</a>, <a class="el" href="classIndex.html#a9b6ad7896736a317a819da3d576802b6">Index&lt; Dim &gt;::slice_away()</a>, <a class="el" href="classTimeSteppers_1_1AdamsBashforthN.html#af71097416f06b566c9a7650c52391055">TimeSteppers::AdamsBashforthN::stable_step()</a>, and <a class="el" href="Test__Rotation_8cpp.html#a7a8bf0a8b0c6ffb44f1f7317b0e23aad">test_rotation_3()</a>.</p>
 
 </div>
 </div>
@@ -1091,7 +1137,7 @@ template&lt;typename... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map &gt;::value &gt; *  = nullptr&gt; </div>
+template&lt;typename Map , Requires&lt; tt::is_maplike_v&lt; Map &gt;&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1182,7 +1228,7 @@ template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map 
 </div>
 </div>
 <a id="ga18e7d6f15d7089f056a7d1a32ad1b536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga18e7d6f15d7089f056a7d1a32ad1b536">&#9670;&nbsp;</a></span>make_array() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18e7d6f15d7089f056a7d1a32ad1b536">&#9670;&nbsp;</a></span>make_array() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1212,12 +1258,12 @@ template&lt;std::size_t size, typename T &gt; </div>
 </div>
 </div>
 <a id="ga55b73f5c6d3e8963a3110b1b314fc463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga55b73f5c6d3e8963a3110b1b314fc463">&#9670;&nbsp;</a></span>make_array() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55b73f5c6d3e8963a3110b1b314fc463">&#9670;&nbsp;</a></span>make_array() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename... V, typename std::enable_if_t&lt;(sizeof...(V) &gt; 0&gt; </div>
+template&lt;typename T , typename... V, Requires&lt;(sizeof...(V) &gt; 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;typename <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt;T&gt;, sizeof...(V) + 1&gt; make_array </td>
@@ -1242,6 +1288,37 @@ template&lt;typename T , typename... V, typename std::enable_if_t&lt;(sizeof...(
 <p>Helper function to initialize a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a> with varying number of arguments. </p>
 
 <p class="reference">References <a class="el" href="namespacecpp17.html#a958e5adb14431c4cf06fcc785985ac89">cpp17::conjunction_v</a>.</p>
+
+</div>
+</div>
+<a id="ga4bb27843578fd11fee0a855ef2b0866e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4bb27843578fd11fee0a855ef2b0866e">&#9670;&nbsp;</a></span>make_array() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t size, typename Seq &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, size&gt; make_array </td>
+          <td>(</td>
+          <td class="paramtype">Seq &amp;&amp;&#160;</td>
+          <td class="paramname"><em>seq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create an <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, size&gt;</code> from the first <code>size</code> values of <code>seq</code> </p>
+<p><em>Requires:</em> <code>Seq</code> has a <code>begin</code> function </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type held by the array </td></tr>
+    <tr><td class="paramname">size</td><td>the size of the created array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">References <a class="el" href="group__ErrorHandling.html#ga43ee0d6e9c0381c6140d8b87d927c726">CASSERT</a>.</p>
 
 </div>
 </div>
@@ -1557,7 +1634,7 @@ template&lt;typename... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Map , typename std::enable_if_t&lt; tt::is_maplike&lt; Map &gt;::value &gt; * &gt; </div>
+template&lt;typename Map , Requires&lt; tt::is_maplike&lt; Map &gt;::value &gt; &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1677,7 +1754,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if_t&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; * &gt; </div>
+template&lt;typename T , Requires&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1717,7 +1794,7 @@ template&lt;typename T , typename std::enable_if_t&lt; tt::is_streamable&lt; std
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if_t&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; * &gt; </div>
+template&lt;typename T , Requires&lt; tt::is_streamable&lt; std::ostream, T &gt;::value &gt; &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1866,6 +1943,194 @@ template&lt;typename T , typename U &gt; </div>
 <p>Retrieve a string containing the current version of SpECTRE. </p>
 
 <p class="reference">Referenced by <a class="el" href="group__Utilities.html#gada33ac747e1720e8d6c7d89323663c3e">info_from_build()</a>.</p>
+
+</div>
+</div>
+<a id="ga8b6ade329d6c1dbce2c67a94a58b2304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8b6ade329d6c1dbce2c67a94a58b2304">&#9670;&nbsp;</a></span>swallow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void swallow </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allows zero-cost unordered expansion of a parameter. </p>
+<h3>Details</h3>
+<p>Expands a parameter pack, typically useful for runtime evaluation via a Callable such as a lambda, function, or function object. For example, an unordered transform of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> can be implemented as: </p><div class="fragment"><div class="line"><span class="keyword">namespace </span>{</div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Elements, <span class="keywordtype">size_t</span>... Is&gt;</div><div class="line"><span class="keywordtype">void</span> <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/algorithm/transform.html">transform</a>(<span class="keyword">const</span> <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple&lt;Elements...&gt;</a>&amp; tupull,</div><div class="line">               <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple&lt;Elements...&gt;</a>&amp; out_tupull,</div><div class="line">               <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::index_sequence&lt;Is...&gt;</a> <span class="comment">/*meta*/</span>) {</div><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> func = [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; in, <span class="keyword">auto</span>&amp; out) {</div><div class="line">    out = in * <span class="keyword">static_cast&lt;</span>decltype(in)<span class="keyword">&gt;</span>(2);</div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">  };</div><div class="line">  <a class="code" href="group__Utilities.html#ga8b6ade329d6c1dbce2c67a94a58b2304">swallow</a>(func(std::get&lt;Is&gt;(tupull), std::get&lt;Is&gt;(out_tupull))...);</div><div class="line">}</div><div class="line">}  <span class="comment">// namespace</span></div><div class="line"></div><div class="line">SPECTRE_TEST_CASE(<span class="stringliteral">&quot;Unit.Utilities.swallow&quot;</span>, <span class="stringliteral">&quot;[Utilities][Unit]&quot;</span>) {</div><div class="line">  <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple&lt;int, double, float&gt;</a> my_tupull = std::make_tuple(3, 2.7, 8.2);</div><div class="line">  <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple&lt;int, double, float&gt;</a> my_tupull_output;</div><div class="line">  <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/algorithm/transform.html">transform</a>(my_tupull, my_tupull_output, <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence&lt;3&gt;</a>{});</div><div class="line">  CHECK(std::get&lt;0&gt;(my_tupull_output) == 6);</div><div class="line">  CHECK(std::get&lt;1&gt;(my_tupull_output) == 5.4);</div><div class="line">  CHECK(std::get&lt;2&gt;(my_tupull_output) == 16.4f);</div><div class="line">}</div></div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b" title="Perform a fold over a std::tuple. ">tuple_fold</a> <a class="el" href="group__Utilities.html#ga3f67981c777b6762ada9da5ad5da11e7" title="Perform a fold over a std::tuple. ">tuple_counted_fold</a> <a class="el" href="group__Utilities.html#gad65147320c04e61267089a58d71a6302" title="Perform a transform over a std::tuple. ">tuple_transform</a> <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga3f67981c777b6762ada9da5ad5da11e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f67981c777b6762ada9da5ad5da11e7">&#9670;&nbsp;</a></span>tuple_counted_fold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void tuple_counted_fold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">N_aryOp &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform a fold over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>. </p>
+<h3>Details</h3>
+<p>Iterates over the elements in a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> <code>tuple</code> from left to right (left fold) calling <code>op(element, args...)</code> on each element in <code>tuple</code>. A right fold can be done by explicitly setting the first template parameter to true. Folds are easily implemented using <code>tuple_fold</code> by updating one of the <code>args...</code> at each iteration. If you need the index of the current element you can use the <code>tuple_counted_fold</code> variant. <code>tuple_counted_fold</code> passes the current index as the second argument to the Callable <code>op</code>. That is, <code>op(element, index, args...)</code>.</p>
+<h3>Example</h3>
+<p>The sum of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> of Arithmetics can be computed in several ways. First, you can use a lambda: </p><div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> my_tupull = std::make_tuple(2, 7, -3.8, 20.9);</div><div class="line">    <span class="keywordtype">double</span> sum_value = 0.0;</div><div class="line">    <a class="code" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b">tuple_fold</a>(my_tupull,</div><div class="line">               [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; element, <span class="keywordtype">double</span>&amp; state) { state += element; },</div><div class="line">               sum_value);</div><div class="line">    CHECK(sum_value == approx(26.1));</div></div><!-- fragment --><p>You'll notice that <code>state</code> is taken by reference and mutated.</p>
+<p>You can do the same thing with a struct defined as </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">struct </span>tuple_fold_plus {</div><div class="line">  T value = 0.0;</div><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div><div class="line">  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> S&amp; element) {</div><div class="line">    value += element;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>and then using an instance of the struct </p><div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> my_tupull = std::make_tuple(2, 7, -3.8, 20.9);</div><div class="line">    tuple_fold_plus&lt;double&gt; sum_value{};</div><div class="line">    <a class="code" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b">tuple_fold</a>(my_tupull, sum_value);</div><div class="line">    CHECK(sum_value.value == approx(26.1));</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>You are not able to pass a function pointer to <code>tuple_fold</code> or <code>tuple_counted_fold</code> because you cannot pass a pointer to a function template, only a function.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Utilities.html#ga8b6ade329d6c1dbce2c67a94a58b2304" title="Allows zero-cost unordered expansion of a parameter. ">swallow</a> <a class="el" href="group__Utilities.html#gad65147320c04e61267089a58d71a6302" title="Perform a transform over a std::tuple. ">tuple_transform</a> <a class="el" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b" title="Perform a fold over a std::tuple. ">tuple_fold</a> <a class="el" href="group__Utilities.html#ga3f67981c777b6762ada9da5ad5da11e7" title="Perform a fold over a std::tuple. ">tuple_counted_fold</a> <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga91227dc4aa14972b7b2e7070719d061b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91227dc4aa14972b7b2e7070719d061b">&#9670;&nbsp;</a></span>tuple_fold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void tuple_fold </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">N_aryOp &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform a fold over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>. </p>
+<h3>Details</h3>
+<p>Iterates over the elements in a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> <code>tuple</code> from left to right (left fold) calling <code>op(element, args...)</code> on each element in <code>tuple</code>. A right fold can be done by explicitly setting the first template parameter to true. Folds are easily implemented using <code>tuple_fold</code> by updating one of the <code>args...</code> at each iteration. If you need the index of the current element you can use the <code>tuple_counted_fold</code> variant. <code>tuple_counted_fold</code> passes the current index as the second argument to the Callable <code>op</code>. That is, <code>op(element, index, args...)</code>.</p>
+<h3>Example</h3>
+<p>The sum of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> of Arithmetics can be computed in several ways. First, you can use a lambda: </p><div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> my_tupull = std::make_tuple(2, 7, -3.8, 20.9);</div><div class="line">    <span class="keywordtype">double</span> sum_value = 0.0;</div><div class="line">    <a class="code" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b">tuple_fold</a>(my_tupull,</div><div class="line">               [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; element, <span class="keywordtype">double</span>&amp; state) { state += element; },</div><div class="line">               sum_value);</div><div class="line">    CHECK(sum_value == approx(26.1));</div></div><!-- fragment --><p>You'll notice that <code>state</code> is taken by reference and mutated.</p>
+<p>You can do the same thing with a struct defined as </p><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">struct </span>tuple_fold_plus {</div><div class="line">  T value = 0.0;</div><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</div><div class="line">  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> S&amp; element) {</div><div class="line">    value += element;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p>and then using an instance of the struct </p><div class="fragment"><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> my_tupull = std::make_tuple(2, 7, -3.8, 20.9);</div><div class="line">    tuple_fold_plus&lt;double&gt; sum_value{};</div><div class="line">    <a class="code" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b">tuple_fold</a>(my_tupull, sum_value);</div><div class="line">    CHECK(sum_value.value == approx(26.1));</div></div><!-- fragment --> <dl class="section note"><dt>Note</dt><dd>You are not able to pass a function pointer to <code>tuple_fold</code> or <code>tuple_counted_fold</code> because you cannot pass a pointer to a function template, only a function.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Utilities.html#ga8b6ade329d6c1dbce2c67a94a58b2304" title="Allows zero-cost unordered expansion of a parameter. ">swallow</a> <a class="el" href="group__Utilities.html#gad65147320c04e61267089a58d71a6302" title="Perform a transform over a std::tuple. ">tuple_transform</a> <a class="el" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b" title="Perform a fold over a std::tuple. ">tuple_fold</a> <a class="el" href="group__Utilities.html#ga3f67981c777b6762ada9da5ad5da11e7" title="Perform a fold over a std::tuple. ">tuple_counted_fold</a> <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classCoordinateMap.html#ac72e164989eafe79b91725a2fe560626">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<a id="gad65147320c04e61267089a58d71a6302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad65147320c04e61267089a58d71a6302">&#9670;&nbsp;</a></span>tuple_transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool ReverseIteration = false, typename... Elements, typename N_aryOp , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr void tuple_transform </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Elements... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tuple</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">N_aryOp &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform a transform over a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>. </p>
+<h3>Details</h3>
+<p>Iterates over the elements in a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> <code>tuple</code> from left to right calling <code>op.operator()(element, index, args...)</code> on each element in <code>tuple</code>. A right-to-left transform can be done by explicitly setting the first template parameter to true. The second argument of the invokable will be a deduced <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>&lt;size_t, value&gt;</code>, from which the current index can be extracted by using <code>decltype(index)::value</code>. For a function object the <code>decltype(index)</code> can be replaced by the deduced type of <code>index</code>. For example, </p><div class="fragment"><div class="line"><span class="keyword">struct </span>negate {</div><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Index, <span class="keyword">typename</span> S&gt;</div><div class="line">  <span class="keywordtype">void</span> operator()(<span class="keyword">const</span> T&amp; element, <a class="code" href="classIndex.html">Index</a> <span class="comment">/*index*/</span>,</div><div class="line">                  S&amp; second_tuple_element) <span class="keyword">const</span> noexcept {</div><div class="line">    std::get&lt;Index::value&gt;(second_tuple_element) = -element;</div><div class="line">  }</div><div class="line">};</div></div><!-- fragment --><p> Using <code>tuple_transform</code> with a generic lambda goes as follows, </p><div class="fragment"><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> my_tupull = std::make_tuple(2, 7, -3.8, 20.9);</div><div class="line">  <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t&lt;decltype(my_tupull)&gt;</a> out_tupull;</div><div class="line">  <a class="code" href="group__Utilities.html#gad65147320c04e61267089a58d71a6302">tuple_transform</a>(my_tupull,</div><div class="line">                  [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; element, <span class="keyword">auto</span> index, <span class="keyword">auto</span>&amp; out_tuple) {</div><div class="line">                    constexpr <span class="keywordtype">size_t</span> index_v = decltype(index)::value;</div><div class="line">                    std::get&lt;index_v&gt;(out_tuple) = -element;</div><div class="line">                  },</div><div class="line">                  out_tupull);</div><div class="line"></div><div class="line">  CHECK(std::get&lt;0&gt;(out_tupull) == -2);</div><div class="line">  CHECK(std::get&lt;1&gt;(out_tupull) == -7);</div><div class="line">  CHECK(std::get&lt;2&gt;(out_tupull) == 3.8);</div><div class="line">  CHECK(std::get&lt;3&gt;(out_tupull) == -20.9);</div></div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__Utilities.html#ga8b6ade329d6c1dbce2c67a94a58b2304" title="Allows zero-cost unordered expansion of a parameter. ">swallow</a> <a class="el" href="group__Utilities.html#ga91227dc4aa14972b7b2e7070719d061b" title="Perform a fold over a std::tuple. ">tuple_fold</a> <a class="el" href="group__Utilities.html#ga3f67981c777b6762ada9da5ad5da11e7" title="Perform a fold over a std::tuple. ">tuple_counted_fold</a> <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a> </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classCoordinateMap.html#a818912ca2b830a6ae82b88a47a9d7007">CoordinateMap&lt; SourceFrame, TargetFrame, Maps &gt;::inv_jacobian()</a>.</p>
 
 </div>
 </div>

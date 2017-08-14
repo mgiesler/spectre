@@ -19,7 +19,7 @@
         @-o-viewport      { width: device-width; }
         @viewport         { width: device-width; }
       </style>
-  <title>SpECTRE: src/Domain/EmbeddingMaps/Identity.hpp File Reference</title>
+  <title>SpECTRE: src/Domain/CoordinateMaps/Identity.hpp File Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -150,13 +150,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_7afaef6ae7a94ddf3cc0ef59b99b3f6c.html">Domain</a></li><li class="navelem"><a class="el" href="dir_505a8b0d2a32e2ed4e6d0ac42452e38b.html">EmbeddingMaps</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_7afaef6ae7a94ddf3cc0ef59b99b3f6c.html">Domain</a></li><li class="navelem"><a class="el" href="dir_d71d27209b20d04cf3cc140be5c9c4b9.html">CoordinateMaps</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Identity.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -164,24 +165,33 @@ $(function() {
 
 <p>Defines the class Identity.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/memory.html">memory</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="TypeAliases_8hpp_source.html">DataStructures/Tensor/TypeAliases.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="EmbeddingMap_8hpp_source.html">Domain/EmbeddingMaps/EmbeddingMap.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/array.html">array</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/memory.html">memory</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Tensor_8hpp_source.html">DataStructures/Tensor/Tensor.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CharmPupable_8hpp_source.html">Parallel/CharmPupable.hpp</a>&quot;</code><br />
 </div>
 <p><a href="Identity_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1Identity.html">EmbeddingMaps::Identity&lt; Dim &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classEmbeddingMaps_1_1Identity.html" title="Identity map from . ">Identity</a> map from \(\xi \rightarrow x\).  <a href="classEmbeddingMaps_1_1Identity.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1Identity.html">CoordinateMaps::Identity&lt; Dim &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCoordinateMaps_1_1Identity.html" title="Identity map from . ">Identity</a> map from \(\xi \rightarrow x\).  <a href="classCoordinateMaps_1_1Identity.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespaceEmbeddingMaps"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEmbeddingMaps.html">EmbeddingMaps</a></td></tr>
-<tr class="memdesc:namespaceEmbeddingMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all embedding maps. <br /></td></tr>
+<tr class="memitem:namespaceCoordinateMaps"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html">CoordinateMaps</a></td></tr>
+<tr class="memdesc:namespaceCoordinateMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all embedding maps. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9275f2358c5d7813201f5677ea5e837b"><td class="memTemplParams" colspan="2">template&lt;size_t Dim&gt; </td></tr>
+<tr class="memitem:a9275f2358c5d7813201f5677ea5e837b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html#a9275f2358c5d7813201f5677ea5e837b">CoordinateMaps::operator==</a> (const <a class="el" href="classCoordinateMaps_1_1Identity.html">CoordinateMaps::Identity</a>&lt; Dim &gt; &amp;, const <a class="el" href="classCoordinateMaps_1_1Identity.html">CoordinateMaps::Identity</a>&lt; Dim &gt; &amp;) noexcept</td></tr>
+<tr class="separator:a9275f2358c5d7813201f5677ea5e837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8a7d03b0645f99866ed9d3d2928bb6"><td class="memTemplParams" colspan="2">template&lt;size_t Dim&gt; </td></tr>
+<tr class="memitem:aef8a7d03b0645f99866ed9d3d2928bb6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html#aef8a7d03b0645f99866ed9d3d2928bb6">CoordinateMaps::operator!=</a> (const <a class="el" href="classCoordinateMaps_1_1Identity.html">CoordinateMaps::Identity</a>&lt; Dim &gt; &amp;lhs, const <a class="el" href="classCoordinateMaps_1_1Identity.html">CoordinateMaps::Identity</a>&lt; Dim &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:aef8a7d03b0645f99866ed9d3d2928bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the class Identity. </p>

@@ -190,13 +190,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a556cdb2320ff98d51a857bcd4ad30957"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank&gt; </td></tr>
 <tr class="memitem:a556cdb2320ff98d51a857bcd4ad30957"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpressions_1_1TensorContract.html#a556cdb2320ff98d51a857bcd4ad30957">fill_contracting_tensor_index</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank &gt; &amp;tensor_index_in, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, <a class="el" href="structTensorExpressions_1_1TensorContract.html#a94660f0f010f4ef4ddc61f5b48a65baf">num_tensor_indices</a> &gt; &amp;tensor_index) const</td></tr>
 <tr class="separator:a556cdb2320ff98d51a857bcd4ad30957"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index1::value and I&lt;=Index2::value and I&lt; Rank - 1)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, Requires&lt;(I &gt; Index1::value and I&lt;=Index2::value and I&lt; Rank - 1)&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpressions_1_1TensorContract.html#aa520df61a66180c027bab3b90a02921f">fill_contracting_tensor_index</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank &gt; &amp;tensor_index_in, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank - 2 &gt; &amp;tensor_index) const</td></tr>
 <tr class="separator:aa520df61a66180c027bab3b90a02921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index2::value and I&lt; Rank - 1)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, Requires&lt;(I &gt; Index2::value and I&lt; Rank - 1)&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:aa520df61a66180c027bab3b90a02921f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpressions_1_1TensorContract.html#aa520df61a66180c027bab3b90a02921f">fill_contracting_tensor_index</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank &gt; &amp;tensor_index_in, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank - 2 &gt; &amp;tensor_index) const</td></tr>
 <tr class="separator:aa520df61a66180c027bab3b90a02921f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae936ee1c2d40ab9aae7e546805b61792"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I==Rank - 1)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ae936ee1c2d40ab9aae7e546805b61792"><td class="memTemplParams" colspan="2">template&lt;size_t I, size_t Rank, Requires&lt;(I==Rank - 1)&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ae936ee1c2d40ab9aae7e546805b61792"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structTensorExpressions_1_1TensorContract.html#ae936ee1c2d40ab9aae7e546805b61792">fill_contracting_tensor_index</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, Rank &gt; &amp;tensor_index_in, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; int, <a class="el" href="structTensorExpressions_1_1TensorContract.html#a94660f0f010f4ef4ddc61f5b48a65baf">num_tensor_indices</a> &gt; &amp;tensor_index) const</td></tr>
 <tr class="separator:ae936ee1c2d40ab9aae7e546805b61792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c53c1f236b0cf6e78e2e0a9b05ab62"><td class="memTemplParams" colspan="2">template&lt;typename... LhsIndices, typename U &gt; </td></tr>
@@ -399,7 +399,7 @@ template&lt;size_t I, size_t Rank&gt; </div>
 <div class="memtemplate">
 template&lt;typename Index1, typename Index2, typename T, typename X, typename Symm, typename IndexLs, typename ArgsLs&gt; </div>
 <div class="memtemplate">
-template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index1::value and I&lt;=Index2::value and I&lt; Rank - 1)&gt; *  = nullptr&gt; </div>
+template&lt;size_t I, size_t Rank, Requires&lt;(I &gt; Index1::value and I&lt;=Index2::value and I&lt; Rank - 1)&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -439,7 +439,7 @@ template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index1::value and
 <div class="memtemplate">
 template&lt;typename Index1, typename Index2, typename T, typename X, typename Symm, typename IndexLs, typename ArgsLs&gt; </div>
 <div class="memtemplate">
-template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index2::value and I&lt; Rank - 1)&gt; *  = nullptr&gt; </div>
+template&lt;size_t I, size_t Rank, Requires&lt;(I &gt; Index2::value and I&lt; Rank - 1)&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -479,7 +479,7 @@ template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I &gt; Index2::value and
 <div class="memtemplate">
 template&lt;typename Index1, typename Index2, typename T, typename X, typename Symm, typename IndexLs, typename ArgsLs&gt; </div>
 <div class="memtemplate">
-template&lt;size_t I, size_t Rank, std::enable_if_t&lt;(I==Rank - 1)&gt; *  = nullptr&gt; </div>
+template&lt;size_t I, size_t Rank, Requires&lt;(I==Rank - 1)&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

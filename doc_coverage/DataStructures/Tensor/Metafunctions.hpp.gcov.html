@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - DataStructures/Tensor/Metafunctions.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - DataStructures/Tensor/Metafunctions.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">12</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:26:05</td>
+            <td class="headerValue">2017-08-14 02:27:43</td>
             <td></td>
           </tr>
           <tr>
@@ -72,76 +72,76 @@
 <span class="lineNum">       6 </span>            : 
 <span class="lineNum">       7 </span>            : #pragma once
 <span class="lineNum">       8 </span>            : 
-<span class="lineNum">       9 </span>            : #include &quot;Utilities/TMPL.hpp&quot;
-<span class="lineNum">      10 </span>            : 
-<span class="lineNum">      11 </span>            : template &lt;typename X, typename Symm, typename IndexLs&gt;
-<span class="lineNum">      12 </span>            : class Tensor;
-<span class="lineNum">      13 </span>            : 
-<span class="lineNum">      14 </span>            : /// \ingroup Tensor
-<span class="lineNum">      15 </span>            : /// Contains all metafunctions related to Tensor manipulations
-<span class="lineNum">      16 </span>            : namespace TensorMetafunctions {
-<span class="lineNum">      17 </span>            : namespace detail {
-<span class="lineNum">      18 </span>            : /*!
-<span class="lineNum">      19 </span>            :  * \ingroup Tensor
-<span class="lineNum">      20 </span>            :  * Compute the number of components and independent components for a given
-<span class="lineNum">      21 </span>            :  * Symmetry and TensorIndex list
-<span class="lineNum">      22 </span>            :  * \tparam Symmetry_t Symmetry of the Tensor
-<span class="lineNum">      23 </span>            :  * \tparam Indices_t typelist of the TensorIndex's of the Tensor
-<span class="lineNum">      24 </span>            :  */
-<span class="lineNum">      25 </span>            : template &lt;typename Symmetry_t, typename Indices_t, typename = void&gt;
-<span class="lineNum">      26 </span>            : struct number_of_independent_components_impl;
-<span class="lineNum">      27 </span>            : 
-<span class="lineNum">      28 </span>            : /*!
-<span class="lineNum">      29 </span>            :  * \ingroup Tensor
-<span class="lineNum">      30 </span>            :  * Case where the Tensor is a scalar
-<span class="lineNum">      31 </span>            :  */
-<span class="lineNum">      32 </span>            : template &lt;&gt;
-<span class="lineNum">      33 </span>            : struct number_of_independent_components_impl&lt;tmpl::list&lt;&gt;, tmpl::list&lt;&gt;&gt; {
-<span class="lineNum">      34 </span>            :   using number_of_components = tmpl::size_t&lt;1&gt;;
-<span class="lineNum">      35 </span>            :   using number_of_independent_components = tmpl::size_t&lt;1&gt;;
-<span class="lineNum">      36 </span>            : };
-<span class="lineNum">      37 </span>            : 
-<span class="lineNum">      38 </span>            : /*!
-<span class="lineNum">      39 </span>            :  * \ingroup Tensor
-<span class="lineNum">      40 </span>            :  * End recursion, only one index left. The component number is 1 (first
-<span class="lineNum">      41 </span>            :  * component) and the number of components and independent components is the
-<span class="lineNum">      42 </span>            :  * dimensionality of the first index
-<span class="lineNum">      43 </span>            :  */
-<span class="lineNum">      44 </span>            : 
-<span class="lineNum">      45 </span>            : template &lt;typename SymmetryValue, typename Index&gt;
-<span class="lineNum">      46 </span>            : struct number_of_independent_components_impl&lt;typelist&lt;SymmetryValue&gt;,
-<span class="lineNum">      47 </span>            :                                              typelist&lt;Index&gt;, void&gt; {
-<span class="lineNum">      48 </span>            :   using number_of_independent_components = tmpl::size_t&lt;Index::dim&gt;;
-<span class="lineNum">      49 </span>            :   using component_number = tmpl::size_t&lt;1&gt;;
-<span class="lineNum">      50 </span>            :   using number_of_components = tmpl::size_t&lt;Index::dim&gt;;
-<span class="lineNum">      51 </span>            : };
-<span class="lineNum">      52 </span>            : 
-<span class="lineNum">      53 </span>            : /// \cond HIDDEN_SYMBOLS
-<span class="lineNum">      54 </span>            : /*!
-<span class="lineNum">      55 </span>            :  * \ingroup Tensor
-<span class="lineNum">      56 </span>            :  *
-<span class="lineNum">      57 </span>            :  * General case for computing the number of (independent) components. The type
-<span class="lineNum">      58 </span>            :  * alias `next` computes the number of components with one fewer TensorIndex,
-<span class="lineNum">      59 </span>            :  * popping the front off the typelists. The `number_of_components` is given by
-<span class="lineNum">      60 </span>            :  * the product of the dimensionality of each TensorIndex. The component_number
-<span class="lineNum">      61 </span>            :  * is used to keep track of whether the current component is independent or
-<span class="lineNum">      62 </span>            :  * not. This is done by comparing the `component_number + 1` with the first
-<span class="lineNum">      63 </span>            :  * element in Symmetry, if they are equal then we have a new independent
-<span class="lineNum">      64 </span>            :  * component, otherwise the component is a symmetry. For the `component_number`
-<span class="lineNum">      65 </span>            :  * comparison to make sense recall that symmetry is sorted in _descending_
-<span class="lineNum">      66 </span>            :  * order.
-<span class="lineNum">      67 </span>            :  * Finally, to compute the number of independent components we perform the same
-<span class="lineNum">      68 </span>            :  * check with `component_number + 1` and the front of the Symmetry list. If
-<span class="lineNum">      69 </span>            :  * this is a new component we multiply by the dimensionality of the index,
-<span class="lineNum">      70 </span>            :  * otherwise we multiply by `dim + 1` or `dim - 1` depending on whether the
-<span class="lineNum">      71 </span>            :  * index is symmetric or anti-symmetric, respectively and  divide by two.
-<span class="lineNum">      72 </span>            :  */
-<span class="lineNum">      73 </span>            : template &lt;typename FirstSymm, typename... SymmetryValues, typename FirstIndex,
-<span class="lineNum">      74 </span>            :           typename... Indices&gt;
-<span class="lineNum">      75 </span>            : struct number_of_independent_components_impl&lt;
-<span class="lineNum">      76 </span>            :     typelist&lt;FirstSymm, SymmetryValues...&gt;, typelist&lt;FirstIndex, Indices...&gt;,
-<span class="lineNum">      77 </span>            :     std::enable_if_t&lt;(sizeof...(SymmetryValues) &gt; 0 and
-<span class="lineNum">      78 </span>            :                       sizeof...(Indices) &gt; 0)&gt;&gt; {
+<span class="lineNum">       9 </span>            : #include &quot;Utilities/Requires.hpp&quot;
+<span class="lineNum">      10 </span>            : #include &quot;Utilities/TMPL.hpp&quot;
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : template &lt;typename X, typename Symm, typename IndexLs&gt;
+<span class="lineNum">      13 </span>            : class Tensor;
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span>            : /// \ingroup Tensor
+<span class="lineNum">      16 </span>            : /// Contains all metafunctions related to Tensor manipulations
+<span class="lineNum">      17 </span>            : namespace TensorMetafunctions {
+<span class="lineNum">      18 </span>            : namespace detail {
+<span class="lineNum">      19 </span>            : /*!
+<span class="lineNum">      20 </span>            :  * \ingroup Tensor
+<span class="lineNum">      21 </span>            :  * Compute the number of components and independent components for a given
+<span class="lineNum">      22 </span>            :  * Symmetry and TensorIndex list
+<span class="lineNum">      23 </span>            :  * \tparam Symmetry_t Symmetry of the Tensor
+<span class="lineNum">      24 </span>            :  * \tparam Indices_t typelist of the TensorIndex's of the Tensor
+<span class="lineNum">      25 </span>            :  */
+<span class="lineNum">      26 </span>            : template &lt;typename Symmetry_t, typename Indices_t, typename = std::nullptr_t&gt;
+<span class="lineNum">      27 </span>            : struct number_of_independent_components_impl;
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            : /*!
+<span class="lineNum">      30 </span>            :  * \ingroup Tensor
+<span class="lineNum">      31 </span>            :  * Case where the Tensor is a scalar
+<span class="lineNum">      32 </span>            :  */
+<span class="lineNum">      33 </span>            : template &lt;&gt;
+<span class="lineNum">      34 </span>            : struct number_of_independent_components_impl&lt;tmpl::list&lt;&gt;, tmpl::list&lt;&gt;&gt; {
+<span class="lineNum">      35 </span>            :   using number_of_components = tmpl::size_t&lt;1&gt;;
+<span class="lineNum">      36 </span>            :   using number_of_independent_components = tmpl::size_t&lt;1&gt;;
+<span class="lineNum">      37 </span>            : };
+<span class="lineNum">      38 </span>            : 
+<span class="lineNum">      39 </span>            : /*!
+<span class="lineNum">      40 </span>            :  * \ingroup Tensor
+<span class="lineNum">      41 </span>            :  * End recursion, only one index left. The component number is 1 (first
+<span class="lineNum">      42 </span>            :  * component) and the number of components and independent components is the
+<span class="lineNum">      43 </span>            :  * dimensionality of the first index
+<span class="lineNum">      44 </span>            :  */
+<span class="lineNum">      45 </span>            : 
+<span class="lineNum">      46 </span>            : template &lt;typename SymmetryValue, typename Index&gt;
+<span class="lineNum">      47 </span>            : struct number_of_independent_components_impl&lt;typelist&lt;SymmetryValue&gt;,
+<span class="lineNum">      48 </span>            :                                              typelist&lt;Index&gt;, std::nullptr_t&gt; {
+<span class="lineNum">      49 </span>            :   using number_of_independent_components = tmpl::size_t&lt;Index::dim&gt;;
+<span class="lineNum">      50 </span>            :   using component_number = tmpl::size_t&lt;1&gt;;
+<span class="lineNum">      51 </span>            :   using number_of_components = tmpl::size_t&lt;Index::dim&gt;;
+<span class="lineNum">      52 </span>            : };
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            : /// \cond HIDDEN_SYMBOLS
+<span class="lineNum">      55 </span>            : /*!
+<span class="lineNum">      56 </span>            :  * \ingroup Tensor
+<span class="lineNum">      57 </span>            :  *
+<span class="lineNum">      58 </span>            :  * General case for computing the number of (independent) components. The type
+<span class="lineNum">      59 </span>            :  * alias `next` computes the number of components with one fewer TensorIndex,
+<span class="lineNum">      60 </span>            :  * popping the front off the typelists. The `number_of_components` is given by
+<span class="lineNum">      61 </span>            :  * the product of the dimensionality of each TensorIndex. The component_number
+<span class="lineNum">      62 </span>            :  * is used to keep track of whether the current component is independent or
+<span class="lineNum">      63 </span>            :  * not. This is done by comparing the `component_number + 1` with the first
+<span class="lineNum">      64 </span>            :  * element in Symmetry, if they are equal then we have a new independent
+<span class="lineNum">      65 </span>            :  * component, otherwise the component is a symmetry. For the `component_number`
+<span class="lineNum">      66 </span>            :  * comparison to make sense recall that symmetry is sorted in _descending_
+<span class="lineNum">      67 </span>            :  * order.
+<span class="lineNum">      68 </span>            :  * Finally, to compute the number of independent components we perform the same
+<span class="lineNum">      69 </span>            :  * check with `component_number + 1` and the front of the Symmetry list. If
+<span class="lineNum">      70 </span>            :  * this is a new component we multiply by the dimensionality of the index,
+<span class="lineNum">      71 </span>            :  * otherwise we multiply by `dim + 1` or `dim - 1` depending on whether the
+<span class="lineNum">      72 </span>            :  * index is symmetric or anti-symmetric, respectively and  divide by two.
+<span class="lineNum">      73 </span>            :  */
+<span class="lineNum">      74 </span>            : template &lt;typename FirstSymm, typename... SymmetryValues, typename FirstIndex,
+<span class="lineNum">      75 </span>            :           typename... Indices&gt;
+<span class="lineNum">      76 </span>            : struct number_of_independent_components_impl&lt;
+<span class="lineNum">      77 </span>            :     typelist&lt;FirstSymm, SymmetryValues...&gt;, typelist&lt;FirstIndex, Indices...&gt;,
+<span class="lineNum">      78 </span>            :     Requires&lt;(sizeof...(SymmetryValues) &gt; 0 and sizeof...(Indices) &gt; 0)&gt;&gt; {
 <span class="lineNum">      79 </span>            :   static_assert(
 <span class="lineNum">      80 </span>            :       sizeof...(SymmetryValues) == sizeof...(Indices),
 <span class="lineNum">      81 </span>            :       &quot;Number of components in Symmetry_t and Indices_t must be the same.&quot;);

@@ -193,11 +193,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2895e57f4cacd63d2549655bb29bba7b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#ga2895e57f4cacd63d2549655bb29bba7b">serialize_and_deserialize</a> (const T &amp;t)</td></tr>
 <tr class="memdesc:ga2895e57f4cacd63d2549655bb29bba7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes and deserializes an object <code>t</code> of type <code>T</code>  <a href="group__TestingFramework.html#ga2895e57f4cacd63d2549655bb29bba7b">More...</a><br /></td></tr>
 <tr class="separator:ga2895e57f4cacd63d2549655bb29bba7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a606665331765067f231cf230f7b1ca"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; tt::has_equivalence&lt; T &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a6a606665331765067f231cf230f7b1ca"><td class="memTemplParams" colspan="2">template&lt;typename T , Requires&lt; tt::has_equivalence&lt; T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a6a606665331765067f231cf230f7b1ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TestHelpers_8hpp.html#a6a606665331765067f231cf230f7b1ca">test_copy_semantics</a> (const T &amp;a)</td></tr>
 <tr class="memdesc:a6a606665331765067f231cf230f7b1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test for copy semantics assuming operator== is implement correctly.  <a href="#a6a606665331765067f231cf230f7b1ca">More...</a><br /></td></tr>
 <tr class="separator:a6a606665331765067f231cf230f7b1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaaa78f64dc4d1621eb372ca969e99c9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; tt::has_equivalence&lt; T &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:aeaaa78f64dc4d1621eb372ca969e99c9"><td class="memTemplParams" colspan="2">template&lt;typename T , Requires&lt; tt::has_equivalence&lt; T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:aeaaa78f64dc4d1621eb372ca969e99c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="TestHelpers_8hpp.html#aeaaa78f64dc4d1621eb372ca969e99c9">test_move_semantics</a> (T &amp;&amp;a, const T &amp;comparison)</td></tr>
 <tr class="memdesc:aeaaa78f64dc4d1621eb372ca969e99c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test for move semantics assuming operator== is implement correctly.  <a href="#aeaaa78f64dc4d1621eb372ca969e99c9">More...</a><br /></td></tr>
 <tr class="separator:aeaaa78f64dc4d1621eb372ca969e99c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,7 +225,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if&lt; tt::has_equivalence&lt; T &gt;::value, int &gt;::type  = 0&gt; </div>
+template&lt;typename T , Requires&lt; tt::has_equivalence&lt; T &gt;::value &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void test_copy_semantics </td>
@@ -271,7 +271,7 @@ template&lt;typename Container &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename std::enable_if&lt; tt::has_equivalence&lt; T &gt;::value, int &gt;::type  = 0&gt; </div>
+template&lt;typename T , Requires&lt; tt::has_equivalence&lt; T &gt;::value &gt;  = nullptr&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void test_move_semantics </td>

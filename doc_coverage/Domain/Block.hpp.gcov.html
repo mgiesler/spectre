@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 1d78a8ba6bb677c493995d3a5949a9c4834dd0a6 - Domain/Block.hpp</title>
+  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/Block.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/1d78a8ba6bb677c493995d3a5949a9c4834dd0a6">1d78a8ba6bb677c493995d3a5949a9c4834dd0a6</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntry">20</td>
-            <td class="headerCovTableEntryLo">30.0 %</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntryLo">28.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-13 02:26:05</td>
+            <td class="headerValue">2017-08-14 02:27:43</td>
             <td></td>
           </tr>
           <tr>
@@ -72,89 +72,124 @@
 <span class="lineNum">       6 </span>            : 
 <span class="lineNum">       7 </span>            : #pragma once
 <span class="lineNum">       8 </span>            : 
-<span class="lineNum">       9 </span>            : #include &lt;iosfwd&gt;
-<span class="lineNum">      10 </span>            : #include &lt;memory&gt;
+<span class="lineNum">       9 </span>            : #include &lt;memory&gt;
+<span class="lineNum">      10 </span>            : #include &lt;ostream&gt;
 <span class="lineNum">      11 </span>            : #include &lt;unordered_map&gt;
 <span class="lineNum">      12 </span>            : #include &lt;unordered_set&gt;
 <span class="lineNum">      13 </span>            : 
 <span class="lineNum">      14 </span>            : #include &quot;Domain/BlockNeighbor.hpp&quot;
-<span class="lineNum">      15 </span>            : #include &quot;Domain/Direction.hpp&quot;
-<span class="lineNum">      16 </span>            : #include &quot;Domain/EmbeddingMaps/EmbeddingMap.hpp&quot;
-<span class="lineNum">      17 </span>            : 
-<span class="lineNum">      18 </span>            : /// \ingroup ComputationalDomain
-<span class="lineNum">      19 </span>            : /// A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational
-<span class="lineNum">      20 </span>            : /// domain that defines the root node of a tree which is used to construct the
-<span class="lineNum">      21 </span>            : /// Elements that cover a region of the computational domain.
-<span class="lineNum">      22 </span>            : ///
-<span class="lineNum">      23 </span>            : /// Each codimension 1 boundary of a Block&lt;VolumeDim&gt; is either an external
-<span class="lineNum">      24 </span>            : /// boundary or identical to a boundary of one other Block.
-<span class="lineNum">      25 </span>            : ///
-<span class="lineNum">      26 </span>            : /// A Block has logical coordinates that go from -1 to +1 in each
-<span class="lineNum">      27 </span>            : /// dimension.  The global coordinates are obtained from the logical
-<span class="lineNum">      28 </span>            : /// coordinates from the EmbeddingMap:  EmbeddingMap::operator() takes
-<span class="lineNum">      29 </span>            : /// Points in the Logical Frame (i.e., logical coordinates) and
-<span class="lineNum">      30 </span>            : /// returns Points in the Grid Frame (i.e., global coordinates).
-<span class="lineNum">      31 </span>            : ///
-<span class="lineNum">      32 </span>            : /// \tparam VolumeDim the dimension of the Block (i.e. the volume dimension).
-<span class="lineNum">      33 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      34 </span><span class="lineCov">          1 : class Block {</span>
-<span class="lineNum">      35 </span>            :  public:
-<span class="lineNum">      36 </span>            :   /// \param embedding_map the EmbeddingMap.
-<span class="lineNum">      37 </span>            :   /// \param id a unique ID.
-<span class="lineNum">      38 </span>            :   /// \param neighbors info about the Blocks that share a codimension 1
-<span class="lineNum">      39 </span>            :   /// boundary with this Block.
-<span class="lineNum">      40 </span><span class="lineCov">          1 :   Block(const EmbeddingMap&lt;VolumeDim, VolumeDim&gt;&amp; embedding_map, size_t id,</span>
-<span class="lineNum">      41 </span>            :         std::unordered_map&lt;Direction&lt;VolumeDim&gt;, BlockNeighbor&lt;VolumeDim&gt;&gt;&amp;&amp;
-<span class="lineNum">      42 </span>            :             neighbors);
-<span class="lineNum">      43 </span>            : 
-<span class="lineNum">      44 </span><span class="lineNoCov">          0 :   Block() = default;</span>
-<span class="lineNum">      45 </span><span class="lineNoCov">          0 :   ~Block() = default;</span>
-<span class="lineNum">      46 </span><span class="lineNoCov">          0 :   Block(const Block&lt;VolumeDim&gt;&amp;) = delete;</span>
-<span class="lineNum">      47 </span><span class="lineNoCov">          0 :   Block(Block&lt;VolumeDim&gt;&amp;&amp;) = default;</span>
-<span class="lineNum">      48 </span><span class="lineNoCov">          0 :   Block&lt;VolumeDim&gt;&amp; operator=(const Block&lt;VolumeDim&gt;&amp;) = delete;</span>
-<span class="lineNum">      49 </span><span class="lineNoCov">          0 :   Block&lt;VolumeDim&gt;&amp; operator=(Block&lt;VolumeDim&gt;&amp;&amp;) = default;</span>
-<span class="lineNum">      50 </span>            : 
-<span class="lineNum">      51 </span><span class="lineNoCov">          0 :   const EmbeddingMap&lt;VolumeDim, VolumeDim&gt;&amp; embedding_map() const noexcept {</span>
-<span class="lineNum">      52 </span>            :     return *embedding_map_;
-<span class="lineNum">      53 </span>            :   }
-<span class="lineNum">      54 </span>            : 
-<span class="lineNum">      55 </span>            :   /// A unique identifier for the Block that is in the range
-<span class="lineNum">      56 </span>            :   /// [0, number_of_blocks -1] where number_of_blocks is the number
-<span class="lineNum">      57 </span>            :   /// of Blocks that cover the computational domain.
-<span class="lineNum">      58 </span><span class="lineCov">          1 :   size_t id() const noexcept { return id_; }</span>
-<span class="lineNum">      59 </span>            : 
-<span class="lineNum">      60 </span>            :   /// Information about the neighboring Blocks.
-<span class="lineNum">      61 </span>            :   const std::unordered_map&lt;Direction&lt;VolumeDim&gt;, BlockNeighbor&lt;VolumeDim&gt;&gt;&amp;
-<span class="lineNum">      62 </span><span class="lineCov">          1 :   neighbors() const noexcept {</span>
-<span class="lineNum">      63 </span>            :     return neighbors_;
-<span class="lineNum">      64 </span>            :   }
-<span class="lineNum">      65 </span>            : 
-<span class="lineNum">      66 </span>            :   /// The directions of the faces of the Block that are external boundaries.
-<span class="lineNum">      67 </span><span class="lineCov">          1 :   const std::unordered_set&lt;Direction&lt;VolumeDim&gt;&gt;&amp; external_boundaries() const</span>
-<span class="lineNum">      68 </span>            :       noexcept {
-<span class="lineNum">      69 </span>            :     return external_boundaries_;
-<span class="lineNum">      70 </span>            :   }
-<span class="lineNum">      71 </span>            : 
-<span class="lineNum">      72 </span>            :   /// Serialization for Charm++
-<span class="lineNum">      73 </span><span class="lineCov">          1 :   void pup(PUP::er&amp; p);  // NOLINT</span>
-<span class="lineNum">      74 </span>            : 
-<span class="lineNum">      75 </span>            :  private:
-<span class="lineNum">      76 </span><span class="lineNoCov">          0 :   std::unique_ptr&lt;EmbeddingMap&lt;VolumeDim, VolumeDim&gt;&gt; embedding_map_;</span>
-<span class="lineNum">      77 </span><span class="lineNoCov">          0 :   size_t id_;</span>
-<span class="lineNum">      78 </span><span class="lineNoCov">          0 :   std::unordered_map&lt;Direction&lt;VolumeDim&gt;, BlockNeighbor&lt;VolumeDim&gt;&gt; neighbors_;</span>
-<span class="lineNum">      79 </span><span class="lineNoCov">          0 :   std::unordered_set&lt;Direction&lt;VolumeDim&gt;&gt; external_boundaries_;</span>
-<span class="lineNum">      80 </span>            : };
-<span class="lineNum">      81 </span>            : 
-<span class="lineNum">      82 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      83 </span><span class="lineNoCov">          0 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Block&lt;VolumeDim&gt;&amp; block);</span>
-<span class="lineNum">      84 </span>            : 
-<span class="lineNum">      85 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      86 </span><span class="lineNoCov">          0 : bool operator==(const Block&lt;VolumeDim&gt;&amp; lhs,</span>
-<span class="lineNum">      87 </span>            :                 const Block&lt;VolumeDim&gt;&amp; rhs) noexcept;
-<span class="lineNum">      88 </span>            : 
-<span class="lineNum">      89 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      90 </span><span class="lineNoCov">          0 : bool operator!=(const Block&lt;VolumeDim&gt;&amp; lhs,</span>
-<span class="lineNum">      91 </span>            :                 const Block&lt;VolumeDim&gt;&amp; rhs) noexcept;
+<span class="lineNum">      15 </span>            : #include &quot;Domain/CoordinateMaps/CoordinateMap.hpp&quot;
+<span class="lineNum">      16 </span>            : #include &quot;Domain/Direction.hpp&quot;
+<span class="lineNum">      17 </span>            : #include &quot;Utilities/StdHelpers.hpp&quot;
+<span class="lineNum">      18 </span>            : 
+<span class="lineNum">      19 </span>            : /// \ingroup ComputationalDomain
+<span class="lineNum">      20 </span>            : /// A Block&lt;VolumeDim&gt; is a region of a VolumeDim-dimensional computational
+<span class="lineNum">      21 </span>            : /// domain that defines the root node of a tree which is used to construct the
+<span class="lineNum">      22 </span>            : /// Elements that cover a region of the computational domain.
+<span class="lineNum">      23 </span>            : ///
+<span class="lineNum">      24 </span>            : /// Each codimension 1 boundary of a Block&lt;VolumeDim&gt; is either an external
+<span class="lineNum">      25 </span>            : /// boundary or identical to a boundary of one other Block.
+<span class="lineNum">      26 </span>            : ///
+<span class="lineNum">      27 </span>            : /// A Block has logical coordinates that go from -1 to +1 in each
+<span class="lineNum">      28 </span>            : /// dimension.  The global coordinates are obtained from the logical
+<span class="lineNum">      29 </span>            : /// coordinates from the EmbeddingMap:  EmbeddingMap::operator() takes
+<span class="lineNum">      30 </span>            : /// Points in the Logical Frame (i.e., logical coordinates) and
+<span class="lineNum">      31 </span>            : /// returns Points in the Grid Frame (i.e., global coordinates).
+<span class="lineNum">      32 </span>            : ///
+<span class="lineNum">      33 </span>            : /// \tparam Map the type of CoordinateMap the Block will hold
+<span class="lineNum">      34 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">      35 </span><span class="lineCov">          1 : class Block {</span>
+<span class="lineNum">      36 </span>            :  public:
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 :   static constexpr auto dim = Map::dim;</span>
+<span class="lineNum">      38 </span>            :   /// \param embedding_map the EmbeddingMap.
+<span class="lineNum">      39 </span>            :   /// \param id a unique ID.
+<span class="lineNum">      40 </span>            :   /// \param neighbors info about the Blocks that share a codimension 1
+<span class="lineNum">      41 </span>            :   /// boundary with this Block.
+<span class="lineNum">      42 </span><span class="lineCov">          1 :   Block(Map embedding_map, size_t id,</span>
+<span class="lineNum">      43 </span>            :         std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt;&amp;&amp; neighbors);
+<span class="lineNum">      44 </span>            : 
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :   Block() = default;</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :   ~Block() = default;</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :   Block(const Block&amp;) = delete;</span>
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 :   Block(Block&amp;&amp;) = default;</span>
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :   Block&amp; operator=(const Block&amp;) = delete;</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :   Block&amp; operator=(Block&amp;&amp;) = default;</span>
+<span class="lineNum">      51 </span>            : 
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :   const Map&amp; embedding_map() const noexcept { return embedding_map_; }</span>
+<span class="lineNum">      53 </span>            : 
+<span class="lineNum">      54 </span>            :   /// A unique identifier for the Block that is in the range
+<span class="lineNum">      55 </span>            :   /// [0, number_of_blocks -1] where number_of_blocks is the number
+<span class="lineNum">      56 </span>            :   /// of Blocks that cover the computational domain.
+<span class="lineNum">      57 </span><span class="lineCov">          1 :   size_t id() const noexcept { return id_; }</span>
+<span class="lineNum">      58 </span>            : 
+<span class="lineNum">      59 </span>            :   /// Information about the neighboring Blocks.
+<span class="lineNum">      60 </span><span class="lineCov">          1 :   const std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt;&amp; neighbors()</span>
+<span class="lineNum">      61 </span>            :       const noexcept {
+<span class="lineNum">      62 </span>            :     return neighbors_;
+<span class="lineNum">      63 </span>            :   }
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span>            :   /// The directions of the faces of the Block that are external boundaries.
+<span class="lineNum">      66 </span><span class="lineCov">          1 :   const std::unordered_set&lt;Direction&lt;dim&gt;&gt;&amp; external_boundaries() const</span>
+<span class="lineNum">      67 </span>            :       noexcept {
+<span class="lineNum">      68 </span>            :     return external_boundaries_;
+<span class="lineNum">      69 </span>            :   }
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span>            :   /// Serialization for Charm++
+<span class="lineNum">      72 </span><span class="lineCov">          1 :   void pup(PUP::er&amp; p);  // NOLINT</span>
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span>            :  private:
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :   Map embedding_map_;</span>
+<span class="lineNum">      76 </span><span class="lineNoCov">          0 :   size_t id_{0};</span>
+<span class="lineNum">      77 </span><span class="lineNoCov">          0 :   std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt; neighbors_;</span>
+<span class="lineNum">      78 </span><span class="lineNoCov">          0 :   std::unordered_set&lt;Direction&lt;dim&gt;&gt; external_boundaries_;</span>
+<span class="lineNum">      79 </span>            : };
+<span class="lineNum">      80 </span>            : 
+<span class="lineNum">      81 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">      82 </span>            : Block&lt;Map&gt;::Block(
+<span class="lineNum">      83 </span>            :     Map embedding_map, const size_t id,
+<span class="lineNum">      84 </span>            :     std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt;&amp;&amp; neighbors)
+<span class="lineNum">      85 </span>            :     : embedding_map_(std::move(embedding_map)),
+<span class="lineNum">      86 </span>            :       id_(id),
+<span class="lineNum">      87 </span>            :       neighbors_(std::move(neighbors)) {
+<span class="lineNum">      88 </span>            :   // Loop over Directions to search which Directions were not set to neighbors_,
+<span class="lineNum">      89 </span>            :   // set these Directions to external_boundaries_.
+<span class="lineNum">      90 </span>            :   for (const auto&amp; direction : Direction&lt;dim&gt;::all_directions()) {
+<span class="lineNum">      91 </span>            :     if (neighbors_.find(direction) == neighbors_.end()) {
+<span class="lineNum">      92 </span>            :       external_boundaries_.emplace(std::move(direction));
+<span class="lineNum">      93 </span>            :     }
+<span class="lineNum">      94 </span>            :   }
+<span class="lineNum">      95 </span>            : }
+<span class="lineNum">      96 </span>            : 
+<span class="lineNum">      97 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">      98 </span>            : void Block&lt;Map&gt;::pup(PUP::er&amp; p) {
+<span class="lineNum">      99 </span>            :   p | embedding_map_;
+<span class="lineNum">     100 </span>            :   p | id_;
+<span class="lineNum">     101 </span>            :   p | neighbors_;
+<span class="lineNum">     102 </span>            :   p | external_boundaries_;
+<span class="lineNum">     103 </span>            : }
+<span class="lineNum">     104 </span>            : 
+<span class="lineNum">     105 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">     106 </span><span class="lineNoCov">          0 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Block&lt;Map&gt;&amp; block) {</span>
+<span class="lineNum">     107 </span>            :   os &lt;&lt; &quot;Block &quot; &lt;&lt; block.id() &lt;&lt; &quot;:\n&quot;;
+<span class="lineNum">     108 </span>            :   os &lt;&lt; &quot;Neighbors:\n&quot;;
+<span class="lineNum">     109 </span>            :   for (const auto&amp; direction_to_neighbors : block.neighbors()) {
+<span class="lineNum">     110 </span>            :     os &lt;&lt; direction_to_neighbors.first &lt;&lt; &quot;: &quot; &lt;&lt; direction_to_neighbors.second
+<span class="lineNum">     111 </span>            :        &lt;&lt; &quot;\n&quot;;
+<span class="lineNum">     112 </span>            :   }
+<span class="lineNum">     113 </span>            :   os &lt;&lt; &quot;External boundaries: &quot; &lt;&lt; block.external_boundaries() &lt;&lt; &quot;\n&quot;;
+<span class="lineNum">     114 </span>            :   return os;
+<span class="lineNum">     115 </span>            : }
+<span class="lineNum">     116 </span>            : 
+<span class="lineNum">     117 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">     118 </span><span class="lineNoCov">          0 : bool operator==(const Block&lt;Map&gt;&amp; lhs, const Block&lt;Map&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">     119 </span>            :   return (lhs.id() == rhs.id() and lhs.neighbors() == rhs.neighbors() and
+<span class="lineNum">     120 </span>            :           lhs.external_boundaries() == rhs.external_boundaries());
+<span class="lineNum">     121 </span>            : }
+<span class="lineNum">     122 </span>            : 
+<span class="lineNum">     123 </span>            : template &lt;typename Map&gt;
+<span class="lineNum">     124 </span><span class="lineNoCov">          0 : bool operator!=(const Block&lt;Map&gt;&amp; lhs, const Block&lt;Map&gt;&amp; rhs) noexcept {</span>
+<span class="lineNum">     125 </span>            :   return not(lhs == rhs);
+<span class="lineNum">     126 </span>            : }
 </pre>
       </td>
     </tr>

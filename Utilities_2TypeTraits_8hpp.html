@@ -182,6 +182,7 @@ $(function() {
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/unordered_map.html">unordered_map</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/unordered_set.html">unordered_set</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Requires_8hpp_source.html">Utilities/Requires.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="StlStreamDeclarations_8hpp_source.html">Utilities/StlStreamDeclarations.hpp</a>&quot;</code><br />
 </div>
 <p><a href="Utilities_2TypeTraits_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -242,6 +243,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1is__integer.html">tt::is_integer&lt; I &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if <code>I</code> is an integer type (non-bool, non-character), unlike <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/is_integral.html">std::is_integral</a>.  <a href="structtt_1_1is__integer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtt_1_1remove__reference__wrapper.html">tt::remove_reference_wrapper&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying type if the type is a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>, otherwise returns the type itself.  <a href="structtt_1_1remove__reference__wrapper.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -267,6 +271,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gafb844f727c41f01d5f2f2b316b648c7a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TypeTraits.html#gafb844f727c41f01d5f2f2b316b648c7a">tt::array_size</a> = decltype(TypeTraits_details::array_size_impl(std::declval&lt; const Array &amp; &gt;()))</td></tr>
 <tr class="memdesc:gafb844f727c41f01d5f2f2b316b648c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a> as a <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>.  <a href="group__TypeTraits.html#gafb844f727c41f01d5f2f2b316b648c7a">More...</a><br /></td></tr>
 <tr class="separator:gafb844f727c41f01d5f2f2b316b648c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacett.html#ae47692e0f3f890ba58c15e71f3576a3c">tt::remove_reference_wrapper_t</a> = typename remove_reference_wrapper&lt; T &gt;::type</td></tr>
+<tr class="separator:ae47692e0f3f890ba58c15e71f3576a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

@@ -167,6 +167,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/type_traits.html">type_traits</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="ForceInline_8hpp_source.html">Utilities/ForceInline.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Gsl_8hpp_source.html">Utilities/Gsl.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Requires_8hpp_source.html">Utilities/Requires.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TMPL_8hpp_source.html">Utilities/TMPL.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Utilities_2TypeTraits_8hpp_source.html">Utilities/TypeTraits.hpp</a>&quot;</code><br />
 </div>
@@ -179,7 +180,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga6c01ded3973bb4b9973e5381c32c0807"><td class="memTemplParams" colspan="2">template&lt;typename T , std::enable_if_t&lt; std::is_integral&lt; T &gt;::value and not std::is_same&lt; bool, T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga6c01ded3973bb4b9973e5381c32c0807"><td class="memTemplParams" colspan="2">template&lt;typename T , Requires&lt; std::is_integral&lt; T &gt;::value and not std::is_same&lt; bool, T &gt;::value &gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ga6c01ded3973bb4b9973e5381c32c0807"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga6c01ded3973bb4b9973e5381c32c0807">two_to_the</a> (T n)</td></tr>
 <tr class="memdesc:ga6c01ded3973bb4b9973e5381c32c0807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute 2 to the n for integral types.  <a href="group__ConstantExpressions.html#ga6c01ded3973bb4b9973e5381c32c0807">More...</a><br /></td></tr>
 <tr class="separator:ga6c01ded3973bb4b9973e5381c32c0807"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,14 +199,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga711d1085380b0f6e020ad98af636350b"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto) constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga711d1085380b0f6e020ad98af636350b">pow</a> (const T &amp;t)</td></tr>
 <tr class="memdesc:ga711d1085380b0f6e020ad98af636350b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute t^N where N is an integer (positive or negative)  <a href="group__ConstantExpressions.html#ga711d1085380b0f6e020ad98af636350b">More...</a><br /></td></tr>
 <tr class="separator:ga711d1085380b0f6e020ad98af636350b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplParams" colspan="2">template&lt;typename Ls , std::enable_if_t&lt; not tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplParams" colspan="2">template&lt;typename Ls , Requires&lt; not tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; decltype(tmpl::front&lt; Ls &gt;::value)&gt;, tmpl::size&lt; Ls &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ConstantExpressions.html#ga09be92d0bb8581e96be39b82b18871df">make_array_from_list</a> ()</td></tr>
 <tr class="memdesc:ga09be92d0bb8581e96be39b82b18871df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an array from a typelist that holds <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>'s all of which have the same <code>value_type</code>  <a href="group__ConstantExpressions.html#ga09be92d0bb8581e96be39b82b18871df">More...</a><br /></td></tr>
 <tr class="separator:ga09be92d0bb8581e96be39b82b18871df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c63793d5a8986fb6f9013033c4a2991"><td class="memTemplParams" colspan="2">template&lt;typename TypeForZero , std::enable_if_t&lt; not tt::is_a_v&lt; tmpl::list, TypeForZero &gt;&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a9c63793d5a8986fb6f9013033c4a2991"><td class="memTemplParams" colspan="2">template&lt;typename TypeForZero , Requires&lt; not tt::is_a_v&lt; tmpl::list, TypeForZero &gt;&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:a9c63793d5a8986fb6f9013033c4a2991"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/decay.html">std::decay_t</a>&lt; TypeForZero &gt;, 0 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ConstantExpressions_8hpp.html#a9c63793d5a8986fb6f9013033c4a2991">make_array_from_list</a> ()</td></tr>
 <tr class="separator:a9c63793d5a8986fb6f9013033c4a2991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplParams" colspan="2">template&lt;typename Ls , std::enable_if_t&lt; tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplParams" colspan="2">template&lt;typename Ls , Requires&lt; tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt;  = nullptr&gt; </td></tr>
 <tr class="memitem:ga09be92d0bb8581e96be39b82b18871df"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ConstantExpressions_8hpp.html#ga09be92d0bb8581e96be39b82b18871df">make_array_from_list</a> ()</td></tr>
 <tr class="memdesc:ga09be92d0bb8581e96be39b82b18871df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an array of arrays from a typelist that holds typelists of <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/integral_constant.html">std::integral_constant</a>'s all of which have the same <code>value_type</code>  <a href="#ga09be92d0bb8581e96be39b82b18871df">More...</a><br /></td></tr>
 <tr class="separator:ga09be92d0bb8581e96be39b82b18871df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +234,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TypeForZero , std::enable_if_t&lt; not tt::is_a_v&lt; tmpl::list, TypeForZero &gt;&gt; *  = nullptr&gt; </div>
+template&lt;typename TypeForZero , Requires&lt; not tt::is_a_v&lt; tmpl::list, TypeForZero &gt;&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -262,7 +263,7 @@ template&lt;typename TypeForZero , std::enable_if_t&lt; not tt::is_a_v&lt; tmpl:
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Ls , std::enable_if_t&lt; tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt; *  = nullptr&gt; </div>
+template&lt;typename Ls , Requires&lt; tt::is_a_v&lt; tmpl::list, tmpl::front&lt; Ls &gt;&gt;&gt;  = nullptr&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

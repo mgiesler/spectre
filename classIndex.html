@@ -169,7 +169,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a073d3f6f1b5d5188261df65dd883790c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIndex.html#a073d3f6f1b5d5188261df65dd883790c">Index</a> (const size_t i0=<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/numeric_limits.html">std::numeric_limits</a>&lt; size_t &gt;::max())</td></tr>
 <tr class="memdesc:a073d3f6f1b5d5188261df65dd883790c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with each element set to the same value.  <a href="#a073d3f6f1b5d5188261df65dd883790c">More...</a><br /></td></tr>
 <tr class="separator:a073d3f6f1b5d5188261df65dd883790c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0cf42aed2697669e9e7b281eda14dea"><td class="memTemplParams" colspan="2">template&lt;typename... I, std::enable_if_t&lt;(sizeof...(I) &gt; 1&gt; </td></tr>
+<tr class="memitem:af0cf42aed2697669e9e7b281eda14dea"><td class="memTemplParams" colspan="2">template&lt;typename... I, Requires&lt;(sizeof...(I) &gt; 1&gt; </td></tr>
 <tr class="memitem:af0cf42aed2697669e9e7b281eda14dea"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classIndex.html#af0cf42aed2697669e9e7b281eda14dea">Index</a> (I... i)</td></tr>
 <tr class="memdesc:af0cf42aed2697669e9e7b281eda14dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct specifying value in each dimension.  <a href="#af0cf42aed2697669e9e7b281eda14dea">More...</a><br /></td></tr>
 <tr class="separator:af0cf42aed2697669e9e7b281eda14dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,11 +187,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a49f42c475d768b0761d2ff648cfa0d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab52ee33b50c4bcb909b94b365d8bdfcc"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; size_t, Dim &gt;::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIndex.html#ab52ee33b50c4bcb909b94b365d8bdfcc">end</a> () const</td></tr>
 <tr class="separator:ab52ee33b50c4bcb909b94b365d8bdfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d4b4b5b4ef42bdf14787295c331add"><td class="memTemplParams" colspan="2">template&lt;int N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </td></tr>
+<tr class="memitem:a97ecc32a6db4c1e5ca0e944c0d67a592"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIndex.html#a97ecc32a6db4c1e5ca0e944c0d67a592">size</a> () const noexcept</td></tr>
+<tr class="separator:a97ecc32a6db4c1e5ca0e944c0d67a592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d4b4b5b4ef42bdf14787295c331add"><td class="memTemplParams" colspan="2">template&lt;int N = Dim, Requires&lt;(N &gt; 0&gt; </td></tr>
 <tr class="memitem:af3d4b4b5b4ef42bdf14787295c331add"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classIndex.html#af3d4b4b5b4ef42bdf14787295c331add">product</a> () const noexcept</td></tr>
 <tr class="memdesc:af3d4b4b5b4ef42bdf14787295c331add"><td class="mdescLeft">&#160;</td><td class="mdescRight">The product of the indices. If Dim = 0, the product is defined as 1.  <a href="#af3d4b4b5b4ef42bdf14787295c331add">More...</a><br /></td></tr>
 <tr class="separator:af3d4b4b5b4ef42bdf14787295c331add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b6ad7896736a317a819da3d576802b6"><td class="memTemplParams" colspan="2">template&lt;size_t N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </td></tr>
+<tr class="memitem:a9b6ad7896736a317a819da3d576802b6"><td class="memTemplParams" colspan="2">template&lt;size_t N = Dim, Requires&lt;(N &gt; 0&gt; </td></tr>
 <tr class="memitem:a9b6ad7896736a317a819da3d576802b6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classIndex.html">Index</a>&lt; Dim - 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classIndex.html#a9b6ad7896736a317a819da3d576802b6">slice_away</a> (const size_t d) const</td></tr>
 <tr class="memdesc:a9b6ad7896736a317a819da3d576802b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a smaller <a class="el" href="classIndex.html" title="An integer multi-index. ">Index</a> with the d-th elmenent removed.  <a href="#a9b6ad7896736a317a819da3d576802b6">More...</a><br /></td></tr>
 <tr class="separator:a9b6ad7896736a317a819da3d576802b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,7 +258,7 @@ template&lt;size_t Dim&gt; </div>
 <div class="memtemplate">
 template&lt;size_t Dim&gt; </div>
 <div class="memtemplate">
-template&lt;typename... I, std::enable_if_t&lt;(sizeof...(I) &gt; 1&gt; </div>
+template&lt;typename... I, Requires&lt;(sizeof...(I) &gt; 1&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -541,7 +543,7 @@ template&lt;size_t Dim&gt; </div>
 <div class="memtemplate">
 template&lt;size_t Dim&gt; </div>
 <div class="memtemplate">
-template&lt;int N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </div>
+template&lt;int N = Dim, Requires&lt;(N &gt; 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -566,6 +568,33 @@ template&lt;int N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </div>
 
 </div>
 </div>
+<a id="a97ecc32a6db4c1e5ca0e944c0d67a592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97ecc32a6db4c1e5ca0e944c0d67a592">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classIndex.html">Index</a>&lt; Dim &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9b6ad7896736a317a819da3d576802b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b6ad7896736a317a819da3d576802b6">&#9670;&nbsp;</a></span>slice_away()</h2>
 
@@ -574,7 +603,7 @@ template&lt;int N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </div>
 <div class="memtemplate">
 template&lt;size_t Dim&gt; </div>
 <div class="memtemplate">
-template&lt;size_t N = Dim, std::enable_if_t&lt;(N &gt; 0&gt; </div>
+template&lt;size_t N = Dim, Requires&lt;(N &gt; 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

@@ -19,7 +19,7 @@
         @-o-viewport      { width: device-width; }
         @viewport         { width: device-width; }
       </style>
-  <title>SpECTRE: src/Domain/EmbeddingMaps/ProductMaps.hpp File Reference</title>
+  <title>SpECTRE: src/Domain/CoordinateMaps/ProductMaps.hpp File Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -150,13 +150,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_7afaef6ae7a94ddf3cc0ef59b99b3f6c.html">Domain</a></li><li class="navelem"><a class="el" href="dir_505a8b0d2a32e2ed4e6d0ac42452e38b.html">EmbeddingMaps</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_22cd119e9135d55404da822cc2bf42d2.html">src</a></li><li class="navelem"><a class="el" href="dir_7afaef6ae7a94ddf3cc0ef59b99b3f6c.html">Domain</a></li><li class="navelem"><a class="el" href="dir_d71d27209b20d04cf3cc140be5c9c4b9.html">CoordinateMaps</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ProductMaps.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -166,7 +167,6 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/memory.html">memory</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="TypeAliases_8hpp_source.html">DataStructures/Tensor/TypeAliases.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="EmbeddingMap_8hpp_source.html">EmbeddingMap.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CharmPupable_8hpp_source.html">Parallel/CharmPupable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PupStlCpp11_8hpp_source.html">Parallel/PupStlCpp11.hpp</a>&quot;</code><br />
 </div>
@@ -174,18 +174,27 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf2Maps.html">EmbeddingMaps::ProductOf2Maps&lt; Dim1, Dim2 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product of two codimension=0 <a class="el" href="namespaceEmbeddingMaps.html" title="Contains all embedding maps. ">EmbeddingMaps</a>.  <a href="classEmbeddingMaps_1_1ProductOf2Maps.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf2Maps.html">CoordinateMaps::ProductOf2Maps&lt; Map1, Map2 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product of two codimension=0 <a class="el" href="namespaceCoordinateMaps.html" title="Contains all embedding maps. ">CoordinateMaps</a>.  <a href="classCoordinateMaps_1_1ProductOf2Maps.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmbeddingMaps_1_1ProductOf3Maps.html">EmbeddingMaps::ProductOf3Maps</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product of three one-dimensional <a class="el" href="namespaceEmbeddingMaps.html" title="Contains all embedding maps. ">EmbeddingMaps</a>.  <a href="classEmbeddingMaps_1_1ProductOf3Maps.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoordinateMaps_1_1ProductOf3Maps.html">CoordinateMaps::ProductOf3Maps&lt; Map1, Map2, Map3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product of three one-dimensional <a class="el" href="namespaceCoordinateMaps.html" title="Contains all embedding maps. ">CoordinateMaps</a>.  <a href="classCoordinateMaps_1_1ProductOf3Maps.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespaceEmbeddingMaps"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEmbeddingMaps.html">EmbeddingMaps</a></td></tr>
-<tr class="memdesc:namespaceEmbeddingMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all embedding maps. <br /></td></tr>
+<tr class="memitem:namespaceCoordinateMaps"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html">CoordinateMaps</a></td></tr>
+<tr class="memdesc:namespaceCoordinateMaps"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all embedding maps. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6fa6a128c5d464be6ce3451a9dd34571"><td class="memTemplParams" colspan="2">template&lt;typename Map1 , typename Map2 &gt; </td></tr>
+<tr class="memitem:a6fa6a128c5d464be6ce3451a9dd34571"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html#a6fa6a128c5d464be6ce3451a9dd34571">CoordinateMaps::operator!=</a> (const ProductOf2Maps&lt; Map1, Map2 &gt; &amp;lhs, const ProductOf2Maps&lt; Map1, Map2 &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:a6fa6a128c5d464be6ce3451a9dd34571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd426648b2fd15c9e7de37317074122"><td class="memTemplParams" colspan="2">template&lt;typename Map1 , typename Map2 , typename Map3 &gt; </td></tr>
+<tr class="memitem:a0fd426648b2fd15c9e7de37317074122"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCoordinateMaps.html#a0fd426648b2fd15c9e7de37317074122">CoordinateMaps::operator!=</a> (const ProductOf3Maps&lt; Map1, Map2, Map3 &gt; &amp;lhs, const ProductOf3Maps&lt; Map1, Map2, Map3 &gt; &amp;rhs) noexcept</td></tr>
+<tr class="separator:a0fd426648b2fd15c9e7de37317074122"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the class templates ProductOf2Maps and ProductOf3Maps. </p>

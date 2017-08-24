@@ -218,13 +218,13 @@ Friends</h2></td></tr>
 <tr class="separator:a4638b7e7c4a9d32a59f736fe6e5ff8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a6aa1e6bcd10d41eea214de428b4f3ba1">TimeDelta</a></td></tr>
 <tr class="separator:a6aa1e6bcd10d41eea214de428b4f3ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a7cc11c9b22260d0bc21562c61c5bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#ad3a7cc11c9b22260d0bc21562c61c5bd">operator==</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;, const <a class="el" href="classSlab.html">Slab</a> &amp;) noexcept</td></tr>
-<tr class="separator:ad3a7cc11c9b22260d0bc21562c61c5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a549e97790e62da7208c4a1d35e859510"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a549e97790e62da7208c4a1d35e859510">operator&lt;</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;, const <a class="el" href="classSlab.html">Slab</a> &amp;) noexcept</td></tr>
-<tr class="memdesc:a549e97790e62da7208c4a1d35e859510"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a> comparison operators give the time ordering. Overlapping unequal slabs should not be compared (and will trigger an assertion).  <a href="#a549e97790e62da7208c4a1d35e859510">More...</a><br /></td></tr>
-<tr class="separator:a549e97790e62da7208c4a1d35e859510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6291693747d8f350c3aa938dbf837cfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a6291693747d8f350c3aa938dbf837cfd">operator==</a> (const <a class="el" href="classTime.html">Time</a> &amp;, const <a class="el" href="classTime.html">Time</a> &amp;) noexcept</td></tr>
-<tr class="separator:a6291693747d8f350c3aa938dbf837cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c2bac825b045536b243803d3f35724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a54c2bac825b045536b243803d3f35724">operator==</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;a, const <a class="el" href="classSlab.html">Slab</a> &amp;b) noexcept</td></tr>
+<tr class="separator:a54c2bac825b045536b243803d3f35724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f5138cddba461d332dc2310bb8decc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#a21f5138cddba461d332dc2310bb8decc">operator&lt;</a> (const <a class="el" href="classSlab.html">Slab</a> &amp;a, const <a class="el" href="classSlab.html">Slab</a> &amp;b) noexcept</td></tr>
+<tr class="memdesc:a21f5138cddba461d332dc2310bb8decc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classSlab.html" title="A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes ti...">Slab</a> comparison operators give the time ordering. Overlapping unequal slabs should not be compared (and will trigger an assertion).  <a href="#a21f5138cddba461d332dc2310bb8decc">More...</a><br /></td></tr>
+<tr class="separator:a21f5138cddba461d332dc2310bb8decc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1de6300a6350ef2339f84a359b710e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlab.html#ad1de6300a6350ef2339f84a359b710e8">operator==</a> (const <a class="el" href="classTime.html">Time</a> &amp;a, const <a class="el" href="classTime.html">Time</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ad1de6300a6350ef2339f84a359b710e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A chunk of time. Every element must reach slab boundaries exactly, no matter how it actually takes time steps to get there. The simulation can only be assumed to have global data available at slab boundaries. </p>
@@ -695,8 +695,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a549e97790e62da7208c4a1d35e859510"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a549e97790e62da7208c4a1d35e859510">&#9670;&nbsp;</a></span>operator<</h2>
+<a id="a21f5138cddba461d332dc2310bb8decc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f5138cddba461d332dc2310bb8decc">&#9670;&nbsp;</a></span>operator<</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,8 +733,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ad3a7cc11c9b22260d0bc21562c61c5bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3a7cc11c9b22260d0bc21562c61c5bd">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
+<a id="a54c2bac825b045536b243803d3f35724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c2bac825b045536b243803d3f35724">&#9670;&nbsp;</a></span>operator== <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -769,8 +769,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a6291693747d8f350c3aa938dbf837cfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6291693747d8f350c3aa938dbf837cfd">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
+<a id="ad1de6300a6350ef2339f84a359b710e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1de6300a6350ef2339f84a359b710e8">&#9670;&nbsp;</a></span>operator== <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -782,13 +782,13 @@ Friends</h2></td></tr>
           <td class="memname">bool operator== </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classTime.html">Time</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classTime.html">Time</a> &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

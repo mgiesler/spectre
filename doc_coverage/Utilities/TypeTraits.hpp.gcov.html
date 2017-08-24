@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Utilities/TypeTraits.hpp</title>
+  <title>LCOV - 8c9d298de67acd276263824418ef60f1eca9305d - Utilities/TypeTraits.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8c9d298de67acd276263824418ef60f1eca9305d">8c9d298de67acd276263824418ef60f1eca9305d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">54</td>
-            <td class="headerCovTableEntry">56</td>
-            <td class="headerCovTableEntryHi">96.4 %</td>
+            <td class="headerCovTableEntry">55</td>
+            <td class="headerCovTableEntry">57</td>
+            <td class="headerCovTableEntryHi">96.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-23 02:31:43</td>
+            <td class="headerValue">2017-08-24 02:32:09</td>
             <td></td>
           </tr>
           <tr>
@@ -751,7 +751,7 @@
 <span class="lineNum">     685 </span>            : /// \see std::map std::unordered_map is_a
 <span class="lineNum">     686 </span>            : /// \tparam T the type to check
 <span class="lineNum">     687 </span>            : template &lt;typename T, typename = cpp17::void_t&lt;&gt;&gt;
-<span class="lineNum">     688 </span>            : struct is_maplike : std::false_type {};
+<span class="lineNum">     688 </span><span class="lineCov">          1 : struct is_maplike : std::false_type {};</span>
 <span class="lineNum">     689 </span>            : /// \cond HIDDEN_SYMBOLS
 <span class="lineNum">     690 </span>            : template &lt;typename T&gt;
 <span class="lineNum">     691 </span>            : struct is_maplike&lt;T,

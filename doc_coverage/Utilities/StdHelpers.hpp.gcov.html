@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Utilities/StdHelpers.hpp</title>
+  <title>LCOV - 8c9d298de67acd276263824418ef60f1eca9305d - Utilities/StdHelpers.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,16 +28,16 @@
           </tr>
           <tr>
              <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8c9d298de67acd276263824418ef60f1eca9305d">8c9d298de67acd276263824418ef60f1eca9305d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">14</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-23 02:31:43</td>
+            <td class="headerValue">2017-08-24 02:32:09</td>
             <td></td>
           </tr>
           <tr>
@@ -72,228 +72,283 @@
 <span class="lineNum">       6 </span>            : 
 <span class="lineNum">       7 </span>            : #pragma once
 <span class="lineNum">       8 </span>            : 
-<span class="lineNum">       9 </span>            : #include &lt;array&gt;
-<span class="lineNum">      10 </span>            : #include &lt;chrono&gt;
-<span class="lineNum">      11 </span>            : #include &lt;ctime&gt;
-<span class="lineNum">      12 </span>            : #include &lt;future&gt;
-<span class="lineNum">      13 </span>            : #include &lt;iterator&gt;
-<span class="lineNum">      14 </span>            : #include &lt;list&gt;
-<span class="lineNum">      15 </span>            : #include &lt;map&gt;
-<span class="lineNum">      16 </span>            : #include &lt;memory&gt;
-<span class="lineNum">      17 </span>            : #include &lt;set&gt;
-<span class="lineNum">      18 </span>            : #include &lt;sstream&gt;
-<span class="lineNum">      19 </span>            : #include &lt;string&gt;
-<span class="lineNum">      20 </span>            : #include &lt;unordered_map&gt;
-<span class="lineNum">      21 </span>            : #include &lt;unordered_set&gt;
-<span class="lineNum">      22 </span>            : #include &lt;vector&gt;
-<span class="lineNum">      23 </span>            : 
-<span class="lineNum">      24 </span>            : #include &quot;Utilities/Requires.hpp&quot;
-<span class="lineNum">      25 </span>            : #include &quot;Utilities/StlStreamDeclarations.hpp&quot;
-<span class="lineNum">      26 </span>            : #include &quot;Utilities/TypeTraits.hpp&quot;
-<span class="lineNum">      27 </span>            : 
-<span class="lineNum">      28 </span>            : namespace StdHelpers_detail {
-<span class="lineNum">      29 </span>            : // applies the function f(out, it) to each item from begin to end, separated
-<span class="lineNum">      30 </span>            : // by commas and surrounded by parens
-<span class="lineNum">      31 </span>            : template &lt;typename ForwardIt, typename Func&gt;
-<span class="lineNum">      32 </span>            : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin, ForwardIt&amp;&amp; end,
-<span class="lineNum">      33 </span>            :                          Func f) {
-<span class="lineNum">      34 </span>            :   out &lt;&lt; &quot;(&quot;;
-<span class="lineNum">      35 </span>            :   if (begin != end) {
-<span class="lineNum">      36 </span>            :     while (true) {
-<span class="lineNum">      37 </span>            :       f(out, begin++);
-<span class="lineNum">      38 </span>            :       if (begin == end) {
-<span class="lineNum">      39 </span>            :         break;
-<span class="lineNum">      40 </span>            :       }
-<span class="lineNum">      41 </span>            :       out &lt;&lt; &quot;,&quot;;
-<span class="lineNum">      42 </span>            :     }
-<span class="lineNum">      43 </span>            :   }
-<span class="lineNum">      44 </span>            :   out &lt;&lt; &quot;)&quot;;
-<span class="lineNum">      45 </span>            : }
-<span class="lineNum">      46 </span>            : 
-<span class="lineNum">      47 </span>            : // prints all the items as a comma separated list surrounded by parens
-<span class="lineNum">      48 </span>            : template &lt;typename ForwardIt&gt;
-<span class="lineNum">      49 </span>            : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,
-<span class="lineNum">      50 </span>            :                          ForwardIt&amp;&amp; end) {
-<span class="lineNum">      51 </span>            :   print_helper(out, std::forward&lt;ForwardIt&gt;(begin),
-<span class="lineNum">      52 </span>            :                std::forward&lt;ForwardIt&gt;(end),
-<span class="lineNum">      53 </span>            :                [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });
-<span class="lineNum">      54 </span>            : }
-<span class="lineNum">      55 </span>            : 
-<span class="lineNum">      56 </span>            : // Helper classes for operator&lt;&lt; for tuples
-<span class="lineNum">      57 </span>            : template &lt;size_t N&gt;
-<span class="lineNum">      58 </span>            : struct TuplePrinter {
-<span class="lineNum">      59 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">      60 </span>            :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {
-<span class="lineNum">      61 </span>            :     TuplePrinter&lt;N - 1&gt;::print(os, t);
-<span class="lineNum">      62 </span>            :     os &lt;&lt; &quot;, &quot; &lt;&lt; std::get&lt;N - 1&gt;(t);
-<span class="lineNum">      63 </span>            :     return os;
-<span class="lineNum">      64 </span>            :   }
-<span class="lineNum">      65 </span>            : };
-<span class="lineNum">      66 </span>            : 
-<span class="lineNum">      67 </span>            : template &lt;&gt;
-<span class="lineNum">      68 </span>            : struct TuplePrinter&lt;1&gt; {
-<span class="lineNum">      69 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">      70 </span>            :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {
-<span class="lineNum">      71 </span>            :     os &lt;&lt; std::get&lt;0&gt;(t);
-<span class="lineNum">      72 </span>            :     return os;
-<span class="lineNum">      73 </span>            :   }
-<span class="lineNum">      74 </span>            : };
-<span class="lineNum">      75 </span>            : 
-<span class="lineNum">      76 </span>            : template &lt;&gt;
-<span class="lineNum">      77 </span>            : struct TuplePrinter&lt;0&gt; {
-<span class="lineNum">      78 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">      79 </span>            :   static std::ostream&amp; print(std::ostream&amp; os,
-<span class="lineNum">      80 </span>            :                              const std::tuple&lt;Args...&gt;&amp; /*t*/) {
-<span class="lineNum">      81 </span>            :     return os;
-<span class="lineNum">      82 </span>            :   }
-<span class="lineNum">      83 </span>            : };
-<span class="lineNum">      84 </span>            : }  // namespace StdHelpers_detail
-<span class="lineNum">      85 </span>            : 
-<span class="lineNum">      86 </span>            : /*!
-<span class="lineNum">      87 </span>            :  * \ingroup Utilities
-<span class="lineNum">      88 </span>            :  * \brief Output the items of a std::list
-<span class="lineNum">      89 </span>            :  */
-<span class="lineNum">      90 </span>            : template &lt;typename T&gt;
-<span class="lineNum">      91 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::list&lt;T&gt;&amp; v) {</span>
-<span class="lineNum">      92 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
-<span class="lineNum">      93 </span>            :   return os;
-<span class="lineNum">      94 </span>            : }
-<span class="lineNum">      95 </span>            : 
-<span class="lineNum">      96 </span>            : /*!
-<span class="lineNum">      97 </span>            :  * \ingroup Utilities
-<span class="lineNum">      98 </span>            :  * \brief Output the items of a std::vector
-<span class="lineNum">      99 </span>            :  */
-<span class="lineNum">     100 </span>            : template &lt;typename T&gt;
-<span class="lineNum">     101 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; v) {</span>
-<span class="lineNum">     102 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
-<span class="lineNum">     103 </span>            :   return os;
-<span class="lineNum">     104 </span>            : }
-<span class="lineNum">     105 </span>            : 
-<span class="lineNum">     106 </span>            : /*!
-<span class="lineNum">     107 </span>            :  * \ingroup Utilities
-<span class="lineNum">     108 </span>            :  * \brief Output the items of a std::array
-<span class="lineNum">     109 </span>            :  */
-<span class="lineNum">     110 </span>            : template &lt;typename T, size_t N&gt;
-<span class="lineNum">     111 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::array&lt;T, N&gt;&amp; a) {</span>
-<span class="lineNum">     112 </span>            :   StdHelpers_detail::print_helper(os, begin(a), end(a));
-<span class="lineNum">     113 </span>            :   return os;
-<span class="lineNum">     114 </span>            : }
-<span class="lineNum">     115 </span>            : 
-<span class="lineNum">     116 </span>            : /*!
-<span class="lineNum">     117 </span>            :  * \ingroup Utilities
-<span class="lineNum">     118 </span>            :  * \brief Stream operator for tuples
-<span class="lineNum">     119 </span>            :  */
-<span class="lineNum">     120 </span>            : template &lt;typename... Args&gt;
-<span class="lineNum">     121 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
-<span class="lineNum">     122 </span>            :                                 const std::tuple&lt;Args...&gt;&amp; t) {
-<span class="lineNum">     123 </span>            :   os &lt;&lt; &quot;(&quot;;
-<span class="lineNum">     124 </span>            :   StdHelpers_detail::TuplePrinter&lt;sizeof...(Args)&gt;::print(os, t);
-<span class="lineNum">     125 </span>            :   os &lt;&lt; &quot;)&quot;;
+<span class="lineNum">       9 </span>            : #include &lt;algorithm&gt;
+<span class="lineNum">      10 </span>            : #include &lt;array&gt;
+<span class="lineNum">      11 </span>            : #include &lt;chrono&gt;
+<span class="lineNum">      12 </span>            : #include &lt;ctime&gt;
+<span class="lineNum">      13 </span>            : #include &lt;future&gt;
+<span class="lineNum">      14 </span>            : #include &lt;iterator&gt;
+<span class="lineNum">      15 </span>            : #include &lt;list&gt;
+<span class="lineNum">      16 </span>            : #include &lt;map&gt;
+<span class="lineNum">      17 </span>            : #include &lt;memory&gt;
+<span class="lineNum">      18 </span>            : #include &lt;set&gt;
+<span class="lineNum">      19 </span>            : #include &lt;sstream&gt;
+<span class="lineNum">      20 </span>            : #include &lt;string&gt;
+<span class="lineNum">      21 </span>            : #include &lt;unordered_map&gt;
+<span class="lineNum">      22 </span>            : #include &lt;unordered_set&gt;
+<span class="lineNum">      23 </span>            : #include &lt;vector&gt;
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            : #include &quot;Utilities/Requires.hpp&quot;
+<span class="lineNum">      26 </span>            : #include &quot;Utilities/StlStreamDeclarations.hpp&quot;
+<span class="lineNum">      27 </span>            : #include &quot;Utilities/TypeTraits.hpp&quot;
+<span class="lineNum">      28 </span>            : 
+<span class="lineNum">      29 </span>            : namespace StdHelpers_detail {
+<span class="lineNum">      30 </span>            : // applies the function f(out, it) to each item from begin to end, separated
+<span class="lineNum">      31 </span>            : // by commas and surrounded by parens
+<span class="lineNum">      32 </span>            : template &lt;typename ForwardIt, typename Func&gt;
+<span class="lineNum">      33 </span>            : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin, ForwardIt&amp;&amp; end,
+<span class="lineNum">      34 </span>            :                          Func f) {
+<span class="lineNum">      35 </span>            :   out &lt;&lt; &quot;(&quot;;
+<span class="lineNum">      36 </span>            :   if (begin != end) {
+<span class="lineNum">      37 </span>            :     while (true) {
+<span class="lineNum">      38 </span>            :       f(out, begin++);
+<span class="lineNum">      39 </span>            :       if (begin == end) {
+<span class="lineNum">      40 </span>            :         break;
+<span class="lineNum">      41 </span>            :       }
+<span class="lineNum">      42 </span>            :       out &lt;&lt; &quot;,&quot;;
+<span class="lineNum">      43 </span>            :     }
+<span class="lineNum">      44 </span>            :   }
+<span class="lineNum">      45 </span>            :   out &lt;&lt; &quot;)&quot;;
+<span class="lineNum">      46 </span>            : }
+<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      48 </span>            : // prints all the items as a comma separated list surrounded by parens
+<span class="lineNum">      49 </span>            : template &lt;typename ForwardIt&gt;
+<span class="lineNum">      50 </span>            : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,
+<span class="lineNum">      51 </span>            :                          ForwardIt&amp;&amp; end) {
+<span class="lineNum">      52 </span>            :   print_helper(out, std::forward&lt;ForwardIt&gt;(begin),
+<span class="lineNum">      53 </span>            :                std::forward&lt;ForwardIt&gt;(end),
+<span class="lineNum">      54 </span>            :                [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });
+<span class="lineNum">      55 </span>            : }
+<span class="lineNum">      56 </span>            : 
+<span class="lineNum">      57 </span>            : // Like print_helper, but sorts the string representations
+<span class="lineNum">      58 </span>            : template &lt;typename ForwardIt, typename Func&gt;
+<span class="lineNum">      59 </span>            : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,
+<span class="lineNum">      60 </span>            :                                    ForwardIt&amp;&amp; end, Func f) {
+<span class="lineNum">      61 </span>            :   std::vector&lt;std::string&gt; entries;
+<span class="lineNum">      62 </span>            :   while (begin != end) {
+<span class="lineNum">      63 </span>            :     std::ostringstream ss;
+<span class="lineNum">      64 </span>            :     f(ss, begin++);
+<span class="lineNum">      65 </span>            :     entries.push_back(ss.str());
+<span class="lineNum">      66 </span>            :   }
+<span class="lineNum">      67 </span>            :   std::sort(entries.begin(), entries.end());
+<span class="lineNum">      68 </span>            :   print_helper(out, entries.begin(), entries.end());
+<span class="lineNum">      69 </span>            : }
+<span class="lineNum">      70 </span>            : 
+<span class="lineNum">      71 </span>            : template &lt;typename ForwardIt&gt;
+<span class="lineNum">      72 </span>            : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,
+<span class="lineNum">      73 </span>            :                                    ForwardIt&amp;&amp; end) {
+<span class="lineNum">      74 </span>            :   unordered_print_helper(
+<span class="lineNum">      75 </span>            :       out, std::forward&lt;ForwardIt&gt;(begin), std::forward&lt;ForwardIt&gt;(end),
+<span class="lineNum">      76 </span>            :       [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });
+<span class="lineNum">      77 </span>            : }
+<span class="lineNum">      78 </span>            : 
+<span class="lineNum">      79 </span>            : // Helper classes for operator&lt;&lt; for tuples
+<span class="lineNum">      80 </span>            : template &lt;size_t N&gt;
+<span class="lineNum">      81 </span>            : struct TuplePrinter {
+<span class="lineNum">      82 </span>            :   template &lt;typename... Args&gt;
+<span class="lineNum">      83 </span>            :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {
+<span class="lineNum">      84 </span>            :     TuplePrinter&lt;N - 1&gt;::print(os, t);
+<span class="lineNum">      85 </span>            :     os &lt;&lt; &quot;, &quot; &lt;&lt; std::get&lt;N - 1&gt;(t);
+<span class="lineNum">      86 </span>            :     return os;
+<span class="lineNum">      87 </span>            :   }
+<span class="lineNum">      88 </span>            : };
+<span class="lineNum">      89 </span>            : 
+<span class="lineNum">      90 </span>            : template &lt;&gt;
+<span class="lineNum">      91 </span>            : struct TuplePrinter&lt;1&gt; {
+<span class="lineNum">      92 </span>            :   template &lt;typename... Args&gt;
+<span class="lineNum">      93 </span>            :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {
+<span class="lineNum">      94 </span>            :     os &lt;&lt; std::get&lt;0&gt;(t);
+<span class="lineNum">      95 </span>            :     return os;
+<span class="lineNum">      96 </span>            :   }
+<span class="lineNum">      97 </span>            : };
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span>            : template &lt;&gt;
+<span class="lineNum">     100 </span>            : struct TuplePrinter&lt;0&gt; {
+<span class="lineNum">     101 </span>            :   template &lt;typename... Args&gt;
+<span class="lineNum">     102 </span>            :   static std::ostream&amp; print(std::ostream&amp; os,
+<span class="lineNum">     103 </span>            :                              const std::tuple&lt;Args...&gt;&amp; /*t*/) {
+<span class="lineNum">     104 </span>            :     return os;
+<span class="lineNum">     105 </span>            :   }
+<span class="lineNum">     106 </span>            : };
+<span class="lineNum">     107 </span>            : }  // namespace StdHelpers_detail
+<span class="lineNum">     108 </span>            : 
+<span class="lineNum">     109 </span>            : /*!
+<span class="lineNum">     110 </span>            :  * \ingroup Utilities
+<span class="lineNum">     111 </span>            :  * \brief Output the items of a std::list
+<span class="lineNum">     112 </span>            :  */
+<span class="lineNum">     113 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     114 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::list&lt;T&gt;&amp; v) {</span>
+<span class="lineNum">     115 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
+<span class="lineNum">     116 </span>            :   return os;
+<span class="lineNum">     117 </span>            : }
+<span class="lineNum">     118 </span>            : 
+<span class="lineNum">     119 </span>            : /*!
+<span class="lineNum">     120 </span>            :  * \ingroup Utilities
+<span class="lineNum">     121 </span>            :  * \brief Output the items of a std::vector
+<span class="lineNum">     122 </span>            :  */
+<span class="lineNum">     123 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     124 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; v) {</span>
+<span class="lineNum">     125 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
 <span class="lineNum">     126 </span>            :   return os;
 <span class="lineNum">     127 </span>            : }
 <span class="lineNum">     128 </span>            : 
 <span class="lineNum">     129 </span>            : /*!
 <span class="lineNum">     130 </span>            :  * \ingroup Utilities
-<span class="lineNum">     131 </span>            :  * \brief Output all the key, value pairs of a map
+<span class="lineNum">     131 </span>            :  * \brief Output the items of a std::array
 <span class="lineNum">     132 </span>            :  */
-<span class="lineNum">     133 </span>            : template &lt;typename Map, Requires&lt;tt::is_maplike&lt;Map&gt;::value&gt;&gt;
-<span class="lineNum">     134 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Map&amp; m) {</span>
-<span class="lineNum">     135 </span>            :   StdHelpers_detail::print_helper(
-<span class="lineNum">     136 </span>            :       os, begin(m), end(m),
-<span class="lineNum">     137 </span>            :       [](std::ostream&amp; out, typename Map::const_iterator it) {
-<span class="lineNum">     138 </span>            :         out &lt;&lt; &quot;[&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot;,&quot; &lt;&lt; it-&gt;second &lt;&lt; &quot;]&quot;;
-<span class="lineNum">     139 </span>            :       });
-<span class="lineNum">     140 </span>            :   return os;
-<span class="lineNum">     141 </span>            : }
-<span class="lineNum">     142 </span>            : 
-<span class="lineNum">     143 </span>            : /*!
-<span class="lineNum">     144 </span>            :  * \ingroup Utilities
-<span class="lineNum">     145 </span>            :  * \brief Output the items of a std::unordered_set
-<span class="lineNum">     146 </span>            :  */
-<span class="lineNum">     147 </span>            : template &lt;typename T&gt;
-<span class="lineNum">     148 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
-<span class="lineNum">     149 </span>            :                                 const std::unordered_set&lt;T&gt;&amp; v) {
-<span class="lineNum">     150 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
-<span class="lineNum">     151 </span>            :   return os;
-<span class="lineNum">     152 </span>            : }
-<span class="lineNum">     153 </span>            : 
-<span class="lineNum">     154 </span>            : /*!
-<span class="lineNum">     155 </span>            :  * \ingroup Utilities
-<span class="lineNum">     156 </span>            :  * \brief Output the items of a std::unordered_set
-<span class="lineNum">     157 </span>            :  */
-<span class="lineNum">     158 </span>            : template &lt;typename T&gt;
-<span class="lineNum">     159 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::set&lt;T&gt;&amp; v) {</span>
-<span class="lineNum">     160 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
-<span class="lineNum">     161 </span>            :   return os;
-<span class="lineNum">     162 </span>            : }
-<span class="lineNum">     163 </span>            : 
-<span class="lineNum">     164 </span>            : /*!
-<span class="lineNum">     165 </span>            :  * \ingroup Utilities
-<span class="lineNum">     166 </span>            :  * \brief Stream operator for std::unique_ptr
-<span class="lineNum">     167 </span>            :  */
-<span class="lineNum">     168 </span>            : template &lt;typename T, Requires&lt;tt::is_streamable&lt;std::ostream, T&gt;::value&gt;&gt;
-<span class="lineNum">     169 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::unique_ptr&lt;T&gt;&amp; t) {</span>
-<span class="lineNum">     170 </span>            :   return os &lt;&lt; *t;
-<span class="lineNum">     171 </span>            : }
-<span class="lineNum">     172 </span>            : 
-<span class="lineNum">     173 </span>            : /*!
-<span class="lineNum">     174 </span>            :  * \ingroup Utilities
-<span class="lineNum">     175 </span>            :  * \brief Stream operator for std::shared_ptr
-<span class="lineNum">     176 </span>            :  */
-<span class="lineNum">     177 </span>            : template &lt;typename T, Requires&lt;tt::is_streamable&lt;std::ostream, T&gt;::value&gt;&gt;
-<span class="lineNum">     178 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::shared_ptr&lt;T&gt;&amp; t) {</span>
-<span class="lineNum">     179 </span>            :   return os &lt;&lt; *t;
+<span class="lineNum">     133 </span>            : template &lt;typename T, size_t N&gt;
+<span class="lineNum">     134 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::array&lt;T, N&gt;&amp; a) {</span>
+<span class="lineNum">     135 </span>            :   StdHelpers_detail::print_helper(os, begin(a), end(a));
+<span class="lineNum">     136 </span>            :   return os;
+<span class="lineNum">     137 </span>            : }
+<span class="lineNum">     138 </span>            : 
+<span class="lineNum">     139 </span>            : /*!
+<span class="lineNum">     140 </span>            :  * \ingroup Utilities
+<span class="lineNum">     141 </span>            :  * \brief Stream operator for tuples
+<span class="lineNum">     142 </span>            :  */
+<span class="lineNum">     143 </span>            : template &lt;typename... Args&gt;
+<span class="lineNum">     144 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">     145 </span>            :                                 const std::tuple&lt;Args...&gt;&amp; t) {
+<span class="lineNum">     146 </span>            :   os &lt;&lt; &quot;(&quot;;
+<span class="lineNum">     147 </span>            :   StdHelpers_detail::TuplePrinter&lt;sizeof...(Args)&gt;::print(os, t);
+<span class="lineNum">     148 </span>            :   os &lt;&lt; &quot;)&quot;;
+<span class="lineNum">     149 </span>            :   return os;
+<span class="lineNum">     150 </span>            : }
+<span class="lineNum">     151 </span>            : 
+<span class="lineNum">     152 </span>            : /*!
+<span class="lineNum">     153 </span>            :  * \ingroup Utilities
+<span class="lineNum">     154 </span>            :  * \brief Output all the key, value pairs of a std::unordered_map
+<span class="lineNum">     155 </span>            :  */
+<span class="lineNum">     156 </span>            : template &lt;typename K, typename V&gt;
+<span class="lineNum">     157 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">     158 </span>            :                                 const std::unordered_map&lt;K, V&gt;&amp; m) {
+<span class="lineNum">     159 </span>            :   StdHelpers_detail::unordered_print_helper(
+<span class="lineNum">     160 </span>            :       os, begin(m), end(m),
+<span class="lineNum">     161 </span>            :       [](std::ostream&amp; out,
+<span class="lineNum">     162 </span>            :          typename std::unordered_map&lt;K, V&gt;::const_iterator it) {
+<span class="lineNum">     163 </span>            :         out &lt;&lt; &quot;[&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot;,&quot; &lt;&lt; it-&gt;second &lt;&lt; &quot;]&quot;;
+<span class="lineNum">     164 </span>            :       });
+<span class="lineNum">     165 </span>            :   return os;
+<span class="lineNum">     166 </span>            : }
+<span class="lineNum">     167 </span>            : 
+<span class="lineNum">     168 </span>            : /*!
+<span class="lineNum">     169 </span>            :  * \ingroup Utilities
+<span class="lineNum">     170 </span>            :  * \brief Output all the key, value pairs of a std::map
+<span class="lineNum">     171 </span>            :  */
+<span class="lineNum">     172 </span>            : template &lt;typename K, typename V, typename C&gt;
+<span class="lineNum">     173 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::map&lt;K, V, C&gt;&amp; m) {</span>
+<span class="lineNum">     174 </span>            :   StdHelpers_detail::print_helper(
+<span class="lineNum">     175 </span>            :       os, begin(m), end(m),
+<span class="lineNum">     176 </span>            :       [](std::ostream&amp; out, typename std::map&lt;K, V, C&gt;::const_iterator it) {
+<span class="lineNum">     177 </span>            :         out &lt;&lt; &quot;[&quot; &lt;&lt; it-&gt;first &lt;&lt; &quot;,&quot; &lt;&lt; it-&gt;second &lt;&lt; &quot;]&quot;;
+<span class="lineNum">     178 </span>            :       });
+<span class="lineNum">     179 </span>            :   return os;
 <span class="lineNum">     180 </span>            : }
 <span class="lineNum">     181 </span>            : 
 <span class="lineNum">     182 </span>            : /*!
 <span class="lineNum">     183 </span>            :  * \ingroup Utilities
-<span class="lineNum">     184 </span>            :  * \brief Stream operator for std::pair
+<span class="lineNum">     184 </span>            :  * \brief Output the items of a std::unordered_set
 <span class="lineNum">     185 </span>            :  */
-<span class="lineNum">     186 </span>            : template &lt;typename T, typename U&gt;
-<span class="lineNum">     187 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::pair&lt;T, U&gt;&amp; t) {</span>
-<span class="lineNum">     188 </span>            :   return os &lt;&lt; &quot;(&quot; &lt;&lt; t.first &lt;&lt; &quot;, &quot; &lt;&lt; t.second &lt;&lt; &quot;)&quot;;
-<span class="lineNum">     189 </span>            : }
-<span class="lineNum">     190 </span>            : 
-<span class="lineNum">     191 </span>            : /*!
-<span class="lineNum">     192 </span>            :  * \ingroup Utilities
-<span class="lineNum">     193 </span>            :  * \brief Construct a string containing the keys of a map
-<span class="lineNum">     194 </span>            :  */
-<span class="lineNum">     195 </span>            : template &lt;typename Map, Requires&lt;tt::is_maplike_v&lt;Map&gt;&gt; = nullptr&gt;
-<span class="lineNum">     196 </span><span class="lineCov">          2 : inline std::string keys_of(const Map&amp; m) {</span>
-<span class="lineNum">     197 </span>            :   std::ostringstream os;
-<span class="lineNum">     198 </span>            :   StdHelpers_detail::print_helper(
-<span class="lineNum">     199 </span>            :       os, begin(m), end(m),
-<span class="lineNum">     200 </span>            :       [](std::ostream&amp; out, typename Map::const_iterator it) {
-<span class="lineNum">     201 </span>            :         out &lt;&lt; it-&gt;first;
-<span class="lineNum">     202 </span>            :       });
-<span class="lineNum">     203 </span>            :   return os.str();
-<span class="lineNum">     204 </span>            : }
-<span class="lineNum">     205 </span>            : 
-<span class="lineNum">     206 </span>            : /*!
-<span class="lineNum">     207 </span>            :  * \ingroup Utilities
-<span class="lineNum">     208 </span>            :  * \brief Format a string like printf
-<span class="lineNum">     209 </span>            :  *
-<span class="lineNum">     210 </span>            :  * Given a formatting string and arguments this returns the corresponding
-<span class="lineNum">     211 </span>            :  * string. Similar to printf but using std::strings.
-<span class="lineNum">     212 </span>            :  */
-<span class="lineNum">     213 </span>            : template &lt;typename... Args&gt;
-<span class="lineNum">     214 </span><span class="lineCov">          2 : std::string formatted_string(const std::string&amp; fmt, Args... args) {</span>
-<span class="lineNum">     215 </span>            : #pragma GCC diagnostic push
-<span class="lineNum">     216 </span>            : #pragma GCC diagnostic ignored &quot;-Wformat-nonliteral&quot;
-<span class="lineNum">     217 </span>            :    // clang-tidy: do not use snprintf
-<span class="lineNum">     218 </span>            :   auto requiredBytes = static_cast&lt;size_t&gt;(std::snprintf(  // NOLINT
-<span class="lineNum">     219 </span>            :                            nullptr, 0, fmt.c_str(), args...)) +
-<span class="lineNum">     220 </span>            :                        1;
-<span class="lineNum">     221 </span>            :   std::string rtn;
-<span class="lineNum">     222 </span>            :   rtn.resize(requiredBytes);
-<span class="lineNum">     223 </span>            :   // clang-tidy: do not use snprintf
-<span class="lineNum">     224 </span>            :   std::snprintf(&amp;rtn[0], requiredBytes, fmt.c_str(), args...);  // NOLINT
-<span class="lineNum">     225 </span>            : #pragma GCC diagnostic pop
-<span class="lineNum">     226 </span>            :   if (rtn[rtn.size() - 1] == '\0') {
-<span class="lineNum">     227 </span>            :     rtn.resize(rtn.size() - 1);
-<span class="lineNum">     228 </span>            :   }
-<span class="lineNum">     229 </span>            :   return rtn;
-<span class="lineNum">     230 </span>            : }
+<span class="lineNum">     186 </span>            : template &lt;typename T&gt;
+<span class="lineNum">     187 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">     188 </span>            :                                 const std::unordered_set&lt;T&gt;&amp; v) {
+<span class="lineNum">     189 </span>            :   StdHelpers_detail::unordered_print_helper(os, std::begin(v), std::end(v));
+<span class="lineNum">     190 </span>            :   return os;
+<span class="lineNum">     191 </span>            : }
+<span class="lineNum">     192 </span>            : 
+<span class="lineNum">     193 </span>            : /*!
+<span class="lineNum">     194 </span>            :  * \ingroup Utilities
+<span class="lineNum">     195 </span>            :  * \brief Output the items of a std::set
+<span class="lineNum">     196 </span>            :  */
+<span class="lineNum">     197 </span>            : template &lt;typename T, typename C&gt;
+<span class="lineNum">     198 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::set&lt;T, C&gt;&amp; v) {</span>
+<span class="lineNum">     199 </span>            :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));
+<span class="lineNum">     200 </span>            :   return os;
+<span class="lineNum">     201 </span>            : }
+<span class="lineNum">     202 </span>            : 
+<span class="lineNum">     203 </span>            : /*!
+<span class="lineNum">     204 </span>            :  * \ingroup Utilities
+<span class="lineNum">     205 </span>            :  * \brief Stream operator for std::unique_ptr
+<span class="lineNum">     206 </span>            :  */
+<span class="lineNum">     207 </span>            : template &lt;typename T, Requires&lt;tt::is_streamable&lt;std::ostream, T&gt;::value&gt;&gt;
+<span class="lineNum">     208 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::unique_ptr&lt;T&gt;&amp; t) {</span>
+<span class="lineNum">     209 </span>            :   return os &lt;&lt; *t;
+<span class="lineNum">     210 </span>            : }
+<span class="lineNum">     211 </span>            : 
+<span class="lineNum">     212 </span>            : /*!
+<span class="lineNum">     213 </span>            :  * \ingroup Utilities
+<span class="lineNum">     214 </span>            :  * \brief Stream operator for std::shared_ptr
+<span class="lineNum">     215 </span>            :  */
+<span class="lineNum">     216 </span>            : template &lt;typename T, Requires&lt;tt::is_streamable&lt;std::ostream, T&gt;::value&gt;&gt;
+<span class="lineNum">     217 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::shared_ptr&lt;T&gt;&amp; t) {</span>
+<span class="lineNum">     218 </span>            :   return os &lt;&lt; *t;
+<span class="lineNum">     219 </span>            : }
+<span class="lineNum">     220 </span>            : 
+<span class="lineNum">     221 </span>            : /*!
+<span class="lineNum">     222 </span>            :  * \ingroup Utilities
+<span class="lineNum">     223 </span>            :  * \brief Stream operator for std::pair
+<span class="lineNum">     224 </span>            :  */
+<span class="lineNum">     225 </span>            : template &lt;typename T, typename U&gt;
+<span class="lineNum">     226 </span><span class="lineCov">          2 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::pair&lt;T, U&gt;&amp; t) {</span>
+<span class="lineNum">     227 </span>            :   return os &lt;&lt; &quot;(&quot; &lt;&lt; t.first &lt;&lt; &quot;, &quot; &lt;&lt; t.second &lt;&lt; &quot;)&quot;;
+<span class="lineNum">     228 </span>            : }
+<span class="lineNum">     229 </span>            : 
+<span class="lineNum">     230 </span>            : /*!
+<span class="lineNum">     231 </span>            :  * \ingroup Utilities
+<span class="lineNum">     232 </span>            :  * \brief Construct a string containing the keys of a std::unordered_map
+<span class="lineNum">     233 </span>            :  */
+<span class="lineNum">     234 </span>            : template &lt;typename K, typename V&gt;
+<span class="lineNum">     235 </span><span class="lineCov">          2 : inline std::string keys_of(const std::unordered_map&lt;K, V&gt;&amp; m) {</span>
+<span class="lineNum">     236 </span>            :   std::ostringstream os;
+<span class="lineNum">     237 </span>            :   StdHelpers_detail::unordered_print_helper(
+<span class="lineNum">     238 </span>            :       os, begin(m), end(m),
+<span class="lineNum">     239 </span>            :       [](std::ostream&amp; out,
+<span class="lineNum">     240 </span>            :          typename std::unordered_map&lt;K, V&gt;::const_iterator it) {
+<span class="lineNum">     241 </span>            :         out &lt;&lt; it-&gt;first;
+<span class="lineNum">     242 </span>            :       });
+<span class="lineNum">     243 </span>            :   return os.str();
+<span class="lineNum">     244 </span>            : }
+<span class="lineNum">     245 </span>            : 
+<span class="lineNum">     246 </span>            : /*!
+<span class="lineNum">     247 </span>            :  * \ingroup Utilities
+<span class="lineNum">     248 </span>            :  * \brief Construct a string containing the keys of a std::map
+<span class="lineNum">     249 </span>            :  */
+<span class="lineNum">     250 </span>            : template &lt;typename K, typename V, typename C&gt;
+<span class="lineNum">     251 </span><span class="lineCov">          2 : inline std::string keys_of(const std::map&lt;K, V, C&gt;&amp; m) {</span>
+<span class="lineNum">     252 </span>            :   std::ostringstream os;
+<span class="lineNum">     253 </span>            :   StdHelpers_detail::print_helper(
+<span class="lineNum">     254 </span>            :       os, begin(m), end(m),
+<span class="lineNum">     255 </span>            :       [](std::ostream&amp; out, typename std::map&lt;K, V, C&gt;::const_iterator it) {
+<span class="lineNum">     256 </span>            :         out &lt;&lt; it-&gt;first;
+<span class="lineNum">     257 </span>            :       });
+<span class="lineNum">     258 </span>            :   return os.str();
+<span class="lineNum">     259 </span>            : }
+<span class="lineNum">     260 </span>            : 
+<span class="lineNum">     261 </span>            : /*!
+<span class="lineNum">     262 </span>            :  * \ingroup Utilities
+<span class="lineNum">     263 </span>            :  * \brief Format a string like printf
+<span class="lineNum">     264 </span>            :  *
+<span class="lineNum">     265 </span>            :  * Given a formatting string and arguments this returns the corresponding
+<span class="lineNum">     266 </span>            :  * string. Similar to printf but using std::strings.
+<span class="lineNum">     267 </span>            :  */
+<span class="lineNum">     268 </span>            : template &lt;typename... Args&gt;
+<span class="lineNum">     269 </span><span class="lineCov">          2 : std::string formatted_string(const std::string&amp; fmt, Args... args) {</span>
+<span class="lineNum">     270 </span>            : #pragma GCC diagnostic push
+<span class="lineNum">     271 </span>            : #pragma GCC diagnostic ignored &quot;-Wformat-nonliteral&quot;
+<span class="lineNum">     272 </span>            :    // clang-tidy: do not use snprintf
+<span class="lineNum">     273 </span>            :   auto requiredBytes = static_cast&lt;size_t&gt;(std::snprintf(  // NOLINT
+<span class="lineNum">     274 </span>            :                            nullptr, 0, fmt.c_str(), args...)) +
+<span class="lineNum">     275 </span>            :                        1;
+<span class="lineNum">     276 </span>            :   std::string rtn;
+<span class="lineNum">     277 </span>            :   rtn.resize(requiredBytes);
+<span class="lineNum">     278 </span>            :   // clang-tidy: do not use snprintf
+<span class="lineNum">     279 </span>            :   std::snprintf(&amp;rtn[0], requiredBytes, fmt.c_str(), args...);  // NOLINT
+<span class="lineNum">     280 </span>            : #pragma GCC diagnostic pop
+<span class="lineNum">     281 </span>            :   if (rtn[rtn.size() - 1] == '\0') {
+<span class="lineNum">     282 </span>            :     rtn.resize(rtn.size() - 1);
+<span class="lineNum">     283 </span>            :   }
+<span class="lineNum">     284 </span>            :   return rtn;
+<span class="lineNum">     285 </span>            : }
 </pre>
       </td>
     </tr>

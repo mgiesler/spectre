@@ -152,7 +152,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Testing Framework</div>  </div>
 </div><!--header-->
@@ -187,6 +188,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#gaf4ce9d1bca3b738adf3235e0d6740208">get_output</a> (const Container &amp;c)</td></tr>
 <tr class="memdesc:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the streamed output <code>c</code> as a <code><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></code>  <a href="#gaf4ce9d1bca3b738adf3235e0d6740208">More...</a><br /></td></tr>
 <tr class="separator:gaf4ce9d1bca3b738adf3235e0d6740208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gad812bf5bd5af474d885f54430748b9cb"><td class="memItemLeft" align="right" valign="top">static Approx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__TestingFramework.html#gad812bf5bd5af474d885f54430748b9cb">approx</a></td></tr>
+<tr class="memdesc:gad812bf5bd5af474d885f54430748b9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a default tolerance for floating-point number comparison.  <a href="#gad812bf5bd5af474d885f54430748b9cb">More...</a><br /></td></tr>
+<tr class="separator:gad812bf5bd5af474d885f54430748b9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Classes, functions, macros, and instructions for developing tests. </p>
@@ -194,6 +201,14 @@ Functions</h2></td></tr>
 <p>SpECTRE uses the testing framework <a href="https://github.com/philsquared/Catch">Catch</a>. Catch supports a variety of different styles of tests including BDD and fixture tests. The file <code>cmake/SpectreAddCatchTests.cmake</code> parses the source files and adds the found tests to ctest with the correct properties specified by tags and attributes.</p>
 <h3>Usage</h3>
 <p>To run the tests, type <code>ctest</code> in the build directory. You can specify a regex to match the test name using <code>ctest -R Unit.Blah</code>, or run all tests with a certain tag using <code>ctest -L tag</code>.</p>
+<h3>Comparing double-precision results</h3>
+<p>To compare two floating-point numbers that may differ by round-off, use the helper object <code>approx</code>. This is an instance of Catch's comparison class <code>Approx</code> in which the relative tolerance for comparisons is set to roughly \(10^{-14}\) (i.e. <code>std\:\:numeric_limits&lt;double&gt;\:\:epsilon()*100</code>). When possible, we recommend using <code>approx</code> for fuzzy comparisons as follows: </p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  CHECK(<a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/numeric/math/sin.html">sin</a>(M_PI / 4.0) == <a class="code" href="group__TestingFramework.html#gad812bf5bd5af474d885f54430748b9cb">approx</a>(<a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/numeric/math/cos.html">cos</a>(M_PI / 4.0)));</div></div><!-- fragment --><p> For checks that need more control over the precision (e.g. an algorithm in which round-off errors accumulate to a higher level), we recommend using the <code>approx</code> helper with a one-time tolerance adjustment. A comment should explain the reason for the adjustment: </p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  <span class="comment">// This check needs tolerance 1e-12 for X reason.</span></div><div class="line">  CHECK(1.0 == <a class="code" href="group__TestingFramework.html#gad812bf5bd5af474d885f54430748b9cb">approx</a>(1.0 + 5e-13).epsilon(1e-12));</div></div><!-- fragment --><p> For tests in which the same precision adjustment is re-used many times, a new helper object can be created from Catch's <code>Approx</code> with a custom precision: </p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  <span class="comment">// The checks in this test need tolerance 1d-12 for X reason.</span></div><div class="line">  Approx my_approx = Approx::custom().epsilon(1e-12);</div><div class="line">  CHECK(1.0 == my_approx(1.0 + 5e-13));</div><div class="line">  CHECK(1.0 != my_approx(1.0 + 5e-12));</div></div><!-- fragment --><p> Note: We provide the <code>approx</code> object because Catch's <code>Approx</code> defaults to a very loose tolerance (<code>std\:\:numeric_limits&lt;float&gt;\:\:epsilon()*100</code>, or roughly \(10^{-5}\) relative error), and so is poorly-suited to checking many numerical algorithms that rely on double-precision accuracy. By providing a tighter tolerance with <code>approx</code>, we avoid having to redefine the tolerance in every test.</p>
 <h3>Attributes</h3>
 <p>Attributes allow you to modify properties of the test. Attributes are specified as follows: </p><div class="fragment"><div class="line"><span class="comment">// [[TimeOut, 10]]</span></div><div class="line"><span class="comment">// [[ErrorRegex, The error message expected from the test]]</span></div><div class="line">SPECTRE_TEST_CASE(<span class="stringliteral">&quot;Unit.Blah&quot;</span>, <span class="stringliteral">&quot;[Unit]&quot;</span>) {</div></div><!-- fragment --><p>Available attributes are:</p>
 <table class="doxtable">
@@ -377,7 +392,38 @@ template&lt;typename T &gt; </div>
 <p>snippet <a class="el" href="Test__PupStlCpp11_8cpp.html">Test_PupStlCpp11.cpp</a> example_serialize_copyable</p>
 <p>and for non-copyable types use: snippet <a class="el" href="Test__PupStlCpp11_8cpp.html">Test_PupStlCpp11.cpp</a> example_serialize_non_copyable </p>
 
-<p class="reference">Referenced by <a class="el" href="Test__Block_8cpp.html#a90234211f8121006ab30e7c1a824674c">test_block()</a>, <a class="el" href="Test__Neighbors_8cpp.html#a5abf5249dbe852546745801269750aaa">TEST_CASE()</a>, <a class="el" href="Test__Identity_8cpp.html#a597487a48c3c950d773f89abada6393e">test_identity()</a>, and <a class="el" href="Test__Rotation_8cpp.html#a7a8bf0a8b0c6ffb44f1f7317b0e23aad">test_rotation_3()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Test__Block_8cpp.html#a90234211f8121006ab30e7c1a824674c">test_block()</a>, <a class="el" href="Test__Identity_8cpp.html#a597487a48c3c950d773f89abada6393e">test_identity()</a>, and <a class="el" href="Test__Rotation_8cpp.html#a7a8bf0a8b0c6ffb44f1f7317b0e23aad">test_rotation_3()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gad812bf5bd5af474d885f54430748b9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad812bf5bd5af474d885f54430748b9cb">&#9670;&nbsp;</a></span>approx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Approx approx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= Approx::custom().epsilon(    </div><div class="line">    <a class="codeRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/types/numeric_limits.html">std::numeric_limits&lt;double&gt;::epsilon</a>() * 100)</div><div class="ttc" id="numeric_limits_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/numeric_limits.html">std::numeric_limits</a></div></div>
+</div><!-- fragment -->
+<p>Set a default tolerance for floating-point number comparison. </p>
+<h3>Details</h3>
+<p>Catch's default (relative) tolerance for comparing floating-point numbers is <code>std\:\:numeric_limits&lt;float&gt;\:\:epsilon() * 100</code>, or roughly \(10^{-5}\). This tolerance is too loose for checking many scientific algorithms that rely on double precision floating-point accuracy, so we provide a tighter tighter tolerance through the <code>approx</code> static object.</p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  CHECK(1.0 == <a class="code" href="group__TestingFramework.html#gad812bf5bd5af474d885f54430748b9cb">approx</a>(1.0 + 1e-15));</div><div class="line">  CHECK(1.0 != <a class="code" href="group__TestingFramework.html#gad812bf5bd5af474d885f54430748b9cb">approx</a>(1.0 + 1e-13));</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e">integrate_test()</a>, <a class="el" href="TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48">integrate_variable_test()</a>, and <a class="el" href="Test__Rotation_8cpp.html#a7a8bf0a8b0c6ffb44f1f7317b0e23aad">test_rotation_3()</a>.</p>
 
 </div>
 </div>

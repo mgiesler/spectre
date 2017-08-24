@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/ElementId.cpp</title>
+  <title>LCOV - 8c9d298de67acd276263824418ef60f1eca9305d - Domain/ElementId.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8c9d298de67acd276263824418ef60f1eca9305d">8c9d298de67acd276263824418ef60f1eca9305d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">20</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-23 02:31:13</td>
+            <td class="headerValue">2017-08-24 02:31:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">12</td>
             <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntryLo">33.3 %</td>
+            <td class="headerCovTableEntryLo">66.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -87,9 +87,9 @@
 <span class="lineNum">      17 </span><span class="lineCov">          8 :       segment_ids_(make_array&lt;VolumeDim&gt;(SegmentId(0, 0))) {}</span>
 <a name="18"><span class="lineNum">      18 </span>            : </a>
 <span class="lineNum">      19 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      20 </span><span class="lineCov">         19 : ElementId&lt;VolumeDim&gt;::ElementId(const size_t block_id,</span>
+<span class="lineNum">      20 </span><span class="lineCov">         31 : ElementId&lt;VolumeDim&gt;::ElementId(const size_t block_id,</span>
 <span class="lineNum">      21 </span>            :                                 std::array&lt;SegmentId, VolumeDim&gt; segment_ids)
-<span class="lineNum">      22 </span><span class="lineCov">         19 :     : block_id_{block_id}, segment_ids_(std::move(segment_ids)) {}</span>
+<span class="lineNum">      22 </span><span class="lineCov">         31 :     : block_id_{block_id}, segment_ids_(std::move(segment_ids)) {}</span>
 <a name="23"><span class="lineNum">      23 </span>            : </a>
 <span class="lineNum">      24 </span>            : template &lt;size_t VolumeDim&gt;
 <span class="lineNum">      25 </span><span class="lineCov">          9 : ElementId&lt;VolumeDim&gt; ElementId&lt;VolumeDim&gt;::id_of_child(const size_t dim,</span>
@@ -109,15 +109,15 @@
 <span class="lineNum">      39 </span>            : }
 <a name="40"><span class="lineNum">      40 </span>            : </a>
 <span class="lineNum">      41 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      42 </span><span class="lineCov">          3 : void ElementId&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {</span>
-<span class="lineNum">      43 </span><span class="lineCov">          3 :   p | block_id_;</span>
-<span class="lineNum">      44 </span><span class="lineCov">          3 :   p | segment_ids_;</span>
-<span class="lineNum">      45 </span><span class="lineCov">          3 : }</span>
+<span class="lineNum">      42 </span><span class="lineCov">         30 : void ElementId&lt;VolumeDim&gt;::pup(PUP::er&amp; p) {</span>
+<span class="lineNum">      43 </span><span class="lineCov">         30 :   p | block_id_;</span>
+<span class="lineNum">      44 </span><span class="lineCov">         30 :   p | segment_ids_;</span>
+<span class="lineNum">      45 </span><span class="lineCov">         30 : }</span>
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <span class="lineNum">      47 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      48 </span><span class="lineCov">         29 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const ElementId&lt;VolumeDim&gt;&amp; id) {</span>
-<span class="lineNum">      49 </span><span class="lineCov">         29 :   os &lt;&lt; &quot;[B&quot; &lt;&lt; id.block_id() &lt;&lt; ',' &lt;&lt; id.segment_ids() &lt;&lt; ']';</span>
-<span class="lineNum">      50 </span><span class="lineCov">         29 :   return os;</span>
+<span class="lineNum">      48 </span><span class="lineCov">        108 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const ElementId&lt;VolumeDim&gt;&amp; id) {</span>
+<span class="lineNum">      49 </span><span class="lineCov">        108 :   os &lt;&lt; &quot;[B&quot; &lt;&lt; id.block_id() &lt;&lt; ',' &lt;&lt; id.segment_ids() &lt;&lt; ']';</span>
+<span class="lineNum">      50 </span><span class="lineCov">        108 :   return os;</span>
 <span class="lineNum">      51 </span>            : }
 <span class="lineNum">      52 </span>            : 
 <span class="lineNum">      53 </span>            : // LCOV_EXCL_START

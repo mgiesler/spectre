@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - e46c81950ee78eb1a83925d94f0fd5c2ea74201d - Domain/Orientation.hpp</title>
+  <title>LCOV - 8c9d298de67acd276263824418ef60f1eca9305d - Domain/Orientation.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/e46c81950ee78eb1a83925d94f0fd5c2ea74201d">e46c81950ee78eb1a83925d94f0fd5c2ea74201d</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/8c9d298de67acd276263824418ef60f1eca9305d">8c9d298de67acd276263824418ef60f1eca9305d</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">13</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-08-23 02:31:13</td>
+            <td class="headerValue">2017-08-24 02:31:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">17</td>
@@ -94,7 +94,7 @@
 <span class="lineNum">      24 </span>            : template &lt;size_t VolumeDim&gt;
 <a name="25"><span class="lineNum">      25 </span>            : class Orientation {</a>
 <span class="lineNum">      26 </span>            :  public:
-<span class="lineNum">      27 </span><span class="lineCov">          9 :   Orientation() = default;</span>
+<span class="lineNum">      27 </span><span class="lineCov">         17 :   Orientation() = default;</span>
 <span class="lineNum">      28 </span>            :   explicit Orientation(
 <span class="lineNum">      29 </span>            :       std::array&lt;Direction&lt;VolumeDim&gt;, VolumeDim&gt; mapped_directions);
 <span class="lineNum">      30 </span>            :   Orientation(
@@ -116,10 +116,10 @@
 <span class="lineNum">      46 </span>            :   }
 <a name="47"><span class="lineNum">      47 </span>            : </a>
 <span class="lineNum">      48 </span>            :   /// The corresponding direction in the neighbor.
-<span class="lineNum">      49 </span><span class="lineCov">        182 :   Direction&lt;VolumeDim&gt; mapped(const Direction&lt;VolumeDim&gt;&amp; direction) const {</span>
-<span class="lineNum">      50 </span><span class="lineCov">        182 :     return direction.side() == Side::Upper</span>
-<span class="lineNum">      51 </span><span class="lineCov">        176 :                ? mapped_directions_[direction.dimension()]</span>
-<span class="lineNum">      52 </span><span class="lineCov">        358 :                : mapped_directions_[direction.dimension()].opposite();</span>
+<span class="lineNum">      49 </span><span class="lineCov">        289 :   Direction&lt;VolumeDim&gt; mapped(const Direction&lt;VolumeDim&gt;&amp; direction) const {</span>
+<span class="lineNum">      50 </span><span class="lineCov">        289 :     return direction.side() == Side::Upper</span>
+<span class="lineNum">      51 </span><span class="lineCov">        283 :                ? mapped_directions_[direction.dimension()]</span>
+<span class="lineNum">      52 </span><span class="lineCov">        572 :                : mapped_directions_[direction.dimension()].opposite();</span>
 <span class="lineNum">      53 </span>            :   }
 <span class="lineNum">      54 </span>            : 
 <span class="lineNum">      55 </span>            :   /// The corresponding SegmentIds in the neighbor.
@@ -130,10 +130,10 @@
 <span class="lineNum">      60 </span>            :   void pup(PUP::er&amp; p);  // NOLINT
 <a name="61"><span class="lineNum">      61 </span>            : </a>
 <span class="lineNum">      62 </span>            :  private:
-<span class="lineNum">      63 </span><span class="lineCov">         35 :   friend bool operator==(const Orientation&amp; lhs,</span>
+<span class="lineNum">      63 </span><span class="lineCov">         56 :   friend bool operator==(const Orientation&amp; lhs,</span>
 <span class="lineNum">      64 </span>            :                          const Orientation&amp; rhs) noexcept {
-<span class="lineNum">      65 </span><span class="lineCov">         66 :     return (lhs.mapped_directions_ == rhs.mapped_directions_ and</span>
-<span class="lineNum">      66 </span><span class="lineCov">         66 :             lhs.is_aligned_ == rhs.is_aligned_);</span>
+<span class="lineNum">      65 </span><span class="lineCov">        108 :     return (lhs.mapped_directions_ == rhs.mapped_directions_ and</span>
+<span class="lineNum">      66 </span><span class="lineCov">        108 :             lhs.is_aligned_ == rhs.is_aligned_);</span>
 <span class="lineNum">      67 </span>            :   }
 <span class="lineNum">      68 </span>            : 
 <span class="lineNum">      69 </span>            :   std::array&lt;Direction&lt;VolumeDim&gt;, VolumeDim&gt; mapped_directions_;

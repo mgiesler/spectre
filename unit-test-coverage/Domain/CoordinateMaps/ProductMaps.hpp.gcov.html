@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 0526ed01c804fdad1e5e78f90d682a543412b575 - Domain/CoordinateMaps/ProductMaps.hpp</title>
+  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - Domain/CoordinateMaps/ProductMaps.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0526ed01c804fdad1e5e78f90d682a543412b575">0526ed01c804fdad1e5e78f90d682a543412b575</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">69</td>
@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-01 13:07:51</td>
+            <td class="headerValue">2017-09-02 03:20:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntry">22</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -87,7 +87,7 @@
 <span class="lineNum">      17 </span>            : namespace product_detail {
 <a name="18"><span class="lineNum">      18 </span>            : template &lt;typename T, size_t Size, typename Map1, typename Map2,</a>
 <span class="lineNum">      19 </span>            :           typename Function, size_t... Is, size_t... Js&gt;
-<span class="lineNum">      20 </span><span class="lineCov">         64 : std::array&lt;T, Size&gt; apply_call(const std::array&lt;T, Size&gt;&amp; xi, const Map1&amp; map1,</span>
+<span class="lineNum">      20 </span><span class="lineCov">         69 : std::array&lt;T, Size&gt; apply_call(const std::array&lt;T, Size&gt;&amp; xi, const Map1&amp; map1,</span>
 <span class="lineNum">      21 </span>            :                                const Map2&amp; map2, const Function func,
 <span class="lineNum">      22 </span>            :                                std::integer_sequence&lt;size_t, Is...&gt; /*meta*/,
 <span class="lineNum">      23 </span>            :                                std::integer_sequence&lt;size_t, Js...&gt; /*meta*/) {
@@ -95,12 +95,12 @@
 <span class="lineNum">      25 </span>            :   // a reference_wrapper inside a reference_wrapper.
 <span class="lineNum">      26 </span><span class="lineCov">        128 :   return {{func(</span>
 <span class="lineNum">      27 </span>            :                std::array&lt;std::reference_wrapper&lt;const T&gt;, sizeof...(Is)&gt;{
-<span class="lineNum">      28 </span><span class="lineCov">         64 :                    {xi[Is]...}},</span>
-<span class="lineNum">      29 </span><span class="lineCov">         64 :                map1)[Is]...,</span>
+<span class="lineNum">      28 </span><span class="lineCov">         69 :                    {xi[Is]...}},</span>
+<span class="lineNum">      29 </span><span class="lineCov">         74 :                map1)[Is]...,</span>
 <span class="lineNum">      30 </span><span class="lineCov">        128 :            func(</span>
 <span class="lineNum">      31 </span>            :                std::array&lt;std::reference_wrapper&lt;const T&gt;, sizeof...(Js)&gt;{
-<span class="lineNum">      32 </span><span class="lineCov">         64 :                    {xi[Map1::dim + Js]...}},</span>
-<span class="lineNum">      33 </span><span class="lineCov">        192 :                map2)[Js]...}};</span>
+<span class="lineNum">      32 </span><span class="lineCov">         69 :                    {xi[Map1::dim + Js]...}},</span>
+<span class="lineNum">      33 </span><span class="lineCov">        207 :                map2)[Js]...}};</span>
 <span class="lineNum">      34 </span>            : }
 <span class="lineNum">      35 </span>            : 
 <span class="lineNum">      36 </span>            : template &lt;typename T, size_t Size, typename Map1, typename Map2,
@@ -193,19 +193,19 @@
 <span class="lineNum">     123 </span>            : };
 <a name="124"><span class="lineNum">     124 </span>            : </a>
 <span class="lineNum">     125 </span>            : template &lt;typename Map1, typename Map2&gt;
-<span class="lineNum">     126 </span><span class="lineCov">          3 : ProductOf2Maps&lt;Map1, Map2&gt;::ProductOf2Maps(Map1 map1, Map2 map2)</span>
-<span class="lineNum">     127 </span><span class="lineCov">          3 :     : map1_(std::move(map1)), map2_(std::move(map2)) {}</span>
+<span class="lineNum">     126 </span><span class="lineCov">          4 : ProductOf2Maps&lt;Map1, Map2&gt;::ProductOf2Maps(Map1 map1, Map2 map2)</span>
+<span class="lineNum">     127 </span><span class="lineCov">          4 :     : map1_(std::move(map1)), map2_(std::move(map2)) {}</span>
 <span class="lineNum">     128 </span>            : 
 <span class="lineNum">     129 </span>            : template &lt;typename Map1, typename Map2&gt;
 <span class="lineNum">     130 </span>            : template &lt;typename T&gt;
 <a name="131"><span class="lineNum">     131 </span>            : std::array&lt;std::decay_t&lt;tt::remove_reference_wrapper_t&lt;T&gt;&gt;,</a>
 <span class="lineNum">     132 </span>            :            ProductOf2Maps&lt;Map1, Map2&gt;::dim&gt;
-<span class="lineNum">     133 </span><span class="lineCov">         42 : ProductOf2Maps&lt;Map1, Map2&gt;::operator()(const std::array&lt;T, dim&gt;&amp; xi) const {</span>
+<span class="lineNum">     133 </span><span class="lineCov">         47 : ProductOf2Maps&lt;Map1, Map2&gt;::operator()(const std::array&lt;T, dim&gt;&amp; xi) const {</span>
 <a name="134"><span class="lineNum">     134 </span><span class="lineCov">         84 :   return product_detail::apply_call(</span></a>
 <span class="lineNum">     135 </span>            :       xi, map1_, map2_,
-<span class="lineNum">     136 </span><span class="lineCov">         84 :       [](const auto&amp; point, const auto&amp; map) { return map(point); },</span>
+<span class="lineNum">     136 </span><span class="lineCov">         94 :       [](const auto&amp; point, const auto&amp; map) { return map(point); },</span>
 <span class="lineNum">     137 </span>            :       std::make_index_sequence&lt;Map1::dim&gt;{},
-<span class="lineNum">     138 </span><span class="lineCov">         84 :       std::make_index_sequence&lt;Map2::dim&gt;{});</span>
+<span class="lineNum">     138 </span><span class="lineCov">         89 :       std::make_index_sequence&lt;Map2::dim&gt;{});</span>
 <span class="lineNum">     139 </span>            : }
 <span class="lineNum">     140 </span>            : 
 <span class="lineNum">     141 </span>            : template &lt;typename Map1, typename Map2&gt;
@@ -315,18 +315,18 @@
 <span class="lineNum">     245 </span>            : };
 <a name="246"><span class="lineNum">     246 </span>            : </a>
 <span class="lineNum">     247 </span>            : template &lt;typename Map1, typename Map2, typename Map3&gt;
-<span class="lineNum">     248 </span><span class="lineCov">          3 : ProductOf3Maps&lt;Map1, Map2, Map3&gt;::ProductOf3Maps(Map1 map1, Map2 map2,</span>
+<span class="lineNum">     248 </span><span class="lineCov">          4 : ProductOf3Maps&lt;Map1, Map2, Map3&gt;::ProductOf3Maps(Map1 map1, Map2 map2,</span>
 <span class="lineNum">     249 </span>            :                                                  Map3 map3)
-<span class="lineNum">     250 </span><span class="lineCov">          3 :     : map1_(std::move(map1)), map2_(std::move(map2)), map3_(std::move(map3)) {}</span>
+<span class="lineNum">     250 </span><span class="lineCov">          4 :     : map1_(std::move(map1)), map2_(std::move(map2)), map3_(std::move(map3)) {}</span>
 <span class="lineNum">     251 </span>            : 
 <span class="lineNum">     252 </span>            : template &lt;typename Map1, typename Map2, typename Map3&gt;
 <a name="253"><span class="lineNum">     253 </span>            : template &lt;typename T&gt;</a>
 <span class="lineNum">     254 </span>            : std::array&lt;T, ProductOf3Maps&lt;Map1, Map2, Map3&gt;::dim&gt;
-<span class="lineNum">     255 </span><span class="lineCov">         42 : ProductOf3Maps&lt;Map1, Map2, Map3&gt;::operator()(</span>
+<span class="lineNum">     255 </span><span class="lineCov">         49 : ProductOf3Maps&lt;Map1, Map2, Map3&gt;::operator()(</span>
 <span class="lineNum">     256 </span>            :     const std::array&lt;T, dim&gt;&amp; xi) const {
-<span class="lineNum">     257 </span><span class="lineCov">         84 :   return {{map1_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[0]}})[0],</span>
-<span class="lineNum">     258 </span><span class="lineCov">         84 :            map2_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[1]}})[0],</span>
-<span class="lineNum">     259 </span><span class="lineCov">        126 :            map3_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[2]}})[0]}};</span>
+<span class="lineNum">     257 </span><span class="lineCov">         98 :   return {{map1_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[0]}})[0],</span>
+<span class="lineNum">     258 </span><span class="lineCov">         98 :            map2_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[1]}})[0],</span>
+<span class="lineNum">     259 </span><span class="lineCov">        147 :            map3_(std::array&lt;std::reference_wrapper&lt;const T&gt;, 1&gt;{{xi[2]}})[0]}};</span>
 <span class="lineNum">     260 </span>            : }
 <span class="lineNum">     261 </span>            : 
 <span class="lineNum">     262 </span>            : template &lt;typename Map1, typename Map2, typename Map3&gt;

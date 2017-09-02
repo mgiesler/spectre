@@ -88,6 +88,7 @@ var searchData=
   ['integrate_5ftest',['integrate_test',['../TimeStepperTestUtils_8hpp.html#aabe25149f186d01abfa10f8b9801256e',1,'TimeStepperTestUtils.hpp']]],
   ['integrate_5fvariable_5ftest',['integrate_variable_test',['../TimeStepperTestUtils_8hpp.html#abb8ae4d98d6d4b230c2ca3de2ea58e48',1,'TimeStepperTestUtils.hpp']]],
   ['inteldetails_2ehpp',['IntelDetails.hpp',['../IntelDetails_8hpp.html',1,'']]],
+  ['interface_5fgrid_5fcoordinates',['interface_grid_coordinates',['../group__ComputationalDomain.html#ga68c3ad23f8b27f3a9bc6f8b80ae37d94',1,'GridCoordinates.hpp']]],
   ['intern_5ftype',['intern_type',['http://en.cppreference.com/w/cpp/locale/codecvt.html',1,'std::codecvt::intern_type'],['http://en.cppreference.com/w/cpp/locale/codecvt.html',1,'std::codecvt_byname::intern_type'],['http://en.cppreference.com/w/cpp/locale/codecvt.html',1,'std::codecvt_utf16::intern_type'],['http://en.cppreference.com/w/cpp/locale/codecvt.html',1,'std::codecvt_utf8::intern_type'],['http://en.cppreference.com/w/cpp/locale/codecvt.html',1,'std::codecvt_utf8_utf16::intern_type']]],
   ['interpolation_5fmatrix',['interpolation_matrix',['../namespaceBasis_1_1lgl.html#a56287e67f67d9bb8f0b9c3e331f1d383',1,'Basis::lgl']]],
   ['intervals',['intervals',['http://en.cppreference.com/w/cpp/numeric/random/piecewise_constant_distribution/params.html',1,'std::piecewise_constant_distribution::intervals()'],['http://en.cppreference.com/w/cpp/numeric/random/piecewise_linear_distribution/params.html',1,'std::piecewise_linear_distribution::intervals()']]],

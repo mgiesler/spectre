@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 0526ed01c804fdad1e5e78f90d682a543412b575 - Utilities/MakeArray.hpp</title>
+  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - Utilities/MakeArray.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0526ed01c804fdad1e5e78f90d682a543412b575">0526ed01c804fdad1e5e78f90d682a543412b575</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">12</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-01 13:07:51</td>
+            <td class="headerValue">2017-09-02 03:20:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">46</td>
-            <td class="headerCovTableEntry">58</td>
-            <td class="headerCovTableEntryMed">79.3 %</td>
+            <td class="headerCovTableEntry">48</td>
+            <td class="headerCovTableEntry">60</td>
+            <td class="headerCovTableEntryMed">80.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -101,7 +101,7 @@
 <span class="lineNum">      31 </span>            : make_array_impl(T&amp;&amp; value,
 <span class="lineNum">      32 </span>            :                 std::integer_sequence&lt;size_t, indexes...&gt; /* unused */) {
 <span class="lineNum">      33 </span>            :   return std::array&lt;typename std::decay&lt;T&gt;::type, size&gt;{
-<span class="lineNum">      34 </span><span class="lineCov">      67723 :       {(static_cast&lt;void&gt;(indexes), value)..., std::forward&lt;T&gt;(value)}};</span>
+<span class="lineNum">      34 </span><span class="lineCov">      67757 :       {(static_cast&lt;void&gt;(indexes), value)..., std::forward&lt;T&gt;(value)}};</span>
 <span class="lineNum">      35 </span>            : }
 <span class="lineNum">      36 </span>            : }  // namespace MakeArray_detail
 <span class="lineNum">      37 </span>            : 
@@ -120,8 +120,8 @@
 <span class="lineNum">      50 </span>            : template &lt;std::size_t size, typename T&gt;
 <span class="lineNum">      51 </span>            : SPECTRE_ALWAYS_INLINE constexpr std::array&lt;std::decay_t&lt;T&gt;, size&gt; make_array(
 <span class="lineNum">      52 </span>            :     std::integral_constant&lt;std::size_t, size&gt; /* unused */, T&amp;&amp; value) {
-<span class="lineNum">      53 </span><span class="lineCov">      48894 :   return MakeArray_detail::make_array_impl&lt;size&gt;(</span>
-<span class="lineNum">      54 </span><span class="lineCov">      86552 :       std::forward&lt;T&gt;(value), std::make_index_sequence&lt;size - 1&gt;{});</span>
+<span class="lineNum">      53 </span><span class="lineCov">      48932 :   return MakeArray_detail::make_array_impl&lt;size&gt;(</span>
+<span class="lineNum">      54 </span><span class="lineCov">      86582 :       std::forward&lt;T&gt;(value), std::make_index_sequence&lt;size - 1&gt;{});</span>
 <span class="lineNum">      55 </span>            : }
 <span class="lineNum">      56 </span>            : 
 <span class="lineNum">      57 </span>            : /*!
@@ -133,8 +133,8 @@
 <span class="lineNum">      63 </span>            : template &lt;std::size_t size, typename T&gt;
 <span class="lineNum">      64 </span>            : SPECTRE_ALWAYS_INLINE constexpr std::array&lt;std::decay_t&lt;T&gt;, size&gt; make_array(
 <span class="lineNum">      65 </span>            :     T&amp;&amp; value) {
-<span class="lineNum">      66 </span><span class="lineCov">      48900 :   return make_array(std::integral_constant&lt;std::size_t, size&gt;{},</span>
-<span class="lineNum">      67 </span><span class="lineCov">      86552 :                     std::forward&lt;T&gt;(value));</span>
+<span class="lineNum">      66 </span><span class="lineCov">      48941 :   return make_array(std::integral_constant&lt;std::size_t, size&gt;{},</span>
+<span class="lineNum">      67 </span><span class="lineCov">      86582 :                     std::forward&lt;T&gt;(value));</span>
 <span class="lineNum">      68 </span>            : }
 <span class="lineNum">      69 </span>            : 
 <span class="lineNum">      70 </span>            : /*!
@@ -150,14 +150,14 @@
 <span class="lineNum">      80 </span>            :       cpp17::conjunction_v&lt;std::is_same&lt;std::decay_t&lt;T&gt;, std::decay_t&lt;V&gt;&gt;...&gt;,
 <span class="lineNum">      81 </span>            :       &quot;all types to make_array(...) must be the same&quot;);
 <span class="lineNum">      82 </span>            :   return std::array&lt;typename std::decay&lt;T&gt;::type, sizeof...(V) + 1&gt;{
-<span class="lineNum">      83 </span><span class="lineCov">        356 :       {std::forward&lt;T&gt;(t), std::forward&lt;V&gt;(values)...}};</span>
+<span class="lineNum">      83 </span><span class="lineCov">        361 :       {std::forward&lt;T&gt;(t), std::forward&lt;V&gt;(values)...}};</span>
 <span class="lineNum">      84 </span>            : }
 <span class="lineNum">      85 </span>            : 
 <a name="86"><span class="lineNum">      86 </span>            : namespace MakeArray_detail {</a>
 <span class="lineNum">      87 </span>            : template &lt;typename T, size_t size, typename Seq, size_t... indexes&gt;
-<span class="lineNum">      88 </span><span class="lineCov">        268 : std::array&lt;T, size&gt; make_array_from_iterator_impl(</span>
+<span class="lineNum">      88 </span><span class="lineCov">        283 : std::array&lt;T, size&gt; make_array_from_iterator_impl(</span>
 <span class="lineNum">      89 </span>            :     Seq&amp;&amp; s, std::integer_sequence&lt;size_t, indexes...&gt; /*meta*/) {
-<span class="lineNum">      90 </span><span class="lineCov">        268 :   return std::array&lt;T, size&gt;{{static_cast&lt;T&gt;(*(std::begin(s) + indexes))...}};</span>
+<span class="lineNum">      90 </span><span class="lineCov">        283 :   return std::array&lt;T, size&gt;{{static_cast&lt;T&gt;(*(std::begin(s) + indexes))...}};</span>
 <span class="lineNum">      91 </span>            : }
 <span class="lineNum">      92 </span>            : }  // namespace MakeArray_detail
 <span class="lineNum">      93 </span>            : 
@@ -170,12 +170,12 @@
 <span class="lineNum">     100 </span>            :  * \tparam size the size of the created array
 <a name="101"><span class="lineNum">     101 </span>            :  */</a>
 <span class="lineNum">     102 </span>            : template &lt;typename T, size_t size, typename Seq&gt;
-<span class="lineNum">     103 </span><span class="lineCov">        269 : constexpr std::array&lt;T, size&gt; make_array(Seq&amp;&amp; seq) {</span>
-<span class="lineNum">     104 </span><span class="lineCov">        269 :   CASSERT(size &lt;= seq.size(),</span>
+<span class="lineNum">     103 </span><span class="lineCov">        284 : constexpr std::array&lt;T, size&gt; make_array(Seq&amp;&amp; seq) {</span>
+<span class="lineNum">     104 </span><span class="lineCov">        284 :   CASSERT(size &lt;= seq.size(),</span>
 <span class="lineNum">     105 </span>            :           &quot;The sequence size must be at least as large as the array being &quot;
 <span class="lineNum">     106 </span>            :           &quot;created from it.&quot;);
 <span class="lineNum">     107 </span><span class="lineCov">        508 :   return MakeArray_detail::make_array_from_iterator_impl&lt;T, size&gt;(</span>
-<span class="lineNum">     108 </span><span class="lineCov">        522 :       std::forward&lt;Seq&gt;(seq), std::make_index_sequence&lt;size&gt;{});</span>
+<span class="lineNum">     108 </span><span class="lineCov">        537 :       std::forward&lt;Seq&gt;(seq), std::make_index_sequence&lt;size&gt;{});</span>
 <span class="lineNum">     109 </span>            : }
 </pre>
       </td>

@@ -179,6 +179,7 @@ $(function() {
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/unordered_map.html">unordered_map</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/unordered_set.html">unordered_set</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/header/vector.html">vector</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Gsl_8hpp_source.html">Utilities/Gsl.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Requires_8hpp_source.html">Utilities/Requires.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="StlStreamDeclarations_8hpp_source.html">Utilities/StlStreamDeclarations.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Utilities_2TypeTraits_8hpp_source.html">Utilities/TypeTraits.hpp</a>&quot;</code><br />
@@ -247,10 +248,343 @@ Functions</h2></td></tr>
 <tr class="memitem:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__Utilities.html#ga9a7c7ee897f581360154a3676d5f7ab9">formatted_string</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;fmt, Args... args)</td></tr>
 <tr class="memdesc:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format a string like printf.  <a href="group__Utilities.html#ga9a7c7ee897f581360154a3676d5f7ab9">More...</a><br /></td></tr>
 <tr class="separator:ga9a7c7ee897f581360154a3676d5f7ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a8a578c8824701908fab9e692956d8"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T &gt; </td></tr>
+<tr class="memitem:ad5a8a578c8824701908fab9e692956d8"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#ad5a8a578c8824701908fab9e692956d8">operator+=</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(lhs[0]+=rhs[0]))</td></tr>
+<tr class="separator:ad5a8a578c8824701908fab9e692956d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34392e0f80c911e0531b088d34f15807"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T &gt; </td></tr>
+<tr class="memitem:a34392e0f80c911e0531b088d34f15807"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a34392e0f80c911e0531b088d34f15807">operator+</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(std::declval&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&gt;()+=rhs) and noexcept(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;{lhs}))</td></tr>
+<tr class="separator:a34392e0f80c911e0531b088d34f15807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742cfcefeb32ec806e6e04310e9f49dd"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T &gt; </td></tr>
+<tr class="memitem:a742cfcefeb32ec806e6e04310e9f49dd"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a742cfcefeb32ec806e6e04310e9f49dd">operator-=</a> (<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(lhs[0] -=rhs[0]))</td></tr>
+<tr class="separator:a742cfcefeb32ec806e6e04310e9f49dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6ec44683304f2344f05b339b87bb56"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T &gt; </td></tr>
+<tr class="memitem:a2a6ec44683304f2344f05b339b87bb56"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a2a6ec44683304f2344f05b339b87bb56">operator-</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(std::declval&lt; <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&gt;() -=rhs) and noexcept(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;{lhs}))</td></tr>
+<tr class="separator:a2a6ec44683304f2344f05b339b87bb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04db6ae216ad7b4af238e2c2a8bbe9b7"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T , typename U &gt; </td></tr>
+<tr class="memitem:a04db6ae216ad7b4af238e2c2a8bbe9b7"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a04db6ae216ad7b4af238e2c2a8bbe9b7">operator*</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const U &amp;scale) noexcept(noexcept(lhs[0] *scale) and noexcept(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;{}))</td></tr>
+<tr class="separator:a04db6ae216ad7b4af238e2c2a8bbe9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7b031a81a7df0eea768cbd02462151"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T , typename U &gt; </td></tr>
+<tr class="memitem:a1a7b031a81a7df0eea768cbd02462151"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a1a7b031a81a7df0eea768cbd02462151">operator*</a> (const U &amp;scale, const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(rhs *scale))</td></tr>
+<tr class="separator:a1a7b031a81a7df0eea768cbd02462151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ec01f8f472859b8e37387b68a8a9f7"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T , typename U &gt; </td></tr>
+<tr class="memitem:a33ec01f8f472859b8e37387b68a8a9f7"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a33ec01f8f472859b8e37387b68a8a9f7">operator/</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;lhs, const U &amp;scale) noexcept(noexcept(lhs[0]/scale) and noexcept(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;{}))</td></tr>
+<tr class="separator:a33ec01f8f472859b8e37387b68a8a9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38864dcc702530c3549eea27f54176cd"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename T &gt; </td></tr>
+<tr class="memitem:a38864dcc702530c3549eea27f54176cd"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="StdHelpers_8hpp.html#a38864dcc702530c3549eea27f54176cd">operator-</a> (const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;rhs) noexcept(noexcept(-rhs[0]) and noexcept(<a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt;{}))</td></tr>
+<tr class="separator:a38864dcc702530c3549eea27f54176cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines helper functions for the standard library. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a04db6ae216ad7b4af238e2c2a8bbe9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04db6ae216ad7b4af238e2c2a8bbe9b7">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T , typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const U &amp;&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+</div>
+</div>
+<a id="a1a7b031a81a7df0eea768cbd02462151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a7b031a81a7df0eea768cbd02462151">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T , typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator* </td>
+          <td>(</td>
+          <td class="paramtype">const U &amp;&#160;</td>
+          <td class="paramname"><em>scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34392e0f80c911e0531b088d34f15807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34392e0f80c911e0531b088d34f15807">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5a8a578c8824701908fab9e692956d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a8a578c8824701908fab9e692956d8">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt;&amp; operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classTime.html#aed10f4565d5539c164a375832ed6069f">Time::fraction()</a>, <a class="el" href="classTimeDelta.html#a5597b2d1105841337eff1ad6de7d8782">TimeDelta::is_positive()</a>, and <a class="el" href="classgsl_1_1not__null.html#a2099ebe56c81dd43399911bbfcf4c2b7">gsl::not_null&lt; T &gt;::operator*()</a>.</p>
+
+</div>
+</div>
+<a id="a2a6ec44683304f2344f05b339b87bb56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6ec44683304f2344f05b339b87bb56">&#9670;&nbsp;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38864dcc702530c3549eea27f54176cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38864dcc702530c3549eea27f54176cd">&#9670;&nbsp;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+</div>
+</div>
+<a id="a742cfcefeb32ec806e6e04310e9f49dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742cfcefeb32ec806e6e04310e9f49dd">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt;&amp; operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classTime.html#aed10f4565d5539c164a375832ed6069f">Time::fraction()</a>, <a class="el" href="classTimeDelta.html#a5597b2d1105841337eff1ad6de7d8782">TimeDelta::is_positive()</a>, and <a class="el" href="classgsl_1_1not__null.html#a2099ebe56c81dd43399911bbfcf4c2b7">gsl::not_null&lt; T &gt;::operator*()</a>.</p>
+
+</div>
+</div>
+<a id="a33ec01f8f472859b8e37387b68a8a9f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33ec01f8f472859b8e37387b68a8a9f7">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename T , typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt;T, Dim&gt; operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/work/spectre/docs/config/cppreference-doxygen-web.tag.xml:http://en.cppreference.com/w/" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; T, Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const U &amp;&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.10-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

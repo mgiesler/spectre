@@ -200,6 +200,14 @@ Functions</h2></td></tr>
 <tr class="memitem:gae72599c9671b96f52d0d8f001943fbd2"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; SourceFrame, TargetFrame, Maps... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ComputationalDomain.html#gae72599c9671b96f52d0d8f001943fbd2">make_coordinate_map</a> (Maps &amp;&amp;... maps)</td></tr>
 <tr class="memdesc:gae72599c9671b96f52d0d8f001943fbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classCoordinateMap.html" title="A coordinate map or composition of coordinate maps. ">CoordinateMap</a> of <code>maps...</code>  <a href="#gae72599c9671b96f52d0d8f001943fbd2">More...</a><br /></td></tr>
 <tr class="separator:gae72599c9671b96f52d0d8f001943fbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73812856dece1cf6b52728ff786d7d87"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename... Maps&gt; </td></tr>
+<tr class="memitem:ga73812856dece1cf6b52728ff786d7d87"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacetnsr.html#ae4ca53da15772fdb98d33933d2670a3a">tnsr::I</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ComputationalDomain.html#ga73812856dece1cf6b52728ff786d7d87">grid_coordinates</a> (const <a class="el" href="classIndex.html">Index</a>&lt; VolumeDim &gt; &amp;extents, const <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a>, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>, Maps... &gt; &amp;coordinate_map)</td></tr>
+<tr class="memdesc:ga73812856dece1cf6b52728ff786d7d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the grid coordinates in an Element.  <a href="#ga73812856dece1cf6b52728ff786d7d87">More...</a><br /></td></tr>
+<tr class="separator:ga73812856dece1cf6b52728ff786d7d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68c3ad23f8b27f3a9bc6f8b80ae37d94"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename... Maps&gt; </td></tr>
+<tr class="memitem:ga68c3ad23f8b27f3a9bc6f8b80ae37d94"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacetnsr.html#ae4ca53da15772fdb98d33933d2670a3a">tnsr::I</a>&lt; <a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ComputationalDomain.html#ga68c3ad23f8b27f3a9bc6f8b80ae37d94">interface_grid_coordinates</a> (const <a class="el" href="classIndex.html">Index</a>&lt; VolumeDim - 1 &gt; &amp;extents, const <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a>, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>, Maps... &gt; &amp;coordinate_map, const <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt; &amp;direction)</td></tr>
+<tr class="memdesc:ga68c3ad23f8b27f3a9bc6f8b80ae37d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the grid coordinates on a face of an Element.  <a href="#ga68c3ad23f8b27f3a9bc6f8b80ae37d94">More...</a><br /></td></tr>
+<tr class="separator:ga68c3ad23f8b27f3a9bc6f8b80ae37d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The building blocks used to describe the computational domain. </p>
@@ -236,6 +244,90 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga73812856dece1cf6b52728ff786d7d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73812856dece1cf6b52728ff786d7d87">&#9670;&nbsp;</a></span>grid_coordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim, typename... Maps&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetnsr.html#ae4ca53da15772fdb98d33933d2670a3a">tnsr::I</a>&lt;<a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>&gt; grid_coordinates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIndex.html">Index</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>extents</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a>, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>, Maps... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coordinate_map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the grid coordinates in an Element. </p>
+<p><em>Returns:</em> grid-frame vector holding coordinates</p>
+<p><em>Remarks:</em> assumes that the grid-points lies at the Legendre-Gauss-Lobatto points of the reference cell</p>
+<h3>Details</h3>
+<p>Computes the grid coordinates by applying the coordinate_map at the Legendre-Gauss-Lobatto points of the reference cell.</p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  <span class="keyword">const</span> <a class="code" href="classIndex.html">Index&lt;3&gt;</a> extents_3d(<a class="code" href="classIndex.html">Index&lt;3&gt;</a>(5, 3, 2));</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <a class="code" href="classCoordinateMaps_1_1AffineMap.html">CoordinateMaps::AffineMap</a> x_map{-1.0, 1.0, -3.0, 7.0};</div><div class="line">  <span class="keyword">const</span> <a class="code" href="classCoordinateMaps_1_1AffineMap.html">CoordinateMaps::AffineMap</a> y_map{-1.0, 1.0, -13.0, 47.0};</div><div class="line">  <span class="keyword">const</span> <a class="code" href="classCoordinateMaps_1_1AffineMap.html">CoordinateMaps::AffineMap</a> z_map{-1.0, 1.0, -32.0, 74.0};</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> map_3d = make_coordinate_map&lt;Frame::Logical, Frame::Grid&gt;(</div><div class="line">      affine_map_3d{x_map, y_map, z_map});</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> x_3d = <a class="code" href="group__ComputationalDomain.html#ga73812856dece1cf6b52728ff786d7d87">grid_coordinates</a>(extents_3d, map_3d);</div></div><!-- fragment -->
+<p class="reference">References <a class="el" href="namespaceBasis_1_1lgl.html#ae86f2251c1949e386a4d9ee6da15f935">Basis::lgl::collocation_points()</a>, and <a class="el" href="classIndex.html#af3d4b4b5b4ef42bdf14787295c331add">Index&lt; Dim &gt;::product()</a>.</p>
+
+</div>
+</div>
+<a id="ga68c3ad23f8b27f3a9bc6f8b80ae37d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68c3ad23f8b27f3a9bc6f8b80ae37d94">&#9670;&nbsp;</a></span>interface_grid_coordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim, typename... Maps&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetnsr.html#ae4ca53da15772fdb98d33933d2670a3a">tnsr::I</a>&lt;<a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>&gt; interface_grid_coordinates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classIndex.html">Index</a>&lt; VolumeDim - 1 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>extents</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCoordinateMap.html">CoordinateMap</a>&lt; <a class="el" href="structFrame_1_1Logical.html">Frame::Logical</a>, <a class="el" href="structFrame_1_1Grid.html">Frame::Grid</a>, Maps... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coordinate_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classDirection.html">Direction</a>&lt; VolumeDim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the grid coordinates on a face of an Element. </p>
+<p><em>Returns:</em> grid-frame vector holding coordinates</p>
+<p><em>Remarks:</em> assumes that the grid-points lies at the Legendre-Gauss-Lobatto points of the reference cell of the face</p>
+<h3>Details</h3>
+<p>Computes the grid coordinates by applying the coordinate_map at the Legendre-Gauss-Lobatto points of the reference cell of the face lying in the given direction.</p>
+<h3>Example</h3>
+<div class="fragment"><div class="line">  <span class="keyword">const</span> <a class="code" href="classIndex.html">Index&lt;2&gt;</a> extents_3d_zbdry(<a class="code" href="classIndex.html">Index&lt;2&gt;</a>(5, 3));</div><div class="line"></div><div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> x_3d_lb_zeta = <a class="code" href="group__ComputationalDomain.html#ga68c3ad23f8b27f3a9bc6f8b80ae37d94">interface_grid_coordinates</a>(</div><div class="line">      extents_3d_zbdry, map_3d, <a class="code" href="classDirection.html">Direction&lt;3&gt;::lower_zeta</a>());</div></div><!-- fragment -->
+<p class="reference">References <a class="el" href="group__Utilities.html#ga818f101f2f8bd824a3bc7c2c2361c560">gsl::at()</a>, <a class="el" href="namespaceBasis_1_1lgl.html#ae86f2251c1949e386a4d9ee6da15f935">Basis::lgl::collocation_points()</a>, <a class="el" href="classDirection.html#ae518785f586c5fa053ac10171a3afd33">Direction&lt; VolumeDim &gt;::dimension()</a>, <a class="el" href="group__ComputationalDomain.html#gga8c0137d7160ad71b6ed265c53c99ed00ab75fcdd2d72d9e000beab48622402d93">Lower</a>, <a class="el" href="classIndex.html#af3d4b4b5b4ef42bdf14787295c331add">Index&lt; Dim &gt;::product()</a>, and <a class="el" href="classDirection.html#aeed6135f12322d0c3433c43bb98d743f">Direction&lt; VolumeDim &gt;::side()</a>.</p>
+
+</div>
+</div>
 <a id="gae72599c9671b96f52d0d8f001943fbd2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae72599c9671b96f52d0d8f001943fbd2">&#9670;&nbsp;</a></span>make_coordinate_map()</h2>
 

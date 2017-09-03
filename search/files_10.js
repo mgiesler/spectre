@@ -30,6 +30,7 @@ var searchData=
   ['test_5findex_2ecpp',['Test_Index.cpp',['../Test__Index_8cpp.html',1,'']]],
   ['test_5findexiterator_2ecpp',['Test_IndexIterator.cpp',['../Test__IndexIterator_8cpp.html',1,'']]],
   ['test_5flegendregausslobatto_2ecpp',['Test_LegendreGaussLobatto.cpp',['../Test__LegendreGaussLobatto_8cpp.html',1,'']]],
+  ['test_5flinearize_2ecpp',['Test_Linearize.cpp',['../Test__Linearize_8cpp.html',1,'']]],
   ['test_5fmagnitude_2ecpp',['Test_Magnitude.cpp',['../Test__Magnitude_8cpp.html',1,'']]],
   ['test_5fmakearithmeticvalue_2ecpp',['Test_MakeArithmeticValue.cpp',['../Test__MakeArithmeticValue_8cpp.html',1,'']]],
   ['test_5fmakearray_2ecpp',['Test_MakeArray.cpp',['../Test__MakeArray_8cpp.html',1,'']]],

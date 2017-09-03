@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - DataStructures/Matrix.cpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/Matrix.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">20</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -77,11 +77,11 @@
 <span class="lineNum">       7 </span>            : #include &lt;pup.h&gt;
 <a name="8"><span class="lineNum">       8 </span>            : #include &lt;pup_stl.h&gt;</a>
 <span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">         59 : Matrix::Matrix(const size_t number_of_rows, const size_t number_of_colums,</span>
-<span class="lineNum">      11 </span><span class="lineCov">         59 :                const double value)</span>
+<span class="lineNum">      10 </span><span class="lineCov">        125 : Matrix::Matrix(const size_t number_of_rows, const size_t number_of_colums,</span>
+<span class="lineNum">      11 </span><span class="lineCov">        125 :                const double value)</span>
 <span class="lineNum">      12 </span>            :     : number_of_rows_(number_of_rows),
 <span class="lineNum">      13 </span>            :       number_of_columns_(number_of_colums),
-<a name="14"><span class="lineNum">      14 </span><span class="lineCov">         59 :       data_(number_of_rows_ * number_of_columns_, value) {}</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineCov">        125 :       data_(number_of_rows_ * number_of_columns_, value) {}</span></a>
 <span class="lineNum">      15 </span>            : 
 <span class="lineNum">      16 </span><span class="lineCov">          3 : void Matrix::pup(PUP::er&amp; p) {  // NOLINT</span>
 <span class="lineNum">      17 </span><span class="lineCov">          3 :   p | number_of_rows_;</span>

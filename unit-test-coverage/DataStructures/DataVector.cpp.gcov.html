@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - DataStructures/DataVector.cpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/DataVector.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">63</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -77,10 +77,10 @@
 <span class="lineNum">       7 </span>            : 
 <a name="8"><span class="lineNum">       8 </span>            : #include &quot;Utilities/StdHelpers.hpp&quot;</a>
 <span class="lineNum">       9 </span>            : 
-<span class="lineNum">      10 </span><span class="lineCov">      43595 : DataVector::DataVector(const size_t size, const double value)</span>
+<span class="lineNum">      10 </span><span class="lineCov">      44297 : DataVector::DataVector(const size_t size, const double value)</span>
 <span class="lineNum">      11 </span>            :     : size_(size),
 <span class="lineNum">      12 </span>            :       owned_data_(size_, value),
-<a name="13"><span class="lineNum">      13 </span><span class="lineCov">      43595 :       data_(owned_data_.data(), size_) {}</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineCov">      44297 :       data_(owned_data_.data(), size_) {}</span></a>
 <span class="lineNum">      14 </span>            : 
 <span class="lineNum">      15 </span><span class="lineCov">         32 : DataVector::DataVector(std::initializer_list&lt;double&gt; list)</span>
 <a name="16"><span class="lineNum">      16 </span><span class="lineCov">         32 :     : size_(list.size()), owned_data_(list), data_(owned_data_.data(), size_) {}</span></a>
@@ -89,15 +89,15 @@
 <span class="lineNum">      19 </span><span class="lineCov">          2 :     : size_(size), owned_data_(0), data_(start, size_), owning_(false) {}</span>
 <a name="20"><span class="lineNum">      20 </span>            : </a>
 <span class="lineNum">      21 </span>            : /// \cond HIDDEN_SYMBOLS
-<span class="lineNum">      22 </span><span class="lineCov">        174 : DataVector::DataVector(const DataVector&amp; rhs) {</span>
-<span class="lineNum">      23 </span><span class="lineCov">        174 :   size_ = rhs.size();</span>
-<span class="lineNum">      24 </span><span class="lineCov">        174 :   if (rhs.is_owning()) {</span>
-<span class="lineNum">      25 </span><span class="lineCov">        172 :     owned_data_ = rhs.owned_data_;</span>
+<span class="lineNum">      22 </span><span class="lineCov">        198 : DataVector::DataVector(const DataVector&amp; rhs) {</span>
+<span class="lineNum">      23 </span><span class="lineCov">        198 :   size_ = rhs.size();</span>
+<span class="lineNum">      24 </span><span class="lineCov">        198 :   if (rhs.is_owning()) {</span>
+<span class="lineNum">      25 </span><span class="lineCov">        196 :     owned_data_ = rhs.owned_data_;</span>
 <span class="lineNum">      26 </span>            :   } else {
 <span class="lineNum">      27 </span><span class="lineCov">          2 :     owned_data_ = InternalStorage_t(rhs.begin(), rhs.end());</span>
 <span class="lineNum">      28 </span>            :   }
-<span class="lineNum">      29 </span><span class="lineCov">        174 :   data_ = decltype(data_){owned_data_.data(), size_};</span>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">        174 : }</span></a>
+<span class="lineNum">      29 </span><span class="lineCov">        198 :   data_ = decltype(data_){owned_data_.data(), size_};</span>
+<a name="30"><span class="lineNum">      30 </span><span class="lineCov">        198 : }</span></a>
 <span class="lineNum">      31 </span>            : 
 <span class="lineNum">      32 </span><span class="lineCov">         58 : DataVector&amp; DataVector::operator=(const DataVector&amp; rhs) {</span>
 <span class="lineNum">      33 </span><span class="lineCov">         58 :   if (this == &amp;rhs) {</span>
@@ -177,7 +177,7 @@
 <span class="lineNum">     107 </span>            : /// Inequivalence operator for DataVector
 <a name="108"><span class="lineNum">     108 </span><span class="lineCov">          3 : bool operator!=(const DataVector&amp; lhs, const DataVector&amp; rhs) {</span></a>
 <span class="lineNum">     109 </span><span class="lineCov">          3 :   return not(lhs == rhs);</span>
-<span class="lineNum">     110 </span><span class="lineCov">        660 : }</span>
+<span class="lineNum">     110 </span><span class="lineCov">        666 : }</span>
 </pre>
       </td>
     </tr>

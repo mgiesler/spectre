@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - DataStructures/IndexIterator.cpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/IndexIterator.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">16</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -76,24 +76,24 @@
 <span class="lineNum">       6 </span>            : #include &quot;Utilities/Gsl.hpp&quot;
 <a name="7"><span class="lineNum">       7 </span>            : </a>
 <span class="lineNum">       8 </span>            : template &lt;size_t Dim&gt;
-<span class="lineNum">       9 </span><span class="lineCov">      23926 : IndexIterator&lt;Dim&gt;::IndexIterator(Index&lt;Dim&gt; extents)</span>
-<span class="lineNum">      10 </span><span class="lineCov">      23926 :     : extents_(std::move(extents)), index_(0), offset_(0), valid_(true) {}</span>
+<span class="lineNum">       9 </span><span class="lineCov">      23942 : IndexIterator&lt;Dim&gt;::IndexIterator(Index&lt;Dim&gt; extents)</span>
+<span class="lineNum">      10 </span><span class="lineCov">      23942 :     : extents_(std::move(extents)), index_(0), offset_(0), valid_(true) {}</span>
 <a name="11"><span class="lineNum">      11 </span>            : </a>
 <span class="lineNum">      12 </span>            : template &lt;size_t Dim&gt;
-<span class="lineNum">      13 </span><span class="lineCov">    2867464 : IndexIterator&lt;Dim&gt;&amp; IndexIterator&lt;Dim&gt;::operator++() {</span>
-<span class="lineNum">      14 </span><span class="lineCov">    3580371 :   for (size_t d = 0;; ++d) {</span>
-<span class="lineNum">      15 </span><span class="lineCov">    4293278 :     ++index_[d];</span>
-<span class="lineNum">      16 </span><span class="lineCov">    3580371 :     if (extents_[d] &gt; index_[d]) {</span>
-<span class="lineNum">      17 </span><span class="lineCov">    2843541 :       break;</span>
+<span class="lineNum">      13 </span><span class="lineCov">    2868150 : IndexIterator&lt;Dim&gt;&amp; IndexIterator&lt;Dim&gt;::operator++() {</span>
+<span class="lineNum">      14 </span><span class="lineCov">    3581309 :   for (size_t d = 0;; ++d) {</span>
+<span class="lineNum">      15 </span><span class="lineCov">    4294468 :     ++index_[d];</span>
+<span class="lineNum">      16 </span><span class="lineCov">    3581309 :     if (extents_[d] &gt; index_[d]) {</span>
+<span class="lineNum">      17 </span><span class="lineCov">    2844211 :       break;</span>
 <span class="lineNum">      18 </span>            :     }
-<span class="lineNum">      19 </span><span class="lineCov">     736830 :     index_[d] = 0;</span>
-<span class="lineNum">      20 </span><span class="lineCov">     736830 :     if (UNLIKELY(Dim == d + 1)) {</span>
-<span class="lineNum">      21 </span><span class="lineCov">      23923 :       valid_ = false;</span>
-<span class="lineNum">      22 </span><span class="lineCov">      23923 :       break;</span>
+<span class="lineNum">      19 </span><span class="lineCov">     737098 :     index_[d] = 0;</span>
+<span class="lineNum">      20 </span><span class="lineCov">     737098 :     if (UNLIKELY(Dim == d + 1)) {</span>
+<span class="lineNum">      21 </span><span class="lineCov">      23939 :       valid_ = false;</span>
+<span class="lineNum">      22 </span><span class="lineCov">      23939 :       break;</span>
 <span class="lineNum">      23 </span>            :     }
 <span class="lineNum">      24 </span>            :   }
-<span class="lineNum">      25 </span><span class="lineCov">    2867464 :   ++offset_;</span>
-<span class="lineNum">      26 </span><span class="lineCov">    2867464 :   return *this;</span>
+<span class="lineNum">      25 </span><span class="lineCov">    2868150 :   ++offset_;</span>
+<span class="lineNum">      26 </span><span class="lineCov">    2868150 :   return *this;</span>
 <span class="lineNum">      27 </span>            : }
 <span class="lineNum">      28 </span>            : 
 <a name="29"><span class="lineNum">      29 </span>            : /// \cond</a>

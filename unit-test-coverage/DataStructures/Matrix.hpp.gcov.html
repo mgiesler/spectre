@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - DataStructures/Matrix.hpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/Matrix.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">12</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">14</td>
@@ -88,7 +88,7 @@
 <span class="lineNum">      18 </span>            :  * \ingroup DataStructures
 <a name="19"><span class="lineNum">      19 </span>            :  * \brief A dynamically sized matrix.</a>
 <span class="lineNum">      20 </span>            :  */
-<span class="lineNum">      21 </span><span class="lineCov">        159 : class Matrix {</span>
+<span class="lineNum">      21 </span><span class="lineCov">        357 : class Matrix {</span>
 <span class="lineNum">      22 </span>            :  public:
 <span class="lineNum">      23 </span>            :   /// Create and set each element to value
 <span class="lineNum">      24 </span>            :   Matrix(size_t number_of_rows, size_t number_of_colums,
@@ -97,15 +97,15 @@
 <span class="lineNum">      27 </span>            :   /// Default constructor needed for serialization
 <a name="28"><span class="lineNum">      28 </span><span class="lineCov">          2 :   Matrix() = default;</span></a>
 <span class="lineNum">      29 </span>            : 
-<span class="lineNum">      30 </span><span class="lineCov">       3410 :   double&amp; operator()(size_t i, size_t j) noexcept {</span>
-<a name="31"><span class="lineNum">      31 </span><span class="lineCov">       3410 :     return data_[i + j * number_of_rows_];</span></a>
+<span class="lineNum">      30 </span><span class="lineCov">       6006 :   double&amp; operator()(size_t i, size_t j) noexcept {</span>
+<a name="31"><span class="lineNum">      31 </span><span class="lineCov">       6006 :     return data_[i + j * number_of_rows_];</span></a>
 <span class="lineNum">      32 </span>            :   }
 <span class="lineNum">      33 </span><span class="lineCov">        387 :   const double&amp; operator()(size_t i, size_t j) const noexcept {</span>
 <span class="lineNum">      34 </span><span class="lineCov">        387 :     return data_[i + j * number_of_rows_];</span>
 <a name="35"><span class="lineNum">      35 </span>            :   }</a>
 <a name="36"><span class="lineNum">      36 </span>            : </a>
-<span class="lineNum">      37 </span><span class="lineCov">         12 :   double* data() noexcept { return data_.data(); }</span>
-<span class="lineNum">      38 </span><span class="lineCov">         46 :   const double* data() const noexcept { return data_.data(); }</span>
+<span class="lineNum">      37 </span><span class="lineCov">         34 :   double* data() noexcept { return data_.data(); }</span>
+<span class="lineNum">      38 </span><span class="lineCov">       1266 :   const double* data() const noexcept { return data_.data(); }</span>
 <a name="39"><span class="lineNum">      39 </span>            : </a>
 <span class="lineNum">      40 </span>            :   decltype(auto) begin() { return data_.begin(); }
 <span class="lineNum">      41 </span><span class="lineCov">         14 :   decltype(auto) begin() const { return data_.begin(); }</span>

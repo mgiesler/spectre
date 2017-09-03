@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - Utilities/Blas.hpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Utilities/Blas.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">22</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -154,24 +154,24 @@
 <span class="lineNum">      84 </span>            :  * \tparam UseLibXsmm if `true` then use LIBXSMM
 <a name="85"><span class="lineNum">      85 </span>            :  */</a>
 <span class="lineNum">      86 </span>            : template &lt;bool UseLibXsmm = false&gt;
-<span class="lineNum">      87 </span><span class="lineCov">         13 : inline void dgemm_(const char&amp; TRANSA, const char&amp; TRANSB, const size_t&amp; M,</span>
+<span class="lineNum">      87 </span><span class="lineCov">         35 : inline void dgemm_(const char&amp; TRANSA, const char&amp; TRANSB, const size_t&amp; M,</span>
 <span class="lineNum">      88 </span>            :                    const size_t&amp; N, const size_t&amp; K, const double&amp; ALPHA,
 <span class="lineNum">      89 </span>            :                    const double* A, const size_t&amp; LDA, const double* B,
 <span class="lineNum">      90 </span>            :                    const size_t&amp; LDB, const double&amp; BETA, double* C,
 <span class="lineNum">      91 </span>            :                    const size_t&amp; LDC) {
-<span class="lineNum">      92 </span><span class="lineCov">         13 :   ASSERT('N' == TRANSA or 'n' == TRANSA or 'T' == TRANSA or 't' == TRANSA or</span>
+<span class="lineNum">      92 </span><span class="lineCov">         35 :   ASSERT('N' == TRANSA or 'n' == TRANSA or 'T' == TRANSA or 't' == TRANSA or</span>
 <span class="lineNum">      93 </span>            :              'C' == TRANSA or 'c' == TRANSA,
 <span class="lineNum">      94 </span>            :          &quot;TRANSA must be upper or lower case N, T, or C. See the BLAS &quot;
 <span class="lineNum">      95 </span>            :          &quot;documentation for help.&quot;);
-<span class="lineNum">      96 </span><span class="lineCov">         12 :   ASSERT('N' == TRANSB or 'n' == TRANSB or 'T' == TRANSB or 't' == TRANSB or</span>
+<span class="lineNum">      96 </span><span class="lineCov">         34 :   ASSERT('N' == TRANSB or 'n' == TRANSB or 'T' == TRANSB or 't' == TRANSB or</span>
 <span class="lineNum">      97 </span>            :              'C' == TRANSB or 'c' == TRANSB,
 <span class="lineNum">      98 </span>            :          &quot;TRANSB must be upper or lower case N, T, or C. See the BLAS &quot;
 <span class="lineNum">      99 </span>            :          &quot;documentation for help.&quot;);
-<span class="lineNum">     100 </span><span class="lineCov">         11 :   blas_detail::dgemm_(</span>
-<span class="lineNum">     101 </span><span class="lineCov">         33 :       TRANSA, TRANSB, gsl::narrow_cast&lt;int&gt;(M), gsl::narrow_cast&lt;int&gt;(N),</span>
-<span class="lineNum">     102 </span><span class="lineCov">         33 :       gsl::narrow_cast&lt;int&gt;(K), ALPHA, A, gsl::narrow_cast&lt;int&gt;(LDA), B,</span>
-<span class="lineNum">     103 </span><span class="lineCov">         33 :       gsl::narrow_cast&lt;int&gt;(LDB), BETA, C, gsl::narrow_cast&lt;int&gt;(LDC));</span>
-<span class="lineNum">     104 </span><span class="lineCov">         11 : }</span>
+<span class="lineNum">     100 </span><span class="lineCov">         33 :   blas_detail::dgemm_(</span>
+<span class="lineNum">     101 </span><span class="lineCov">         99 :       TRANSA, TRANSB, gsl::narrow_cast&lt;int&gt;(M), gsl::narrow_cast&lt;int&gt;(N),</span>
+<span class="lineNum">     102 </span><span class="lineCov">         99 :       gsl::narrow_cast&lt;int&gt;(K), ALPHA, A, gsl::narrow_cast&lt;int&gt;(LDA), B,</span>
+<span class="lineNum">     103 </span><span class="lineCov">         99 :       gsl::narrow_cast&lt;int&gt;(LDB), BETA, C, gsl::narrow_cast&lt;int&gt;(LDC));</span>
+<span class="lineNum">     104 </span><span class="lineCov">         33 : }</span>
 <a name="105"><span class="lineNum">     105 </span>            : </a>
 <span class="lineNum">     106 </span>            : template &lt;&gt;
 <span class="lineNum">     107 </span><span class="lineCov">          2 : inline void dgemm_&lt;true&gt;(const char&amp; TRANSA, const char&amp; TRANSB,</span>
@@ -219,11 +219,11 @@
 <span class="lineNum">     149 </span>            :  * \param Y Vector \f$y\f$
 <a name="150"><span class="lineNum">     150 </span>            :  * \param INCY Specifies the increment for the elements of \f$y\f$</a>
 <span class="lineNum">     151 </span>            :  */
-<span class="lineNum">     152 </span><span class="lineCov">      42830 : inline void dgemv_(const char&amp; TRANS, const size_t&amp; M, const size_t&amp; N,</span>
+<span class="lineNum">     152 </span><span class="lineCov">      44006 : inline void dgemv_(const char&amp; TRANS, const size_t&amp; M, const size_t&amp; N,</span>
 <span class="lineNum">     153 </span>            :                    const double&amp; ALPHA, const double* A, const size_t&amp; LDA,
 <span class="lineNum">     154 </span>            :                    const double* X, const size_t&amp; INCX, const double&amp; BETA,
 <span class="lineNum">     155 </span>            :                    double* Y, const size_t&amp; INCY) {
-<span class="lineNum">     156 </span><span class="lineCov">      42830 :   ASSERT('N' == TRANS or 'n' == TRANS or 'T' == TRANS or 't' == TRANS or</span>
+<span class="lineNum">     156 </span><span class="lineCov">      44006 :   ASSERT('N' == TRANS or 'n' == TRANS or 'T' == TRANS or 't' == TRANS or</span>
 <span class="lineNum">     157 </span>            :              'C' == TRANS or 'c' == TRANS,
 <span class="lineNum">     158 </span>            :          &quot;TRANS must be upper or lower case N, T, or C. See the BLAS &quot;
 <span class="lineNum">     159 </span>            :          &quot;documentation for help.&quot;);
@@ -231,11 +231,11 @@
 <span class="lineNum">     161 </span>            :   // use them that way.  If needed, they can be changed here, but then
 <span class="lineNum">     162 </span>            :   // code providing values will also have to be changed to int to
 <span class="lineNum">     163 </span>            :   // avoid warnings.
-<span class="lineNum">     164 </span><span class="lineCov">     128487 :   blas_detail::dgemv_(TRANS, gsl::narrow_cast&lt;int&gt;(M), gsl::narrow_cast&lt;int&gt;(N),</span>
-<span class="lineNum">     165 </span><span class="lineCov">      85658 :                       ALPHA, A, gsl::narrow_cast&lt;int&gt;(LDA), X,</span>
-<span class="lineNum">     166 </span><span class="lineCov">      85658 :                       gsl::narrow_cast&lt;int&gt;(INCX), BETA, Y,</span>
-<span class="lineNum">     167 </span><span class="lineCov">     128487 :                       gsl::narrow_cast&lt;int&gt;(INCY));</span>
-<span class="lineNum">     168 </span><span class="lineCov">      42829 : }</span>
+<span class="lineNum">     164 </span><span class="lineCov">     132015 :   blas_detail::dgemv_(TRANS, gsl::narrow_cast&lt;int&gt;(M), gsl::narrow_cast&lt;int&gt;(N),</span>
+<span class="lineNum">     165 </span><span class="lineCov">      88010 :                       ALPHA, A, gsl::narrow_cast&lt;int&gt;(LDA), X,</span>
+<span class="lineNum">     166 </span><span class="lineCov">      88010 :                       gsl::narrow_cast&lt;int&gt;(INCX), BETA, Y,</span>
+<span class="lineNum">     167 </span><span class="lineCov">     132015 :                       gsl::narrow_cast&lt;int&gt;(INCY));</span>
+<span class="lineNum">     168 </span><span class="lineCov">      44005 : }</span>
 <span class="lineNum">     169 </span>            : //@}
 </pre>
       </td>

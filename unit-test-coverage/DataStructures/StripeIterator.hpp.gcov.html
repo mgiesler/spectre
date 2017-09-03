@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 3b3aa4e60cf774f0413e2fe9f79431a040b623c4 - DataStructures/StripeIterator.hpp</title>
+  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/StripeIterator.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/3b3aa4e60cf774f0413e2fe9f79431a040b623c4">3b3aa4e60cf774f0413e2fe9f79431a040b623c4</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">3</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-02 03:20:33</td>
+            <td class="headerValue">2017-09-03 02:36:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -98,16 +98,16 @@
 <span class="lineNum">      28 </span>            :   StripeIterator() = delete;
 <a name="29"><span class="lineNum">      29 </span>            : </a>
 <span class="lineNum">      30 </span>            :   /// Returns `true` if the iterator is valid
-<span class="lineNum">      31 </span><span class="lineCov">         65 :   explicit operator bool() const noexcept { return offset_ &lt; size_; }</span>
+<span class="lineNum">      31 </span><span class="lineCov">       1337 :   explicit operator bool() const noexcept { return offset_ &lt; size_; }</span>
 <span class="lineNum">      32 </span>            : 
 <span class="lineNum">      33 </span>            :   /// Increment to the next stripe.
 <span class="lineNum">      34 </span>            :   StripeIterator&amp; operator++();
 <a name="35"><span class="lineNum">      35 </span>            : </a>
 <span class="lineNum">      36 </span>            :   /// Offset into DataVector for first element of stripe.
-<span class="lineNum">      37 </span><span class="lineCov">         47 :   size_t offset() const noexcept { return offset_; }</span>
+<span class="lineNum">      37 </span><span class="lineCov">       1713 :   size_t offset() const noexcept { return offset_; }</span>
 <a name="38"><span class="lineNum">      38 </span>            : </a>
 <span class="lineNum">      39 </span>            :   /// Stride of elements in DataVector for the stripe.
-<span class="lineNum">      40 </span><span class="lineCov">         47 :   size_t stride() const noexcept { return stride_; }</span>
+<span class="lineNum">      40 </span><span class="lineCov">       1811 :   size_t stride() const noexcept { return stride_; }</span>
 <span class="lineNum">      41 </span>            : 
 <span class="lineNum">      42 </span>            :  private:
 <span class="lineNum">      43 </span>            :   size_t offset_ = std::numeric_limits&lt;size_t&gt;::max();

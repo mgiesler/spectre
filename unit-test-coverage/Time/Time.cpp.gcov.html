@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Time/Time.cpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Time/Time.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">84</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -120,12 +120,12 @@
 <span class="lineNum">      50 </span>            :   }
 <a name="51"><span class="lineNum">      51 </span>            : }</a>
 <span class="lineNum">      52 </span>            : 
-<span class="lineNum">      53 </span><span class="lineCov">     399398 : double Time::value() const noexcept {</span>
-<span class="lineNum">      54 </span><span class="lineCov">     399398 :   if (is_at_slab_end()) {</span>
+<span class="lineNum">      53 </span><span class="lineCov">      41238 : double Time::value() const noexcept {</span>
+<span class="lineNum">      54 </span><span class="lineCov">      41238 :   if (is_at_slab_end()) {</span>
 <span class="lineNum">      55 </span>            :     // Protection against rounding error.
-<span class="lineNum">      56 </span><span class="lineCov">     192784 :     return slab_.end_;</span>
+<span class="lineNum">      56 </span><span class="lineCov">      13704 :     return slab_.end_;</span>
 <span class="lineNum">      57 </span>            :   } else {
-<span class="lineNum">      58 </span><span class="lineCov">     206614 :     return slab_.start_ + (slab_.duration() * fraction_).value();</span>
+<span class="lineNum">      58 </span><span class="lineCov">      27534 :     return slab_.start_ + (slab_.duration() * fraction_).value();</span>
 <span class="lineNum">      59 </span>            :   }
 <a name="60"><span class="lineNum">      60 </span>            : }</a>
 <span class="lineNum">      61 </span>            : 
@@ -172,8 +172,8 @@
 <span class="lineNum">     102 </span>            :   }
 <a name="103"><span class="lineNum">     103 </span>            : }</a>
 <span class="lineNum">     104 </span>            : 
-<span class="lineNum">     105 </span><span class="lineCov">        661 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Time&amp; t) noexcept {</span>
-<span class="lineNum">     106 </span><span class="lineCov">        661 :   return os &lt;&lt; t.slab() &lt;&lt; &quot;:&quot; &lt;&lt; t.fraction();</span>
+<span class="lineNum">     105 </span><span class="lineCov">          3 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Time&amp; t) noexcept {</span>
+<span class="lineNum">     106 </span><span class="lineCov">          3 :   return os &lt;&lt; t.slab() &lt;&lt; &quot;:&quot; &lt;&lt; t.fraction();</span>
 <span class="lineNum">     107 </span>            : }
 <span class="lineNum">     108 </span>            : 
 <a name="109"><span class="lineNum">     109 </span>            : // TimeDelta implementations</a>
@@ -200,8 +200,8 @@
 <span class="lineNum">     130 </span><span class="lineCov">     586362 :          (a.slab().duration().value() / b.slab().duration().value());</span>
 <a name="131"><span class="lineNum">     131 </span>            : }</a>
 <span class="lineNum">     132 </span>            : 
-<span class="lineNum">     133 </span><span class="lineCov">     178330 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const TimeDelta&amp; dt) noexcept {</span>
-<span class="lineNum">     134 </span><span class="lineCov">     178330 :   return os &lt;&lt; dt.slab() &lt;&lt; &quot;:&quot; &lt;&lt; dt.fraction();</span>
+<span class="lineNum">     133 </span><span class="lineCov">          4 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const TimeDelta&amp; dt) noexcept {</span>
+<span class="lineNum">     134 </span><span class="lineCov">          4 :   return os &lt;&lt; dt.slab() &lt;&lt; &quot;:&quot; &lt;&lt; dt.fraction();</span>
 <a name="135"><span class="lineNum">     135 </span>            : }</a>
 <span class="lineNum">     136 </span>            : 
 <span class="lineNum">     137 </span><span class="lineCov">         10 : size_t hash_value(const Time&amp; t) noexcept {</span>

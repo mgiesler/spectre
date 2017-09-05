@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Domain/ElementId.cpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Domain/ElementId.cpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">20</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntry">10</td>
             <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntryLo">66.7 %</td>
+            <td class="headerCovTableEntryLo">55.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -115,9 +115,9 @@
 <span class="lineNum">      45 </span><span class="lineCov">         30 : }</span>
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <span class="lineNum">      47 </span>            : template &lt;size_t VolumeDim&gt;
-<span class="lineNum">      48 </span><span class="lineCov">        108 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const ElementId&lt;VolumeDim&gt;&amp; id) {</span>
-<span class="lineNum">      49 </span><span class="lineCov">        108 :   os &lt;&lt; &quot;[B&quot; &lt;&lt; id.block_id() &lt;&lt; ',' &lt;&lt; id.segment_ids() &lt;&lt; ']';</span>
-<span class="lineNum">      50 </span><span class="lineCov">        108 :   return os;</span>
+<span class="lineNum">      48 </span><span class="lineCov">         11 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const ElementId&lt;VolumeDim&gt;&amp; id) {</span>
+<span class="lineNum">      49 </span><span class="lineCov">         11 :   os &lt;&lt; &quot;[B&quot; &lt;&lt; id.block_id() &lt;&lt; ',' &lt;&lt; id.segment_ids() &lt;&lt; ']';</span>
+<span class="lineNum">      50 </span><span class="lineCov">         11 :   return os;</span>
 <span class="lineNum">      51 </span>            : }
 <span class="lineNum">      52 </span>            : 
 <span class="lineNum">      53 </span>            : // LCOV_EXCL_START

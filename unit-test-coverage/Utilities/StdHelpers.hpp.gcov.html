@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Utilities/StdHelpers.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Utilities/StdHelpers.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">136</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">128</td>
+            <td class="headerCovTableEntry">99</td>
             <td class="headerCovTableEntry">151</td>
-            <td class="headerCovTableEntryMed">84.8 %</td>
+            <td class="headerCovTableEntryLo">65.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -102,78 +102,78 @@
 <span class="lineNum">      32 </span>            : // applies the function f(out, it) to each item from begin to end, separated
 <a name="33"><span class="lineNum">      33 </span>            : // by commas and surrounded by parens</a>
 <span class="lineNum">      34 </span>            : template &lt;typename ForwardIt, typename Func&gt;
-<span class="lineNum">      35 </span><span class="lineCov">        900 : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin, ForwardIt&amp;&amp; end,</span>
+<span class="lineNum">      35 </span><span class="lineCov">         79 : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin, ForwardIt&amp;&amp; end,</span>
 <span class="lineNum">      36 </span>            :                          Func f) {
-<span class="lineNum">      37 </span><span class="lineCov">        900 :   out &lt;&lt; &quot;(&quot;;</span>
-<span class="lineNum">      38 </span><span class="lineCov">        900 :   if (begin != end) {</span>
+<span class="lineNum">      37 </span><span class="lineCov">         79 :   out &lt;&lt; &quot;(&quot;;</span>
+<span class="lineNum">      38 </span><span class="lineCov">         79 :   if (begin != end) {</span>
 <span class="lineNum">      39 </span>            :     while (true) {
-<span class="lineNum">      40 </span><span class="lineCov">       2537 :       f(out, begin++);</span>
-<span class="lineNum">      41 </span><span class="lineCov">       1632 :       if (begin == end) {</span>
-<span class="lineNum">      42 </span><span class="lineCov">        727 :         break;</span>
+<span class="lineNum">      40 </span><span class="lineCov">        267 :       f(out, begin++);</span>
+<span class="lineNum">      41 </span><span class="lineCov">        163 :       if (begin == end) {</span>
+<span class="lineNum">      42 </span><span class="lineCov">         59 :         break;</span>
 <span class="lineNum">      43 </span>            :       }
-<span class="lineNum">      44 </span><span class="lineCov">        905 :       out &lt;&lt; &quot;,&quot;;</span>
+<span class="lineNum">      44 </span><span class="lineCov">        104 :       out &lt;&lt; &quot;,&quot;;</span>
 <span class="lineNum">      45 </span>            :     }
 <span class="lineNum">      46 </span>            :   }
-<span class="lineNum">      47 </span><span class="lineCov">        900 :   out &lt;&lt; &quot;)&quot;;</span>
-<span class="lineNum">      48 </span><span class="lineCov">        900 : }</span>
+<span class="lineNum">      47 </span><span class="lineCov">         79 :   out &lt;&lt; &quot;)&quot;;</span>
+<span class="lineNum">      48 </span><span class="lineCov">         79 : }</span>
 <span class="lineNum">      49 </span>            : 
 <a name="50"><span class="lineNum">      50 </span>            : // prints all the items as a comma separated list surrounded by parens</a>
 <span class="lineNum">      51 </span>            : template &lt;typename ForwardIt&gt;
-<span class="lineNum">      52 </span><span class="lineCov">        894 : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
+<span class="lineNum">      52 </span><span class="lineCov">         73 : inline void print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
 <span class="lineNum">      53 </span>            :                          ForwardIt&amp;&amp; end) {
-<a name="54"><span class="lineNum">      54 </span><span class="lineCov">        894 :   print_helper(out, std::forward&lt;ForwardIt&gt;(begin),</span></a>
+<a name="54"><span class="lineNum">      54 </span><span class="lineCov">         73 :   print_helper(out, std::forward&lt;ForwardIt&gt;(begin),</span></a>
 <span class="lineNum">      55 </span>            :                std::forward&lt;ForwardIt&gt;(end),
-<span class="lineNum">      56 </span><span class="lineCov">       1620 :                [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });</span>
-<span class="lineNum">      57 </span><span class="lineCov">        894 : }</span>
+<span class="lineNum">      56 </span><span class="lineCov">        151 :                [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });</span>
+<span class="lineNum">      57 </span><span class="lineCov">         73 : }</span>
 <span class="lineNum">      58 </span>            : 
 <a name="59"><span class="lineNum">      59 </span>            : // Like print_helper, but sorts the string representations</a>
 <span class="lineNum">      60 </span>            : template &lt;typename ForwardIt, typename Func&gt;
-<span class="lineNum">      61 </span><span class="lineCov">         73 : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
+<span class="lineNum">      61 </span><span class="lineCov">         11 : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
 <span class="lineNum">      62 </span>            :                                    ForwardIt&amp;&amp; end, Func f) {
-<span class="lineNum">      63 </span><span class="lineCov">        146 :   std::vector&lt;std::string&gt; entries;</span>
-<span class="lineNum">      64 </span><span class="lineCov">        375 :   while (begin != end) {</span>
-<span class="lineNum">      65 </span><span class="lineCov">        302 :     std::ostringstream ss;</span>
-<span class="lineNum">      66 </span><span class="lineCov">        151 :     f(ss, begin++);</span>
-<span class="lineNum">      67 </span><span class="lineCov">        151 :     entries.push_back(ss.str());</span>
+<span class="lineNum">      63 </span><span class="lineCov">         22 :   std::vector&lt;std::string&gt; entries;</span>
+<span class="lineNum">      64 </span><span class="lineCov">         67 :   while (begin != end) {</span>
+<span class="lineNum">      65 </span><span class="lineCov">         56 :     std::ostringstream ss;</span>
+<span class="lineNum">      66 </span><span class="lineCov">         28 :     f(ss, begin++);</span>
+<span class="lineNum">      67 </span><span class="lineCov">         28 :     entries.push_back(ss.str());</span>
 <span class="lineNum">      68 </span>            :   }
-<span class="lineNum">      69 </span><span class="lineCov">         73 :   std::sort(entries.begin(), entries.end());</span>
-<span class="lineNum">      70 </span><span class="lineCov">         73 :   print_helper(out, entries.begin(), entries.end());</span>
-<span class="lineNum">      71 </span><span class="lineCov">         73 : }</span>
+<span class="lineNum">      69 </span><span class="lineCov">         11 :   std::sort(entries.begin(), entries.end());</span>
+<span class="lineNum">      70 </span><span class="lineCov">         11 :   print_helper(out, entries.begin(), entries.end());</span>
+<span class="lineNum">      71 </span><span class="lineCov">         11 : }</span>
 <a name="72"><span class="lineNum">      72 </span>            : </a>
 <span class="lineNum">      73 </span>            : template &lt;typename ForwardIt&gt;
-<span class="lineNum">      74 </span><span class="lineCov">         67 : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
+<span class="lineNum">      74 </span><span class="lineCov">          5 : inline void unordered_print_helper(std::ostream&amp; out, ForwardIt&amp;&amp; begin,</span>
 <span class="lineNum">      75 </span>            :                                    ForwardIt&amp;&amp; end) {
-<a name="76"><span class="lineNum">      76 </span><span class="lineCov">         67 :   unordered_print_helper(</span></a>
+<a name="76"><span class="lineNum">      76 </span><span class="lineCov">          5 :   unordered_print_helper(</span></a>
 <span class="lineNum">      77 </span>            :       out, std::forward&lt;ForwardIt&gt;(begin), std::forward&lt;ForwardIt&gt;(end),
-<span class="lineNum">      78 </span><span class="lineCov">        139 :       [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });</span>
-<span class="lineNum">      79 </span><span class="lineCov">         67 : }</span>
+<span class="lineNum">      78 </span><span class="lineCov">         16 :       [](std::ostream&amp; os, const ForwardIt&amp; it) { os &lt;&lt; *it; });</span>
+<span class="lineNum">      79 </span><span class="lineCov">          5 : }</span>
 <span class="lineNum">      80 </span>            : 
 <span class="lineNum">      81 </span>            : // Helper classes for operator&lt;&lt; for tuples
 <span class="lineNum">      82 </span>            : template &lt;size_t N&gt;
 <a name="83"><span class="lineNum">      83 </span>            : struct TuplePrinter {</a>
 <span class="lineNum">      84 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">      85 </span><span class="lineCov">         12 :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {</span>
-<span class="lineNum">      86 </span><span class="lineCov">         12 :     TuplePrinter&lt;N - 1&gt;::print(os, t);</span>
-<span class="lineNum">      87 </span><span class="lineCov">         12 :     os &lt;&lt; &quot;, &quot; &lt;&lt; std::get&lt;N - 1&gt;(t);</span>
-<span class="lineNum">      88 </span><span class="lineCov">         12 :     return os;</span>
+<span class="lineNum">      85 </span><span class="lineCov">          4 :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {</span>
+<span class="lineNum">      86 </span><span class="lineCov">          4 :     TuplePrinter&lt;N - 1&gt;::print(os, t);</span>
+<span class="lineNum">      87 </span><span class="lineCov">          4 :     os &lt;&lt; &quot;, &quot; &lt;&lt; std::get&lt;N - 1&gt;(t);</span>
+<span class="lineNum">      88 </span><span class="lineCov">          4 :     return os;</span>
 <span class="lineNum">      89 </span>            :   }
 <span class="lineNum">      90 </span>            : };
 <span class="lineNum">      91 </span>            : 
 <span class="lineNum">      92 </span>            : template &lt;&gt;
 <a name="93"><span class="lineNum">      93 </span>            : struct TuplePrinter&lt;1&gt; {</a>
 <span class="lineNum">      94 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">      95 </span><span class="lineCov">         34 :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {</span>
-<span class="lineNum">      96 </span><span class="lineCov">         34 :     os &lt;&lt; std::get&lt;0&gt;(t);</span>
-<span class="lineNum">      97 </span><span class="lineCov">         34 :     return os;</span>
+<span class="lineNum">      95 </span><span class="lineCov">          4 :   static std::ostream&amp; print(std::ostream&amp; os, const std::tuple&lt;Args...&gt;&amp; t) {</span>
+<span class="lineNum">      96 </span><span class="lineCov">          4 :     os &lt;&lt; std::get&lt;0&gt;(t);</span>
+<span class="lineNum">      97 </span><span class="lineCov">          4 :     return os;</span>
 <span class="lineNum">      98 </span>            :   }
 <span class="lineNum">      99 </span>            : };
 <span class="lineNum">     100 </span>            : 
 <span class="lineNum">     101 </span>            : template &lt;&gt;
 <a name="102"><span class="lineNum">     102 </span>            : struct TuplePrinter&lt;0&gt; {</a>
 <span class="lineNum">     103 </span>            :   template &lt;typename... Args&gt;
-<span class="lineNum">     104 </span><span class="lineCov">         24 :   static std::ostream&amp; print(std::ostream&amp; os,</span>
+<span class="lineNum">     104 </span><span class="lineCov">          4 :   static std::ostream&amp; print(std::ostream&amp; os,</span>
 <span class="lineNum">     105 </span>            :                              const std::tuple&lt;Args...&gt;&amp; /*t*/) {
-<span class="lineNum">     106 </span><span class="lineCov">         24 :     return os;</span>
+<span class="lineNum">     106 </span><span class="lineCov">          4 :     return os;</span>
 <span class="lineNum">     107 </span>            :   }
 <span class="lineNum">     108 </span>            : };
 <span class="lineNum">     109 </span>            : }  // namespace StdHelpers_detail
@@ -193,9 +193,9 @@
 <span class="lineNum">     123 </span>            :  * \brief Output the items of a std::vector
 <a name="124"><span class="lineNum">     124 </span>            :  */</a>
 <span class="lineNum">     125 </span>            : template &lt;typename T&gt;
-<span class="lineNum">     126 </span><span class="lineCov">         87 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; v) {</span>
-<span class="lineNum">     127 </span><span class="lineCov">         87 :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));</span>
-<span class="lineNum">     128 </span><span class="lineCov">         87 :   return os;</span>
+<span class="lineNum">     126 </span><span class="lineCov">          7 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::vector&lt;T&gt;&amp; v) {</span>
+<span class="lineNum">     127 </span><span class="lineCov">          7 :   StdHelpers_detail::print_helper(os, std::begin(v), std::end(v));</span>
+<span class="lineNum">     128 </span><span class="lineCov">          7 :   return os;</span>
 <span class="lineNum">     129 </span>            : }
 <span class="lineNum">     130 </span>            : 
 <span class="lineNum">     131 </span>            : /*!
@@ -213,9 +213,9 @@
 <span class="lineNum">     143 </span>            :  * \brief Output the items of a std::array
 <a name="144"><span class="lineNum">     144 </span>            :  */</a>
 <span class="lineNum">     145 </span>            : template &lt;typename T, size_t N&gt;
-<span class="lineNum">     146 </span><span class="lineCov">        548 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::array&lt;T, N&gt;&amp; a) {</span>
-<span class="lineNum">     147 </span><span class="lineCov">        548 :   StdHelpers_detail::print_helper(os, begin(a), end(a));</span>
-<span class="lineNum">     148 </span><span class="lineCov">        548 :   return os;</span>
+<span class="lineNum">     146 </span><span class="lineCov">         43 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const std::array&lt;T, N&gt;&amp; a) {</span>
+<span class="lineNum">     147 </span><span class="lineCov">         43 :   StdHelpers_detail::print_helper(os, begin(a), end(a));</span>
+<span class="lineNum">     148 </span><span class="lineCov">         43 :   return os;</span>
 <span class="lineNum">     149 </span>            : }
 <span class="lineNum">     150 </span>            : 
 <span class="lineNum">     151 </span>            : /*!
@@ -223,12 +223,12 @@
 <span class="lineNum">     153 </span>            :  * \brief Stream operator for tuples
 <a name="154"><span class="lineNum">     154 </span>            :  */</a>
 <span class="lineNum">     155 </span>            : template &lt;typename... Args&gt;
-<span class="lineNum">     156 </span><span class="lineCov">         58 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">     156 </span><span class="lineCov">          8 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
 <span class="lineNum">     157 </span>            :                                 const std::tuple&lt;Args...&gt;&amp; t) {
-<span class="lineNum">     158 </span><span class="lineCov">         58 :   os &lt;&lt; &quot;(&quot;;</span>
-<span class="lineNum">     159 </span><span class="lineCov">         58 :   StdHelpers_detail::TuplePrinter&lt;sizeof...(Args)&gt;::print(os, t);</span>
-<span class="lineNum">     160 </span><span class="lineCov">         58 :   os &lt;&lt; &quot;)&quot;;</span>
-<span class="lineNum">     161 </span><span class="lineCov">         58 :   return os;</span>
+<span class="lineNum">     158 </span><span class="lineCov">          8 :   os &lt;&lt; &quot;(&quot;;</span>
+<span class="lineNum">     159 </span><span class="lineCov">          8 :   StdHelpers_detail::TuplePrinter&lt;sizeof...(Args)&gt;::print(os, t);</span>
+<span class="lineNum">     160 </span><span class="lineCov">          8 :   os &lt;&lt; &quot;)&quot;;</span>
+<span class="lineNum">     161 </span><span class="lineCov">          8 :   return os;</span>
 <span class="lineNum">     162 </span>            : }
 <span class="lineNum">     163 </span>            : 
 <span class="lineNum">     164 </span>            : /*!
@@ -266,10 +266,10 @@
 <span class="lineNum">     196 </span>            :  * \brief Output the items of a std::unordered_set
 <a name="197"><span class="lineNum">     197 </span>            :  */</a>
 <span class="lineNum">     198 </span>            : template &lt;typename T&gt;
-<span class="lineNum">     199 </span><span class="lineCov">         67 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">     199 </span><span class="lineCov">          5 : inline std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
 <span class="lineNum">     200 </span>            :                                 const std::unordered_set&lt;T&gt;&amp; v) {
-<span class="lineNum">     201 </span><span class="lineCov">         67 :   StdHelpers_detail::unordered_print_helper(os, std::begin(v), std::end(v));</span>
-<span class="lineNum">     202 </span><span class="lineCov">         67 :   return os;</span>
+<span class="lineNum">     201 </span><span class="lineCov">          5 :   StdHelpers_detail::unordered_print_helper(os, std::begin(v), std::end(v));</span>
+<span class="lineNum">     202 </span><span class="lineCov">          5 :   return os;</span>
 <span class="lineNum">     203 </span>            : }
 <span class="lineNum">     204 </span>            : 
 <span class="lineNum">     205 </span>            : /*!

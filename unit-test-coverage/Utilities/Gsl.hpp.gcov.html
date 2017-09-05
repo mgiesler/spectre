@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Utilities/Gsl.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Utilities/Gsl.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">14</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -144,7 +144,7 @@
 <span class="lineNum">      74 </span>            :  */
 <span class="lineNum">      75 </span>            : template &lt;class T, class U&gt;
 <span class="lineNum">      76 </span>            : SPECTRE_ALWAYS_INLINE constexpr T narrow_cast(U&amp;&amp; u) noexcept {
-<span class="lineNum">      77 </span><span class="lineCov">   26352233 :   return static_cast&lt;T&gt;(std::forward&lt;U&gt;(u));</span>
+<span class="lineNum">      77 </span><span class="lineCov">   26351735 :   return static_cast&lt;T&gt;(std::forward&lt;U&gt;(u));</span>
 <span class="lineNum">      78 </span>            : }
 <span class="lineNum">      79 </span>            : 
 <span class="lineNum">      80 </span>            : namespace details {
@@ -189,8 +189,8 @@
 <span class="lineNum">     119 </span>            : template &lt;class Cont, typename Size&gt;
 <span class="lineNum">     120 </span>            : SPECTRE_ALWAYS_INLINE constexpr const typename Cont::value_type&amp; at(
 <span class="lineNum">     121 </span>            :     const Cont&amp; cont, Size index) {
-<span class="lineNum">     122 </span><span class="lineCov">   30352588 :   Expects(index &gt;= 0 and index &lt; narrow_cast&lt;Size&gt;(cont.size()));</span>
-<span class="lineNum">     123 </span><span class="lineCov">   15177110 :   return cont[static_cast&lt;typename Cont::size_type&gt;(index)];</span>
+<span class="lineNum">     122 </span><span class="lineCov">   30351592 :   Expects(index &gt;= 0 and index &lt; narrow_cast&lt;Size&gt;(cont.size()));</span>
+<span class="lineNum">     123 </span><span class="lineCov">   15176612 :   return cont[static_cast&lt;typename Cont::size_type&gt;(index)];</span>
 <span class="lineNum">     124 </span>            : }
 <span class="lineNum">     125 </span>            : 
 <span class="lineNum">     126 </span>            : template &lt;class T, typename Size&gt;

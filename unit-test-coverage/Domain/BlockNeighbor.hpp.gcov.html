@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Domain/BlockNeighbor.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Domain/BlockNeighbor.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">4</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -104,10 +104,10 @@
 <span class="lineNum">      34 </span>            :   BlockNeighbor&lt;VolumeDim&gt;&amp; operator=(BlockNeighbor&lt;VolumeDim&gt;&amp;&amp;) noexcept =
 <a name="35"><span class="lineNum">      35 </span>            :       default;</a>
 <span class="lineNum">      36 </span>            : 
-<a name="37"><span class="lineNum">      37 </span><span class="lineCov">         48 :   size_t id() const noexcept { return id_; }</span></a>
+<a name="37"><span class="lineNum">      37 </span><span class="lineCov">         26 :   size_t id() const noexcept { return id_; }</span></a>
 <span class="lineNum">      38 </span>            : 
-<span class="lineNum">      39 </span><span class="lineCov">         50 :   const Orientation&lt;VolumeDim&gt;&amp; orientation() const noexcept {</span>
-<span class="lineNum">      40 </span><span class="lineCov">         50 :     return orientation_;</span>
+<span class="lineNum">      39 </span><span class="lineCov">         28 :   const Orientation&lt;VolumeDim&gt;&amp; orientation() const noexcept {</span>
+<span class="lineNum">      40 </span><span class="lineCov">         28 :     return orientation_;</span>
 <span class="lineNum">      41 </span>            :   }
 <span class="lineNum">      42 </span>            : 
 <span class="lineNum">      43 </span>            :   // Serialization for Charm++

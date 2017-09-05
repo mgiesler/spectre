@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Domain/Neighbors.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Domain/Neighbors.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">25</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">44</td>
@@ -106,12 +106,12 @@
 <span class="lineNum">      36 </span>            :   Neighbors&amp; operator=(const Neighbors&amp; rhs) = default;
 <a name="37"><span class="lineNum">      37 </span>            :   Neighbors&amp; operator=(Neighbors&amp;&amp;) noexcept = default;</a>
 <span class="lineNum">      38 </span>            : 
-<span class="lineNum">      39 </span><span class="lineCov">         95 :   const std::unordered_set&lt;ElementId&lt;VolumeDim&gt;&gt;&amp; ids() const noexcept {</span>
-<span class="lineNum">      40 </span><span class="lineCov">         95 :     return ids_;</span>
+<span class="lineNum">      39 </span><span class="lineCov">         51 :   const std::unordered_set&lt;ElementId&lt;VolumeDim&gt;&gt;&amp; ids() const noexcept {</span>
+<span class="lineNum">      40 </span><span class="lineCov">         51 :     return ids_;</span>
 <a name="41"><span class="lineNum">      41 </span>            :   }</a>
 <span class="lineNum">      42 </span>            : 
-<span class="lineNum">      43 </span><span class="lineCov">         89 :   const Orientation&lt;VolumeDim&gt;&amp; orientation() const noexcept {</span>
-<span class="lineNum">      44 </span><span class="lineCov">         89 :     return orientation_;</span>
+<span class="lineNum">      43 </span><span class="lineCov">         45 :   const Orientation&lt;VolumeDim&gt;&amp; orientation() const noexcept {</span>
+<span class="lineNum">      44 </span><span class="lineCov">         45 :     return orientation_;</span>
 <span class="lineNum">      45 </span>            :   }
 <a name="46"><span class="lineNum">      46 </span>            : </a>
 <span class="lineNum">      47 </span>            :   /// Reset the ids of the neighbors.

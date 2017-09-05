@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Domain/Block.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Domain/Block.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">35</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">25</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryHi">96.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -124,18 +124,18 @@
 <span class="lineNum">      54 </span>            :   /// A unique identifier for the Block that is in the range
 <a name="55"><span class="lineNum">      55 </span>            :   /// [0, number_of_blocks -1] where number_of_blocks is the number</a>
 <span class="lineNum">      56 </span>            :   /// of Blocks that cover the computational domain.
-<span class="lineNum">      57 </span><span class="lineCov">         44 :   size_t id() const noexcept { return id_; }</span>
+<span class="lineNum">      57 </span><span class="lineCov">         26 :   size_t id() const noexcept { return id_; }</span>
 <a name="58"><span class="lineNum">      58 </span>            : </a>
 <span class="lineNum">      59 </span>            :   /// Information about the neighboring Blocks.
-<span class="lineNum">      60 </span><span class="lineCov">         42 :   const std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt;&amp; neighbors()</span>
+<span class="lineNum">      60 </span><span class="lineCov">         24 :   const std::unordered_map&lt;Direction&lt;dim&gt;, BlockNeighbor&lt;dim&gt;&gt;&amp; neighbors()</span>
 <span class="lineNum">      61 </span>            :       const noexcept {
-<span class="lineNum">      62 </span><span class="lineCov">         42 :     return neighbors_;</span>
+<span class="lineNum">      62 </span><span class="lineCov">         24 :     return neighbors_;</span>
 <span class="lineNum">      63 </span>            :   }
 <a name="64"><span class="lineNum">      64 </span>            : </a>
 <span class="lineNum">      65 </span>            :   /// The directions of the faces of the Block that are external boundaries.
-<span class="lineNum">      66 </span><span class="lineCov">         42 :   const std::unordered_set&lt;Direction&lt;dim&gt;&gt;&amp; external_boundaries() const</span>
+<span class="lineNum">      66 </span><span class="lineCov">         24 :   const std::unordered_set&lt;Direction&lt;dim&gt;&gt;&amp; external_boundaries() const</span>
 <span class="lineNum">      67 </span>            :       noexcept {
-<span class="lineNum">      68 </span><span class="lineCov">         42 :     return external_boundaries_;</span>
+<span class="lineNum">      68 </span><span class="lineCov">         24 :     return external_boundaries_;</span>
 <span class="lineNum">      69 </span>            :   }
 <span class="lineNum">      70 </span>            : 
 <span class="lineNum">      71 </span>            :   /// Serialization for Charm++
@@ -173,15 +173,15 @@
 <span class="lineNum">     103 </span><span class="lineCov">          6 : }</span>
 <a name="104"><span class="lineNum">     104 </span>            : </a>
 <span class="lineNum">     105 </span>            : template &lt;typename Map&gt;
-<span class="lineNum">     106 </span><span class="lineCov">         19 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Block&lt;Map&gt;&amp; block) {</span>
-<span class="lineNum">     107 </span><span class="lineCov">         19 :   os &lt;&lt; &quot;Block &quot; &lt;&lt; block.id() &lt;&lt; &quot;:\n&quot;;</span>
-<span class="lineNum">     108 </span><span class="lineCov">         19 :   os &lt;&lt; &quot;Neighbors:\n&quot;;</span>
-<span class="lineNum">     109 </span><span class="lineCov">         27 :   for (const auto&amp; direction_to_neighbors : block.neighbors()) {</span>
-<span class="lineNum">     110 </span><span class="lineCov">          8 :     os &lt;&lt; direction_to_neighbors.first &lt;&lt; &quot;: &quot; &lt;&lt; direction_to_neighbors.second</span>
+<span class="lineNum">     106 </span><span class="lineCov">          1 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Block&lt;Map&gt;&amp; block) {</span>
+<span class="lineNum">     107 </span><span class="lineCov">          1 :   os &lt;&lt; &quot;Block &quot; &lt;&lt; block.id() &lt;&lt; &quot;:\n&quot;;</span>
+<span class="lineNum">     108 </span><span class="lineCov">          1 :   os &lt;&lt; &quot;Neighbors:\n&quot;;</span>
+<span class="lineNum">     109 </span><span class="lineCov">          3 :   for (const auto&amp; direction_to_neighbors : block.neighbors()) {</span>
+<span class="lineNum">     110 </span><span class="lineCov">          2 :     os &lt;&lt; direction_to_neighbors.first &lt;&lt; &quot;: &quot; &lt;&lt; direction_to_neighbors.second</span>
 <span class="lineNum">     111 </span>            :        &lt;&lt; &quot;\n&quot;;
 <span class="lineNum">     112 </span>            :   }
-<span class="lineNum">     113 </span><span class="lineCov">         19 :   os &lt;&lt; &quot;External boundaries: &quot; &lt;&lt; block.external_boundaries() &lt;&lt; &quot;\n&quot;;</span>
-<span class="lineNum">     114 </span><span class="lineCov">         19 :   return os;</span>
+<span class="lineNum">     113 </span><span class="lineCov">          1 :   os &lt;&lt; &quot;External boundaries: &quot; &lt;&lt; block.external_boundaries() &lt;&lt; &quot;\n&quot;;</span>
+<span class="lineNum">     114 </span><span class="lineCov">          1 :   return os;</span>
 <span class="lineNum">     115 </span>            : }
 <a name="116"><span class="lineNum">     116 </span>            : </a>
 <span class="lineNum">     117 </span>            : template &lt;typename Map&gt;

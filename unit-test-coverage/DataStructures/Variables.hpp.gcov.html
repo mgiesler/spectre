@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - DataStructures/Variables.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - DataStructures/Variables.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">115</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">55</td>
             <td class="headerCovTableEntry">58</td>
-            <td class="headerCovTableEntry">58</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryHi">94.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -190,8 +190,8 @@
 <span class="lineNum">     120 </span><span class="lineCov">          6 :     return reference_variable_data_.template get&lt;Tag&gt;();</span>
 <a name="121"><span class="lineNum">     121 </span>            :   }</a>
 <span class="lineNum">     122 </span>            :   template &lt;typename Tag&gt;
-<span class="lineNum">     123 </span><span class="lineCov">         41 :   constexpr const auto&amp; get() const noexcept {</span>
-<span class="lineNum">     124 </span><span class="lineCov">         41 :     return reference_variable_data_.template get&lt;Tag&gt;();</span>
+<span class="lineNum">     123 </span><span class="lineCov">          3 :   constexpr const auto&amp; get() const noexcept {</span>
+<span class="lineNum">     124 </span><span class="lineCov">          3 :     return reference_variable_data_.template get&lt;Tag&gt;();</span>
 <span class="lineNum">     125 </span>            :   }
 <span class="lineNum">     126 </span>            :   // @}
 <span class="lineNum">     127 </span>            : 
@@ -442,24 +442,24 @@
 <span class="lineNum">     372 </span>            : }
 <a name="373"><span class="lineNum">     373 </span>            : </a>
 <span class="lineNum">     374 </span>            : template &lt;typename Tag, typename TagsLs&gt;
-<span class="lineNum">     375 </span><span class="lineCov">         19 : std::ostream&amp; print_helper(std::ostream&amp; os, const Variables&lt;TagsLs&gt;&amp; d,</span>
+<span class="lineNum">     375 </span><span class="lineCov">          1 : std::ostream&amp; print_helper(std::ostream&amp; os, const Variables&lt;TagsLs&gt;&amp; d,</span>
 <span class="lineNum">     376 </span>            :                            typelist&lt;Tag&gt; /*meta*/) {
-<span class="lineNum">     377 </span><span class="lineCov">         19 :   return os &lt;&lt; d.template get&lt;Tag&gt;();</span>
+<span class="lineNum">     377 </span><span class="lineCov">          1 :   return os &lt;&lt; d.template get&lt;Tag&gt;();</span>
 <span class="lineNum">     378 </span>            : }
 <a name="379"><span class="lineNum">     379 </span>            : template &lt;typename Tag, typename SecondTag, typename... RemainingTags,</a>
 <span class="lineNum">     380 </span>            :           typename TagsLs&gt;
-<span class="lineNum">     381 </span><span class="lineCov">         22 : std::ostream&amp; print_helper(</span>
+<span class="lineNum">     381 </span><span class="lineCov">          2 : std::ostream&amp; print_helper(</span>
 <span class="lineNum">     382 </span>            :     std::ostream&amp; os, const Variables&lt;TagsLs&gt;&amp; d,
 <span class="lineNum">     383 </span>            :     typelist&lt;Tag, SecondTag, RemainingTags...&gt; /*meta*/) {
-<span class="lineNum">     384 </span><span class="lineCov">         22 :   os &lt;&lt; d.template get&lt;Tag&gt;() &lt;&lt; '\n';</span>
-<span class="lineNum">     385 </span><span class="lineCov">         22 :   print_helper(os, d, typelist&lt;SecondTag, RemainingTags...&gt;{});</span>
-<span class="lineNum">     386 </span><span class="lineCov">         22 :   return os;</span>
+<span class="lineNum">     384 </span><span class="lineCov">          2 :   os &lt;&lt; d.template get&lt;Tag&gt;() &lt;&lt; '\n';</span>
+<span class="lineNum">     385 </span><span class="lineCov">          2 :   print_helper(os, d, typelist&lt;SecondTag, RemainingTags...&gt;{});</span>
+<span class="lineNum">     386 </span><span class="lineCov">          2 :   return os;</span>
 <span class="lineNum">     387 </span>            : }
 <span class="lineNum">     388 </span>            : }  // namespace Variables_detail
 <a name="389"><span class="lineNum">     389 </span>            : </a>
 <span class="lineNum">     390 </span>            : template &lt;typename TagsLs&gt;
-<span class="lineNum">     391 </span><span class="lineCov">         19 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Variables&lt;TagsLs&gt;&amp; d) {</span>
-<span class="lineNum">     392 </span><span class="lineCov">         19 :   return Variables_detail::print_helper(os, d, TagsLs{});</span>
+<span class="lineNum">     391 </span><span class="lineCov">          1 : std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Variables&lt;TagsLs&gt;&amp; d) {</span>
+<span class="lineNum">     392 </span><span class="lineCov">          1 :   return Variables_detail::print_helper(os, d, TagsLs{});</span>
 <span class="lineNum">     393 </span>            : }
 <a name="394"><span class="lineNum">     394 </span>            : </a>
 <span class="lineNum">     395 </span>            : template &lt;typename TagsLs&gt;

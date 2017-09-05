@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - dd0e8f7dfeb0965d63a0392905726335404f3f49 - Utilities/TaggedTuple.hpp</title>
+  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Utilities/TaggedTuple.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/dd0e8f7dfeb0965d63a0392905726335404f3f49">dd0e8f7dfeb0965d63a0392905726335404f3f49</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">12</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-04 02:36:57</td>
+            <td class="headerValue">2017-09-05 02:39:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">24</td>
             <td class="headerCovTableEntry">25</td>
-            <td class="headerCovTableEntry">25</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryHi">96.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -136,7 +136,7 @@
 <span class="lineNum">      66 </span>            :   }
 <a name="67"><span class="lineNum">      67 </span>            : </a>
 <span class="lineNum">      68 </span>            :   template &lt;typename Tag&gt;
-<span class="lineNum">      69 </span><span class="lineCov">         42 :   constexpr const typename Tag::type&amp; get() const noexcept {</span>
+<span class="lineNum">      69 </span><span class="lineCov">          4 :   constexpr const typename Tag::type&amp; get() const noexcept {</span>
 <span class="lineNum">      70 </span>            :     static_assert(
 <span class="lineNum">      71 </span>            :         not std::is_same&lt;tmpl::index_of&lt;tmpl::list&lt;Tags...&gt;, Tag&gt;,
 <span class="lineNum">      72 </span>            :                          tmpl::no_such_type_&gt;::value,
@@ -144,14 +144,14 @@
 <span class="lineNum">      74 </span>            :         &quot;parameter of the instantiation for what Tag is being &quot;
 <span class="lineNum">      75 </span>            :         &quot;retrieved and the remaining template parameters for what &quot;
 <span class="lineNum">      76 </span>            :         &quot;Tags are available.&quot;);
-<span class="lineNum">      77 </span><span class="lineCov">         42 :     return std::get&lt;tmpl::index_of&lt;tmpl::list&lt;Tags...&gt;, Tag&gt;::value&gt;(data_);</span>
+<span class="lineNum">      77 </span><span class="lineCov">          4 :     return std::get&lt;tmpl::index_of&lt;tmpl::list&lt;Tags...&gt;, Tag&gt;::value&gt;(data_);</span>
 <span class="lineNum">      78 </span>            :   }
 <span class="lineNum">      79 </span>            :   // @}
 <a name="80"><span class="lineNum">      80 </span>            : </a>
 <span class="lineNum">      81 </span>            :   /// Stream operator for TaggedTuple
-<span class="lineNum">      82 </span><span class="lineCov">          3 :   friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
+<span class="lineNum">      82 </span><span class="lineCov">          1 :   friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os,</span>
 <span class="lineNum">      83 </span>            :                                   const TaggedTuple&lt;Tags...&gt;&amp; t) {
-<span class="lineNum">      84 </span><span class="lineCov">          3 :     return os &lt;&lt; t.data_;</span>
+<span class="lineNum">      84 </span><span class="lineCov">          1 :     return os &lt;&lt; t.data_;</span>
 <a name="85"><span class="lineNum">      85 </span>            :   }</a>
 <span class="lineNum">      86 </span>            : 
 <span class="lineNum">      87 </span><span class="lineCov">          1 :   constexpr friend bool operator==(const TaggedTuple&amp; lhs,</span>

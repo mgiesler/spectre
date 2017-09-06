@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - 0f06045a232566f075d8d19ca6c54a3bd17bc8c1 - Parallel/Printf.hpp</title>
+  <title>LCOV - 82ad683d7a93e0a1c78eaff94d1ad349bee80827 - Parallel/Printf.hpp</title>
   <link rel="stylesheet" type="text/css" href="../gcov.css">
 </head>
 
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td class="headerItem">Commit:</td>
-             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/0f06045a232566f075d8d19ca6c54a3bd17bc8c1">0f06045a232566f075d8d19ca6c54a3bd17bc8c1</a></td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/82ad683d7a93e0a1c78eaff94d1ad349bee80827">82ad683d7a93e0a1c78eaff94d1ad349bee80827</a></td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">18</td>
@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2017-09-05 02:39:49</td>
+            <td class="headerValue">2017-09-06 06:18:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntryLo">46.7 %</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntryLo">52.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -95,8 +95,8 @@
 <span class="lineNum">      25 </span>            :                        std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value or
 <a name="26"><span class="lineNum">      26 </span>            :                    std::is_pointer&lt;T&gt;::value or</a>
 <span class="lineNum">      27 </span>            :                    std::is_pointer&lt;std::decay_t&lt;T&gt;&gt;::value&gt; = nullptr&gt;
-<span class="lineNum">      28 </span><span class="lineCov">          5 : inline constexpr T stream_object_to_string(T&amp;&amp; t) {</span>
-<span class="lineNum">      29 </span><span class="lineCov">          5 :   return t;</span>
+<span class="lineNum">      28 </span><span class="lineCov">        227 : inline constexpr T stream_object_to_string(T&amp;&amp; t) {</span>
+<span class="lineNum">      29 </span><span class="lineCov">        227 :   return t;</span>
 <span class="lineNum">      30 </span>            : }
 <span class="lineNum">      31 </span>            : 
 <span class="lineNum">      32 </span>            : /*!
@@ -121,8 +121,8 @@
 <span class="lineNum">      51 </span>            : template &lt;typename T,
 <a name="52"><span class="lineNum">      52 </span>            :           Requires&lt;std::is_fundamental&lt;std::decay_t&lt;</a>
 <span class="lineNum">      53 </span>            :               std::remove_pointer_t&lt;std::decay_t&lt;T&gt;&gt;&gt;&gt;::value&gt; = nullptr&gt;
-<span class="lineNum">      54 </span><span class="lineCov">          5 : inline constexpr T get_printable_type(T&amp;&amp; t) {</span>
-<span class="lineNum">      55 </span><span class="lineCov">          5 :   return t;</span>
+<span class="lineNum">      54 </span><span class="lineCov">        227 : inline constexpr T get_printable_type(T&amp;&amp; t) {</span>
+<span class="lineNum">      55 </span><span class="lineCov">        227 :   return t;</span>
 <span class="lineNum">      56 </span>            : }
 <span class="lineNum">      57 </span>            : 
 <span class="lineNum">      58 </span>            : /*!
@@ -135,10 +135,10 @@
 <span class="lineNum">      65 </span>            : }
 <a name="66"><span class="lineNum">      66 </span>            : </a>
 <span class="lineNum">      67 </span>            : template &lt;typename... Ts&gt;
-<span class="lineNum">      68 </span><span class="lineCov">          1 : inline void print_helper(const std::string&amp; format, Ts&amp;&amp;... t) {</span>
-<span class="lineNum">      69 </span><span class="lineCov">          3 :   CkPrintf(format.c_str(),                               // NOLINT</span>
+<span class="lineNum">      68 </span><span class="lineCov">        223 : inline void print_helper(const std::string&amp; format, Ts&amp;&amp;... t) {</span>
+<span class="lineNum">      69 </span><span class="lineCov">        225 :   CkPrintf(format.c_str(),                               // NOLINT</span>
 <span class="lineNum">      70 </span><span class="lineCov">          3 :            get_printable_type(std::forward&lt;Ts&gt;(t))...);  // NOLINT</span>
-<span class="lineNum">      71 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      71 </span><span class="lineCov">        223 : }</span>
 <span class="lineNum">      72 </span>            : }  // namespace detail
 <span class="lineNum">      73 </span>            : 
 <span class="lineNum">      74 </span>            : /*!
@@ -153,10 +153,10 @@
 <span class="lineNum">      83 </span>            :    * \endcode
 <a name="84"><span class="lineNum">      84 </span>            :    */</a>
 <span class="lineNum">      85 </span>            : template &lt;typename... Args&gt;
-<span class="lineNum">      86 </span><span class="lineCov">          1 : inline void printf(const std::string&amp; format, Args&amp;&amp;... args) {</span>
-<span class="lineNum">      87 </span><span class="lineCov">          3 :   detail::print_helper(</span>
-<span class="lineNum">      88 </span><span class="lineCov">          2 :       format, detail::stream_object_to_string(std::forward&lt;Args&gt;(args))...);</span>
-<span class="lineNum">      89 </span><span class="lineCov">          1 : }</span>
+<span class="lineNum">      86 </span><span class="lineCov">        223 : inline void printf(const std::string&amp; format, Args&amp;&amp;... args) {</span>
+<span class="lineNum">      87 </span><span class="lineCov">        225 :   detail::print_helper(</span>
+<span class="lineNum">      88 </span><span class="lineCov">        446 :       format, detail::stream_object_to_string(std::forward&lt;Args&gt;(args))...);</span>
+<span class="lineNum">      89 </span><span class="lineCov">        223 : }</span>
 <span class="lineNum">      90 </span>            : }  // namespace Parallel
 </pre>
       </td>

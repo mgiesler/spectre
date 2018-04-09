@@ -5,6 +5,7 @@ set(LIBRARY "Test_RootFinding")
 
 set(LIBRARY_SOURCES
   Test_NewtonRaphson.cpp
+  Test_CubicEquation.cpp
   Test_QuadraticEquation.cpp
   Test_TOMS748.cpp
   )

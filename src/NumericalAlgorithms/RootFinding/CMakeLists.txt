@@ -4,6 +4,7 @@
 set(LIBRARY RootFinding)
 
 set(LIBRARY_SOURCES
+    CubicEquation.cpp
     QuadraticEquation.cpp
    )
 

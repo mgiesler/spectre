@@ -4,19 +4,44 @@
 #include <benchmark/benchmark.h>
 #include <vector>
 
-#include "DataStructures/DataBox/DataBoxTag.hpp"
+// #include "DataStructures/DataBox/DataBoxTag.hpp"
+// #include "DataStructures/DataVector.hpp"
+// #include "DataStructures/Index.hpp"
+// #include "DataStructures/Tensor/Tensor.hpp"
+// #include "DataStructures/Variables.hpp"
+// #include "Domain/CoordinateMaps/Affine.hpp"
+// #include "Domain/CoordinateMaps/CoordinateMap.hpp"
+// #include "Domain/CoordinateMaps/ProductMaps.hpp"
+// #include "Domain/Element.hpp"
+// #include "Domain/LogicalCoordinates.hpp"
+// #include "NumericalAlgorithms/LinearOperators/PartialDerivatives.hpp"
+// #include "NumericalAlgorithms/Spectral/LegendreGaussLobatto.hpp"
+// #include "PointwiseFunctions/MathFunctions/PowX.hpp"
+#include <array>
+#include <cstddef>
+#include <functional>
+#include <limits>
+#include <ostream>
+#include <pup.h>
+#include <pup_stl.h>
+#include <string>
+#include <unordered_map>
+
+#include "ControlSystem/FunctionOfTime.hpp"
+#include "ControlSystem/PiecewisePolynomial.hpp"
 #include "DataStructures/DataVector.hpp"
-#include "DataStructures/Index.hpp"
 #include "DataStructures/Tensor/Tensor.hpp"
-#include "DataStructures/Variables.hpp"
-#include "Domain/CoordinateMaps/Affine.hpp"
-#include "Domain/CoordinateMaps/CoordinateMap.hpp"
-#include "Domain/CoordinateMaps/ProductMaps.hpp"
-#include "Domain/Element.hpp"
-#include "Domain/LogicalCoordinates.hpp"
-#include "NumericalAlgorithms/LinearOperators/PartialDerivatives.hpp"
-#include "NumericalAlgorithms/Spectral/LegendreGaussLobatto.hpp"
-#include "PointwiseFunctions/MathFunctions/PowX.hpp"
+#include "DataStructures/Tensor/TypeAliases.hpp"
+#include "Domain/CoordinateMaps/CubicScale.hpp"
+#include "ErrorHandling/Error.hpp"
+#include "NumericalAlgorithms/RootFinding/CubicEquation.hpp"
+#include "NumericalAlgorithms/RootFinding/NewtonRaphson.hpp"
+#include "Utilities/ConstantExpressions.hpp"
+#include "Utilities/DereferenceWrapper.hpp"
+#include "Utilities/GenerateInstantiations.hpp"
+#include "Utilities/MakeWithValue.hpp"
+#include "Utilities/StdArrayHelpers.hpp"
+#include "Utilities/TypeTraits.hpp"
 
 // Charm looks for this function but since we build without a main function or
 // main module we just have it be empty
@@ -65,43 +90,60 @@ namespace {
 // In this anonymous namespace is an example of microbenchmarking the
 // all_gradient routine for the GH system
 
-template <size_t Dim>
-struct Kappa : db::DataBoxTag {
-  using type = tnsr::abb<DataVector, Dim, Frame::Grid>;
-  static constexpr db::DataBoxString label = "Kappa";
-};
-template <size_t Dim>
-struct Psi : db::DataBoxTag {
-  using type = tnsr::aa<DataVector, Dim, Frame::Grid>;
-  static constexpr db::DataBoxString label = "Psi";
-};
+// template <size_t Dim>
+// struct Kappa : db::DataBoxTag {
+//   using type = tnsr::abb<DataVector, Dim, Frame::Grid>;
+//   static constexpr db::DataBoxString label = "Kappa";
+// };
+// template <size_t Dim>
+// struct Psi : db::DataBoxTag {
+//   using type = tnsr::aa<DataVector, Dim, Frame::Grid>;
+//   static constexpr db::DataBoxString label = "Psi";
+// };
 
 // clang-tidy: don't pass be non-const reference
 void bench_all_gradient(benchmark::State& state) {  // NOLINT
-  constexpr const size_t pts_1d = 4;
-  constexpr const size_t Dim = 3;
-  const Index<Dim> extents(pts_1d);
-  CoordinateMaps::Affine map1d(-1.0, 1.0, -1.0, 1.0);
-  using Map3d = CoordinateMaps::ProductOf3Maps<CoordinateMaps::Affine,
-                                               CoordinateMaps::Affine,
-                                               CoordinateMaps::Affine>;
-  CoordinateMap<Frame::Logical, Frame::Grid, Map3d> map(
-      Map3d{map1d, map1d, map1d});
+  constexpr size_t deriv_order = 2;
+  const double t = 4.2;
+  const double outer_b = 20.0;
 
-  using VarTags = tmpl::list<Kappa<Dim>, Psi<Dim>>;
-  const InverseJacobian<DataVector, Dim, Frame::Logical, Frame::Grid> inv_jac =
-      map.inv_jacobian(logical_coordinates(extents));
-  const auto grid_coords = map(logical_coordinates(extents));
-  Variables<VarTags> vars(extents.product(), 0.0);
+  const CoordMapsTimeDependent::CubicScale scale_map(outer_b);
+
+  const std::array<DataVector, deriv_order + 1> init_func_a{
+      {{1.0}, {0.0007}, {-0.004}}};
+  FunctionsOfTime::PiecewisePolynomial<deriv_order> f_of_t_A(t, init_func_a);
+  FunctionOfTime& f_of_t_a = f_of_t_A;
+  const std::array<DataVector, deriv_order + 1> init_func_b{
+      {{1.0}, {-0.001}, {0.003}}};
+  FunctionsOfTime::PiecewisePolynomial<deriv_order> f_of_t_B(t, init_func_b);
+  FunctionOfTime& f_of_t_b = f_of_t_B;
+
+  const std::unordered_map<std::string, FunctionOfTime&> f_of_t_list = {
+      {"expansion_a", f_of_t_a}, {"expansion_b", f_of_t_b}};
+
+  const double a = f_of_t_a.func_and_deriv(t)[0][0];
+  const double b = f_of_t_b.func_and_deriv(t)[0][0];
 
   while (state.KeepRunning()) {
-    benchmark::DoNotOptimize(
-        partial_derivatives<VarTags>(vars, extents, inv_jac));
+    for (double j = 0.0; j < 20.0; j += 0.1) {
+      const std::array<double, 1> point_xi{{j}};
+      const std::array<double, 1> mapped_point{
+          {point_xi[0] * (a + (b - a) * square(point_xi[0] / outer_b))}};
+      benchmark::DoNotOptimize(scale_map.inverse(mapped_point, t, f_of_t_list));
+    }
   }
 }
-BENCHMARK(bench_all_gradient);
+
+// if google benchmark complains with: '***WARNING*** CPU scaling is enabled,
+// the benchmark real time measurements may be noisy and will incur extra
+//  overhead.'
+//  this will fix it:
+//  sudo cpupower frequency-set --governor performance
+//  this will put if back to normal:
+//  sudo cpupower frequency-set --governor powersave
+
+BENCHMARK(bench_all_gradient)->Repetitions(50)->ReportAggregatesOnly();
+// BENCHMARK(bench_all_gradient);
 }  // namespace
 
 BENCHMARK_MAIN()
-
-#include "NumericalAlgorithms/LinearOperators/PartialDerivatives.tpp"
